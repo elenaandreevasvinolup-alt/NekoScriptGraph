@@ -1,6 +1,6 @@
 # NekoScriptGraph (NSG) — Быстрое развёртывание и справочник
 
-**Версия** 1.0.1 · **Unity** 2022.3+ · **Автор** NekoAndreeva · **Лицензия** MIT · **Пакет** `com.nekoandreeva.nekoscriptgraph`
+**Версия** 1.0.2 · **Unity** 2022.3+ · **Автор** NekoAndreeva · **Лицензия** MIT · **Пакет** `com.nekoandreeva.nekoscriptgraph`
 
 > Визуальное программирование для Unity в стиле Scratch, которое **никогда ничего не добавляет в ваш код.**
 > NSG записывает файл конфигурации блоков *рядом* со скриптом, чтобы его можно было редактировать как блоки, и переводит в обоих направлениях. В сгенерированном `.cs` нет ни следа плагина — удалите папку плагина, и ваши скрипты по-прежнему компилируются.
@@ -27,7 +27,7 @@
 11. [Архитектурная гигиена](#11-architecture-health)
 12. [Локализация](#12-localization)
 13. [Агенты и MCP](#13-agents--mcp)
-14. [Ассистент ProgramNeko (необязательно)](#14-programneko-assistant-optional)
+14. [Ассистент Движкошка (необязательно)](#14-programneko-assistant-optional)
 15. [Настройки](#15-settings)
 16. [Структура каталогов](#16-directory-layout)
 17. [Удаление](#17-uninstall)
@@ -285,21 +285,24 @@ NSG отслеживает, **какая сторона сдвинулась п�
 
 | Папка | Назначение | Если удалить |
 |---|---|---|
-| `Dependencies/` | Спрайты 9-slice со скруглением | Откат к простым скруглённым углам; пакет ~1.4 MB |
-| `LanguageSupport/{c,cpp,hlsl,java,python,rust}` | Языки, кроме C# | Этот язык исчезает; больше ничего не ломается |
+| `Dependencies/` | Спрайты 9-slice со скруглением | Откат к простым скруглённым углам; пакет ~3.3 MB |
+| `LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}` | Языки, кроме C# | Этот язык исчезает; больше ничего не ломается |
 | `ProgramNeko/` | Пиксельный ассистент-кошка | Плагин прекрасно работает без неё |
 | `Locale/*` | Переводы интерфейса | Эта локаль откатывается к английскому |
 
 ### Размер пакета
 
-≈ **2.2 MB** в поставке:
+≈ **4.2 MB** в поставке:
 
 | Часть | Размер |
 |---|---|
-| `Editor/` — ядро, интерфейс, движок C# | ~0.9 MB |
+| `Editor/` — ядро, интерфейс, движок C#, настройки | ~1.4 MB |
 | `Dependencies/Editor/Sprite/` — необязательные спрайты 9-slice | ~0.86 MB |
+| `Documents/` — это руководство на 15 языках | ~0.7 MB |
+| `Locale/` — 15 языков интерфейса | ~0.7 MB |
+| `LanguageSupport/` — восемь подключаемых языков | ~0.24 MB |
 | `Blocks/` — встроенная библиотека блоков (пересоздаётся по требованию) | ~0.23 MB |
-| `LanguageSupport/` — семь подключаемых языков | ~0.21 MB |
+| `Extensions~/` — шаблон внешнего движка для установки | ~0.04 MB |
 
 ---
 
@@ -463,7 +466,7 @@ NSG отслеживает, **какая сторона сдвинулась п�
 <a id="9-languages--adding-one"></a>
 ## 9. Языки и добавление нового
 
-`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python`
+`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python` · `Swift`
 
 - Каждый переводит **в обе стороны**.
 - **C# встроен** (`Editor/Languages/CSharp/`: Lexer, Parser, Printer, Splitter, CodeMap).
@@ -681,7 +684,7 @@ Unity -batchmode -quit -projectPath <project> \
 ---
 
 <a id="14-programneko-assistant-optional"></a>
-## 14. Ассистент ProgramNeko (необязательно)
+## 14. Ассистент Движкошка (необязательно)
 
 `ProgramNeko/` — необязательный пиксельный ассистент-кошка. **Удалите всю папку, и плагин продолжит работать.**
 
@@ -738,14 +741,14 @@ NekoScriptGraph/
 │  ├─ Nsg_AgentCli.cs            headless CLI
 │  └─ Nsg_SelfTest.cs            round-trip self test
 ├─ Blocks/                       built-in block library + API/*.json
-├─ LanguageSupport/{c,cpp,hlsl,java,python,rust}/
+├─ LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}/
 ├─ Locale/{15 locales}/strings.json
 ├─ Dependencies/Editor/Sprite/   optional 9-slice sprites
 ├─ ProgramNeko/                  optional assistant
 ├─ .presets/presets.json
 ├─ NekoScriptGraph.settings.json
 ├─ MCP.md                        dedicated MCP chapter
-└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.1
+└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.2
 ```
 
 ---

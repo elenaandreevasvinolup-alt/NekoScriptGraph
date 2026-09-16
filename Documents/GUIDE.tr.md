@@ -1,6 +1,6 @@
 # NekoScriptGraph (NSG) — Hızlı Kurulum ve El Kitabı
 
-**Sürüm** 1.0.1 · **Unity** 2022.3+ · **Yazar** NekoAndreeva · **Lisans** MIT · **Paket** `com.nekoandreeva.nekoscriptgraph`
+**Sürüm** 1.0.2 · **Unity** 2022.3+ · **Yazar** NekoAndreeva · **Lisans** MIT · **Paket** `com.nekoandreeva.nekoscriptgraph`
 
 > Unity için Scratch tarzı görsel programlama; **kodunuza asla hiçbir şey koymaz.**
 > NSG, bir betiğin *yanına* bir blok yapılandırma dosyası yazar; böylece betik bloklar olarak düzenlenebilir hale gelir ve NSG iki yönde çeviri yapar. Üretilen `.cs` eklentiye dair hiçbir iz taşımaz — eklenti klasörünü silin, betikleriniz yine de derlenir.
@@ -27,7 +27,7 @@
 11. [Mimari Sağlık](#11-architecture-health)
 12. [Yerelleştirme](#12-localization)
 13. [Aracılar ve MCP](#13-agents--mcp)
-14. [ProgramNeko Asistanı (İsteğe Bağlı)](#14-programneko-assistant-optional)
+14. [ProgramKedisi Asistanı (İsteğe Bağlı)](#14-programneko-assistant-optional)
 15. [Ayarlar](#15-settings)
 16. [Dizin Yapısı](#16-directory-layout)
 17. [Kaldırma](#17-uninstall)
@@ -282,21 +282,24 @@ NSG **hangi tarafın önce hareket ettiğini** izler, böylece Üret'e basmanın
 
 | Klasör | Amaç | Kaldırılırsa |
 |---|---|---|
-| `Dependencies/` | 9 dilim yuvarlatılmış sprite'lar | Düz yuvarlatılmış köşelere döner; paket ~1,4 MB |
-| `LanguageSupport/{c,cpp,hlsl,java,python,rust}` | C# dışı diller | O dil kaybolur; başka bir şey bozulmaz |
+| `Dependencies/` | 9 dilim yuvarlatılmış sprite'lar | Düz yuvarlatılmış köşelere döner; paket ~3,3 MB |
+| `LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}` | C# dışı diller | O dil kaybolur; başka bir şey bozulmaz |
 | `ProgramNeko/` | Piksel kedi asistan | Eklenti onu olmadan sorunsuz çalışır |
 | `Locale/*` | Arayüz çevirileri | O yerel ayar İngilizceye döner |
 
 ### Paket boyutu
 
-Gönderildiği haliyle ≈ **2,2 MB**:
+Gönderildiği haliyle ≈ **4,2 MB**:
 
 | Parça | Boyut |
 |---|---|
-| `Editor/` — çekirdek, arayüz, C# motoru | ~0,9 MB |
+| `Editor/` — çekirdek, arayüz, C# motoru, ayarlar | ~1,4 MB |
 | `Dependencies/Editor/Sprite/` — isteğe bağlı 9 dilim sprite'lar | ~0,86 MB |
+| `Documents/` — bu kılavuzun 15 dilde hâli | ~0,7 MB |
+| `Locale/` — 15 arayüz dili | ~0,7 MB |
+| `LanguageSupport/` — sekiz eklenebilir dil | ~0,24 MB |
 | `Blocks/` — yerleşik blok kütüphanesi (istek üzerine yeniden üretilir) | ~0,23 MB |
-| `LanguageSupport/` — yedi eklenebilir dil | ~0,21 MB |
+| `Extensions~/` — kurulabilir harici motor şablonu | ~0,04 MB |
 
 ---
 
@@ -460,7 +463,7 @@ Notlar:
 <a id="9-languages--adding-one"></a>
 ## 9. Diller ve Yeni Bir Dil Ekleme
 
-`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python`
+`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python` · `Swift`
 
 - Her biri **iki yönde de** çevirir.
 - **C# yerleşiktir** (`Editor/Languages/CSharp/`: Lexer, Parser, Printer, Splitter, CodeMap).
@@ -678,7 +681,7 @@ Unity -batchmode -quit -projectPath <project> \
 ---
 
 <a id="14-programneko-assistant-optional"></a>
-## 14. ProgramNeko Asistanı (İsteğe Bağlı)
+## 14. ProgramKedisi Asistanı (İsteğe Bağlı)
 
 `ProgramNeko/` isteğe bağlı bir piksel kedi asistandır. **Tüm klasörü silin, eklenti çalışmaya devam eder.**
 
@@ -735,14 +738,14 @@ NekoScriptGraph/
 │  ├─ Nsg_AgentCli.cs            headless CLI
 │  └─ Nsg_SelfTest.cs            round-trip self test
 ├─ Blocks/                       built-in block library + API/*.json
-├─ LanguageSupport/{c,cpp,hlsl,java,python,rust}/
+├─ LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}/
 ├─ Locale/{15 locales}/strings.json
 ├─ Dependencies/Editor/Sprite/   optional 9-slice sprites
 ├─ ProgramNeko/                  optional assistant
 ├─ .presets/presets.json
 ├─ NekoScriptGraph.settings.json
 ├─ MCP.md                        dedicated MCP chapter
-└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.1
+└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.2
 ```
 
 ---

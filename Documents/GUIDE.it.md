@@ -1,6 +1,6 @@
 # NekoScriptGraph (NSG) — Guida rapida al deployment e manuale
 
-**Versione** 1.0.1 · **Unity** 2022.3+ · **Autore** NekoAndreeva · **Licenza** MIT · **Pacchetto** `com.nekoandreeva.nekoscriptgraph`
+**Versione** 1.0.2 · **Unity** 2022.3+ · **Autore** NekoAndreeva · **Licenza** MIT · **Pacchetto** `com.nekoandreeva.nekoscriptgraph`
 
 > Programmazione visuale in stile Scratch per Unity che **non mette mai nulla nel tuo codice.**
 > NSG scrive un file di configurazione dei blocchi *accanto* a uno script per renderlo modificabile come blocchi, e traduce in entrambe le direzioni. Il `.cs` generato non contiene alcuna traccia del plugin — elimina la cartella del plugin e i tuoi script continueranno a compilare.
@@ -27,7 +27,7 @@
 11. [Salute dell'architettura](#11-architecture-health)
 12. [Localizzazione](#12-localization)
 13. [Agenti e MCP](#13-agents--mcp)
-14. [Assistente ProgramNeko (opzionale)](#14-programneko-assistant-optional)
+14. [Assistente GattaProgramma (opzionale)](#14-programneko-assistant-optional)
 15. [Impostazioni](#15-settings)
 16. [Struttura delle directory](#16-directory-layout)
 17. [Disinstallazione](#17-uninstall)
@@ -285,21 +285,24 @@ NSG tiene traccia di **quale lato si è mosso per primo**, così sai sempre se p
 
 | Cartella | Scopo | Se rimossa |
 |---|---|---|
-| `Dependencies/` | Sprite arrotondati 9-slice | Ripiega su angoli arrotondati semplici; pacchetto ~1,4 MB |
-| `LanguageSupport/{c,cpp,hlsl,java,python,rust}` | Linguaggi non-C# | Quel linguaggio scompare; nient'altro si rompe |
+| `Dependencies/` | Sprite arrotondati 9-slice | Ripiega su angoli arrotondati semplici; pacchetto ~3,3 MB |
+| `LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}` | Linguaggi non-C# | Quel linguaggio scompare; nient'altro si rompe |
 | `ProgramNeko/` | Assistente gatto pixel | Il plugin funziona bene anche senza di lei |
 | `Locale/*` | Traduzioni dell'interfaccia | Quel locale ripiega sull'inglese |
 
 ### Dimensione del pacchetto
 
-≈ **2,2 MB** così come viene distribuito:
+≈ **4,2 MB** così come viene distribuito:
 
 | Parte | Dimensione |
 |---|---|
-| `Editor/` — core, UI, motore C# | ~0,9 MB |
+| `Editor/` — core, UI, motore C#, impostazioni | ~1,4 MB |
 | `Dependencies/Editor/Sprite/` — sprite 9-slice opzionali | ~0,86 MB |
+| `Documents/` — questa guida in 15 lingue | ~0,7 MB |
+| `Locale/` — 15 lingue dell'interfaccia | ~0,7 MB |
+| `LanguageSupport/` — otto linguaggi aggiuntivi | ~0,24 MB |
 | `Blocks/` — libreria di blocchi integrata (rigenerata su richiesta) | ~0,23 MB |
-| `LanguageSupport/` — sette linguaggi aggiuntivi | ~0,21 MB |
+| `Extensions~/` — modello di motore esterno installabile | ~0,04 MB |
 
 ---
 
@@ -463,7 +466,7 @@ Note:
 <a id="9-languages--adding-one"></a>
 ## 9. Linguaggi e come aggiungerne uno
 
-`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python`
+`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python` · `Swift`
 
 - Ognuno traduce **in entrambe le direzioni**.
 - **C# è integrato** (`Editor/Languages/CSharp/`: Lexer, Parser, Printer, Splitter, CodeMap).
@@ -681,7 +684,7 @@ Unity -batchmode -quit -projectPath <project> \
 ---
 
 <a id="14-programneko-assistant-optional"></a>
-## 14. Assistente ProgramNeko (opzionale)
+## 14. Assistente GattaProgramma (opzionale)
 
 `ProgramNeko/` è un assistente gatto pixel opzionale. **Elimina l'intera cartella e il plugin continua a funzionare.**
 
@@ -738,14 +741,14 @@ NekoScriptGraph/
 │  ├─ Nsg_AgentCli.cs            headless CLI
 │  └─ Nsg_SelfTest.cs            round-trip self test
 ├─ Blocks/                       built-in block library + API/*.json
-├─ LanguageSupport/{c,cpp,hlsl,java,python,rust}/
+├─ LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}/
 ├─ Locale/{15 locales}/strings.json
 ├─ Dependencies/Editor/Sprite/   optional 9-slice sprites
 ├─ ProgramNeko/                  optional assistant
 ├─ .presets/presets.json
 ├─ NekoScriptGraph.settings.json
 ├─ MCP.md                        dedicated MCP chapter
-└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.1
+└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.2
 ```
 
 ---

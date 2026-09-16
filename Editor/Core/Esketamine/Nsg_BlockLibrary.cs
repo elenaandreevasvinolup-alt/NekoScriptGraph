@@ -87,6 +87,13 @@ namespace NekoScriptGraph
                     Blocks.RemoveAt(i);
                     continue;
                 }
+
+                // Пустой набор слотов вместо null. Так приходит блок из
+                // blocks/*.json, где поля sockets нет вовсе: JsonUtility
+                // оставляет null, а палитра, проверки и отрисовка читают
+                // def.sockets.Length напрямую.
+                if (b.sockets == null) b.sockets = new NsgSocketDef[0];
+
                 _byId[b.id] = b;
             }
 
@@ -362,6 +369,7 @@ namespace NekoScriptGraph
                 var b = all[i];
                 if (!profile.HasForeach && b.id == "stmt.foreach") continue;
                 if (!profile.HasNew && b.id == "expr.new") continue;
+                if (profile.Excludes(b.id)) continue;
                 result.Add(b);
             }
 
@@ -453,10 +461,12 @@ namespace NekoScriptGraph
                 "cast", "({{0}}){{1}}", false, S("type", "text"), S("operand", "expr")));
 
             // ---- аварийный выход ----
-            l.Add(D("stmt.raw", "statement", "cat.raw", "raw C# {0}",
+            // Подпись нейтральная: блок общий для всех языков, и «raw C#» в
+            // палитре Rust или Go читался как чужая деталь.
+            l.Add(D("stmt.raw", "statement", "cat.raw", "raw text {0}",
                 "rawStmt", "{{0}}", false, S("text", "text")));
 
-            l.Add(D("expr.raw", "expression", "cat.raw", "raw C# {0}",
+            l.Add(D("expr.raw", "expression", "cat.raw", "raw text {0}",
                 "rawExpr", "{{0}}", false, S("text", "text")));
 
             return l;

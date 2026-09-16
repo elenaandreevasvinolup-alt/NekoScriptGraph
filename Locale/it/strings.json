@@ -639,7 +639,7 @@
     },
     {
       "key": "menu.open",
-      "value": "Apri editor blocchi"
+      "value": "Apri NekoScriptGraph"
     },
     {
       "key": "menu.problems",
@@ -971,7 +971,7 @@
     },
     {
       "key": "win.title",
-      "value": "Editor a blocchi NekoScriptGraph"
+      "value": "NekoScriptGraph"
     }
   ],
   "blocks": [
@@ -1181,7 +1181,7 @@
     },
     {
       "key": "expr.raw",
-      "value": "C# grezzo {0}"
+      "value": "testo grezzo {0}"
     },
     {
       "key": "expr.unary",
@@ -1817,7 +1817,7 @@
     },
     {
       "key": "stmt.raw",
-      "value": "C# grezzo {0}"
+      "value": "testo grezzo {0}"
     },
     {
       "key": "stmt.return",

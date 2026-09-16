@@ -1,6 +1,6 @@
 # NekoScriptGraph（NSG）—— 快速部署与手册
 
-**版本** 1.0.1 · **Unity** 2022.3+ · **作者** NekoAndreeva · **许可证** MIT · **包名** `com.nekoandreeva.nekoscriptgraph`
+**版本** 1.0.2 · **Unity** 2022.3+ · **作者** NekoAndreeva · **许可证** MIT · **包名** `com.nekoandreeva.nekoscriptgraph`
 
 > 面向 Unity 的 Scratch 风格可视化编程，**绝不往你的代码里塞任何东西。**
 > NSG 会在脚本*旁边*写一个积木配置文件，让它能以积木形式编辑，并支持双向转换。生成的 `.cs` 中不含插件的任何痕迹——删掉插件文件夹，你的脚本依然可以编译。
@@ -27,7 +27,7 @@
 11. [架构健康度](#11-architecture-health)
 12. [本地化](#12-localization)
 13. [Agent 与 MCP](#13-agents--mcp)
-14. [ProgramNeko 助手（可选）](#14-programneko-assistant-optional)
+14. [代码喵喵 助手（可选）](#14-programneko-assistant-optional)
 15. [设置](#15-settings)
 16. [目录结构](#16-directory-layout)
 17. [卸载](#17-uninstall)
@@ -285,21 +285,24 @@ NSG 会追踪**哪一侧先变动**，因此你始终知道按下 Generate 是�
 
 | 文件夹 | 用途 | 删除后 |
 |---|---|---|
-| `Dependencies/` | 九宫格（9-slice）圆角精灵 | 回退为普通圆角；包体约 1.4 MB |
-| `LanguageSupport/{c,cpp,hlsl,java,python,rust}` | 非 C# 语言 | 该语言消失；其他功能不受影响 |
+| `Dependencies/` | 九宫格（9-slice）圆角精灵 | 回退为普通圆角；包体约 3.3 MB |
+| `LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}` | 非 C# 语言 | 该语言消失；其他功能不受影响 |
 | `ProgramNeko/` | 像素猫助手 | 没有它插件照常工作 |
 | `Locale/*` | UI 翻译 | 该语言回退为英文 |
 
 ### 包体大小
 
-发布时约为 **2.2 MB**：
+发布时约为 **4.2 MB**：
 
 | 部分 | 大小 |
 |---|---|
-| `Editor/` —— 核心、UI、C# 引擎 | ~0.9 MB |
+| `Editor/` —— 核心、UI、C# 引擎、设置 | ~1.4 MB |
 | `Dependencies/Editor/Sprite/` —— 可选的九宫格精灵 | ~0.86 MB |
+| `Documents/` —— 15 种语言的这份指南 | ~0.7 MB |
+| `Locale/` —— 15 种界面语言 | ~0.7 MB |
+| `LanguageSupport/` —— 八种即插即用语言 | ~0.24 MB |
 | `Blocks/` —— 内置积木库（按需重新生成） | ~0.23 MB |
-| `LanguageSupport/` —— 七种即插即用语言 | ~0.21 MB |
+| `Extensions~/` —— 可安装的外部引擎模板 | ~0.04 MB |
 
 ---
 
@@ -365,6 +368,16 @@ VS Code 风格的多标签窗口，最小尺寸 980×600。
 ## 7. 菜单参考
 
 > `[MenuItem]` 的标题是编译期常量，因此 Unity 实际发布的是**静态英文**名称；本地化层会在加载和切换语言时替换为翻译后的标签。`MCP Bridge` 相关条目刻意保留英文。
+
+**顶栏路径**：所有 NekoWorks 系列插件共用**一个**顶栏栏位，各自占一个子菜单，装再多插件也不会把顶栏横向撑爆。
+
+```
+NekoWorks
+├── NSG   ← 本插件（NekoScriptGraph）
+└── NDC   ← Neko Dynamic Collision
+```
+
+下表列的是 `NekoWorks → NSG` 子菜单里的条目。
 
 | 菜单项 | 用途 |
 |---|---|
@@ -463,7 +476,7 @@ A 部分讲的是工作流。这里讲的是底层机制。
 <a id="9-languages--adding-one"></a>
 ## 9. 语言与新增语言
 
-`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python`
+`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python` · `Swift`
 
 - 每一种都支持**双向**转换。
 - **C# 是内置的**（`Editor/Languages/CSharp/`：Lexer、Parser、Printer、Splitter、CodeMap）。
@@ -681,7 +694,7 @@ Unity -batchmode -quit -projectPath <project> \
 ---
 
 <a id="14-programneko-assistant-optional"></a>
-## 14. ProgramNeko 助手（可选）
+## 14. 代码喵喵 助手（可选）
 
 `ProgramNeko/` 是一个可选的像素猫助手。**删掉整个文件夹，插件依然照常工作。**
 
@@ -738,14 +751,14 @@ NekoScriptGraph/
 │  ├─ Nsg_AgentCli.cs            headless CLI
 │  └─ Nsg_SelfTest.cs            round-trip self test
 ├─ Blocks/                       built-in block library + API/*.json
-├─ LanguageSupport/{c,cpp,hlsl,java,python,rust}/
+├─ LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}/
 ├─ Locale/{15 locales}/strings.json
 ├─ Dependencies/Editor/Sprite/   optional 9-slice sprites
 ├─ ProgramNeko/                  optional assistant
 ├─ .presets/presets.json
 ├─ NekoScriptGraph.settings.json
 ├─ MCP.md                        dedicated MCP chapter
-└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.1
+└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.2
 ```
 
 ---

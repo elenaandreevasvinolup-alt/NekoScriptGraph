@@ -639,7 +639,7 @@
     },
     {
       "key": "menu.open",
-      "value": "打开积木编辑器"
+      "value": "打开 NekoScriptGraph"
     },
     {
       "key": "menu.problems",
@@ -1019,7 +1019,7 @@
     },
     {
       "key": "win.title",
-      "value": "NekoScriptGraph 积木编辑器"
+      "value": "NekoScriptGraph"
     },
     {
       "key": "menu.settings",
@@ -1031,15 +1031,15 @@
     },
     {
       "key": "adv.enabled",
-      "value": "进阶功能已开启：猫娘已安装，任何改动她都能解释。"
+      "value": "进阶功能已开启：ProgramNeko 已安装，任何改动她都能解释。"
     },
     {
       "key": "adv.disabled",
-      "value": "进阶功能已关闭：核心（解析、生成、诊断、积木）照常可用，但补全、自动修正和优化需要猫娘。"
+      "value": "进阶功能已关闭：核心（解析、生成、诊断、积木）照常可用，但补全、自动修正和优化需要 ProgramNeko。"
     },
     {
       "key": "adv.needAssistant",
-      "value": "这项需要猫娘。请在「扩展」里安装或重新启用 ProgramNeko。"
+      "value": "这项需要 ProgramNeko。请在「扩展」里安装或重新启用她。"
     },
     {
       "key": "set.title",
@@ -1050,12 +1050,24 @@
       "value": "插件 {0} · 核心 {1}（{2}）"
     },
     {
+      "key": "confirm.selectSource",
+      "value": "请先在 Project 窗口里选中一个受支持语言的源文件。"
+    },
+    {
+      "key": "api.doneAll",
+      "value": "已为全部语言生成 {0} 个 API 积木（{1} 个语言报错）。"
+    },
+    {
+      "key": "msg.importFailed",
+      "value": "导入 {0} 失败：{1}"
+    },
+    {
       "key": "set.tab.general",
       "value": "通用"
     },
     {
       "key": "set.tab.assistant",
-      "value": "猫娘"
+      "value": "ProgramNeko"
     },
     {
       "key": "set.tab.extensions",
@@ -1079,7 +1091,7 @@
     },
     {
       "key": "set.assistant.missing",
-      "value": "猫娘尚未安装"
+      "value": "ProgramNeko 尚未安装"
     },
     {
       "key": "set.assistant.missingNote",
@@ -1087,7 +1099,7 @@
     },
     {
       "key": "set.assistant.noSchema",
-      "value": "这只猫娘没有描述任何设置项。"
+      "value": "没有描述任何性格设置项。"
     },
     {
       "key": "set.assistant.presets",
@@ -1191,7 +1203,7 @@
     },
     {
       "key": "set.ext.assistant",
-      "value": "猫娘"
+      "value": "ProgramNeko"
     },
     {
       "key": "set.ext.assistantOn",
@@ -1207,7 +1219,7 @@
     },
     {
       "key": "set.ext.assistantNote",
-      "value": "卸载会保留全部文件、关闭进阶功能，核心照常工作。想装回来只要一键。"
+      "value": "卸载 ProgramNeko 会保留全部文件、关闭进阶功能，核心照常工作。想装回来只要一键。"
     },
     {
       "key": "set.ext.engines",
@@ -1259,7 +1271,7 @@
     },
     {
       "key": "ext.roslyn.desc",
-      "value": "可选。由 C# 编译器提供真实的成员与重载补全。以独立包安装，且需要猫娘。"
+      "value": "可选。由 C# 编译器提供真实的成员与重载补全。以独立包安装，且需要 ProgramNeko。"
     },
     {
       "key": "ext.roslyn.notFound",
@@ -1303,7 +1315,7 @@
     },
     {
       "key": "set.adv.optimizerCount",
-      "value": "已注册 {0} 个优化器。没有猫娘时优化器永不运行。"
+      "value": "已注册 {0} 个优化器。没有 ProgramNeko 时优化器永不运行。"
     },
     {
       "key": "set.adv.state.ready",
@@ -1529,7 +1541,7 @@
     },
     {
       "key": "expr.raw",
-      "value": "原始C# {0}"
+      "value": "原始文本 {0}"
     },
     {
       "key": "expr.unary",
@@ -2165,7 +2177,7 @@
     },
     {
       "key": "stmt.raw",
-      "value": "原始C# {0}"
+      "value": "原始文本 {0}"
     },
     {
       "key": "stmt.return",
@@ -2374,6 +2386,106 @@
     {
       "key": "go.timeNow",
       "value": "当前时间"
+    },
+    {
+      "key": "swift.print",
+      "value": "输出 {0}"
+    },
+    {
+      "key": "swift.fatalError",
+      "value": "致命错误 {0}"
+    },
+    {
+      "key": "swift.assert",
+      "value": "断言 {0}"
+    },
+    {
+      "key": "swift.precondition",
+      "value": "前置条件 {0}"
+    },
+    {
+      "key": "swift.interpolate",
+      "value": "插值 {0}"
+    },
+    {
+      "key": "swift.guardLet",
+      "value": "守卫 let {0} 等于 {1}"
+    },
+    {
+      "key": "swift.string",
+      "value": "转字符串 {0}"
+    },
+    {
+      "key": "swift.int",
+      "value": "转整数 {0}"
+    },
+    {
+      "key": "swift.double",
+      "value": "转双精度 {0}"
+    },
+    {
+      "key": "swift.abs",
+      "value": "{0} 的绝对值"
+    },
+    {
+      "key": "swift.min",
+      "value": "{0} 和 {1} 中较小者"
+    },
+    {
+      "key": "swift.max",
+      "value": "{0} 和 {1} 中较大者"
+    },
+    {
+      "key": "swift.count",
+      "value": "{0} 的元素个数"
+    },
+    {
+      "key": "swift.isEmpty",
+      "value": "{0} 是否为空"
+    },
+    {
+      "key": "swift.append",
+      "value": "把 {1} 追加到 {0}"
+    },
+    {
+      "key": "swift.removeAt",
+      "value": "从 {0} 移除第 {1} 项"
+    },
+    {
+      "key": "swift.arrayOf",
+      "value": "由 {0} 组成的数组"
+    },
+    {
+      "key": "swift.map",
+      "value": "用 {1} 映射 {0}"
+    },
+    {
+      "key": "swift.filter",
+      "value": "用 {1} 筛选 {0}"
+    },
+    {
+      "key": "swift.sorted",
+      "value": "排序 {0}"
+    },
+    {
+      "key": "swift.uppercased",
+      "value": "转大写 {0}"
+    },
+    {
+      "key": "swift.lowercased",
+      "value": "转小写 {0}"
+    },
+    {
+      "key": "swift.hasPrefix",
+      "value": "{0} 以 {1} 开头"
+    },
+    {
+      "key": "swift.split",
+      "value": "按 {1} 切分 {0}"
+    },
+    {
+      "key": "swift.joined",
+      "value": "用 {1} 连接 {0}"
     }
   ]
 }

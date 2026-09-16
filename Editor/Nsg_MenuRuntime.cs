@@ -18,7 +18,8 @@ namespace NekoScriptGraph
     /// </summary>
     public static class Nsg_MenuRuntime
     {
-        const string Root = "NekoScriptGraph/";
+        /// <summary>必须与 Nsg_Menu.Root 保持一致。</summary>
+        const string Root = Nsg_Menu.Root;
 
         public class Item
         {
@@ -30,7 +31,7 @@ namespace NekoScriptGraph
 
         static readonly Item[] Items =
         {
-            new Item { Key = "menu.open",      Fallback = "Open Block Editor",         Handler = "OpenWindow",         Priority = 10 },
+            new Item { Key = "menu.open",      Fallback = "Open NekoScriptGraph",         Handler = "OpenWindow",         Priority = 10 },
             new Item { Key = "menu.problems",  Fallback = "Problems",                  Handler = "OpenErrors",         Priority = 20 },
             new Item { Key = "menu.health",    Fallback = "Architecture Health",       Handler = "OpenHealth",         Priority = 30 },
             new Item { Key = "menu.manage",    Fallback = "Take Selected Script Under Management", Handler = "ManageSelection", Priority = 50 },

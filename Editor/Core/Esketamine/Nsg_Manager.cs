@@ -96,7 +96,21 @@ namespace NekoScriptGraph
             doc = new Nsg_Document(entry);
             doc.CsPath = csPath;
             doc.NsgPath = Nsg_Document.NsgPathFor(csPath);
-            doc.Library = GetLibrary(entry);
+
+            // Библиотека собирается кодом языка, и упасть она может по его
+            // вине. Ошибку записываем в документ, а не выпускаем наружу:
+            // иначе открытие файла выглядит как «кнопка не работает».
+            try
+            {
+                doc.Library = GetLibrary(entry);
+            }
+            catch (System.Exception ex)
+            {
+                doc.Library = new Nsg_BlockLibrary();
+                doc.Diagnostics.Error(NsgCodes.Internal,
+                    "язык '" + (entry != null ? entry.Id : "?") +
+                    "': библиотека блоков не собрана — " + ex.GetType().Name + ": " + ex.Message);
+            }
 
             if (entry == null)
             {
@@ -120,6 +134,8 @@ namespace NekoScriptGraph
                 doc.State = NsgDocState.Unmanaged;
             }
 
+            LogErrors(doc);
+
             _documents[csPath] = doc;
             return doc;
         }
@@ -135,11 +151,39 @@ namespace NekoScriptGraph
             _documents.Remove(doc.CsPath);
         }
 
+        /// <summary>
+        /// Дублирует ошибки документа в консоль.
+        ///
+        /// Окно проблем легко не заметить, а до его открытия причины отказа
+        /// вообще не видно — и тогда «ничего не произошло» невозможно починить.
+        /// Строка в консоли с путём и причиной — минимально необходимое.
+        /// </summary>
+        static void LogErrors(Nsg_Document doc)
+        {
+            if (doc == null || doc.Diagnostics == null) return;
+
+            for (int i = 0; i < doc.Diagnostics.Items.Count; i++)
+            {
+                var d = doc.Diagnostics.Items[i];
+                if (d == null || d.Severity != NsgSeverity.Error) continue;
+                Debug.LogError("[NekoScriptGraph] " + doc.CsPath + ": " + d.Message);
+            }
+        }
+
         /// <summary>Превращает свободный файл в управляемый (код -> блоки).</summary>
         public bool Manage(Nsg_Document doc)
         {
-            if (doc == null || doc.Engine == null) return false;
-            if (!doc.ImportFromCode(false)) return false;
+            if (doc == null || doc.Engine == null)
+            {
+                LogErrors(doc);
+                return false;
+            }
+
+            if (!doc.ImportFromCode(false))
+            {
+                LogErrors(doc);
+                return false;
+            }
 
             doc.Model.sourceGuid = GuidOf(doc.CsPath);
             doc.SaveModel();
@@ -173,8 +217,17 @@ namespace NekoScriptGraph
         /// <summary>Код перезаписывает блоки (повторный импорт).</summary>
         public bool ReimportCode(Nsg_Document doc)
         {
-            if (doc == null || doc.Engine == null) return false;
-            if (!doc.ImportFromCode(true)) return false;
+            if (doc == null || doc.Engine == null)
+            {
+                LogErrors(doc);
+                return false;
+            }
+
+            if (!doc.ImportFromCode(true))
+            {
+                LogErrors(doc);
+                return false;
+            }
 
             doc.Model.sourceGuid = GuidOf(doc.CsPath);
             doc.SaveModel();

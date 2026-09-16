@@ -9,8 +9,8 @@
     "bodyIndent": 14,
     "cornerRadius": 6,
     "footerHeight": 10,
-    "rightPaneWidth": 240.0,
-    "presetPaneHeight": 241.0,
+    "rightPaneWidth": 287.0,
+    "presetPaneHeight": 254.0,
     "shaderPipeline": "auto",
     "apiOutputFolder": "Assets/NekoScriptGraph/Blocks/API"
 }

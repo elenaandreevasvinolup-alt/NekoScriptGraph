@@ -490,7 +490,25 @@ namespace NekoScriptGraph
             // Устанавливаемый язык: КОД — источник истины. Он собирает общую
             // базу с учётом ограничений языка и добавляет свои идиомы, поэтому
             // правка AddLanguageBlocks видна сразу.
-            var lib = entry.Language.CreateLibrary(folder);
+            Nsg_BlockLibrary lib;
+            try
+            {
+                lib = entry.Language.CreateLibrary(folder);
+            }
+            catch (System.Exception ex)
+            {
+                // Библиотека языка не собралась. Раньше исключение улетало
+                // наружу и выглядело как «кнопка не работает»: теперь причина
+                // записана в сам языковой слот и попадает в отчёт по языкам.
+                entry.Error = "библиотека блоков не собрана: " + ex.GetType().Name + ": " + ex.Message;
+                return new Nsg_BlockLibrary();
+            }
+
+            if (lib == null)
+            {
+                entry.Error = "язык вернул null вместо библиотеки блоков";
+                return new Nsg_BlockLibrary();
+            }
 
             if (Directory.Exists(folder))
             {

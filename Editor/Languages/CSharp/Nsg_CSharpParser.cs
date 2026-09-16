@@ -366,6 +366,12 @@ namespace NekoScriptGraph
             get { return _profile != null && _profile.AutoSemicolon; }
         }
 
+        /// <summary>Аргументы вызова с метками: "f(label: value)" (Swift).</summary>
+        bool ArgumentLabels
+        {
+            get { return _profile != null && _profile.ArgumentLabels; }
+        }
+
         /// <summary>Условие оператора: "if (x)" или "if x" (Rust, Python).</summary>
         bool ParseCondition(out NsgExpr cond)
         {
@@ -426,7 +432,7 @@ namespace NekoScriptGraph
 
             // Go пишет цикл без круглых скобок и в трёх формах. Выбор формы
             // делается по тому, что стоит до '{', а не по скобкам.
-            if (Parenless) return ParseForParenless(line, col);
+            if (ParenlessConditions) return ParseForParenless(line, col);
 
             if (!Expect("(")) return null;
 
@@ -1277,6 +1283,14 @@ namespace NekoScriptGraph
 
             while (_p < _end)
             {
+                // Swift: "f(label: value)" — метка аргумента часть вызова.
+                // Пропускаем её, чтобы аргумент остался обычным выражением.
+                if (ArgumentLabels && Cur.Kind == NsgTokenKind.Ident && Peek(1).Text == ":")
+                {
+                    Next();
+                    Next();
+                }
+
                 var a = ParseExpression();
                 if (a == null) return null;
                 list.Add(a);

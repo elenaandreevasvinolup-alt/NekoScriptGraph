@@ -915,7 +915,11 @@
     },
     {
       "key": "win.title",
-      "value": "NekoScriptGraph Blok Düzenleyici"
+      "value": "NekoScriptGraph"
+    },
+    {
+      "key": "menu.open",
+      "value": "NekoScriptGraph'ı Aç"
     }
   ],
   "blocks": [
@@ -1125,7 +1129,7 @@
     },
     {
       "key": "expr.raw",
-      "value": "ham C# {0}"
+      "value": "ham metin {0}"
     },
     {
       "key": "expr.unary",
@@ -1761,7 +1765,7 @@
     },
     {
       "key": "stmt.raw",
-      "value": "ham C# {0}"
+      "value": "ham metin {0}"
     },
     {
       "key": "stmt.return",

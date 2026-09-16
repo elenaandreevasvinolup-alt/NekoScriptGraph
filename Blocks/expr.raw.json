@@ -2,10 +2,10 @@
     "id": "expr.raw",
     "level": "high",
     "shape": "expression",
-    "category": "原始C# {0}",
+    "category": "raw text {0}",
     "categoryKey": "cat.raw",
-    "label": "raw C# {0}",
-    "labelEn": "raw C# {0}",
+    "label": "raw text {0}",
+    "labelEn": "raw text {0}",
     "labelRu": "",
     "sockets": [
         {

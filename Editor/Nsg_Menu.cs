@@ -6,7 +6,13 @@ namespace NekoScriptGraph
 {
     public static class Nsg_Menu
     {
-        const string Root = "NekoScriptGraph/";
+        /// <summary>
+        /// 顶栏根路径。所有 NekoWorks 插件共用一个顶栏栏位，各自是一个子菜单，
+        /// 这样装再多插件也不会把 Unity 顶栏横向撑爆。
+        /// 改这里必须同步 Nsg_MenuRuntime.Root。
+        /// </summary>
+        public const string WorksRoot = "NekoWorks/";
+        public const string Root = WorksRoot + "NekoScriptGraph/";
 
         [MenuItem(Root + "Languages: Show Loaded")]
         public static void ShowLanguages()
@@ -45,7 +51,7 @@ namespace NekoScriptGraph
         // Подписи в атрибутах — английские и статические: [MenuItem] это
         // константа времени компиляции. Реальные, локализованные подписи
         // расставляет Nsg_MenuRuntime.Rebuild() при загрузке и смене языка.
-        [MenuItem(Root + "Open Block Editor")]
+        [MenuItem(Root + "Open NekoScriptGraph")]
         public static void OpenWindow()
         {
             Nsg_Window.Open();
@@ -106,7 +112,7 @@ namespace NekoScriptGraph
         [MenuItem(Root + "Architecture Health")]
         public static void OpenHealth()
         {
-            string path = SelectionCs();
+            string path = SelectionSource();
             Nsg_Document doc = path != null ? Nsg_Manager.Instance.Open(path) : null;
             Nsg_HealthWindow.Open(doc);
         }
@@ -114,10 +120,10 @@ namespace NekoScriptGraph
         [MenuItem(Root + "Take Selected Script Under Management")]
         public static void ManageSelection()
         {
-            string path = SelectionCs();
+            string path = SelectionSource();
             if (path == null)
             {
-                EditorUtility.DisplayDialog(Nsg_L10n.T("confirm.title"), Nsg_L10n.T("confirm.selectCs"),
+                EditorUtility.DisplayDialog(Nsg_L10n.T("confirm.title"), Nsg_L10n.T("confirm.selectSource"),
                                             Nsg_L10n.T("confirm.ok"));
                 return;
             }
@@ -144,10 +150,10 @@ namespace NekoScriptGraph
         [MenuItem(Root + "Release Selected Script")]
         public static void UnmanageSelection()
         {
-            string path = SelectionCs();
+            string path = SelectionSource();
             if (path == null)
             {
-                EditorUtility.DisplayDialog(Nsg_L10n.T("confirm.title"), Nsg_L10n.T("confirm.selectCs"),
+                EditorUtility.DisplayDialog(Nsg_L10n.T("confirm.title"), Nsg_L10n.T("confirm.selectSource"),
                                             Nsg_L10n.T("confirm.ok"));
                 return;
             }
@@ -185,6 +191,15 @@ namespace NekoScriptGraph
             GenerateApiForFolder(folder);
         }
 
+        /// <summary>
+        /// API-блоки для папки — по ВСЕМ загруженным языкам.
+        ///
+        /// Раньше здесь вызывался генератор C# напрямую, поэтому на папке с
+        /// .py, .rs или .go он честно находил ноль файлов: эти расширения не
+        /// MonoScript, и FindAssets("t:MonoScript") их не возвращает. Теперь
+        /// спрашиваем каждый движок, а он сам обходит свою часть файловой
+        /// системы — так же, как это уже делает генерация по всему проекту.
+        /// </summary>
         public static void GenerateApiForFolder(string folder)
         {
             if (string.IsNullOrEmpty(folder)) return;
@@ -194,8 +209,39 @@ namespace NekoScriptGraph
                 Nsg_L10n.T("confirm.continue"), Nsg_L10n.T("confirm.cancel"));
             if (!ok) return;
 
+            int generated = 0;
+            int failedLangs = 0;
             var diag = new NsgDiagnostics();
-            var result = Nsg_ApiGenerator.Generate(folder, diag);
+
+            var entries = Nsg_LanguageRegistry.All;
+            for (int i = 0; i < entries.Count; i++)
+            {
+                var entry = entries[i];
+                if (entry == null || entry.Language == null) continue;
+
+                var engine = entry.Language.CreateEngine();
+                if (engine == null) { failedLangs++; continue; }
+
+                var langDiag = new NsgDiagnostics();
+                try
+                {
+                    generated += engine.GenerateApiBlocks(folder, langDiag);
+                }
+                catch (System.Exception e)
+                {
+                    langDiag.Error(NsgCodes.Internal, entry.Id + ": " + e.Message);
+                }
+
+                if (langDiag.HasErrors)
+                {
+                    failedLangs++;
+                    for (int k = 0; k < langDiag.Items.Count; k++) diag.Add(langDiag.Items[k]);
+                }
+            }
+
+            // Библиотеку перечитываем до показа ошибок: часть языков могла
+            // отработать успешно, и терять их блоки из-за чужой ошибки нельзя.
+            if (generated > 0) Nsg_Manager.Instance.ReloadLibrary();
 
             if (diag.HasErrors)
             {
@@ -203,9 +249,7 @@ namespace NekoScriptGraph
                 return;
             }
 
-            Nsg_Manager.Instance.ReloadLibrary();
-
-            string msg = Nsg_L10n.T("api.done", result.Generated, result.Skipped);
+            string msg = Nsg_L10n.T("api.doneAll", generated, failedLangs);
             Debug.Log("[NekoScriptGraph] " + msg);
             EditorUtility.DisplayDialog(Nsg_L10n.T("api.title"), msg, Nsg_L10n.T("confirm.ok"));
         }
@@ -437,13 +481,26 @@ namespace NekoScriptGraph
                       " (running: " + Nsg_McpBridge.IsRunning + ")");
         }
 
-        static string SelectionCs()
+        /// <summary>
+        /// Путь выделенного исходника ЛЮБОГО поддерживаемого языка.
+        ///
+        /// Раньше здесь стояла проверка на «.cs», и подсказка требовала выбрать
+        /// именно C#-файл — хотя под управление берутся все языки, у которых
+        /// есть движок. Расширения берём у реестра языков, а не списком в коде:
+        /// новый язык начинает работать сразу, без правки этого места.
+        /// </summary>
+        static string SelectionSource()
         {
             var obj = Selection.activeObject;
             if (obj == null) return null;
+
             string p = AssetDatabase.GetAssetPath(obj);
-            if (string.IsNullOrEmpty(p) || !p.EndsWith(".cs")) return null;
-            return p;
+            if (string.IsNullOrEmpty(p)) return null;
+
+            string ext = Path.GetExtension(p);
+            if (string.IsNullOrEmpty(ext)) return null;
+
+            return Nsg_Manager.Instance.RegisteredExtensions().Contains(ext) ? p : null;
         }
 
         static string SelectionFolder()

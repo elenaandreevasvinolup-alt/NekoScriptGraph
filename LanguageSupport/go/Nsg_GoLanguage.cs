@@ -50,16 +50,14 @@ namespace NekoScriptGraph
         /// <summary>
         /// Собственные формы объявления Go.
         ///
-        /// Короткое объявление печатается шаблоном, но ОБРАТНО читается
-        /// настоящим оператором присваивания: разборщик знает ":=" как
-        /// оператор, поэтому код, собранный из блоков, потом разберётся в
-        /// обычное присваивание, а не в сырой текст.
+        /// Короткое объявление — НЕ шаблон, а настоящий оператор присваивания
+        /// (node = "assign", op = ":="). Это обязательно, а не красивее:
+        /// шаблон умеет только печатать, и при импорте ":=" остался бы сырым
+        /// текстом, а без блока ядро вообще теряло бы такое выражение.
         /// </summary>
         static void AddDeclarations(List<NsgBlockDef> into)
         {
-            into.Add(Nsg_CStyleBlocks.Template("go.shortDecl", "statement",
-                "declare {0} as {1}", "{{0}} := {{1}}",
-                Nsg_CStyleBlocks.S("name", "var"), Nsg_CStyleBlocks.E("value")));
+            into.Add(ShortDecl());
 
             into.Add(Nsg_CStyleBlocks.Template("go.varDecl", "statement",
                 "var {0} = {1}", "var {{0}} = {{1}}",
@@ -80,6 +78,41 @@ namespace NekoScriptGraph
             into.Add(Nsg_CStyleBlocks.Template("go.typeInterface", "statement",
                 "type {0} interface", "type {{0}} interface {\n}",
                 Nsg_CStyleBlocks.S("name", "var")));
+        }
+
+        /// <summary>
+        /// ":=" — блок присваивания с оператором ":=".
+        ///
+        /// Описан ровно как stmt.assign в ядре: тот же node, тот же набор
+        /// сокетов, только другой оператор. Благодаря этому обратный разбор
+        /// работает без единой строчки кода под Go.
+        /// </summary>
+        static NsgBlockDef ShortDecl()
+        {
+            const string label = "declare {0} as {1}";
+
+            return new NsgBlockDef
+            {
+                id = "stmt.shortDecl",
+                level = "high",
+                shape = "statement",
+                categoryKey = "cat.var",
+                category = label,
+                label = label,
+                labelEn = label,
+                labelRu = string.Empty,
+                sockets = new[]
+                {
+                    Nsg_CStyleBlocks.S("target", "expr"),
+                    Nsg_CStyleBlocks.E("value")
+                },
+                emit = "{{0}} := {{1}}",
+                node = "assign",
+                op = ":=",
+                // В выпадающем списке операторов рядом с "=", "+=" и прочими.
+                variantGroup = "assign",
+                variantLabel = ":="
+            };
         }
 
         static void AddStatements(List<NsgBlockDef> into)
@@ -255,7 +288,8 @@ namespace NekoScriptGraph
                 ParenlessConditions = true,  // "if x > 0 {", а не "if (x > 0)"
                 AutoSemicolon = true,        // ';' в конце строки не пишут
                 ShortDecl = true,            // ":="
-                TrailingReturnType = true    // "func f() error {"
+                TrailingReturnType = true,   // "func f() error {"
+                SameLineBrace = true         // "if x {" и "} else {" — иначе ';' всё сломает
             };
 
             Nsg_LanguageProfile.Fill(p.Keywords,
@@ -282,6 +316,11 @@ namespace NekoScriptGraph
             // тело разбирается как поля. "func" здесь НЕТ — функция обязана
             // остаться методом, иначе её тело стало бы телом типа.
             Nsg_LanguageProfile.Fill(p.TypeDeclKeywords, "type");
+
+            // Чего в Go нет — того не должно быть и в палитре: приведение
+            // пишется "T(x)", тернарного оператора нет. Счётный for и "++"
+            // остаются: это как раз синтаксис Go.
+            Nsg_LanguageProfile.Fill(p.ExcludedBlocks, "expr.cast", "expr.conditional");
 
             return p;
         }

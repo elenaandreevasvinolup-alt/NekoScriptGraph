@@ -1,6 +1,6 @@
 # NekoScriptGraph (NSG) — Déploiement rapide et manuel
 
-**Version** 1.0.1 · **Unity** 2022.3+ · **Auteur** NekoAndreeva · **Licence** MIT · **Paquet** `com.nekoandreeva.nekoscriptgraph`
+**Version** 1.0.2 · **Unity** 2022.3+ · **Auteur** NekoAndreeva · **Licence** MIT · **Paquet** `com.nekoandreeva.nekoscriptgraph`
 
 > Programmation visuelle à la Scratch pour Unity qui **ne met jamais rien dans votre code.**
 > NSG écrit un fichier de configuration de blocs *à côté* d'un script pour le rendre éditable sous forme de blocs, et traduit dans les deux sens. Le `.cs` généré ne contient aucune trace du plugin — supprimez le dossier du plugin et vos scripts compilent toujours.
@@ -27,7 +27,7 @@
 11. [Santé de l'architecture](#11-architecture-health)
 12. [Localisation](#12-localization)
 13. [Agents et MCP](#13-agents--mcp)
-14. [Assistant ProgramNeko (facultatif)](#14-programneko-assistant-optional)
+14. [Assistant ChatProgramme (facultatif)](#14-programneko-assistant-optional)
 15. [Réglages](#15-settings)
 16. [Arborescence des dossiers](#16-directory-layout)
 17. [Désinstallation](#17-uninstall)
@@ -285,21 +285,24 @@ NSG suit **quel côté a bougé en premier**, de sorte que vous savez toujours s
 
 | Dossier | Rôle | Si supprimé |
 |---|---|---|
-| `Dependencies/` | Sprites arrondis 9-slice | Retombe sur des coins arrondis simples ; paquet ~1,4 Mo |
-| `LanguageSupport/{c,cpp,hlsl,java,python,rust}` | Langues non-C# | Cette langue disparaît ; rien d'autre ne casse |
+| `Dependencies/` | Sprites arrondis 9-slice | Retombe sur des coins arrondis simples ; paquet ~3,3 Mo |
+| `LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}` | Langues non-C# | Cette langue disparaît ; rien d'autre ne casse |
 | `ProgramNeko/` | Assistante chatte pixelisée | Le plugin fonctionne très bien sans elle |
 | `Locale/*` | Traductions de l'interface | Cette locale retombe sur l'anglais |
 
 ### Taille du paquet
 
-≈ **2,2 Mo** tel que livré :
+≈ **4,2 Mo** tel que livré :
 
 | Partie | Taille |
 |---|---|
-| `Editor/` — cœur, UI, moteur C# | ~0,9 Mo |
+| `Editor/` — cœur, UI, moteur C#, réglages | ~1,4 Mo |
 | `Dependencies/Editor/Sprite/` — sprites 9-slice facultatifs | ~0,86 Mo |
+| `Documents/` — ce guide en 15 langues | ~0,7 Mo |
+| `Locale/` — 15 langues d'interface | ~0,7 Mo |
+| `LanguageSupport/` — huit langues prêtes à l'emploi | ~0,24 Mo |
 | `Blocks/` — bibliothèque de blocs intégrée (régénérée à la demande) | ~0,23 Mo |
-| `LanguageSupport/` — sept langues prêtes à l'emploi | ~0,21 Mo |
+| `Extensions~/` — modèle de moteur externe installable | ~0,04 Mo |
 
 ---
 
@@ -463,7 +466,7 @@ Notes :
 <a id="9-languages--adding-one"></a>
 ## 9. Langues et ajout d'une langue
 
-`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python`
+`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python` · `Swift`
 
 - Chacune traduit **dans les deux sens**.
 - **Le C# est intégré** (`Editor/Languages/CSharp/` : Lexer, Parser, Printer, Splitter, CodeMap).
@@ -681,7 +684,7 @@ Unity -batchmode -quit -projectPath <project> \
 ---
 
 <a id="14-programneko-assistant-optional"></a>
-## 14. Assistant ProgramNeko (facultatif)
+## 14. Assistant ChatProgramme (facultatif)
 
 `ProgramNeko/` est une assistante chatte pixelisée facultative. **Supprimez tout le dossier et le plugin continue de fonctionner.**
 
@@ -738,14 +741,14 @@ NekoScriptGraph/
 │  ├─ Nsg_AgentCli.cs            headless CLI
 │  └─ Nsg_SelfTest.cs            round-trip self test
 ├─ Blocks/                       built-in block library + API/*.json
-├─ LanguageSupport/{c,cpp,hlsl,java,python,rust}/
+├─ LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}/
 ├─ Locale/{15 locales}/strings.json
 ├─ Dependencies/Editor/Sprite/   optional 9-slice sprites
 ├─ ProgramNeko/                  optional assistant
 ├─ .presets/presets.json
 ├─ NekoScriptGraph.settings.json
 ├─ MCP.md                        dedicated MCP chapter
-└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.1
+└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.2
 ```
 
 ---

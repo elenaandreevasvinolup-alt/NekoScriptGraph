@@ -31,11 +31,15 @@ namespace NekoScriptGraph
 
         protected override void AddLanguageBlocks(List<NsgBlockDef> into)
         {
+            // Формат и аргументы пишутся ОДНИМ полем, как printf у C:
+            // "sum = {}, x". Кавычек в шаблоне нет намеренно — с ними
+            // аргументы попали бы внутрь строкового литерала и код стал бы
+            // неверным: println!("sum = {}, x").
             into.Add(Nsg_CStyleBlocks.Template("rust.println", "statement", "println!({0})",
-                "println!(\"{{0}}\");", Nsg_CStyleBlocks.S("args", "text")));
+                "println!({{0}});", Nsg_CStyleBlocks.S("args", "text")));
 
             into.Add(Nsg_CStyleBlocks.Template("rust.panic", "statement", "panic!({0})",
-                "panic!(\"{{0}}\");", Nsg_CStyleBlocks.S("message", "text")));
+                "panic!({{0}});", Nsg_CStyleBlocks.S("message", "text")));
 
             into.Add(Nsg_CStyleBlocks.Call("rust.vec", "expression", "vec!", "vector {0}", Nsg_CStyleBlocks.E("value")));
 
@@ -115,7 +119,7 @@ namespace NekoScriptGraph
                 Nsg_CStyleBlocks.S("template", "text"), Nsg_CStyleBlocks.E("args")));
 
             into.Add(Nsg_CStyleBlocks.Template("rust.eprintln", "statement", "print error {0}",
-                "eprintln!(\"{{0}}\");", Nsg_CStyleBlocks.S("args", "text")));
+                "eprintln!({{0}});", Nsg_CStyleBlocks.S("args", "text")));
 
             into.Add(Nsg_CStyleBlocks.Template("rust.assert", "statement", "assert {0}",
                 "assert!({{0}});", Nsg_CStyleBlocks.E("condition")));
@@ -163,6 +167,12 @@ namespace NekoScriptGraph
                 "continue", "use", "impl", "fn", "struct", "enum", "trait", "mod", "pub");
 
             Nsg_LanguageProfile.Fill(p.TypeDeclKeywords, "struct", "enum", "trait", "impl", "mod");
+
+            // Чего в Rust нет — того не должно быть и в палитре: приведение
+            // пишется "x as i32", тернарного оператора нет, "++"/"--" нет,
+            // счётного for нет (только "for x in y").
+            Nsg_LanguageProfile.Fill(p.ExcludedBlocks,
+                "expr.cast", "expr.conditional", "expr.postfix", "stmt.for");
 
             return p;
         }

@@ -1,5 +1,8 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using UnityEditor;
+using UnityEngine;
 
 namespace NekoScriptGraph
 {
@@ -193,12 +196,125 @@ namespace NekoScriptGraph
             return new NsgCodeMap(library, diag).ToAst(graph);
         }
 
+        /// <summary>
+        /// API-блоки для Python: по блоку вызова на каждую функцию верхнего
+        /// уровня.
+        ///
+        /// Разбирается только имя и число параметров. Тело чужой функции и её
+        /// типы нам неизвестны, а аннотаций в Python обычно и нет — этого
+        /// хватает, чтобы вызвать функцию блоком и увидеть её в палитре.
+        ///
+        /// Методы классов не описываются: у них нет имени без класса, а сам
+        /// класс — отдельная сущность, для которой нужна своя модель.
+        /// </summary>
         public int GenerateApiBlocks(string folder, NsgDiagnostics diag)
         {
-            // У Python другая модель модулей и импортов, генератор API-блоков
-            // для него пока не сделан. Сообщаем явно, а не молчим.
-            diag.Info(NsgCodes.OutOfSubset, Nsg_L10n.T("lang.python.apiNotImplemented"));
-            return 0;
+            if (string.IsNullOrEmpty(folder) || !Directory.Exists(folder))
+            {
+                diag.Error(NsgCodes.Internal, "нет папки для генерации API-блоков");
+                return 0;
+            }
+
+            var defs = new List<NsgBlockDef>();
+            var seen = new HashSet<string>();
+
+            string[] files;
+            try
+            {
+                files = Directory.GetFiles(folder, "*.py", SearchOption.AllDirectories);
+            }
+            catch
+            {
+                return 0;
+            }
+
+            for (int i = 0; i < files.Length; i++)
+            {
+                string path = files[i].Replace('\\', '/');
+                if (path.Contains("/.checkpoints/")) continue;
+                if (path.Contains("/Dependencies/")) continue;
+
+                string src;
+                try { src = File.ReadAllText(path); }
+                catch { continue; }
+
+                var fileDiag = new NsgDiagnostics();
+                var model = Split(src, Path.GetFileName(path), fileDiag);
+                if (model == null || model.roots == null) continue;
+
+                for (int k = 0; k < model.roots.Count; k++)
+                {
+                    var node = model.roots[k];
+                    if (node == null || node.kind != "method") continue;
+
+                    var def = ApiDefFor(node);
+                    if (def == null) continue;
+
+                    if (seen.Add(def.id)) defs.Add(def);
+                }
+            }
+
+            if (defs.Count == 0) return 0;
+
+            string outDir = Nsg_Settings.Instance.apiOutputFolder;
+            Nsg_Paths.EnsureDirectory(outDir);
+
+            for (int i = 0; i < defs.Count; i++)
+            {
+                string p = Path.Combine(outDir, Nsg_BlockLibrary.SafeFileName(defs[i].id) + ".json");
+                File.WriteAllText(p, JsonUtility.ToJson(defs[i], true));
+            }
+
+            AssetDatabase.Refresh();
+            return defs.Count;
+        }
+
+        /// <summary>
+        /// Блок вызова по строке "def name(a, b, c):".
+        ///
+        /// Подпись разбирается как текст, а не разборщиком выражений: у Python
+        /// в заголовке стоят значения по умолчанию, *args и **kwargs, и
+        /// приводить их к типам нечем — типов в языке нет.
+        /// </summary>
+        static NsgBlockDef ApiDefFor(NsgStructNode node)
+        {
+            string header = node.header;
+            if (string.IsNullOrEmpty(header)) return null;
+
+            int defIdx = header.IndexOf("def ", System.StringComparison.Ordinal);
+            if (defIdx < 0) return null;
+
+            int open = header.IndexOf('(', defIdx);
+            int close = header.LastIndexOf(')');
+            if (open < 0 || close <= open) return null;
+
+            string name = header.Substring(defIdx + 4, open - (defIdx + 4)).Trim();
+            if (name.Length == 0) return null;
+
+            string inner = header.Substring(open + 1, close - (open + 1)).Trim();
+            int arity = 0;
+            if (inner.Length > 0)
+            {
+                arity = 1;
+                for (int i = 0; i < inner.Length; i++)
+                {
+                    if (inner[i] == ',') arity++;
+                }
+            }
+
+            var sockets = new List<NsgSocketDef>();
+            var label = new StringBuilder(name);
+            for (int i = 0; i < arity; i++)
+            {
+                sockets.Add(Nsg_CStyleBlocks.E("arg" + i));
+                label.Append(" {").Append(i).Append('}');
+            }
+
+            var def = Nsg_CStyleBlocks.Call("py.api." + name, "expression", name,
+                                            label.ToString(), sockets.ToArray());
+            def.categoryKey = "cat.api";
+            def.category = "module";
+            return def;
         }
 
         // ------------------------------------------------------------------

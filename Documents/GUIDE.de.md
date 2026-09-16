@@ -1,6 +1,6 @@
 # NekoScriptGraph (NSG) — Schnell-Deploy & Handbuch
 
-**Version** 1.0.1 · **Unity** 2022.3+ · **Autor** NekoAndreeva · **Lizenz** MIT · **Paket** `com.nekoandreeva.nekoscriptgraph`
+**Version** 1.0.2 · **Unity** 2022.3+ · **Autor** NekoAndreeva · **Lizenz** MIT · **Paket** `com.nekoandreeva.nekoscriptgraph`
 
 > Visuelle Scratch-artige Programmierung für Unity, die **niemals etwas in deinen Code schreibt.**
 > NSG schreibt eine Block-Konfigurationsdatei *neben* ein Skript, damit es als Blöcke editierbar wird, und übersetzt in beide Richtungen. Die erzeugte `.cs` enthält keine Spur des Plugins — lösche den Plugin-Ordner, und deine Skripte kompilieren weiter.
@@ -27,7 +27,7 @@
 11. [Architekturqualität](#11-architecture-health)
 12. [Lokalisierung](#12-localization)
 13. [Agenten & MCP](#13-agents--mcp)
-14. [ProgramNeko-Assistent (optional)](#14-programneko-assistant-optional)
+14. [Programmkatze-Assistent (optional)](#14-programneko-assistant-optional)
 15. [Einstellungen](#15-settings)
 16. [Verzeichnisstruktur](#16-directory-layout)
 17. [Deinstallation](#17-uninstall)
@@ -285,21 +285,24 @@ NSG verfolgt, **welche Seite sich zuerst bewegt hat**, sodass du immer weißt, o
 
 | Ordner | Zweck | Wenn entfernt |
 |---|---|---|
-| `Dependencies/` | 9-Slice-gerundete Sprites | Fällt auf einfache abgerundete Ecken zurück; Paket ~1,4 MB |
-| `LanguageSupport/{c,cpp,hlsl,java,python,rust}` | Nicht-C#-Sprachen | Diese Sprache verschwindet; sonst bricht nichts |
+| `Dependencies/` | 9-Slice-gerundete Sprites | Fällt auf einfache abgerundete Ecken zurück; Paket ~3,3 MB |
+| `LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}` | Nicht-C#-Sprachen | Diese Sprache verschwindet; sonst bricht nichts |
 | `ProgramNeko/` | Pixel-Katzen-Assistentin | Plugin funktioniert auch ohne sie |
 | `Locale/*` | UI-Übersetzungen | Diese Locale fällt auf Englisch zurück |
 
 ### Paketgröße
 
-≈ **2,2 MB** im Auslieferungszustand:
+≈ **4,2 MB** im Auslieferungszustand:
 
 | Teil | Größe |
 |---|---|
-| `Editor/` — Kern, UI, C#-Engine | ~0,9 MB |
+| `Editor/` — Kern, UI, C#-Engine, Einstellungen | ~1,4 MB |
 | `Dependencies/Editor/Sprite/` — optionale 9-Slice-Sprites | ~0,86 MB |
+| `Documents/` — dieser Leitfaden in 15 Sprachen | ~0,7 MB |
+| `Locale/` — 15 UI-Sprachen | ~0,7 MB |
+| `LanguageSupport/` — acht Drop-in-Sprachen | ~0,24 MB |
 | `Blocks/` — eingebaute Blockbibliothek (bei Bedarf neu erzeugt) | ~0,23 MB |
-| `LanguageSupport/` — sieben Drop-in-Sprachen | ~0,21 MB |
+| `Extensions~/` — installierbare Vorlage für eine externe Engine | ~0,04 MB |
 
 ---
 
@@ -463,7 +466,7 @@ Hinweise:
 <a id="9-languages--adding-one"></a>
 ## 9. Sprachen & eine hinzufügen
 
-`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python`
+`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python` · `Swift`
 
 - Jede übersetzt **in beide Richtungen**.
 - **C# ist eingebaut** (`Editor/Languages/CSharp/`: Lexer, Parser, Printer, Splitter, CodeMap).
@@ -681,7 +684,7 @@ Unity -batchmode -quit -projectPath <project> \
 ---
 
 <a id="14-programneko-assistant-optional"></a>
-## 14. ProgramNeko-Assistent (optional)
+## 14. Programmkatze-Assistent (optional)
 
 `ProgramNeko/` ist eine optionale Pixel-Katzen-Assistentin. **Lösche den ganzen Ordner und das Plugin funktioniert weiter.**
 
@@ -738,14 +741,14 @@ NekoScriptGraph/
 │  ├─ Nsg_AgentCli.cs            headless CLI
 │  └─ Nsg_SelfTest.cs            round-trip self test
 ├─ Blocks/                       built-in block library + API/*.json
-├─ LanguageSupport/{c,cpp,hlsl,java,python,rust}/
+├─ LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}/
 ├─ Locale/{15 locales}/strings.json
 ├─ Dependencies/Editor/Sprite/   optional 9-slice sprites
 ├─ ProgramNeko/                  optional assistant
 ├─ .presets/presets.json
 ├─ NekoScriptGraph.settings.json
 ├─ MCP.md                        dedicated MCP chapter
-└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.1
+└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.2
 ```
 
 ---

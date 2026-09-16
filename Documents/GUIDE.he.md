@@ -1,6 +1,6 @@
 # NekoScriptGraph (NSG) — פריסה מהירה ומדריך
 
-**גרסה** 1.0.1 · **Unity** 2022.3+ · **מחבר** NekoAndreeva · **רישיון** MIT · **חבילה** `com.nekoandreeva.nekoscriptgraph`
+**גרסה** 1.0.2 · **Unity** 2022.3+ · **מחבר** NekoAndreeva · **רישיון** MIT · **חבילה** `com.nekoandreeva.nekoscriptgraph`
 
 > תכנות חזותי בסגנון Scratch ל-Unity ש**לעולם אינו מכניס דבר אל תוך הקוד שלך.**
 > NSG כותב קובץ הגדרת בלוקים *לצד* הסקריפט כדי לאפשר לערוך אותו כבלוקים, ומתרגם בשני הכיוונים. קובץ ה-`.cs` שנוצר אינו מכיל שום זכר לתוסף — מחק את תיקיית התוסף והסקריפטים שלך עדיין יתקמפלו.
@@ -27,7 +27,7 @@
 11. [בריאות הארכיטקטורה](#11-architecture-health)
 12. [לוקליזציה](#12-localization)
 13. [סוכנים ו-MCP](#13-agents--mcp)
-14. [העוזר ProgramNeko (אופציונלי)](#14-programneko-assistant-optional)
+14. [העוזר חתולת התוכנה (אופציונלי)](#14-programneko-assistant-optional)
 15. [הגדרות](#15-settings)
 16. [פריסת תיקיות](#16-directory-layout)
 17. [הסרה](#17-uninstall)
@@ -284,21 +284,24 @@ NSG עוקב אחר **איזה צד זז ראשון**, כך שתמיד תדע א
 
 | תיקייה | מטרה | אם תוסר |
 |---|---|---|
-| `Dependencies/` | ספרייטים מעוגלים 9-slice | נסוג לפינות מעוגלות רגילות; החבילה ~1.4 MB |
-| `LanguageSupport/{c,cpp,hlsl,java,python,rust}` | שפות שאינן C# | השפה הזו נעלמת; שום דבר אחר לא נשבר |
+| `Dependencies/` | ספרייטים מעוגלים 9-slice | נסוג לפינות מעוגלות רגילות; החבילה ~3.3 MB |
+| `LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}` | שפות שאינן C# | השפה הזו נעלמת; שום דבר אחר לא נשבר |
 | `ProgramNeko/` | עוזרת חתול פיקסלית | התוסף עובד היטב בלעדיה |
 | `Locale/*` | תרגומי ממשק | הלוקאל הזה נסוג לאנגלית |
 
 ### גודל החבילה
 
-≈ **2.2 MB** כפי שהיא נשלחת:
+≈ **4.2 MB** כפי שהיא נשלחת:
 
 | חלק | גודל |
 |---|---|
-| `Editor/` — ליבה, ממשק, מנוע C# | ~0.9 MB |
+| `Editor/` — ליבה, ממשק, מנוע C#, הגדרות | ~1.4 MB |
 | `Dependencies/Editor/Sprite/` — ספרייטים אופציונליים 9-slice | ~0.86 MB |
+| `Documents/` — המדריך הזה ב-15 שפות | ~0.7 MB |
+| `Locale/` — 15 שפות ממשק | ~0.7 MB |
+| `LanguageSupport/` — שמונה שפות להוספה | ~0.24 MB |
 | `Blocks/` — ספריית בלוקים מובנית (נוצרת מחדש לפי דרישה) | ~0.23 MB |
-| `LanguageSupport/` — שבע שפות להוספה | ~0.21 MB |
+| `Extensions~/` — תבנית מנוע חיצוני להתקנה | ~0.04 MB |
 
 ---
 
@@ -462,7 +465,7 @@ NSG עוקב אחר **איזה צד זז ראשון**, כך שתמיד תדע א
 <a id="9-languages--adding-one"></a>
 ## 9. שפות והוספת שפה
 
-`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python`
+`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python` · `Swift`
 
 - כל אחת מתרגמת **בשני הכיוונים**.
 - **C# מובנית** (`Editor/Languages/CSharp/`: Lexer, Parser, Printer, Splitter, CodeMap).
@@ -680,7 +683,7 @@ Unity -batchmode -quit -projectPath <project> \
 ---
 
 <a id="14-programneko-assistant-optional"></a>
-## 14. העוזר ProgramNeko (אופציונלי)
+## 14. העוזר חתולת התוכנה (אופציונלי)
 
 `ProgramNeko/` הוא עוזר חתול פיקסלי אופציונלי. **מחק את כל התיקייה והתוסף ממשיך לעבוד.**
 
@@ -737,14 +740,14 @@ NekoScriptGraph/
 │  ├─ Nsg_AgentCli.cs            headless CLI
 │  └─ Nsg_SelfTest.cs            round-trip self test
 ├─ Blocks/                       built-in block library + API/*.json
-├─ LanguageSupport/{c,cpp,hlsl,java,python,rust}/
+├─ LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}/
 ├─ Locale/{15 locales}/strings.json
 ├─ Dependencies/Editor/Sprite/   optional 9-slice sprites
 ├─ ProgramNeko/                  optional assistant
 ├─ .presets/presets.json
 ├─ NekoScriptGraph.settings.json
 ├─ MCP.md                        dedicated MCP chapter
-└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.1
+└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.2
 ```
 
 ---

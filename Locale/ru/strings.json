@@ -639,7 +639,7 @@
     },
     {
       "key": "menu.open",
-      "value": "Открыть редактор блоков"
+      "value": "Открыть NekoScriptGraph"
     },
     {
       "key": "menu.problems",
@@ -1019,7 +1019,7 @@
     },
     {
       "key": "win.title",
-      "value": "NekoScriptGraph — редактор блоков"
+      "value": "NekoScriptGraph"
     }
   ],
   "blocks": [
@@ -1229,7 +1229,7 @@
     },
     {
       "key": "expr.raw",
-      "value": "сырой C# {0}"
+      "value": "сырой текст {0}"
     },
     {
       "key": "expr.unary",
@@ -1865,7 +1865,7 @@
     },
     {
       "key": "stmt.raw",
-      "value": "сырой C# {0}"
+      "value": "сырой текст {0}"
     },
     {
       "key": "stmt.return",

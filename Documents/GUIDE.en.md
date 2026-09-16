@@ -1,6 +1,6 @@
 # NekoScriptGraph (NSG) — Quick Deploy & Handbook
 
-**Version** 1.0.1 · **Unity** 2022.3+ · **Author** NekoAndreeva · **License** MIT · **Package** `com.nekoandreeva.nekoscriptgraph`
+**Version** 1.0.2 · **Unity** 2022.3+ · **Author** NekoAndreeva · **License** MIT · **Package** `com.nekoandreeva.nekoscriptgraph`
 
 > Scratch-style visual programming for Unity that **never puts anything into your code.**
 > NSG writes a block configuration file *next to* a script to make it editable as blocks, and translates in both directions. The generated `.cs` contains no trace of the plugin — delete the plugin folder and your scripts still compile.
@@ -278,21 +278,24 @@ NSG tracks **which side moved first**, so you always know whether pressing Gener
 
 | Folder | Purpose | If removed |
 |---|---|---|
-| `Dependencies/` | 9-slice rounded sprites | Falls back to plain rounded corners; package ~1.4 MB |
-| `LanguageSupport/{c,cpp,hlsl,java,python,rust}` | Non-C# languages | That language disappears; nothing else breaks |
+| `Dependencies/` | 9-slice rounded sprites | Falls back to plain rounded corners; package ~3.3 MB |
+| `LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}` | Non-C# languages | That language disappears; nothing else breaks |
 | `ProgramNeko/` | Pixel cat assistant | Plugin works fine without her |
 | `Locale/*` | UI translations | That locale falls back to English |
 
 ### Package size
 
-≈ **2.2 MB** as shipped:
+≈ **4.2 MB** as shipped:
 
 | Part | Size |
 |---|---|
-| `Editor/` — core, UI, C# engine | ~0.9 MB |
+| `Editor/` — core, UI, C# engine, settings | ~1.4 MB |
 | `Dependencies/Editor/Sprite/` — optional 9-slice sprites | ~0.86 MB |
+| `Documents/` — this guide in 15 languages | ~0.7 MB |
+| `Locale/` — 15 interface languages | ~0.7 MB |
+| `LanguageSupport/` — eight drop-in languages | ~0.24 MB |
 | `Blocks/` — built-in block library (regenerated on demand) | ~0.23 MB |
-| `LanguageSupport/` — seven drop-in languages | ~0.21 MB |
+| `Extensions~/` — installable external-engine template | ~0.04 MB |
 
 ---
 
@@ -356,6 +359,16 @@ Built-in snapshots live in `.checkpoints/`, which is **git-ignored** — it can 
 ## 7. Menu Reference
 
 > `[MenuItem]` captions are compile-time constants, so the **static English** name is what Unity ships; the localization layer substitutes translated labels on load and language change. `MCP Bridge` entries are intentionally English.
+
+**Menu bar path**: every NekoWorks plugin shares **one** top-level slot and takes a submenu of its own, so installing more plugins never widens the menu bar.
+
+```
+NekoWorks
+├── NSG   ← this plugin (NekoScriptGraph)
+└── NDC   ← Neko Dynamic Collision
+```
+
+The table below lists the entries inside `NekoWorks → NSG`.
 
 | Menu item | Purpose |
 |---|---|
@@ -452,7 +465,7 @@ Notes:
 
 ## 9. Languages & Adding One
 
-`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python`
+`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python` · `Swift`
 
 - Every one translates **both ways**.
 - **C# is built in** (`Editor/Languages/CSharp/`: Lexer, Parser, Printer, Splitter, CodeMap).
@@ -720,14 +733,14 @@ NekoScriptGraph/
 │  ├─ Nsg_AgentCli.cs            headless CLI
 │  └─ Nsg_SelfTest.cs            round-trip self test
 ├─ Blocks/                       built-in block library + API/*.json
-├─ LanguageSupport/{c,cpp,hlsl,java,python,rust}/
+├─ LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}/
 ├─ Locale/{15 locales}/strings.json
 ├─ Dependencies/Editor/Sprite/   optional 9-slice sprites
 ├─ ProgramNeko/                  optional assistant
 ├─ .presets/presets.json
 ├─ NekoScriptGraph.settings.json
 ├─ MCP.md                        dedicated MCP chapter
-└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.1
+└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.2
 ```
 
 ---

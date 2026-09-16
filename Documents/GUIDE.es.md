@@ -1,6 +1,6 @@
 # NekoScriptGraph (NSG) — Despliegue rápido y manual
 
-**Versión** 1.0.1 · **Unity** 2022.3+ · **Autor** NekoAndreeva · **Licencia** MIT · **Paquete** `com.nekoandreeva.nekoscriptgraph`
+**Versión** 1.0.2 · **Unity** 2022.3+ · **Autor** NekoAndreeva · **Licencia** MIT · **Paquete** `com.nekoandreeva.nekoscriptgraph`
 
 > Programación visual estilo Scratch para Unity que **nunca pone nada en tu código.**
 > NSG escribe un archivo de configuración de bloques *junto a* un script para hacerlo editable como bloques, y traduce en ambas direcciones. El `.cs` generado no contiene ningún rastro del plugin: borra la carpeta del plugin y tus scripts seguirán compilando.
@@ -27,7 +27,7 @@
 11. [Salud de la arquitectura](#11-architecture-health)
 12. [Localización](#12-localization)
 13. [Agentes y MCP](#13-agents--mcp)
-14. [Asistente ProgramNeko (opcional)](#14-programneko-assistant-optional)
+14. [Asistente GataPrograma (opcional)](#14-programneko-assistant-optional)
 15. [Ajustes](#15-settings)
 16. [Estructura de directorios](#16-directory-layout)
 17. [Desinstalación](#17-uninstall)
@@ -283,21 +283,24 @@ NSG registra **qué lado se movió primero**, así siempre sabes si pulsar Gener
 
 | Carpeta | Propósito | Si se elimina |
 |---|---|---|
-| `Dependencies/` | Sprites redondeados de 9 rebanadas | Recurre a esquinas redondeadas simples; el paquete pesa ~1,4 MB |
-| `LanguageSupport/{c,cpp,hlsl,java,python,rust}` | Idiomas distintos de C# | Ese idioma desaparece; nada más se rompe |
+| `Dependencies/` | Sprites redondeados de 9 rebanadas | Recurre a esquinas redondeadas simples; el paquete pesa ~3,3 MB |
+| `LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}` | Idiomas distintos de C# | Ese idioma desaparece; nada más se rompe |
 | `ProgramNeko/` | Asistente gato de píxeles | El plugin funciona bien sin ella |
 | `Locale/*` | Traducciones de la interfaz | Ese idioma recurre al inglés |
 
 ### Tamaño del paquete
 
-≈ **2,2 MB** tal como se distribuye:
+≈ **4,2 MB** tal como se distribuye:
 
 | Parte | Tamaño |
 |---|---|
-| `Editor/` — núcleo, interfaz, motor de C# | ~0,9 MB |
+| `Editor/` — núcleo, interfaz, motor de C#, ajustes | ~1,4 MB |
 | `Dependencies/Editor/Sprite/` — sprites 9-slice opcionales | ~0,86 MB |
+| `Documents/` — esta guía en 15 idiomas | ~0,7 MB |
+| `Locale/` — 15 idiomas de interfaz | ~0,7 MB |
+| `LanguageSupport/` — ocho idiomas de instalación directa | ~0,24 MB |
 | `Blocks/` — biblioteca de bloques integrada (regenerada a demanda) | ~0,23 MB |
-| `LanguageSupport/` — siete idiomas de instalación directa | ~0,21 MB |
+| `Extensions~/` — plantilla de motor externo instalable | ~0,04 MB |
 
 ---
 
@@ -461,7 +464,7 @@ Notas:
 <a id="9-languages--adding-one"></a>
 ## 9. Idiomas y añadir uno
 
-`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python`
+`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python` · `Swift`
 
 - Todos traducen **en ambos sentidos**.
 - **C# está integrado** (`Editor/Languages/CSharp/`: Lexer, Parser, Printer, Splitter, CodeMap).
@@ -679,7 +682,7 @@ Unity -batchmode -quit -projectPath <project> \
 ---
 
 <a id="14-programneko-assistant-optional"></a>
-## 14. Asistente ProgramNeko (opcional)
+## 14. Asistente GataPrograma (opcional)
 
 `ProgramNeko/` es un asistente gato de píxeles opcional. **Borra la carpeta entera y el plugin sigue funcionando.**
 
@@ -736,14 +739,14 @@ NekoScriptGraph/
 │  ├─ Nsg_AgentCli.cs            headless CLI
 │  └─ Nsg_SelfTest.cs            round-trip self test
 ├─ Blocks/                       built-in block library + API/*.json
-├─ LanguageSupport/{c,cpp,hlsl,java,python,rust}/
+├─ LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}/
 ├─ Locale/{15 locales}/strings.json
 ├─ Dependencies/Editor/Sprite/   optional 9-slice sprites
 ├─ ProgramNeko/                  optional assistant
 ├─ .presets/presets.json
 ├─ NekoScriptGraph.settings.json
 ├─ MCP.md                        dedicated MCP chapter
-└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.1
+└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.2
 ```
 
 ---

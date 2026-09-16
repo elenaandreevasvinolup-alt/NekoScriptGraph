@@ -1,6 +1,6 @@
 # NekoScriptGraph (NSG) — النشر السريع والدليل
 
-**الإصدار** 1.0.1 · **Unity** 2022.3+ · **المؤلف** NekoAndreeva · **الترخيص** MIT · **الحزمة** `com.nekoandreeva.nekoscriptgraph`
+**الإصدار** 1.0.2 · **Unity** 2022.3+ · **المؤلف** NekoAndreeva · **الترخيص** MIT · **الحزمة** `com.nekoandreeva.nekoscriptgraph`
 
 > برمجة مرئية بأسلوب Scratch لـ Unity و**لا تضع أي شيء في شفرتك أبدًا.**
 > يكتب NSG ملف تهيئة كتل *بجوار* برنامج نصي ليجعله قابلًا للتحرير ككتل، ويترجم في الاتجاهين. الملف `.cs` الناتج لا يحتوي على أي أثر للإضافة — احذف مجلد الإضافة وستظل برامجك النصية تُصرَّف.
@@ -27,7 +27,7 @@
 11. [سلامة البنية](#11-architecture-health)
 12. [التعريب](#12-localization)
 13. [الوكلاء وMCP](#13-agents--mcp)
-14. [مساعد ProgramNeko (اختياري)](#14-programneko-assistant-optional)
+14. [مساعد قطة البرنامج (اختياري)](#14-programneko-assistant-optional)
 15. [الإعدادات](#15-settings)
 16. [تخطيط المجلدات](#16-directory-layout)
 17. [إلغاء التثبيت](#17-uninstall)
@@ -285,21 +285,24 @@ flowchart LR
 
 | المجلد | الغرض | عند الحذف |
 |---|---|---|
-| `Dependencies/` | صور مستديرة الزوايا بتقنية 9-slice | يتراجع إلى زوايا مستديرة بسيطة؛ والحزمة ~1.4 MB |
-| `LanguageSupport/{c,cpp,hlsl,java,python,rust}` | لغات غير C# | تختفي تلك اللغة؛ ولا يتعطل أي شيء آخر |
+| `Dependencies/` | صور مستديرة الزوايا بتقنية 9-slice | يتراجع إلى زوايا مستديرة بسيطة؛ والحزمة ~3.3 MB |
+| `LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}` | لغات غير C# | تختفي تلك اللغة؛ ولا يتعطل أي شيء آخر |
 | `ProgramNeko/` | مساعدة القطة البكسلية | تعمل الإضافة بشكل جيد بدونها |
 | `Locale/*` | ترجمات الواجهة | تتراجع تلك اللغة إلى الإنجليزية |
 
 ### حجم الحزمة
 
-≈ **2.2 MB** كما تُشحن:
+≈ **4.2 MB** كما تُشحن:
 
 | الجزء | الحجم |
 |---|---|
-| `Editor/` — النواة والواجهة ومحرّك C# | ~0.9 MB |
+| `Editor/` — النواة والواجهة ومحرّك C# والإعدادات | ~1.4 MB |
 | `Dependencies/Editor/Sprite/` — صور 9-slice اختيارية | ~0.86 MB |
+| `Documents/` — هذا الدليل في 15 لغة | ~0.7 MB |
+| `Locale/` — 15 لغة واجهة | ~0.7 MB |
+| `LanguageSupport/` — ثماني لغات قابلة للإسقاط | ~0.24 MB |
 | `Blocks/` — مكتبة الكتل المدمجة (تُعاد توليدها عند الطلب) | ~0.23 MB |
-| `LanguageSupport/` — سبع لغات قابلة للإسقاط | ~0.21 MB |
+| `Extensions~/` — قالب محرّك خارجي قابل للتثبيت | ~0.04 MB |
 
 ---
 
@@ -463,7 +466,7 @@ flowchart LR
 <a id="9-languages--adding-one"></a>
 ## 9. اللغات وإضافة لغة
 
-`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python`
+`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python` · `Swift`
 
 - كل واحدة تترجم **في الاتجاهين**.
 - **C# مدمجة** (`Editor/Languages/CSharp/`: Lexer، Parser، Printer، Splitter، CodeMap).
@@ -681,7 +684,7 @@ Unity -batchmode -quit -projectPath <project> \
 ---
 
 <a id="14-programneko-assistant-optional"></a>
-## 14. مساعد ProgramNeko (اختياري)
+## 14. مساعد قطة البرنامج (اختياري)
 
 `ProgramNeko/` مساعد قط بكسل اختياري. **احذف المجلد بأكمله وتستمر الإضافة في العمل.**
 
@@ -738,14 +741,14 @@ NekoScriptGraph/
 │  ├─ Nsg_AgentCli.cs            headless CLI
 │  └─ Nsg_SelfTest.cs            round-trip self test
 ├─ Blocks/                       built-in block library + API/*.json
-├─ LanguageSupport/{c,cpp,hlsl,java,python,rust}/
+├─ LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}/
 ├─ Locale/{15 locales}/strings.json
 ├─ Dependencies/Editor/Sprite/   optional 9-slice sprites
 ├─ ProgramNeko/                  optional assistant
 ├─ .presets/presets.json
 ├─ NekoScriptGraph.settings.json
 ├─ MCP.md                        dedicated MCP chapter
-└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.1
+└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.2
 ```
 
 ---

@@ -1,6 +1,6 @@
 # NekoScriptGraph (NSG) — クイックデプロイ & ハンドブック
 
-**バージョン** 1.0.1 · **Unity** 2022.3+ · **作者** NekoAndreeva · **ライセンス** MIT · **パッケージ** `com.nekoandreeva.nekoscriptgraph`
+**バージョン** 1.0.2 · **Unity** 2022.3+ · **作者** NekoAndreeva · **ライセンス** MIT · **パッケージ** `com.nekoandreeva.nekoscriptgraph`
 
 > Unity 向けの Scratch スタイルのビジュアルプログラミング。**コードには何も書き込みません。**
 > NSG はスクリプトの*隣に*ブロック設定ファイルを書き出してブロックとして編集できるようにし、双方向に変換します。生成される `.cs` にはプラグインの痕跡が一切ありません — プラグインフォルダーを削除してもスクリプトはそのままコンパイルできます。
@@ -27,7 +27,7 @@
 11. [アーキテクチャ健全性](#11-architecture-health)
 12. [ローカライズ](#12-localization)
 13. [エージェントと MCP](#13-agents--mcp)
-14. [ProgramNeko アシスタント（任意）](#14-programneko-assistant-optional)
+14. [プログラムねこ アシスタント（任意）](#14-programneko-assistant-optional)
 15. [設定](#15-settings)
 16. [ディレクトリ構成](#16-directory-layout)
 17. [アンインストール](#17-uninstall)
@@ -285,21 +285,24 @@ NSG は**どちら側が先に動いたか**を追跡するので、Generate を
 
 | フォルダー | 目的 | 削除した場合 |
 |---|---|---|
-| `Dependencies/` | 9 スライスの角丸スプライト | 単純な角丸にフォールバック。パッケージは約 1.4 MB |
-| `LanguageSupport/{c,cpp,hlsl,java,python,rust}` | C# 以外の言語 | その言語が消えるだけで、ほかは壊れない |
+| `Dependencies/` | 9 スライスの角丸スプライト | 単純な角丸にフォールバック。パッケージは約 3.3 MB |
+| `LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}` | C# 以外の言語 | その言語が消えるだけで、ほかは壊れない |
 | `ProgramNeko/` | ピクセル猫のアシスタント | 彼女なしでもプラグインは問題なく動作する |
 | `Locale/*` | UI の翻訳 | そのロケールは英語にフォールバック |
 
 ### パッケージサイズ
 
-出荷時で約 **2.2 MB**:
+出荷時で約 **4.2 MB**:
 
 | 部分 | サイズ |
 |---|---|
-| `Editor/` — コア、UI、C# エンジン | 約 0.9 MB |
+| `Editor/` — コア、UI、C# エンジン、設定 | 約 1.4 MB |
 | `Dependencies/Editor/Sprite/` — 任意の 9 スライススプライト | 約 0.86 MB |
+| `Documents/` — 15 言語のこのガイド | 約 0.7 MB |
+| `Locale/` — 15 の UI 言語 | 約 0.7 MB |
+| `LanguageSupport/` — 8 つのドロップイン言語 | 約 0.24 MB |
 | `Blocks/` — 組み込みブロックライブラリ（必要時に再生成） | 約 0.23 MB |
-| `LanguageSupport/` — 7 つのドロップイン言語 | 約 0.21 MB |
+| `Extensions~/` — インストール可能な外部エンジンのテンプレート | 約 0.04 MB |
 
 ---
 
@@ -463,7 +466,7 @@ Part A でワークフローを扱いました。ここではその仕組みを�
 <a id="9-languages--adding-one"></a>
 ## 9. 対応言語と追加方法
 
-`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python`
+`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python` · `Swift`
 
 - どれも**双方向**に変換します。
 - **C# は組み込み**です（`Editor/Languages/CSharp/`: Lexer、Parser、Printer、Splitter、CodeMap）。
@@ -681,7 +684,7 @@ Unity -batchmode -quit -projectPath <project> \
 ---
 
 <a id="14-programneko-assistant-optional"></a>
-## 14. ProgramNeko アシスタント（任意）
+## 14. プログラムねこ アシスタント（任意）
 
 `ProgramNeko/` は任意のピクセル猫アシスタントです。**フォルダーごと削除してもプラグインは動作し続けます。**
 
@@ -738,14 +741,14 @@ NekoScriptGraph/
 │  ├─ Nsg_AgentCli.cs            headless CLI
 │  └─ Nsg_SelfTest.cs            round-trip self test
 ├─ Blocks/                       built-in block library + API/*.json
-├─ LanguageSupport/{c,cpp,hlsl,java,python,rust}/
+├─ LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}/
 ├─ Locale/{15 locales}/strings.json
 ├─ Dependencies/Editor/Sprite/   optional 9-slice sprites
 ├─ ProgramNeko/                  optional assistant
 ├─ .presets/presets.json
 ├─ NekoScriptGraph.settings.json
 ├─ MCP.md                        dedicated MCP chapter
-└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.1
+└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.2
 ```
 
 ---

@@ -72,6 +72,7 @@ namespace NekoScriptGraph
             { "msg.outOfSubset"           , "this statement is outside the subset; kept as a raw snippet (cannot be turned back into blocks)" },
             { "msg.foreachName"           , "foreach is missing the iteration variable name" },
             { "msg.noSource"              , "source file not found: {0}" },
+            { "msg.importFailed"          , "failed to import {0}: {1}" },
             { "msg.canonicalized"         , "{0} methods are not in canonical form (missing braces, inconsistent indentation, or one of several equivalent spellings). The first \"Blocks → Code\" will normalise them; semantics are unchanged but formatting will change." },
             { "msg.noModelRender"         , "there is no block model to render." },
             { "msg.noModelGenerate"       , "there is no block model to generate." },
@@ -132,7 +133,7 @@ namespace NekoScriptGraph
             { "preset.empty"              , "The preset has no blocks." },
             { "preset.needName"           , "Enter a preset name." },
             { "scratch.hint"              , "Detached blocks (not compiled)" },
-            { "menu.open"                 , "Open Block Editor" },
+            { "menu.open"                 , "Open NekoScriptGraph" },
             { "menu.problems"             , "Problems" },
             { "menu.health"               , "Architecture Health" },
             { "menu.manage"               , "Take Selected Script Under Management" },
@@ -167,7 +168,7 @@ namespace NekoScriptGraph
             { "git.done"                  , "Git checkpoint created." },
             { "git.failed"                , "Git commit failed: " },
             { "git.note"                  , "Built-in checkpoints live in .checkpoints (git-ignored) and can never clash with the repository history." },
-            { "win.title"                 , "NekoScriptGraph Block Editor" },
+            { "win.title"                 , "NekoScriptGraph" },
             { "win.lang"                  , "Language" },
             { "view.mode"                 , "View" },
             { "view.stack"                , "Stack (Scratch)" },
@@ -226,6 +227,7 @@ namespace NekoScriptGraph
             { "confirm.cancel"            , "Cancel" },
             { "confirm.ok"                , "OK" },
             { "confirm.selectCs"          , "Select a .cs file in the Project window first." },
+            { "confirm.selectSource"      , "Select a source file of a supported language in the Project window first." },
             { "confirm.selectFolder"      , "Select a folder in the Project window first." },
             { "pick.statement"            , "Insert a statement block" },
             { "pick.expression"           , "Insert an expression block" },
@@ -272,6 +274,7 @@ namespace NekoScriptGraph
             { "api.title"                 , "Generate API block library" },
             { "api.prompt"                , "Generate API blocks for the selected folder?" },
             { "api.done"                  , "Generated {0} API blocks ({1} skipped)." },
+            { "api.doneAll"               , "Generated {0} API blocks across all languages ({1} language(s) reported errors)." },
             { "api.noFolder"              , "The selection is not a folder." },
             { "api.folder"                , "API block source folder" },
             { "selftest.title"            , "Round-trip self test" },
@@ -300,9 +303,9 @@ namespace NekoScriptGraph
             // Базовое (разбор, печать, диагностика, окно блоков) работает всегда.
             // Продвинутое (подсказки, авто-правки, оптимизаторы) требует кошки.
             // ------------------------------------------------------------------
-            { "adv.enabled"               , "Advanced features are on: the assistant is installed and can explain every change." },
-            { "adv.disabled"              , "Advanced features are off: the core (parse, print, diagnostics, blocks) works, but hints, auto-fixes and optimisers need the assistant." },
-            { "adv.needAssistant"         , "This needs the assistant. Install or re-enable ProgramNeko under Extensions." },
+            { "adv.enabled"               , "Advanced features are on: ProgramNeko is installed and can explain every change." },
+            { "adv.disabled"              , "Advanced features are off: the core (parse, print, diagnostics, blocks) works, but hints, auto-fixes and optimisers need ProgramNeko." },
+            { "adv.needAssistant"         , "This needs ProgramNeko. Install or re-enable her under Extensions." },
 
             // ------------------------------------------------------------------
             // Окно настроек
@@ -312,7 +315,7 @@ namespace NekoScriptGraph
             { "set.title"                 , "NekoScriptGraph Settings" },
             { "set.versions"              , "plugin {0} · core {1} ({2})" },
             { "set.tab.general"           , "General" },
-            { "set.tab.assistant"         , "Assistant" },
+            { "set.tab.assistant"         , "ProgramNeko" },
             { "set.tab.extensions"        , "Extensions" },
             { "set.tab.advanced"          , "Advanced" },
 
@@ -320,9 +323,9 @@ namespace NekoScriptGraph
             { "set.general.api"           , "API blocks" },
             { "set.general.langNote"      , "Interface language. English is built in and cannot be removed: it is the fallback for every unfinished translation." },
 
-            { "set.assistant.missing"     , "The assistant is not installed" },
+            { "set.assistant.missing"     , "ProgramNeko is not installed" },
             { "set.assistant.missingNote" , "Without her the plugin still parses, prints and reports diagnostics. Her character settings appear here once she is installed." },
-            { "set.assistant.noSchema"    , "This assistant does not describe any settings." },
+            { "set.assistant.noSchema"    , "No character settings are described." },
             { "set.assistant.presets"     , "Presets" },
             { "set.assistant.persona"     , "Character" },
 
@@ -351,11 +354,11 @@ namespace NekoScriptGraph
             { "set.ext.none"              , "Nothing found." },
             { "set.ext.enable"            , "Enable" },
             { "set.ext.disable"           , "Remove" },
-            { "set.ext.assistant"         , "Assistant" },
+            { "set.ext.assistant"         , "ProgramNeko" },
             { "set.ext.assistantOn"       , "ProgramNeko is installed" },
             { "set.ext.assistantOff"      , "ProgramNeko is removed (files kept)" },
             { "set.ext.assistantAbsent"   , "ProgramNeko is not present" },
-            { "set.ext.assistantNote"     , "Removing her keeps every file and turns off the advanced features. The core keeps working. Put her back with one click." },
+            { "set.ext.assistantNote"     , "Removing ProgramNeko keeps every file and turns off the advanced features. The core keeps working. Put her back with one click." },
             { "set.ext.engines"           , "External engines" },
             { "set.ext.enginesNote"       , "These live outside the plugin package and are installed through the Package Manager. The plugin contains none of their code, so removing one can never break it." },
             { "set.ext.installed"         , "installed" },
@@ -368,7 +371,7 @@ namespace NekoScriptGraph
             { "ext.reloadFailed"          , "The package state did not match the request after the reload. Check the Package Manager." },
             { "ext.completion.data"       , "Built-in block hints" },
             { "ext.roslyn.name"           , "Roslyn completion engine" },
-            { "ext.roslyn.desc"           , "Optional. Real member and overload completion from the C# compiler. Installed as a separate package, requires the assistant." },
+            { "ext.roslyn.desc"           , "Optional. Real member and overload completion from the C# compiler. Installed as a separate package, requires ProgramNeko." },
             { "ext.roslyn.notFound"       , "Roslyn assemblies were not found. Put Microsoft.CodeAnalysis.dll and Microsoft.CodeAnalysis.CSharp.dll into {0}/, or use an editor that ships them." },
 
             { "set.adv.gate"              , "Gate" },
@@ -380,7 +383,7 @@ namespace NekoScriptGraph
             { "set.adv.testRunning"       , "Running…" },
             { "set.adv.testDone"          , "Returned {0} item(s)" },
             { "set.adv.optimizers"        , "Optimisers" },
-            { "set.adv.optimizerCount"    , "{0} optimiser pass(es) registered. Optimisers never run without the assistant." },
+            { "set.adv.optimizerCount"    , "{0} optimiser pass(es) registered. Optimisers never run without ProgramNeko." },
             { "set.adv.state.ready"       , "ready" },
             { "set.adv.state.warming"     , "warming up" },
             { "set.adv.state.failed"      , "failed" },

@@ -915,7 +915,11 @@
     },
     {
       "key": "win.title",
-      "value": "Edytor bloków NekoScriptGraph"
+      "value": "NekoScriptGraph"
+    },
+    {
+      "key": "menu.open",
+      "value": "Otwórz NekoScriptGraph"
     }
   ],
   "blocks": [
@@ -1125,7 +1129,7 @@
     },
     {
       "key": "expr.raw",
-      "value": "surowy C# {0}"
+      "value": "surowy tekst {0}"
     },
     {
       "key": "expr.unary",
@@ -1761,7 +1765,7 @@
     },
     {
       "key": "stmt.raw",
-      "value": "surowy C# {0}"
+      "value": "surowy tekst {0}"
     },
     {
       "key": "stmt.return",

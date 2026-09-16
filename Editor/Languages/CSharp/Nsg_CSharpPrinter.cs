@@ -40,6 +40,34 @@ namespace NekoScriptGraph
             get { return Profile != null && Profile.AutoSemicolon ? string.Empty : ";"; }
         }
 
+        /// <summary>
+        /// Открывающая скобка тела стоит на строке заголовка (Go, Swift).
+        ///
+        /// Это не косметика. Там, где конец строки сам закрывает оператор,
+        /// "if x" и "{", разнесённые по строкам, дают неразборный код, а "}"
+        /// и "else" на разных строках — тоже.
+        /// </summary>
+        bool SameLineBrace
+        {
+            get { return Profile != null && Profile.SameLineBrace; }
+        }
+
+        /// <summary>Разделитель перед телом: пробел или перевод строки.</summary>
+        string BeforeBody
+        {
+            get { return SameLineBrace ? " " : "\n"; }
+        }
+
+        /// <summary>
+        /// Закрывает тело. Когда скобка остаётся на строке заголовка,
+        /// завершающий перевод строки добавляет вызывающий: за '}' может
+        /// последовать 'else', и тогда перевод строки всё сломает.
+        /// </summary>
+        void EndBody(StringBuilder sb)
+        {
+            if (SameLineBrace) sb.Append('\n');
+        }
+
         bool ForIn
         {
             get { return Profile != null && Profile.ForIn; }
@@ -141,8 +169,9 @@ namespace NekoScriptGraph
                     sb.Append(Parenless ? " " : " (");
                     sb.Append(Expr(w.Cond));
                     if (!Parenless) sb.Append(')');
-                    sb.Append('\n');
+                    sb.Append(BeforeBody);
                     EmitBody(sb, w.Body, indent);
+                    EndBody(sb);
                     break;
                 }
                 case NsgStmtKind.For:
@@ -158,16 +187,18 @@ namespace NekoScriptGraph
                     {
                         sb.Append(indent)
                           .Append("for ").Append(fe.Name)
-                          .Append(" in ").Append(Expr(fe.Source)).Append('\n');
+                          .Append(" in ").Append(Expr(fe.Source));
                     }
                     else
                     {
                         sb.Append(indent)
                           .Append("foreach (").Append(fe.TypeText).Append(' ').Append(fe.Name)
-                          .Append(" in ").Append(Expr(fe.Source)).Append(")\n");
+                          .Append(" in ").Append(Expr(fe.Source)).Append(')');
                     }
 
+                    sb.Append(BeforeBody);
                     EmitBody(sb, fe.Body, indent);
+                    EndBody(sb);
                     break;
                 }
                 case NsgStmtKind.Return:
@@ -197,14 +228,22 @@ namespace NekoScriptGraph
 
         void EmitIfChain(StringBuilder sb, NsgIfStmt s, string indent, bool isElseIf)
         {
-            sb.Append(indent).Append(isElseIf ? "else if" : "if");
+            // "} else if" продолжает строку закрывающей скобки, поэтому отступ
+            // здесь уже не начало строки.
+            if (!isElseIf || !SameLineBrace) sb.Append(indent);
+
+            sb.Append(isElseIf ? "else if" : "if");
             sb.Append(Parenless ? " " : " (");
             sb.Append(Expr(s.Cond));
             if (!Parenless) sb.Append(')');
-            sb.Append('\n');
+            sb.Append(BeforeBody);
             EmitBody(sb, s.Then, indent);
 
-            if (s.Else == null) return;
+            if (s.Else == null)
+            {
+                EndBody(sb);
+                return;
+            }
 
             if (s.Else.Kind == NsgStmtKind.If && string.IsNullOrEmpty(s.Else.Comments))
             {
@@ -212,15 +251,9 @@ namespace NekoScriptGraph
                 return;
             }
 
-            sb.Append(indent).Append("else\n");
-            if (s.Else.Kind == NsgStmtKind.Block)
-            {
-                EmitBody(sb, s.Else, indent);
-            }
-            else
-            {
-                EmitBody(sb, s.Else, indent);
-            }
+            sb.Append(SameLineBrace ? "else " : indent + "else\n");
+            EmitBody(sb, s.Else, indent);
+            EndBody(sb);
         }
 
         void EmitFor(StringBuilder sb, NsgForStmt s, string indent)
@@ -234,8 +267,9 @@ namespace NekoScriptGraph
                 {
                     sb.Append(indent).Append("for");
                     if (s.Cond != null) sb.Append(' ').Append(Expr(s.Cond));
-                    sb.Append('\n');
+                    sb.Append(BeforeBody);
                     EmitBody(sb, s.Body, indent);
+                    EndBody(sb);
                     return;
                 }
             }
@@ -252,8 +286,9 @@ namespace NekoScriptGraph
                 if (i > 0) sb.Append(", ");
                 sb.Append(Expr(s.Incr[i]));
             }
-            sb.Append(Parenless ? "\n" : ")\n");
+            sb.Append(Parenless ? BeforeBody : ")\n");
             EmitBody(sb, s.Body, indent);
+            EndBody(sb);
         }
 
         /// <summary>Рендерит оператор без отступа и без завершающей точки с запятой.</summary>
@@ -279,12 +314,26 @@ namespace NekoScriptGraph
 
         void EmitBody(StringBuilder sb, NsgStmt body, string indent)
         {
-            if (body != null && !string.IsNullOrEmpty(body.Comments))
+            // Go и Swift: '{' стоит на строке заголовка, поэтому отступ перед
+            // ней не нужен, а комментарии тела переезжают ВНУТРЬ скобок —
+            // между заголовком и '{' их поставить нельзя.
+            if (SameLineBrace)
             {
-                EmitComments(sb, body, indent);
+                sb.Append("{\n");
+                if (body != null && !string.IsNullOrEmpty(body.Comments))
+                {
+                    EmitComments(sb, body, indent + IndentUnit);
+                }
+            }
+            else
+            {
+                if (body != null && !string.IsNullOrEmpty(body.Comments))
+                {
+                    EmitComments(sb, body, indent);
+                }
+                sb.Append(indent).Append("{\n");
             }
 
-            sb.Append(indent).Append("{\n");
             if (body != null)
             {
                 if (body.Kind == NsgStmtKind.Block)
@@ -296,7 +345,11 @@ namespace NekoScriptGraph
                     EmitStatement(sb, body, indent + IndentUnit);
                 }
             }
-            sb.Append(indent).Append("}\n");
+
+            // Завершающий перевод строки добавляет вызывающий: за '}' может
+            // последовать 'else'.
+            sb.Append(indent).Append('}');
+            if (!SameLineBrace) sb.Append('\n');
         }
 
         // ------------------------------------------------------------------

@@ -15,11 +15,18 @@ namespace NekoScriptGraph
         Sleepy
     }
 
-    /// <summary>Время суток: от него зависит фон окна с окном на заднем плане.</summary>
+    /// <summary>
+    /// Время суток: от него зависит фон окна.
+    ///
+    /// Sunset отделён от Night намеренно: вечер и глубокая ночь читаются
+    /// по-разному, и на вечер хочется свою картинку. Пока её нет, берётся
+    /// рассветная — см. Neko_Assistant.Background.
+    /// </summary>
     public enum Nsg_NekoDayPhase
     {
         Sunrise,
         Day,
+        Sunset,
         Night
     }
 
@@ -186,15 +193,17 @@ namespace NekoScriptGraph
     {
         public const int SunriseFrom = 5;   // 05:00 — рассвет
         public const int DayFrom = 9;       // 09:00 — день
-        public const int NightFrom = 18;    // 18:00 — ночь
+        public const int SunsetFrom = 18;   // 18:00 — закат
+        public const int NightFrom = 20;    // 20:00 — ночь
 
         public static Nsg_NekoDayPhase Phase(DateTime now)
         {
             int h = now.Hour;
-            if (h < SunriseFrom) return Nsg_NekoDayPhase.Night;
-            if (h < DayFrom) return Nsg_NekoDayPhase.Sunrise;
-            if (h < NightFrom) return Nsg_NekoDayPhase.Day;
-            return Nsg_NekoDayPhase.Night;
+            if (h < SunriseFrom) return Nsg_NekoDayPhase.Night;     // 00–04
+            if (h < DayFrom) return Nsg_NekoDayPhase.Sunrise;       // 05–08
+            if (h < SunsetFrom) return Nsg_NekoDayPhase.Day;        // 09–17
+            if (h < NightFrom) return Nsg_NekoDayPhase.Sunset;      // 18–19
+            return Nsg_NekoDayPhase.Night;                          // 20–23
         }
 
         public static Nsg_NekoDayPhase Now

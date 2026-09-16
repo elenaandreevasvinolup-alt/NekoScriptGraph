@@ -915,7 +915,11 @@
     },
     {
       "key": "win.title",
-      "value": "محرر كتل NekoScriptGraph"
+      "value": "NekoScriptGraph"
+    },
+    {
+      "key": "menu.open",
+      "value": "فتح NekoScriptGraph"
     }
   ],
   "blocks": [
@@ -1125,7 +1129,7 @@
     },
     {
       "key": "expr.raw",
-      "value": "C# خام {0}"
+      "value": "نص خام {0}"
     },
     {
       "key": "expr.unary",
@@ -1761,7 +1765,7 @@
     },
     {
       "key": "stmt.raw",
-      "value": "C# خام {0}"
+      "value": "نص خام {0}"
     },
     {
       "key": "stmt.return",

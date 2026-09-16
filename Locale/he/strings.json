@@ -915,7 +915,11 @@
     },
     {
       "key": "win.title",
-      "value": "עורך הבלוקים NekoScriptGraph"
+      "value": "NekoScriptGraph"
+    },
+    {
+      "key": "menu.open",
+      "value": "פתח NekoScriptGraph"
     }
   ],
   "blocks": [
@@ -1125,7 +1129,7 @@
     },
     {
       "key": "expr.raw",
-      "value": "C# גולמי {0}"
+      "value": "טקסט גולמי {0}"
     },
     {
       "key": "expr.unary",
@@ -1761,7 +1765,7 @@
     },
     {
       "key": "stmt.raw",
-      "value": "C# גולמי {0}"
+      "value": "טקסט גולמי {0}"
     },
     {
       "key": "stmt.return",

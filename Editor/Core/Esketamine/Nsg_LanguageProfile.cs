@@ -80,6 +80,43 @@ namespace NekoScriptGraph
         /// </summary>
         public bool TrailingReturnType;
 
+        /// <summary>
+        /// Открывающая скобка тела — на строке заголовка, и "}" с "else" тоже
+        /// на одной строке (Go, Swift).
+        ///
+        /// Это не косметика. Там, где конец строки сам закрывает оператор,
+        /// "if x" и "{", разнесённые по строкам, дают неразборный код, а "}"
+        /// и "else" на разных строках — тоже. Языкам, которым это не нужно,
+        /// флаг не включают, и они печатаются как раньше.
+        /// </summary>
+        public bool SameLineBrace;
+
+        /// <summary>
+        /// Аргументы вызова пишутся с метками: "f(label: value)" (Swift).
+        ///
+        /// Метка пропускается, а аргумент остаётся обычным выражением —
+        /// иначе почти любой вызов в Swift уходил бы в сырой текст.
+        /// </summary>
+        public bool ArgumentLabels;
+
+        /// <summary>
+        /// Блоки общей базы, которых в языке НЕТ и которые не должны попадать
+        /// в палитру: у Rust и Swift нет приведения "(T)x" (там T(x)), у Rust и
+        /// Swift нет счётного for, у Rust нет тернарного оператора.
+        ///
+        /// Отличие от HasForeach/HasNew: те про конкретную возможность, а
+        /// здесь — точный список идентификаторов, чтобы не заводить отдельный
+        /// флаг под каждый блок. Блок из этого списка не создаётся, и
+        /// разборщик такого выражения тоже не порождает — иначе получился бы
+        /// узел без блока.
+        /// </summary>
+        public readonly HashSet<string> ExcludedBlocks = new HashSet<string>();
+
+        public bool Excludes(string blockId)
+        {
+            return !string.IsNullOrEmpty(blockId) && ExcludedBlocks.Contains(blockId);
+        }
+
         public bool IsKeyword(string s)
         {
             return s != null && Keywords.Contains(s);

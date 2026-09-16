@@ -720,9 +720,16 @@ namespace NekoScriptGraph
             var obj = Selection.activeObject;
             if (obj != null) path = AssetDatabase.GetAssetPath(obj);
 
-            if (string.IsNullOrEmpty(path) || Path.GetExtension(path) == string.Empty)
+            // Проверяем не «есть ли расширение», а «знает ли язык это
+            // расширение»: иначе открывался бы любой текстовый файл, а .py,
+            // .rs и .go — не открывались бы как чужие.
+            string ext = string.IsNullOrEmpty(path) ? null : Path.GetExtension(path);
+            bool known = !string.IsNullOrEmpty(ext) &&
+                         Nsg_Manager.Instance.RegisteredExtensions().Contains(ext);
+
+            if (!known)
             {
-                EditorUtility.DisplayDialog(Nsg_L10n.T("confirm.title"), Nsg_L10n.T("confirm.selectCs"),
+                EditorUtility.DisplayDialog(Nsg_L10n.T("confirm.title"), Nsg_L10n.T("confirm.selectSource"),
                                             Nsg_L10n.T("confirm.ok"));
                 return;
             }

@@ -139,7 +139,29 @@ namespace NekoScriptGraph
             if (src == null) src = string.Empty;
 
             Diagnostics.Clear();
-            var fresh = Engine.Split(src, Path.GetFileName(CsPath), Diagnostics);
+
+            NsgFileModel fresh;
+            try
+            {
+                fresh = Engine.Split(src, Path.GetFileName(CsPath), Diagnostics);
+            }
+            catch (System.Exception ex)
+            {
+                // Язык не смог разбить файл на методы. Молчаливый отказ здесь
+                // выглядит как «кнопка не работает», и починить такое нельзя:
+                // поэтому называем язык, файл и само исключение.
+                Diagnostics.Error(NsgCodes.Internal,
+                    Nsg_L10n.T("msg.importFailed", "split", Describe(ex)));
+                return false;
+            }
+
+            if (fresh == null)
+            {
+                Diagnostics.Error(NsgCodes.Internal,
+                    Nsg_L10n.T("msg.importFailed", "split", "вернул null"));
+                return false;
+            }
+
             var freshMethods = fresh.AllMethods();
 
             var previous = new NsgMethodGraph[freshMethods.Count];
@@ -163,22 +185,35 @@ namespace NekoScriptGraph
             for (int i = 0; i < freshMethods.Count; i++)
             {
                 var m = freshMethods[i];
-                string inner = Engine.InnerBody(m.printed);
 
-                int before = Diagnostics.Count;
-                var body = Engine.ParseBody(inner, Diagnostics);
-
-                int offset = m.line - 3;
-                if (offset != 0)
+                // Ошибка языка внутри одного метода не должна уносить с собой
+                // весь импорт: помечаем метод и идём дальше, а в диагностике
+                // остаётся имя метода и текст исключения.
+                try
                 {
-                    for (int k = before; k < Diagnostics.Count; k++)
-                    {
-                        var dg = Diagnostics.Items[k];
-                        if (dg.Line >= 3) dg.Line += offset;
-                    }
-                }
+                    string inner = Engine.InnerBody(m.printed);
 
-                m.graph = Engine.ToGraph(Library, Diagnostics, body, previous[i]);
+                    int before = Diagnostics.Count;
+                    var body = Engine.ParseBody(inner, Diagnostics);
+
+                    int offset = m.line - 3;
+                    if (offset != 0)
+                    {
+                        for (int k = before; k < Diagnostics.Count; k++)
+                        {
+                            var dg = Diagnostics.Items[k];
+                            if (dg.Line >= 3) dg.Line += offset;
+                        }
+                    }
+
+                    m.graph = Engine.ToGraph(Library, Diagnostics, body, previous[i]);
+                }
+                catch (System.Exception ex)
+                {
+                    Diagnostics.Error(NsgCodes.Internal,
+                        Nsg_L10n.T("msg.importFailed", m.name ?? m.header, Describe(ex)));
+                    m.graph = new NsgMethodGraph();
+                }
             }
 
             // Заранее предупреждаем, что импорт что-то переформатирует.
@@ -187,9 +222,17 @@ namespace NekoScriptGraph
             for (int i = 0; i < freshMethods.Count; i++)
             {
                 var m = freshMethods[i];
-                var ast = Engine.ToAst(Library, check, m.graph);
-                string indent = Engine.BodyIndent(m.header);
-                if (Engine.PrintBody(ast, indent) != m.printed) reformatted++;
+                try
+                {
+                    var ast = Engine.ToAst(Library, check, m.graph);
+                    string indent = Engine.BodyIndent(m.header);
+                    if (Engine.PrintBody(ast, indent) != m.printed) reformatted++;
+                }
+                catch (System.Exception ex)
+                {
+                    Diagnostics.Error(NsgCodes.Internal,
+                        Nsg_L10n.T("msg.importFailed", m.name ?? m.header, Describe(ex)));
+                }
             }
             if (reformatted > 0)
             {
@@ -200,10 +243,20 @@ namespace NekoScriptGraph
             return !Diagnostics.HasErrors;
         }
 
+        /// <summary>
+        /// Короткое описание исключения для диагностики: тип и сообщение.
+        /// Нужно, чтобы отказ языка был виден как текст, а не как «ничего не
+        /// произошло» — по стеку из консоли починить чужой язык нельзя.
+        /// </summary>
+        static string Describe(System.Exception ex)
+        {
+            if (ex == null) return "unknown";
+            return ex.GetType().Name + ": " + ex.Message;
+        }
+
         // ------------------------------------------------------------------
         // Блоки -> код
         // ------------------------------------------------------------------
-
         public bool TryRender(out string text, out List<string> bodies, NsgDiagnostics diag)
         {
             text = null;

@@ -15,7 +15,7 @@ your scripts still compile.
 - **Bidirectional** — blocks ⇄ code, both ways, for every supported language
 - **Block vocabulary is data** — a block is a `Blocks/*.json` entry, so adding one
   needs no recompile
-- **7 languages**, **15 locales**, including full right-to-left for Arabic and Hebrew
+- **8 languages**, **15 locales**, including full right-to-left for Arabic and Hebrew
 - **Agent-ready** — a headless CLI *and* an in-editor **MCP server**; see [MCP.md](MCP.md)
 - **One-click release** — delete every block config in a folder, or in the whole
   project, for a clean uninstall
@@ -26,13 +26,89 @@ your scripts still compile.
 - Editor-only: the whole package is scoped by an Editor-only assembly definition,
   so nothing is added to a player build.
 
+## What's new in 1.0.2
+
+### Two more languages
+
+- **Go** — `func` with the return type *after* the parameters, `:=`, `var`,
+  conditions without parentheses, the three-clause `for`, `for {}` / `for cond {}`
+  and `type … struct`. Go omits semicolons, so the lexer inserts them the way the Go
+  spec does, and the printer keeps the opening brace on the header line so generated
+  Go stays valid. 49 Go idiom blocks.
+- **Swift** — `func … -> T`, argument labels (`clamp(value: 12, low: 0)`), `let`/`var`,
+  `for … in`, opening brace on the header line. 25 Swift idiom blocks.
+
+That makes **eight** drop-in languages, all of them bidirectional. Anything outside
+the block subset is still preserved verbatim as a raw snippet and reported.
+
+### Fixes
+
+- **Opening a Python file crashed the block editor.** `py.pass` declared a `null`
+  socket array, and five renderers read `def.sockets.Length` without a guard. Socket
+  arrays are now normalised to empty when a block is created and again in the block
+  library, so a block with no inputs is simply a block with no inputs.
+- **Rust's `println!` produced wrong code.** The template wrapped the text socket in
+  quotes, so arguments landed inside the string literal — `println!("sum = {}, x")`.
+  It now takes the whole argument list, exactly as C's `printf` always did.
+- **Go generated invalid code.** The printer put the opening brace on the next line,
+  and Go's automatic semicolon insertion closed the statement before the block
+  opened. Braces now stay on the header line, including `} else {`.
+- **Go's `:=` silently lost code.** There was no block for it, and an expression
+  whose block is unknown was dropped without a word: the line vanished from the
+  graph *and* from the generated file. `:=` is now a real assignment block, and an
+  unknown block is reported as a diagnostic instead of being discarded.
+- **Palettes no longer offer blocks the language cannot express.** Rust and Swift
+  were showing a C-style cast, a ternary, `++`/`--` and a three-clause `for`. A
+  per-language exclusion list removes them.
+- **The raw-snippet blocks were labelled "raw C#"** in every language, Rust and Go
+  included. They now read "raw text", localised in all 15 locales.
+- **Any language can be taken under management.** The menu required a `.cs` file, so
+  `.py`, `.rs`, `.go` and `.swift` were refused outright. The check now asks the
+  language registry instead of testing for one extension.
+- **"Generate API Blocks for Selected Folder" only ever walked C#** — it looked for
+  `MonoScript` assets, which no other language produces. It now asks every loaded
+  engine for its own files.
+- **Python API-block generation was a stub** that returned zero. It now emits a call
+  block for every top-level `def`.
+- **A language that fails now says so.** An exception while splitting, parsing or
+  building the graph used to look like "the button does nothing". It is caught and
+  reported with the method name and the exception, and errors also reach the Console.
+
+### Settings and extensions
+
+- `NekoScriptGraph ▸ Settings` — editor mode, hiding block files, the API output
+  folder and the interface language.
+- `NekoScriptGraph ▸ Extensions` — enable or remove any language pack except English
+  (English is built into the code and is the fallback for every unfinished
+  translation), and install or remove optional external engines in one click through
+  the Unity Package Manager. The request is persisted, so an install that triggers a
+  domain reload reports its real outcome instead of hanging.
+- The settings window only shows what is actually present. With no language packs
+  and no external engines it is a single General tab.
+- **Optional external engines are a separate package.** The plugin contains none of
+  their code, so removing one cannot break it — and it keeps working when none is
+  installed.
+
+### Not in this release
+
+Advanced features — block hints, one-click optimisers and multi-step fix plans —
+belong to the optional **ProgramNeko** pack, which is not part of this release. Without it
+the core is unaffected: parsing, printing, diagnostics, the block editor, the block
+library and the agent interface all work as before.
+
 ## Supported languages
 
-`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python`
+`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python` · `Swift`
 
 Every one of them translates both ways. C# is built in; the others are drop-in
 folders, and deleting a folder removes that language from the plugin without
 breaking anything else.
+
+Each language is honest about its own limits, and the limits live next to the code
+rather than here — a language whose syntax the block model cannot express yet (Go's
+`for … range`, Swift's `guard`, Rust's macros) keeps those lines as raw snippets,
+which survive both directions unchanged. The header comment of each
+`LanguageSupport/<id>/Nsg_<Id>Language.cs` lists exactly what stays raw.
 
 ## Localization
 
@@ -101,17 +177,33 @@ afterwards the only thing left is the plugin folder itself.
 
 ## Package size
 
-Roughly **2.2 MB** as shipped:
+Roughly **4.2 MB** as shipped:
 
 | Part | Size |
 |---|---|
-| `Editor/` — core, UI, C# engine | ~0.9 MB |
+| `Editor/` — core, UI, C# engine, settings | ~1.4 MB |
 | `Dependencies/Editor/Sprite/` — optional 9-slice sprites | ~0.86 MB |
-| `Blocks/` — built-in block library (regenerated on demand) | ~0.23 MB |
-| `LanguageSupport/` — the seven drop-in languages | ~0.21 MB |
+| `Documents/` — the guide in 15 languages | ~0.7 MB |
+| `Locale/` — 15 interface languages | ~0.7 MB |
+| `LanguageSupport/` — the eight drop-in languages | ~0.24 MB |
+| `Blocks/` — default block library (regenerated on demand) | ~0.23 MB |
+| `Extensions~/` — installable external-engine template | ~0.04 MB |
 
-The sprite pack is optional: delete `Dependencies/` and the plugin is about 1.4 MB,
-falling back to plain rounded corners.
+Figures include the `.meta` files and are approximate; generated API blocks under
+`Blocks/API/` are project data and are not counted.
+
+Every optional part can go, and each one is independent:
+
+- delete `Dependencies/` — about **3.3 MB** left, and the UI falls back to plain
+  rounded corners;
+- delete a `LanguageSupport/<id>/` folder — that language disappears, the rest keep
+  working;
+- remove a `Locale/<code>/` folder (or use `NekoScriptGraph ▸ Extensions`) — that
+  interface language disappears. English is built into the code and cannot be
+  removed: it is the fallback for every unfinished translation.
+
+The optional **ProgramNeko** pack is **not part of this release** and is
+not included in the figures above.
 
 ## Contact
 

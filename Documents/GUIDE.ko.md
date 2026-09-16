@@ -1,6 +1,6 @@
 # NekoScriptGraph (NSG) — 빠른 배포 및 핸드북
 
-**버전** 1.0.1 · **Unity** 2022.3+ · **제작자** NekoAndreeva · **라이선스** MIT · **패키지** `com.nekoandreeva.nekoscriptgraph`
+**버전** 1.0.2 · **Unity** 2022.3+ · **제작자** NekoAndreeva · **라이선스** MIT · **패키지** `com.nekoandreeva.nekoscriptgraph`
 
 > 코드에 **무엇도 집어넣지 않는** Unity용 Scratch 스타일 비주얼 프로그래밍입니다.
 > NSG는 스크립트 *옆에* 블록 설정 파일을 작성해 블록으로 편집할 수 있게 하고, 양방향으로 변환합니다. 생성된 `.cs`에는 플러그인의 흔적이 전혀 없습니다 — 플러그인 폴더를 삭제해도 스크립트는 그대로 컴파일됩니다.
@@ -27,7 +27,7 @@
 11. [아키텍처 건전성](#11-architecture-health)
 12. [지역화](#12-localization)
 13. [에이전트 및 MCP](#13-agents--mcp)
-14. [ProgramNeko 어시스턴트(선택 사항)](#14-programneko-assistant-optional)
+14. [프로그램냥 어시스턴트(선택 사항)](#14-programneko-assistant-optional)
 15. [설정](#15-settings)
 16. [디렉터리 구조](#16-directory-layout)
 17. [제거](#17-uninstall)
@@ -284,21 +284,24 @@ NSG는 **어느 쪽이 먼저 움직였는지** 추적하므로, Generate를 눌
 
 | 폴더 | 용도 | 제거할 경우 |
 |---|---|---|
-| `Dependencies/` | 9-slice 둥근 스프라이트 | 일반 둥근 모서리로 대체되며 패키지 약 1.4 MB |
-| `LanguageSupport/{c,cpp,hlsl,java,python,rust}` | C# 이외 언어 | 해당 언어가 사라지고 다른 것은 깨지지 않음 |
+| `Dependencies/` | 9-slice 둥근 스프라이트 | 일반 둥근 모서리로 대체되며 패키지 약 3.3 MB |
+| `LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}` | C# 이외 언어 | 해당 언어가 사라지고 다른 것은 깨지지 않음 |
 | `ProgramNeko/` | 픽셀 고양이 어시스턴트 | 없어도 플러그인은 정상 동작 |
 | `Locale/*` | UI 번역 | 해당 로케일이 영어로 대체됨 |
 
 ### 패키지 크기
 
-배포 기준 ≈ **2.2 MB**:
+배포 기준 ≈ **4.2 MB**:
 
 | 구성 | 크기 |
 |---|---|
-| `Editor/` — 코어, UI, C# 엔진 | ~0.9 MB |
+| `Editor/` — 코어, UI, C# 엔진, 설정 | ~1.4 MB |
 | `Dependencies/Editor/Sprite/` — 선택적 9-slice 스프라이트 | ~0.86 MB |
+| `Documents/` — 15개 언어의 이 가이드 | ~0.7 MB |
+| `Locale/` — 15개 UI 언어 | ~0.7 MB |
+| `LanguageSupport/` — 바로 넣는 여덟 개 언어 | ~0.24 MB |
 | `Blocks/` — 내장 블록 라이브러리(요청 시 재생성) | ~0.23 MB |
-| `LanguageSupport/` — 바로 넣는 일곱 개 언어 | ~0.21 MB |
+| `Extensions~/` — 설치 가능한 외부 엔진 템플릿 | ~0.04 MB |
 
 ---
 
@@ -462,7 +465,7 @@ VS Code 스타일의 다중 탭 창이며 최소 크기는 980×600입니다.
 <a id="9-languages--adding-one"></a>
 ## 9. 언어 및 언어 추가
 
-`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python`
+`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python` · `Swift`
 
 - 모두 **양방향**으로 변환합니다.
 - **C#은 내장**입니다(`Editor/Languages/CSharp/`: Lexer, Parser, Printer, Splitter, CodeMap).
@@ -680,7 +683,7 @@ Unity -batchmode -quit -projectPath <project> \
 ---
 
 <a id="14-programneko-assistant-optional"></a>
-## 14. ProgramNeko 어시스턴트(선택 사항)
+## 14. 프로그램냥 어시스턴트(선택 사항)
 
 `ProgramNeko/`는 선택적인 픽셀 고양이 어시스턴트입니다. **폴더 전체를 삭제해도 플러그인은 계속 동작합니다.**
 
@@ -737,14 +740,14 @@ NekoScriptGraph/
 │  ├─ Nsg_AgentCli.cs            headless CLI
 │  └─ Nsg_SelfTest.cs            round-trip self test
 ├─ Blocks/                       built-in block library + API/*.json
-├─ LanguageSupport/{c,cpp,hlsl,java,python,rust}/
+├─ LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}/
 ├─ Locale/{15 locales}/strings.json
 ├─ Dependencies/Editor/Sprite/   optional 9-slice sprites
 ├─ ProgramNeko/                  optional assistant
 ├─ .presets/presets.json
 ├─ NekoScriptGraph.settings.json
 ├─ MCP.md                        dedicated MCP chapter
-└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.1
+└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.2
 ```
 
 ---

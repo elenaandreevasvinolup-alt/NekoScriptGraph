@@ -82,6 +82,15 @@ namespace NekoScriptGraph
 
         NsgGraphNode NewNode(string block, string id)
         {
+            // Блок обязан быть в библиотеке языка. Раньше узел с чужим
+            // идентификатором создавался молча: в редакторе он рисовался
+            // пустой рамкой, а отрисовка могла упасть. Теперь это диагноз с
+            // именем блока — такую ошибку можно починить.
+            if (_lib != null && _lib.Get(block) == null)
+            {
+                _diag.Error(NsgCodes.UnknownBlock, Nsg_L10n.T("msg.unknownBlock", block));
+            }
+
             var n = new NsgGraphNode();
             n.id = id;
             n.block = block;
@@ -286,7 +295,15 @@ namespace NekoScriptGraph
                 return new NsgSlot(null, ((NsgIdentExpr)e).Name);
 
             string block = BlockForExpr(e);
-            if (block == null) return new NsgSlot();
+            if (block == null)
+            {
+                // Раньше здесь молча возвращался пустой слот: выражение
+                // ИСЧЕЗАЛО из графа, а вместе с ним и строка из вывода.
+                // Потеря кода не должна быть беззвучной — лучше диагноз.
+                _diag.Error(NsgCodes.UnknownBlock,
+                    Nsg_L10n.T("msg.unknownExpr", e.Kind.ToString()));
+                return new NsgSlot();
+            }
 
             // API-блоки: статический вызов вроде "Debug.Log" отображается
             // обратно в собственный блок, а не в общий expr.call, поэтому
@@ -457,6 +474,11 @@ namespace NekoScriptGraph
                 case "<<=": return "stmt.shlAssign";
                 case ">>=": return "stmt.shrAssign";
                 case "??=": return "stmt.coalesceAssign";
+
+                // Короткое объявление Go. Блок приносит сам язык Go, поэтому
+                // у остальных языков этой записи нет в библиотеке — и взяться
+                // ей там неоткуда: ":=" выдаёт только его лексер.
+                case ":=": return "stmt.shortDecl";
             }
             return null;
         }

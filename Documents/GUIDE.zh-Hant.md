@@ -1,6 +1,6 @@
 # NekoScriptGraph (NSG) — 快速部署與手冊
 
-**版本** 1.0.1 · **Unity** 2022.3+ · **作者** NekoAndreeva · **授權** MIT · **套件** `com.nekoandreeva.nekoscriptgraph`
+**版本** 1.0.2 · **Unity** 2022.3+ · **作者** NekoAndreeva · **授權** MIT · **套件** `com.nekoandreeva.nekoscriptgraph`
 
 > 為 Unity 打造的 Scratch 風格視覺化程式設計，**絕不把任何東西寫進你的程式碼。**
 > NSG 會在指令碼*旁邊*寫入一個積木設定檔，讓它能以積木形式編輯，並支援雙向轉譯。產生的 `.cs` 不含任何外掛痕跡——刪除外掛資料夾後，你的指令碼依然可以編譯。
@@ -27,7 +27,7 @@
 11. [架構健康度](#11-architecture-health)
 12. [在地化](#12-localization)
 13. [代理與 MCP](#13-agents--mcp)
-14. [ProgramNeko 助手（選用）](#14-programneko-assistant-optional)
+14. [程式喵喵 助手（選用）](#14-programneko-assistant-optional)
 15. [設定](#15-settings)
 16. [目錄結構](#16-directory-layout)
 17. [解除安裝](#17-uninstall)
@@ -285,21 +285,24 @@ NSG 會追蹤**哪一邊先變動**，因此你永遠知道按下 Generate 是�
 
 | 資料夾 | 用途 | 若移除 |
 |---|---|---|
-| `Dependencies/` | 九宮格圓角精靈圖 | 退回純圓角；套件約 1.4 MB |
-| `LanguageSupport/{c,cpp,hlsl,java,python,rust}` | 非 C# 語言 | 該語言消失；其他都不受影響 |
+| `Dependencies/` | 九宮格圓角精靈圖 | 退回純圓角；套件約 3.3 MB |
+| `LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}` | 非 C# 語言 | 該語言消失；其他都不受影響 |
 | `ProgramNeko/` | 像素貓助手 | 沒有她，外掛仍運作良好 |
 | `Locale/*` | UI 翻譯 | 該語系退回英文 |
 
 ### 套件大小
 
-出貨時約 **2.2 MB**：
+出貨時約 **4.2 MB**：
 
 | 部分 | 大小 |
 |---|---|
-| `Editor/` — 核心、UI、C# 引擎 | ~0.9 MB |
+| `Editor/` — 核心、UI、C# 引擎、設定 | ~1.4 MB |
 | `Dependencies/Editor/Sprite/` — 選用九宮格精靈圖 | ~0.86 MB |
+| `Documents/` — 15 種語言的這份指南 | ~0.7 MB |
+| `Locale/` — 15 種介面語言 | ~0.7 MB |
+| `LanguageSupport/` — 八種即插即用語言 | ~0.24 MB |
 | `Blocks/` — 內建積木庫（視需求重新產生） | ~0.23 MB |
-| `LanguageSupport/` — 七種即插即用語言 | ~0.21 MB |
+| `Extensions~/` — 可安裝的外部引擎範本 | ~0.04 MB |
 
 ---
 
@@ -463,7 +466,7 @@ Part A 介紹了工作流程。這裡說明其內部機制。
 <a id="9-languages--adding-one"></a>
 ## 9. 語言與新增語言
 
-`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python`
+`C` · `C++` · `C#` · `Go` · `HLSL` · `Java` · `Rust` · `Python` · `Swift`
 
 - 每一種都能**雙向**轉譯。
 - **C# 是內建的**（`Editor/Languages/CSharp/`：Lexer, Parser, Printer, Splitter, CodeMap）。
@@ -681,7 +684,7 @@ Unity -batchmode -quit -projectPath <project> \
 ---
 
 <a id="14-programneko-assistant-optional"></a>
-## 14. ProgramNeko 助手（選用）
+## 14. 程式喵喵 助手（選用）
 
 `ProgramNeko/` 是選用的像素貓助手。**刪除整個資料夾，外掛仍可運作。**
 
@@ -738,14 +741,14 @@ NekoScriptGraph/
 │  ├─ Nsg_AgentCli.cs            headless CLI
 │  └─ Nsg_SelfTest.cs            round-trip self test
 ├─ Blocks/                       built-in block library + API/*.json
-├─ LanguageSupport/{c,cpp,hlsl,java,python,rust}/
+├─ LanguageSupport/{c,cpp,go,hlsl,java,python,rust,swift}/
 ├─ Locale/{15 locales}/strings.json
 ├─ Dependencies/Editor/Sprite/   optional 9-slice sprites
 ├─ ProgramNeko/                  optional assistant
 ├─ .presets/presets.json
 ├─ NekoScriptGraph.settings.json
 ├─ MCP.md                        dedicated MCP chapter
-└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.1
+└─ package.json                  com.nekoandreeva.nekoscriptgraph v1.0.2
 ```
 
 ---

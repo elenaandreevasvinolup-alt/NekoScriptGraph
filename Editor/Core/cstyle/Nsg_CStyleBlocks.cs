@@ -39,6 +39,12 @@ namespace NekoScriptGraph
                                        string en,
                                        params NsgSocketDef[] sockets)
         {
+            // null и «без слотов» — одно и то же. Явный null приходил от
+            // языков, у которых у блока нет входов (py.pass), и ронял всё, что
+            // читает def.sockets.Length без проверки: палитра, проверки
+            // здоровья, отрисовка блока. Пустой набор — то, что имелось в виду.
+            if (sockets == null) sockets = new NsgSocketDef[0];
+
             var fallback = new StringBuilder();
             fallback.Append(name).Append('(');
             for (int i = 0; i < sockets.Length; i++)
@@ -104,6 +110,7 @@ namespace NekoScriptGraph
                 case "python": return "#3B7EA1";
                 case "rust":   return "#A0522D";
                 case "go":     return "#00ADD8";
+                case "swift":  return "#F05138";
                 case "hlsl":   return "#7A5AA6";
                 case "csharp": return "#2E7D32";
             }
@@ -120,6 +127,9 @@ namespace NekoScriptGraph
                                            string en, string emit,
                                            params NsgSocketDef[] sockets)
         {
+            // См. Call: null приводим к пустому набору.
+            if (sockets == null) sockets = new NsgSocketDef[0];
+
             return new NsgBlockDef
             {
                 id = id,
