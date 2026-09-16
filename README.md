@@ -120,3 +120,7 @@ Author: NekoAndreeva
 
 - Email: elenaandreevasvinolup@gmail.com
 - WhatsApp: +852 5247 4163
+<img width="1436" height="752" alt="Screenshot 2026-09-16 at 19 51 33" src="https://github.com/user-attachments/assets/5eea5914-19c6-4324-aee4-a3fb118d5f30" />
+<img width="1436" height="752" alt="Screenshot 2026-09-16 at 19 51 19" src="https://github.com/user-attachments/assets/8d648043-dd58-4a2d-86ea-eed99f1a36ca" />
+<img width="1436" height="752" alt="Screenshot 2026-09-16 at 19 51 03" src="https://github.com/user-attachments/assets/47ba12ec-1bdd-4499-8288-2c946916088b" />
+<img width="1436" height="752" alt="Screenshot 2026-09-16 at 19 50 50" src="https://github.com/user-attachments/assets/02b373bf-99b0-4273-b763-1a76da883733" />
