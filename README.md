@@ -1,3 +1,4 @@
+![banner](https://raw.githubusercontent.com/elenaandreevasvinolup-alt/NekoScriptGraph/main/banner.png)
 # NekoScriptGraph (NSG)
 
 A Scratch-like visual programming plugin for Unity that **never puts anything into
