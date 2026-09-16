@@ -1,0 +1,29 @@
+{
+    "id": "stmt.while",
+    "level": "high",
+    "shape": "control",
+    "category": "重复当 {0}",
+    "categoryKey": "cat.ctrl",
+    "label": "repeat while {0}",
+    "labelEn": "repeat while {0}",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "cond",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "while",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": true,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

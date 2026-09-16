@@ -1,0 +1,43 @@
+{
+    "id": "api.DecalUtils.ProjectLightmapUV.3",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecalUtils",
+    "categoryKey": "cat.api",
+    "label": "DecalUtils.ProjectLightmapUV({0}, {1}, {2})",
+    "labelEn": "DecalUtils.ProjectLightmapUV({0}, {1}, {2})",
+    "labelRu": "DecalUtils.ProjectLightmapUV({0}, {1}, {2})",
+    "sockets": [
+        {
+            "name": "mesh",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "parents",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "takeSeamsIntoAccount",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalUtils.ProjectLightmapUV",
+    "matchArity": 3,
+    "builtin": true,
+    "manual": "DecalUtils.ProjectLightmapUV(mesh, parents, takeSeamsIntoAccount) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

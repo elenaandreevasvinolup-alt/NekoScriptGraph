@@ -1,0 +1,43 @@
+{
+    "id": "api.UnityEditor.DecaleryStandardPBRShaderGUI.OnGUI.2",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecaleryStandardPBRShaderGUI",
+    "categoryKey": "cat.api",
+    "label": "{0}DecaleryStandardPBRShaderGUI.OnGUI({1}, {2})",
+    "labelEn": "{0}DecaleryStandardPBRShaderGUI.OnGUI({1}, {2})",
+    "labelRu": "{0}DecaleryStandardPBRShaderGUI.OnGUI({1}, {2})",
+    "sockets": [
+        {
+            "name": "target",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "materialEditor",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "props",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecaleryStandardPBRShaderGUI.OnGUI",
+    "matchArity": 2,
+    "builtin": true,
+    "manual": "UnityEditor.DecaleryStandardPBRShaderGUI.OnGUI(materialEditor, props) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

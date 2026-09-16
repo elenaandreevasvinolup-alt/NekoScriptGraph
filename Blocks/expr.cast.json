@@ -1,0 +1,36 @@
+{
+    "id": "expr.cast",
+    "level": "high",
+    "shape": "expression",
+    "category": "把 {1} 转为 {0}",
+    "categoryKey": "cat.expr",
+    "label": "cast {1} to {0}",
+    "labelEn": "cast {1} to {0}",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "type",
+            "kind": "text",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "operand",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "({{0}}){{1}}",
+    "node": "cast",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": false,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

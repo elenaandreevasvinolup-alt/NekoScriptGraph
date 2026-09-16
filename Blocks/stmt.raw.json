@@ -1,0 +1,29 @@
+{
+    "id": "stmt.raw",
+    "level": "high",
+    "shape": "statement",
+    "category": "原始C# {0}",
+    "categoryKey": "cat.raw",
+    "label": "raw C# {0}",
+    "labelEn": "raw C# {0}",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "text",
+            "kind": "text",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "{{0}}",
+    "node": "rawStmt",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": false,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

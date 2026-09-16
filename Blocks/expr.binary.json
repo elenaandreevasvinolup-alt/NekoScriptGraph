@@ -1,0 +1,63 @@
+{
+    "id": "expr.binary",
+    "level": "high",
+    "shape": "expression",
+    "category": "{0} {1} {2}",
+    "categoryKey": "cat.expr",
+    "label": "{0} {1} {2}",
+    "labelEn": "{0} {1} {2}",
+    "labelRu": "{0} {1} {2}",
+    "sockets": [
+        {
+            "name": "left",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "op",
+            "kind": "text",
+            "required": true,
+            "variadic": false,
+            "choices": [
+                "+",
+                "-",
+                "*",
+                "/",
+                "%",
+                "==",
+                "!=",
+                "<",
+                ">",
+                "<=",
+                ">=",
+                "&&",
+                "||",
+                "??",
+                "&",
+                "|",
+                "^",
+                "<<",
+                ">>"
+            ]
+        },
+        {
+            "name": "right",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "binary",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": true,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

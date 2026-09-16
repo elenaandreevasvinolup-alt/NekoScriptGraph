@@ -1,0 +1,64 @@
+{
+    "id": "api.DecalSpawner.Init.5",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecalSpawner",
+    "categoryKey": "cat.api",
+    "label": "{0}DecalSpawner.Init({1}, {2}, {3}, {4}, {5})",
+    "labelEn": "{0}DecalSpawner.Init({1}, {2}, {3}, {4}, {5})",
+    "labelRu": "{0}DecalSpawner.Init({1}, {2}, {3}, {4}, {5})",
+    "sockets": [
+        {
+            "name": "target",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "maxTrisTotal",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "maxTrisInDecal",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "preferredMode",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "preferDrawIndirect",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "preferredShaderPass",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalSpawner.Init",
+    "matchArity": 5,
+    "builtin": true,
+    "manual": "DecalSpawner.Init(maxTrisTotal, maxTrisInDecal, preferredMode, preferDrawIndirect, preferredShaderPass) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

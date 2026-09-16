@@ -1,0 +1,43 @@
+{
+    "id": "stmt.localDecl",
+    "level": "high",
+    "shape": "statement",
+    "category": "声明 {0} {1} = {2}",
+    "categoryKey": "cat.var",
+    "label": "declare {0} {1} = {2}",
+    "labelEn": "declare {0} {1} = {2}",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "type",
+            "kind": "text",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "name",
+            "kind": "var",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "value",
+            "kind": "expr",
+            "required": false,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "{{0}} {{1}} = {{2}};",
+    "node": "localDecl",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": true,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

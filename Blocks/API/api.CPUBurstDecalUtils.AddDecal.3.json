@@ -1,0 +1,43 @@
+{
+    "id": "api.CPUBurstDecalUtils.AddDecal.3",
+    "level": "high",
+    "shape": "statement",
+    "category": "CPUBurstDecalUtils",
+    "categoryKey": "cat.api",
+    "label": "CPUBurstDecalUtils.AddDecal({0}, {1}, {2})",
+    "labelEn": "CPUBurstDecalUtils.AddDecal({0}, {1}, {2})",
+    "labelRu": "CPUBurstDecalUtils.AddDecal({0}, {1}, {2})",
+    "sockets": [
+        {
+            "name": "group",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "desc",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "receiver",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "CPUBurstDecalUtils.AddDecal",
+    "matchArity": 3,
+    "builtin": true,
+    "manual": "CPUBurstDecalUtils.AddDecal(group, desc, receiver) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

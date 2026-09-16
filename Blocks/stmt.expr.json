@@ -1,0 +1,29 @@
+{
+    "id": "stmt.expr",
+    "level": "high",
+    "shape": "statement",
+    "category": "执行 {0}",
+    "categoryKey": "cat.var",
+    "label": "run {0}",
+    "labelEn": "run {0}",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "value",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "{{0}};",
+    "node": "expr",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": false,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

@@ -1,0 +1,1835 @@
+{
+  "schemaVersion": 1,
+  "code": "de",
+  "name": "Deutsch",
+  "rtl": false,
+  "order": 50,
+  "ui": [
+    {
+      "key": "api.done",
+      "value": "{0} API-Blöcke erzeugt ({1} übersprungen)."
+    },
+    {
+      "key": "api.folder",
+      "value": "Quellordner der API-Blöcke"
+    },
+    {
+      "key": "api.noFolder",
+      "value": "Die Auswahl ist kein Ordner."
+    },
+    {
+      "key": "api.noSources",
+      "value": "Keine Quelldateien gefunden."
+    },
+    {
+      "key": "api.projectPrompt",
+      "value": "Analysierte Quelldateien: {0}. Für jede öffentliche Methode werden API-Blöcke erzeugt in:\n{1}\n\nIn einem großen Projekt können das Tausende Blöcke sein. Fortfahren?"
+    },
+    {
+      "key": "api.prompt",
+      "value": "API-Blöcke für den ausgewählten Ordner erzeugen?"
+    },
+    {
+      "key": "api.title",
+      "value": "API-Blockbibliothek erzeugen"
+    },
+    {
+      "key": "blk.body",
+      "value": "Körper"
+    },
+    {
+      "key": "blk.del",
+      "value": "Löschen"
+    },
+    {
+      "key": "blk.down",
+      "value": "Nach unten"
+    },
+    {
+      "key": "blk.dup",
+      "value": "Duplizieren"
+    },
+    {
+      "key": "blk.editRaw",
+      "value": "Rohes Fragment bearbeiten"
+    },
+    {
+      "key": "blk.else",
+      "value": "sonst"
+    },
+    {
+      "key": "blk.insertAbove",
+      "value": "Oberhalb einfügen"
+    },
+    {
+      "key": "blk.insertBelow",
+      "value": "Unterhalb einfügen"
+    },
+    {
+      "key": "blk.menu",
+      "value": "Blockaktionen"
+    },
+    {
+      "key": "blk.rename",
+      "value": "Umbenennen"
+    },
+    {
+      "key": "blk.replace",
+      "value": "Ersetzen"
+    },
+    {
+      "key": "blk.up",
+      "value": "Nach oben"
+    },
+    {
+      "key": "bp.tidy",
+      "value": "Automatisch anordnen"
+    },
+    {
+      "key": "btn.api",
+      "value": "API-Blöcke für den gewählten Ordner erzeugen"
+    },
+    {
+      "key": "btn.apiAll",
+      "value": "API-Bibliothek für das ganze Projekt erstellen"
+    },
+    {
+      "key": "btn.checkpoint",
+      "value": "Speicherpunkte"
+    },
+    {
+      "key": "btn.collapseAll",
+      "value": "Alle einklappen"
+    },
+    {
+      "key": "btn.errors",
+      "value": "Probleme"
+    },
+    {
+      "key": "btn.expandAll",
+      "value": "Alle ausklappen"
+    },
+    {
+      "key": "btn.fit",
+      "value": "An Fenster anpassen"
+    },
+    {
+      "key": "btn.generate",
+      "value": "Blöcke → Code"
+    },
+    {
+      "key": "btn.git",
+      "value": "Git-Punkt"
+    },
+    {
+      "key": "btn.import",
+      "value": "Code → Blöcke"
+    },
+    {
+      "key": "btn.library",
+      "value": "Blockbibliothek neu laden"
+    },
+    {
+      "key": "btn.manage",
+      "value": "Unter Verwaltung nehmen"
+    },
+    {
+      "key": "btn.manageAll",
+      "value": "Das ganze Projekt unter Verwaltung nehmen"
+    },
+    {
+      "key": "btn.manageFolder",
+      "value": "Ausgewählten Ordner unter Verwaltung nehmen"
+    },
+    {
+      "key": "btn.open",
+      "value": "Ausgewähltes Skript öffnen"
+    },
+    {
+      "key": "btn.preview",
+      "value": "Vorschau"
+    },
+    {
+      "key": "btn.redo",
+      "value": "Wiederholen"
+    },
+    {
+      "key": "btn.selftest",
+      "value": "Selbsttest"
+    },
+    {
+      "key": "btn.shell",
+      "value": "Pipeline-Hülle erzeugen"
+    },
+    {
+      "key": "btn.sprites",
+      "value": "Sprites verwenden"
+    },
+    {
+      "key": "btn.undo",
+      "value": "Rückgängig"
+    },
+    {
+      "key": "btn.unmanage",
+      "value": "Freigeben"
+    },
+    {
+      "key": "btn.unmanageAll",
+      "value": "Blockdateien des ganzen Projekts abbauen"
+    },
+    {
+      "key": "btn.unmanageFolder",
+      "value": "Blockdateien des gewählten Ordners abbauen"
+    },
+    {
+      "key": "cat.api",
+      "value": "API"
+    },
+    {
+      "key": "cat.apiAll",
+      "value": "Alle"
+    },
+    {
+      "key": "cat.ctrl",
+      "value": "Steuerung"
+    },
+    {
+      "key": "cat.expr",
+      "value": "Ausdrücke"
+    },
+    {
+      "key": "cat.frame",
+      "value": "Struktur"
+    },
+    {
+      "key": "cat.macro",
+      "value": "Eigene Blöcke"
+    },
+    {
+      "key": "cat.raw",
+      "value": "Notausgang"
+    },
+    {
+      "key": "cat.var",
+      "value": "Variablen"
+    },
+    {
+      "key": "confirm.alreadyManaged",
+      "value": "steht bereits unter Verwaltung."
+    },
+    {
+      "key": "confirm.cancel",
+      "value": "Abbrechen"
+    },
+    {
+      "key": "confirm.continue",
+      "value": "Fortfahren"
+    },
+    {
+      "key": "confirm.manage",
+      "value": "Blockdatei jetzt anlegen und importieren?"
+    },
+    {
+      "key": "confirm.manageYes",
+      "value": "Anlegen und importieren"
+    },
+    {
+      "key": "confirm.notManaged",
+      "value": "hat keine Blockdatei; es ist bereits ein freies Skript."
+    },
+    {
+      "key": "confirm.ok",
+      "value": "OK"
+    },
+    {
+      "key": "confirm.overwriteConflict",
+      "value": "Beide Seiten wurden geändert. Überschreiben verwirft manuelle Änderungen in Methodenkörpern (Felder, Attribute und Kommentare bleiben erhalten). Fortfahren?"
+    },
+    {
+      "key": "confirm.reimportConflict",
+      "value": "Die Blöcke enthalten Änderungen, die nie in den Code geschrieben wurden. Erneutes Importieren verwirft sie. Fortfahren?"
+    },
+    {
+      "key": "confirm.selectCs",
+      "value": "Wählen Sie zuerst eine Quelldatei im Project-Fenster."
+    },
+    {
+      "key": "confirm.selectFolder",
+      "value": "Wählen Sie zuerst einen Ordner im Project-Fenster."
+    },
+    {
+      "key": "confirm.title",
+      "value": "NekoScriptGraph"
+    },
+    {
+      "key": "confirm.unmanage",
+      "value": "Blockdatei löschen? Das Skript wird wieder frei."
+    },
+    {
+      "key": "confirm.unmanageYes",
+      "value": "Blockdatei löschen"
+    },
+    {
+      "key": "cp.confirmLoad",
+      "value": "Laden überschreibt den aktuellen Code und die Blöcke. Fortfahren?"
+    },
+    {
+      "key": "cp.delete",
+      "value": "Speicherpunkt {0} löschen"
+    },
+    {
+      "key": "cp.empty",
+      "value": "Speicherpunkt {0} (leer)"
+    },
+    {
+      "key": "cp.load",
+      "value": "Speicherpunkt {0} laden ({1})"
+    },
+    {
+      "key": "cp.loaded",
+      "value": "Speicherpunkt {0} geladen"
+    },
+    {
+      "key": "cp.overwrite",
+      "value": "In Speicherpunkt {0} sichern (überschreiben: {1})"
+    },
+    {
+      "key": "cp.save",
+      "value": "In Speicherpunkt {0} sichern"
+    },
+    {
+      "key": "cp.saved",
+      "value": "In Speicherpunkt {0} gesichert"
+    },
+    {
+      "key": "diag.summary",
+      "value": "Fehler {0} / Warnungen {1} / Infos {2}"
+    },
+    {
+      "key": "drag.blocks",
+      "value": "{0} Block/Blöcke"
+    },
+    {
+      "key": "err.clear",
+      "value": "Leeren"
+    },
+    {
+      "key": "err.count",
+      "value": "Fehler {0} / Warnungen {1} / Infos {2}"
+    },
+    {
+      "key": "err.details",
+      "value": "Details im Fenster Probleme."
+    },
+    {
+      "key": "err.error",
+      "value": "Fehler"
+    },
+    {
+      "key": "err.generateFailed",
+      "value": "Überschreiben fehlgeschlagen"
+    },
+    {
+      "key": "err.goto",
+      "value": "Gehe zu"
+    },
+    {
+      "key": "err.info",
+      "value": "Info"
+    },
+    {
+      "key": "err.manageFailed",
+      "value": "Import fehlgeschlagen"
+    },
+    {
+      "key": "err.none",
+      "value": "Keine Diagnosen."
+    },
+    {
+      "key": "err.reimportFailed",
+      "value": "Erneuter Import fehlgeschlagen"
+    },
+    {
+      "key": "err.title",
+      "value": "NekoScriptGraph Probleme"
+    },
+    {
+      "key": "err.warning",
+      "value": "Warnung"
+    },
+    {
+      "key": "files.btnHide",
+      "value": "Konfigdateien ausblenden"
+    },
+    {
+      "key": "files.btnShow",
+      "value": "Konfigdateien einblenden"
+    },
+    {
+      "key": "files.hidden",
+      "value": "{0} Konfigdateien ausgeblendet"
+    },
+    {
+      "key": "files.hotkeyHint",
+      "value": "Tastenkürzel: Ctrl/Cmd+Shift+H"
+    },
+    {
+      "key": "files.shown",
+      "value": "{0} Konfigdateien eingeblendet"
+    },
+    {
+      "key": "git.done",
+      "value": "Git-Punkt erstellt."
+    },
+    {
+      "key": "git.failed",
+      "value": "Git-Commit fehlgeschlagen: "
+    },
+    {
+      "key": "git.noChanges",
+      "value": "Keine Änderungen für dieses Skript."
+    },
+    {
+      "key": "git.notRepo",
+      "value": "Dieses Projekt ist kein Git-Repository."
+    },
+    {
+      "key": "git.note",
+      "value": "Integrierte Speicherpunkte liegen in .checkpoints (von Git ignoriert) und können nie mit der Historie kollidieren."
+    },
+    {
+      "key": "health.afterReturn",
+      "value": "Anweisungen nach return werden nie ausgeführt"
+    },
+    {
+      "key": "health.btn",
+      "value": "Qualitätsprüfung"
+    },
+    {
+      "key": "health.constantCondition",
+      "value": "die Bedingung ist immer {0}; der Zweig ist toter Code"
+    },
+    {
+      "key": "health.cycle",
+      "value": "Zirkelbezug: der Ausdruck erreicht sich über seine Eingänge selbst, keine Generierung möglich"
+    },
+    {
+      "key": "health.danglingInput",
+      "value": "der Pflichteingang '{0}' ist leer; im erzeugten Code fehlt ein Argument"
+    },
+    {
+      "key": "health.duplicate",
+      "value": "dupliziertes Fragment: diese Struktur kommt {0} Mal vor"
+    },
+    {
+      "key": "health.emptyBody",
+      "value": "der Steuerblock hat keinen Körper und tut nichts"
+    },
+    {
+      "key": "health.emptyMethod",
+      "value": "der Methodenkörper ist leer"
+    },
+    {
+      "key": "health.escapeRatio",
+      "value": "rohe Fragmente sind {0} % des Codes (Schwelle {1} %), die Teilmenge ist zu eng"
+    },
+    {
+      "key": "health.expressionSize",
+      "value": "Ausdruck zu groß: {0} Knoten (Schwelle {1})"
+    },
+    {
+      "key": "health.fix",
+      "value": "Korrekturvorschlag"
+    },
+    {
+      "key": "health.fixAddRelease",
+      "value": "Passenden Freigabeaufruf anhängen"
+    },
+    {
+      "key": "health.fixApply",
+      "value": "Anwenden"
+    },
+    {
+      "key": "health.fixBreakLink",
+      "value": "Die schließende Verbindung trennen"
+    },
+    {
+      "key": "health.fixFillZero",
+      "value": "Mit 0 auffüllen"
+    },
+    {
+      "key": "health.fixNone",
+      "value": "Keine automatisch anwendbare Korrektur"
+    },
+    {
+      "key": "health.leak",
+      "value": "mögliche Lücke: {0} {2} Mal verwendet, {1} nur {3} Mal"
+    },
+    {
+      "key": "health.locals",
+      "value": "zu viele lokale Variablen: {0} (Schwelle {1})"
+    },
+    {
+      "key": "health.magicNumber",
+      "value": "magische Zahl {0} kommt {1} Mal vor"
+    },
+    {
+      "key": "health.memberChain",
+      "value": "lange Zugriffskette: {0} (Schwelle {1})"
+    },
+    {
+      "key": "health.methodLength",
+      "value": "Methode ist lang: {0} Anweisungen (Schwelle {1})"
+    },
+    {
+      "key": "health.methods",
+      "value": "Methode"
+    },
+    {
+      "key": "health.metric.escapes",
+      "value": "rohe Fragmente {0} ({1:F1} %)"
+    },
+    {
+      "key": "health.metric.methods",
+      "value": "Methoden {0}"
+    },
+    {
+      "key": "health.metric.statements",
+      "value": "Anweisungsblöcke {0}"
+    },
+    {
+      "key": "health.nesting",
+      "value": "tiefe Verschachtelung: {0} Ebenen (Schwelle {1})"
+    },
+    {
+      "key": "health.none",
+      "value": "Keine Probleme gefunden."
+    },
+    {
+      "key": "health.optimizerNone",
+      "value": "Die Auto-Optimierung ist noch nicht aktiv (kommt mit den Low-Level-Blöcken). Die Schnittstelle ist bereit: registrieren Sie ein INsg_Pass(Optimizer)."
+    },
+    {
+      "key": "health.optimizerReady",
+      "value": "Schnittstelle zur Auto-Optimierung bereit: {0} Optimierer registriert."
+    },
+    {
+      "key": "health.passes",
+      "value": "registrierte Durchläufe: {0}"
+    },
+    {
+      "key": "health.placeholderName",
+      "value": "Platzhaltername: '{0}'"
+    },
+    {
+      "key": "health.rerun",
+      "value": "Erneut prüfen"
+    },
+    {
+      "key": "health.score",
+      "value": "Bewertung {0}/100"
+    },
+    {
+      "key": "health.shortName",
+      "value": "Name zu kurz: '{0}'"
+    },
+    {
+      "key": "health.summary",
+      "value": "Fehler {0} / Warnungen {1} / Hinweise {2}"
+    },
+    {
+      "key": "health.title",
+      "value": "Architekturqualität"
+    },
+    {
+      "key": "health.unusedLocal",
+      "value": "die lokale Variable '{0}' wird nach der Deklaration nie gelesen"
+    },
+    {
+      "key": "info.canonicalized",
+      "value": "{0} Methoden sind nicht in kanonischer Form; das erste „Blöcke → Code“ normalisiert sie (Semantik unverändert)."
+    },
+    {
+      "key": "info.exported",
+      "value": "Standard-Blockbibliothek geschrieben nach {0}"
+    },
+    {
+      "key": "info.libraryReloaded",
+      "value": "Blockbibliothek neu geladen: {0} Blöcke."
+    },
+    {
+      "key": "info.managed",
+      "value": "Unter Verwaltung: {0}"
+    },
+    {
+      "key": "info.unmanaged",
+      "value": "Freigegeben: {0}"
+    },
+    {
+      "key": "macro.cannot",
+      "value": "aus diesem Knoten wird kein Block"
+    },
+    {
+      "key": "macro.create",
+      "value": "Eigenen Block erstellen"
+    },
+    {
+      "key": "macro.saved",
+      "value": "eigener Block gespeichert: {0}"
+    },
+    {
+      "key": "manage.done",
+      "value": "{0} Dateien unter Verwaltung, {1} fehlgeschlagen."
+    },
+    {
+      "key": "manage.nothing",
+      "value": "Keine neuen Dateien zu verwalten."
+    },
+    {
+      "key": "manage.prompt",
+      "value": "{0} Quelldateien werden unter Verwaltung genommen; jede erhält ihre eigene .nsg.json und wird in Blöcke importiert. In einem großen Projekt dauert das. Fortfahren?"
+    },
+    {
+      "key": "manage.title",
+      "value": "Massenverwaltung"
+    },
+    {
+      "key": "manage.unmanageDone",
+      "value": "{0} Dateien abgebaut, {1} fehlgeschlagen."
+    },
+    {
+      "key": "manage.unmanageNothing",
+      "value": "Keine Blockdateien zum Abbauen."
+    },
+    {
+      "key": "manage.unmanagePrompt",
+      "value": "{0} Dateien werden abgebaut: die danebenliegende .nsg.json wird gelöscht, und jedes Skript ist wieder eine gewöhnliche Datei. Die .cs selbst wird nie angefasst. Fortfahren?"
+    },
+    {
+      "key": "menu.api",
+      "value": "API-Blöcke für den gewählten Ordner erzeugen"
+    },
+    {
+      "key": "menu.apiAll",
+      "value": "API-Bibliothek für das ganze Projekt erstellen"
+    },
+    {
+      "key": "menu.export",
+      "value": "Standard-Blockbibliothek exportieren"
+    },
+    {
+      "key": "menu.health",
+      "value": "Architekturqualität"
+    },
+    {
+      "key": "menu.languages",
+      "value": "Sprachen: geladene anzeigen"
+    },
+    {
+      "key": "menu.manage",
+      "value": "Ausgewähltes Skript unter Verwaltung nehmen"
+    },
+    {
+      "key": "menu.manageAll",
+      "value": "Das ganze Projekt unter Verwaltung nehmen"
+    },
+    {
+      "key": "menu.manageFolder",
+      "value": "Ausgewählten Ordner unter Verwaltung nehmen"
+    },
+    {
+      "key": "menu.open",
+      "value": "Block-Editor öffnen"
+    },
+    {
+      "key": "menu.problems",
+      "value": "Probleme"
+    },
+    {
+      "key": "menu.reload",
+      "value": "Blockbibliothek neu laden"
+    },
+    {
+      "key": "menu.selftest",
+      "value": "Selbsttest: Hin und zurück"
+    },
+    {
+      "key": "menu.shell",
+      "value": "ShaderLab-Hülle erzeugen"
+    },
+    {
+      "key": "menu.unmanage",
+      "value": "Ausgewähltes Skript freigeben"
+    },
+    {
+      "key": "msg.canonicalized",
+      "value": "{0} Methoden sind nicht in kanonischer Form (fehlende Klammern, uneinheitliche Einrückung oder mehrere gleichwertige Schreibweisen). Das erste „Blöcke → Code“ normalisiert sie; die Semantik bleibt, das Format ändert sich."
+    },
+    {
+      "key": "msg.expect",
+      "value": "'{0}' erwartet, gefunden '{1}'"
+    },
+    {
+      "key": "msg.expectIdent",
+      "value": "Bezeichner erwartet, gefunden '{0}'"
+    },
+    {
+      "key": "msg.foreachName",
+      "value": "foreach: Name der Iterationsvariable fehlt"
+    },
+    {
+      "key": "msg.lexUnknown",
+      "value": "unbekanntes Zeichen '{0}'"
+    },
+    {
+      "key": "msg.methodCount",
+      "value": "die Anzahl der Methoden auf der Platte ({0}) stimmt nicht mit der Blockdatei ({1}) überein. Importieren Sie den Code erneut oder gleichen Sie von Hand ab, dann erzeugen Sie."
+    },
+    {
+      "key": "msg.methodName",
+      "value": "Methode Nr. {0} stimmt nicht überein: Platte '{1}', Blockdatei '{2}'."
+    },
+    {
+      "key": "msg.noModelGenerate",
+      "value": "kein Blockmodell zum Erzeugen."
+    },
+    {
+      "key": "msg.noModelRender",
+      "value": "kein Blockmodell zum Rendern."
+    },
+    {
+      "key": "msg.noSource",
+      "value": "Quelldatei nicht gefunden: {0}"
+    },
+    {
+      "key": "msg.outOfSubset",
+      "value": "diese Anweisung liegt außerhalb der Teilmenge; als rohes Fragment erhalten (nicht zurück in Blöcke wandelbar)"
+    },
+    {
+      "key": "msg.unknownBlock",
+      "value": "'{0}' ist nicht in der Bibliothek."
+    },
+    {
+      "key": "msg.unknownBlockHint",
+      "value": "'{0}' ist nicht in der Bibliothek; fügen Sie das passende JSON unter Blocks/ hinzu."
+    },
+    {
+      "key": "msg.unknownExpr",
+      "value": "unbekannter Ausdrucksblock '{0}', kann nicht zurück in Code übersetzt werden."
+    },
+    {
+      "key": "msg.unknownStmt",
+      "value": "unbekannter Block '{0}', kann nicht zurück in Code übersetzt werden. Installieren Sie die passende Blockdefinition oder nutzen Sie ein rohes Fragment."
+    },
+    {
+      "key": "palette.empty",
+      "value": "(keine Blöcke verfügbar)"
+    },
+    {
+      "key": "palette.found",
+      "value": "{0} Blöcke gefunden"
+    },
+    {
+      "key": "palette.noMatch",
+      "value": "Keine passenden Blöcke"
+    },
+    {
+      "key": "palette.other",
+      "value": "Sonstige"
+    },
+    {
+      "key": "palette.search",
+      "value": "Blöcke suchen…"
+    },
+    {
+      "key": "pick.clickToAdd",
+      "value": "Klicken, um einen Block hinzuzufügen"
+    },
+    {
+      "key": "pick.empty",
+      "value": "(leer)"
+    },
+    {
+      "key": "pick.expression",
+      "value": "Ausdrucksblock einfügen"
+    },
+    {
+      "key": "pick.noMatch",
+      "value": "Kein passender Block"
+    },
+    {
+      "key": "pick.search",
+      "value": "Suchen"
+    },
+    {
+      "key": "pick.statement",
+      "value": "Anweisungsblock einfügen"
+    },
+    {
+      "key": "ribbon.group.api",
+      "value": "API"
+    },
+    {
+      "key": "ribbon.group.edit",
+      "value": "Bearbeiten"
+    },
+    {
+      "key": "ribbon.group.file",
+      "value": "Diese Datei"
+    },
+    {
+      "key": "ribbon.group.files",
+      "value": "Konfigdateien"
+    },
+    {
+      "key": "ribbon.group.folder",
+      "value": "Ordner"
+    },
+    {
+      "key": "ribbon.group.inspect",
+      "value": "Prüfen"
+    },
+    {
+      "key": "ribbon.group.lang",
+      "value": "Sprache"
+    },
+    {
+      "key": "ribbon.group.library",
+      "value": "Bibliothek"
+    },
+    {
+      "key": "ribbon.group.mode",
+      "value": "Modus"
+    },
+    {
+      "key": "ribbon.group.project",
+      "value": "Gesamtes Projekt"
+    },
+    {
+      "key": "ribbon.group.script",
+      "value": "Skript"
+    },
+    {
+      "key": "ribbon.group.version",
+      "value": "Version"
+    },
+    {
+      "key": "ribbon.group.zoom",
+      "value": "Zoom"
+    },
+    {
+      "key": "ribbon.tab.home",
+      "value": "Start"
+    },
+    {
+      "key": "ribbon.tab.manage",
+      "value": "Verwalten"
+    },
+    {
+      "key": "ribbon.tab.tools",
+      "value": "Extras"
+    },
+    {
+      "key": "ribbon.tab.view",
+      "value": "Ansicht"
+    },
+    {
+      "key": "scratch.hint",
+      "value": "Abgetrennte Blöcke (werden nicht kompiliert)"
+    },
+    {
+      "key": "selftest.fail",
+      "value": "FAIL"
+    },
+    {
+      "key": "selftest.pass",
+      "value": "PASS"
+    },
+    {
+      "key": "selftest.summary",
+      "value": "{0} Prüfungen, {1} bestanden, {2} fehlgeschlagen"
+    },
+    {
+      "key": "selftest.title",
+      "value": "Ergebnis des Selbsttests"
+    },
+    {
+      "key": "shader.needShader",
+      "value": "Wählen Sie zuerst eine .shader-Datei."
+    },
+    {
+      "key": "shader.shellDone",
+      "value": "Pipeline-Hülle {0} erzeugt: {1}"
+    },
+    {
+      "key": "shader.shellPrompt",
+      "value": "Die aktuelle Datei wird mit einer vollständigen ShaderLab-Hülle für die Pipeline {0} überschrieben. Der bisherige Inhalt geht verloren. Fortfahren?"
+    },
+    {
+      "key": "shader.shellTitle",
+      "value": "ShaderLab-Hülle erzeugen"
+    },
+    {
+      "key": "state.blocksdirty",
+      "value": "Blöcke geändert"
+    },
+    {
+      "key": "state.conflict",
+      "value": "Konflikt: beide Seiten geändert"
+    },
+    {
+      "key": "state.csdirty",
+      "value": "Code geändert"
+    },
+    {
+      "key": "state.synced",
+      "value": "Synchron"
+    },
+    {
+      "key": "state.unmanaged",
+      "value": "Freies Skript (keine Blockdatei)"
+    },
+    {
+      "key": "tree.base",
+      "value": "erbt von"
+    },
+    {
+      "key": "tree.bodyEmpty",
+      "value": "(leer)"
+    },
+    {
+      "key": "tree.class",
+      "value": "Klasse"
+    },
+    {
+      "key": "tree.customBase",
+      "value": "Benutzerdefiniert…"
+    },
+    {
+      "key": "tree.enum",
+      "value": "Enumeration"
+    },
+    {
+      "key": "tree.interface",
+      "value": "Schnittstelle"
+    },
+    {
+      "key": "tree.method",
+      "value": "Methode"
+    },
+    {
+      "key": "tree.namespace",
+      "value": "Namespace"
+    },
+    {
+      "key": "tree.noBase",
+      "value": "(keine)"
+    },
+    {
+      "key": "tree.raw",
+      "value": "Member (unverändert)"
+    },
+    {
+      "key": "tree.struct",
+      "value": "Struktur"
+    },
+    {
+      "key": "tree.using",
+      "value": "using"
+    },
+    {
+      "key": "view.blueprint",
+      "value": "Blueprint (UE)"
+    },
+    {
+      "key": "view.mode",
+      "value": "Ansicht"
+    },
+    {
+      "key": "view.stack",
+      "value": "Stapel (Scratch)"
+    },
+    {
+      "key": "win.lang",
+      "value": "Sprache"
+    },
+    {
+      "key": "win.noDoc",
+      "value": "Keine Datei geöffnet"
+    },
+    {
+      "key": "win.none",
+      "value": "—"
+    },
+    {
+      "key": "win.pipeline",
+      "value": "Pipeline"
+    },
+    {
+      "key": "win.pipelineAuto",
+      "value": "Auto ({0})"
+    },
+    {
+      "key": "win.title",
+      "value": "NekoScriptGraph Block-Editor"
+    }
+  ],
+  "blocks": [
+    {
+      "key": "c.abs",
+      "value": "Betrag {0}"
+    },
+    {
+      "key": "c.assert",
+      "value": "Zusicherung {0}"
+    },
+    {
+      "key": "c.atof",
+      "value": "Zeichenkette zu Gleitkomma {0}"
+    },
+    {
+      "key": "c.atoi",
+      "value": "Zeichenkette zu Ganzzahl {0}"
+    },
+    {
+      "key": "c.exit",
+      "value": "Programm beenden {0}"
+    },
+    {
+      "key": "c.fabs",
+      "value": "Betrag (Gleitkomma) {0}"
+    },
+    {
+      "key": "c.fclose",
+      "value": "Datei schließen {0}"
+    },
+    {
+      "key": "c.fgets",
+      "value": "lese Zeile aus {0} nach {1}, höchstens {2} Bytes"
+    },
+    {
+      "key": "c.fopen",
+      "value": "Datei {0} öffnen im Modus {1}"
+    },
+    {
+      "key": "c.fprintf",
+      "value": "schreibe {1} nach {0}"
+    },
+    {
+      "key": "c.free",
+      "value": "gib frei {0}"
+    },
+    {
+      "key": "c.malloc",
+      "value": "{0} Bytes belegen"
+    },
+    {
+      "key": "c.memcpy",
+      "value": "kopiere {2} Bytes {1}→{0}"
+    },
+    {
+      "key": "c.memset",
+      "value": "fülle {0} mit {1} auf {2} Bytes"
+    },
+    {
+      "key": "c.perror",
+      "value": "Fehler melden {0}"
+    },
+    {
+      "key": "c.pow",
+      "value": "Potenz {0}^{1}"
+    },
+    {
+      "key": "c.printf",
+      "value": "printf({0})"
+    },
+    {
+      "key": "c.sizeof",
+      "value": "sizeof({0})"
+    },
+    {
+      "key": "c.sqrt",
+      "value": "Quadratwurzel {0}"
+    },
+    {
+      "key": "c.strcat",
+      "value": "Zeichenketten verketten {0}+{1}"
+    },
+    {
+      "key": "c.strcmp",
+      "value": "Zeichenketten vergleichen {0} {1}"
+    },
+    {
+      "key": "c.strcpy",
+      "value": "Zeichenkette kopieren {1}→{0}"
+    },
+    {
+      "key": "c.strlen",
+      "value": "Länge der Zeichenkette {0}"
+    },
+    {
+      "key": "cpp.at",
+      "value": "Element {1} von {0}"
+    },
+    {
+      "key": "cpp.cin",
+      "value": "eingeben nach {0}"
+    },
+    {
+      "key": "cpp.cout",
+      "value": "ausgeben {0}"
+    },
+    {
+      "key": "cpp.delete",
+      "value": "gib frei {0}"
+    },
+    {
+      "key": "cpp.getline",
+      "value": "lese Zeile nach {0}"
+    },
+    {
+      "key": "cpp.make_shared",
+      "value": "gemeinsamer Zeiger {0} = neu"
+    },
+    {
+      "key": "cpp.map",
+      "value": "Zuordnung {0}<{1}, {2}>"
+    },
+    {
+      "key": "cpp.move",
+      "value": "verschiebe {0}"
+    },
+    {
+      "key": "cpp.printf",
+      "value": "printf({0})"
+    },
+    {
+      "key": "cpp.push_back",
+      "value": "hänge {1} an {0}"
+    },
+    {
+      "key": "cpp.size",
+      "value": "Größe von {0}"
+    },
+    {
+      "key": "cpp.sizeof",
+      "value": "sizeof({0})"
+    },
+    {
+      "key": "cpp.stoi",
+      "value": "Zeichenkette zu Ganzzahl {0}"
+    },
+    {
+      "key": "cpp.string",
+      "value": "Zeichenkette {0} = {1}"
+    },
+    {
+      "key": "cpp.throw",
+      "value": "werfe {0}"
+    },
+    {
+      "key": "cpp.to_string",
+      "value": "in Zeichenkette {0}"
+    },
+    {
+      "key": "cpp.unique_ptr",
+      "value": "eindeutiger Zeiger {0} = neu {1}"
+    },
+    {
+      "key": "cpp.vector",
+      "value": "Vektor {0}<{1}>"
+    },
+    {
+      "key": "expr.binary",
+      "value": "{0} {1} {2}"
+    },
+    {
+      "key": "expr.call",
+      "value": "rufe {0}"
+    },
+    {
+      "key": "expr.cast",
+      "value": "wandle {1} in {0}"
+    },
+    {
+      "key": "expr.conditional",
+      "value": "wenn {0} dann {1} sonst {2}"
+    },
+    {
+      "key": "expr.ident",
+      "value": "Variable {0}"
+    },
+    {
+      "key": "expr.index",
+      "value": "Element {1} von {0}"
+    },
+    {
+      "key": "expr.literal",
+      "value": "{0}"
+    },
+    {
+      "key": "expr.member",
+      "value": "{1} von {0}"
+    },
+    {
+      "key": "expr.new",
+      "value": "erzeuge {0}"
+    },
+    {
+      "key": "expr.postfix",
+      "value": "{0}{1}"
+    },
+    {
+      "key": "expr.raw",
+      "value": "rohes C# {0}"
+    },
+    {
+      "key": "expr.unary",
+      "value": "{0}{1}"
+    },
+    {
+      "key": "hlsl.abs",
+      "value": "Betrag {0}"
+    },
+    {
+      "key": "hlsl.acos",
+      "value": "Arkuskosinus {0}"
+    },
+    {
+      "key": "hlsl.all",
+      "value": "alle {0} wahr"
+    },
+    {
+      "key": "hlsl.any",
+      "value": "irgendein {0} wahr"
+    },
+    {
+      "key": "hlsl.asin",
+      "value": "Arkussinus {0}"
+    },
+    {
+      "key": "hlsl.atan",
+      "value": "Arkustangens {0}"
+    },
+    {
+      "key": "hlsl.atan2",
+      "value": "Arkustangens {0}/{1}"
+    },
+    {
+      "key": "hlsl.ceil",
+      "value": "aufrunden {0}"
+    },
+    {
+      "key": "hlsl.clamp",
+      "value": "begrenze {0} auf {1}..{2}"
+    },
+    {
+      "key": "hlsl.clip",
+      "value": "beschneide {0}"
+    },
+    {
+      "key": "hlsl.clipPos",
+      "value": "Clip-Space-Koordinate {0}"
+    },
+    {
+      "key": "hlsl.cos",
+      "value": "Kosinus {0}"
+    },
+    {
+      "key": "hlsl.cross",
+      "value": "Kreuzprodukt {0}×{1}"
+    },
+    {
+      "key": "hlsl.ddx",
+      "value": "Bildschirmänderung X von {0}"
+    },
+    {
+      "key": "hlsl.ddy",
+      "value": "Bildschirmänderung Y von {0}"
+    },
+    {
+      "key": "hlsl.determinant",
+      "value": "Determinante {0}"
+    },
+    {
+      "key": "hlsl.discard",
+      "value": "Pixel verwerfen"
+    },
+    {
+      "key": "hlsl.distance",
+      "value": "Abstand {0}→{1}"
+    },
+    {
+      "key": "hlsl.dot",
+      "value": "Skalarprodukt {0}·{1}"
+    },
+    {
+      "key": "hlsl.exp",
+      "value": "e hoch {0}"
+    },
+    {
+      "key": "hlsl.exp2",
+      "value": "2 hoch {0}"
+    },
+    {
+      "key": "hlsl.floor",
+      "value": "abrunden {0}"
+    },
+    {
+      "key": "hlsl.fmod",
+      "value": "Gleitkomma-Modulo {0} {1}"
+    },
+    {
+      "key": "hlsl.frac",
+      "value": "Nachkommateil {0}"
+    },
+    {
+      "key": "hlsl.length",
+      "value": "Länge {0}"
+    },
+    {
+      "key": "hlsl.lerp",
+      "value": "interpoliere {0}→{1} mit {2}"
+    },
+    {
+      "key": "hlsl.log",
+      "value": "natürlicher Logarithmus {0}"
+    },
+    {
+      "key": "hlsl.log2",
+      "value": "Logarithmus zur Basis 2 von {0}"
+    },
+    {
+      "key": "hlsl.mad",
+      "value": "Multiplizieren-Addieren {0}×{1}+{2}"
+    },
+    {
+      "key": "hlsl.max",
+      "value": "größerer Wert {0} {1}"
+    },
+    {
+      "key": "hlsl.min",
+      "value": "kleinerer Wert {0} {1}"
+    },
+    {
+      "key": "hlsl.mul",
+      "value": "Matrixprodukt {0}×{1}"
+    },
+    {
+      "key": "hlsl.normalize",
+      "value": "normalisiere {0}"
+    },
+    {
+      "key": "hlsl.pow",
+      "value": "Potenz {0}^{1}"
+    },
+    {
+      "key": "hlsl.rcp",
+      "value": "Kehrwert {0}"
+    },
+    {
+      "key": "hlsl.reflect",
+      "value": "reflektiere {0} an {1}"
+    },
+    {
+      "key": "hlsl.refract",
+      "value": "breche {0} an {1} mit Brechungsindex {2}"
+    },
+    {
+      "key": "hlsl.round",
+      "value": "runden {0}"
+    },
+    {
+      "key": "hlsl.rsqrt",
+      "value": "Kehrwert der Quadratwurzel {0}"
+    },
+    {
+      "key": "hlsl.sample",
+      "value": "sample {0} bei {1}"
+    },
+    {
+      "key": "hlsl.saturate",
+      "value": "saturate({0})"
+    },
+    {
+      "key": "hlsl.sign",
+      "value": "Vorzeichen {0}"
+    },
+    {
+      "key": "hlsl.sin",
+      "value": "Sinus {0}"
+    },
+    {
+      "key": "hlsl.smoothstep",
+      "value": "weicher Übergang {0}..{1} bei {2}"
+    },
+    {
+      "key": "hlsl.sqrt",
+      "value": "Quadratwurzel {0}"
+    },
+    {
+      "key": "hlsl.step",
+      "value": "Stufe {0} Schwelle {1}"
+    },
+    {
+      "key": "hlsl.tan",
+      "value": "Tangens {0}"
+    },
+    {
+      "key": "hlsl.tex2D",
+      "value": "sample {0} bei {1}"
+    },
+    {
+      "key": "hlsl.tex2Dlod",
+      "value": "sample {0} bei {1}"
+    },
+    {
+      "key": "hlsl.texCUBE",
+      "value": "Würfel-Sampling {0} Richtung {1}"
+    },
+    {
+      "key": "hlsl.transpose",
+      "value": "transponiere {0}"
+    },
+    {
+      "key": "hlsl.trunc",
+      "value": "abschneiden {0}"
+    },
+    {
+      "key": "java.add",
+      "value": "hänge {1} an {0}"
+    },
+    {
+      "key": "java.arraysSort",
+      "value": "sortiere {0}"
+    },
+    {
+      "key": "java.equals",
+      "value": "{0} gleich {1}"
+    },
+    {
+      "key": "java.format",
+      "value": "formatiere {0} mit {1}"
+    },
+    {
+      "key": "java.get",
+      "value": "Element {1} von {0}"
+    },
+    {
+      "key": "java.length",
+      "value": "Länge von {0}"
+    },
+    {
+      "key": "java.list",
+      "value": "Liste {0}"
+    },
+    {
+      "key": "java.map",
+      "value": "Zuordnung {0}"
+    },
+    {
+      "key": "java.mathAbs",
+      "value": "Betrag {0}"
+    },
+    {
+      "key": "java.mathMax",
+      "value": "größerer Wert {0} {1}"
+    },
+    {
+      "key": "java.mathMin",
+      "value": "kleinerer Wert {0} {1}"
+    },
+    {
+      "key": "java.mathPow",
+      "value": "Potenz {0}^{1}"
+    },
+    {
+      "key": "java.mathRandom",
+      "value": "Zufallszahl"
+    },
+    {
+      "key": "java.mathSqrt",
+      "value": "Quadratwurzel {0}"
+    },
+    {
+      "key": "java.parseDouble",
+      "value": "Zeichenkette zu Gleitkomma {0}"
+    },
+    {
+      "key": "java.parseInt",
+      "value": "Zeichenkette zu Ganzzahl {0}"
+    },
+    {
+      "key": "java.print",
+      "value": "ausgeben (ohne Umbruch) {0}"
+    },
+    {
+      "key": "java.println",
+      "value": "ausgeben {0}"
+    },
+    {
+      "key": "java.put",
+      "value": "lege {1} → {2} in {0}"
+    },
+    {
+      "key": "java.split",
+      "value": "zerlege {0} nach {1}"
+    },
+    {
+      "key": "java.substring",
+      "value": "Teilstring {1}..{2} von {0}"
+    },
+    {
+      "key": "java.throw",
+      "value": "werfe {0}"
+    },
+    {
+      "key": "java.toString",
+      "value": "{0} in Zeichenkette"
+    },
+    {
+      "key": "java.valueOf",
+      "value": "in Zeichenkette {0}"
+    },
+    {
+      "key": "py.abs",
+      "value": "Betrag {0}"
+    },
+    {
+      "key": "py.append",
+      "value": "hänge {0} an {1}"
+    },
+    {
+      "key": "py.assert",
+      "value": "Zusicherung {0}"
+    },
+    {
+      "key": "py.chr",
+      "value": "Code zu Zeichen {0}"
+    },
+    {
+      "key": "py.del",
+      "value": "lösche {0}"
+    },
+    {
+      "key": "py.dict",
+      "value": "Wörterbuch {0}"
+    },
+    {
+      "key": "py.enumerate",
+      "value": "mit Index {0}"
+    },
+    {
+      "key": "py.float",
+      "value": "in Gleitkomma {0}"
+    },
+    {
+      "key": "py.format",
+      "value": "formatiere {0} mit {1}"
+    },
+    {
+      "key": "py.fromImport",
+      "value": "aus {0} importiere {1}"
+    },
+    {
+      "key": "py.global",
+      "value": "global {0}"
+    },
+    {
+      "key": "py.import",
+      "value": "importiere {0}"
+    },
+    {
+      "key": "py.input",
+      "value": "Eingabe lesen {0}"
+    },
+    {
+      "key": "py.int",
+      "value": "in Ganzzahl {0}"
+    },
+    {
+      "key": "py.isinstance",
+      "value": "{0} ist {1}"
+    },
+    {
+      "key": "py.items",
+      "value": "Paare von {0}"
+    },
+    {
+      "key": "py.join",
+      "value": "verbinde {1} mit {0}"
+    },
+    {
+      "key": "py.keys",
+      "value": "Schlüssel von {0}"
+    },
+    {
+      "key": "py.len",
+      "value": "Länge {0}"
+    },
+    {
+      "key": "py.list",
+      "value": "Liste {0}"
+    },
+    {
+      "key": "py.lower",
+      "value": "{0} in Kleinbuchstaben"
+    },
+    {
+      "key": "py.max",
+      "value": "Maximum von {0}"
+    },
+    {
+      "key": "py.min",
+      "value": "Minimum von {0}"
+    },
+    {
+      "key": "py.ord",
+      "value": "Zeichencode {0}"
+    },
+    {
+      "key": "py.pass",
+      "value": "pass"
+    },
+    {
+      "key": "py.print",
+      "value": "print({0})"
+    },
+    {
+      "key": "py.raise",
+      "value": "werfe {0}"
+    },
+    {
+      "key": "py.range",
+      "value": "Bereich {0}"
+    },
+    {
+      "key": "py.replace",
+      "value": "ersetze {1} durch {2} in {0}"
+    },
+    {
+      "key": "py.repr",
+      "value": "Darstellung {0}"
+    },
+    {
+      "key": "py.round",
+      "value": "runden {0}"
+    },
+    {
+      "key": "py.set",
+      "value": "Menge {0}"
+    },
+    {
+      "key": "py.sorted",
+      "value": "sortiere {0}"
+    },
+    {
+      "key": "py.split",
+      "value": "zerlege {1} nach {0}"
+    },
+    {
+      "key": "py.str",
+      "value": "in Zeichenkette {0}"
+    },
+    {
+      "key": "py.strip",
+      "value": "Leerraum entfernen {0}"
+    },
+    {
+      "key": "py.sum",
+      "value": "Summe von {0}"
+    },
+    {
+      "key": "py.tuple",
+      "value": "Tupel {0}"
+    },
+    {
+      "key": "py.type",
+      "value": "Typ {0}"
+    },
+    {
+      "key": "py.upper",
+      "value": "{0} in Großbuchstaben"
+    },
+    {
+      "key": "py.yield",
+      "value": "erzeuge {0}"
+    },
+    {
+      "key": "py.zip",
+      "value": "paare {0} {1}"
+    },
+    {
+      "key": "rust.assert",
+      "value": "Zusicherung {0}"
+    },
+    {
+      "key": "rust.collect",
+      "value": "sammle {0}"
+    },
+    {
+      "key": "rust.eprintln",
+      "value": "Fehlerausgabe {0}"
+    },
+    {
+      "key": "rust.err",
+      "value": "Err({0})"
+    },
+    {
+      "key": "rust.expect",
+      "value": "{0} auspacken, sonst Fehler {1}"
+    },
+    {
+      "key": "rust.filter",
+      "value": "filtere {0} nach {1}"
+    },
+    {
+      "key": "rust.format",
+      "value": "formatiere {0}"
+    },
+    {
+      "key": "rust.hashmap",
+      "value": "Zuordnung {0}"
+    },
+    {
+      "key": "rust.is_ok",
+      "value": "{0} ist Ok"
+    },
+    {
+      "key": "rust.iter",
+      "value": "durchlaufe {0}"
+    },
+    {
+      "key": "rust.len",
+      "value": "Länge von {0}"
+    },
+    {
+      "key": "rust.map",
+      "value": "auf {0} jedes {1} anwenden"
+    },
+    {
+      "key": "rust.none",
+      "value": "None"
+    },
+    {
+      "key": "rust.ok",
+      "value": "Ok({0})"
+    },
+    {
+      "key": "rust.panic",
+      "value": "panic!({0})"
+    },
+    {
+      "key": "rust.parse",
+      "value": "parse {0}"
+    },
+    {
+      "key": "rust.pop",
+      "value": "{0} letztes entnehmen"
+    },
+    {
+      "key": "rust.println",
+      "value": "println!({0})"
+    },
+    {
+      "key": "rust.push",
+      "value": "hänge {1} an {0}"
+    },
+    {
+      "key": "rust.some",
+      "value": "Some({0})"
+    },
+    {
+      "key": "rust.string_from",
+      "value": "Zeichenkette {0}"
+    },
+    {
+      "key": "rust.to_string",
+      "value": "{0} in Zeichenkette"
+    },
+    {
+      "key": "rust.todo",
+      "value": "Platzhalter todo"
+    },
+    {
+      "key": "rust.unreachable",
+      "value": "unerreichbar"
+    },
+    {
+      "key": "rust.unwrap",
+      "value": "{0} auspacken"
+    },
+    {
+      "key": "rust.unwrap_or",
+      "value": "{0} auspacken, sonst {1}"
+    },
+    {
+      "key": "rust.vec",
+      "value": "Vektor erzeugen {0}"
+    },
+    {
+      "key": "stmt.add",
+      "value": "erhöhe {0} um {1}"
+    },
+    {
+      "key": "stmt.assign",
+      "value": "setze {0} auf {1}"
+    },
+    {
+      "key": "stmt.break",
+      "value": "Schleife verlassen"
+    },
+    {
+      "key": "stmt.continue",
+      "value": "nächste Iteration"
+    },
+    {
+      "key": "stmt.div",
+      "value": "teile {0} durch {1}"
+    },
+    {
+      "key": "stmt.expr",
+      "value": "führe aus {0}"
+    },
+    {
+      "key": "stmt.for",
+      "value": "Zählschleife"
+    },
+    {
+      "key": "stmt.foreach",
+      "value": "für jedes {0} {1} in {2}"
+    },
+    {
+      "key": "stmt.if",
+      "value": "wenn {0}"
+    },
+    {
+      "key": "stmt.localDecl",
+      "value": "deklariere {0} {1} = {2}"
+    },
+    {
+      "key": "stmt.mod",
+      "value": "{0} modulo {1}"
+    },
+    {
+      "key": "stmt.mul",
+      "value": "multipliziere {0} mit {1}"
+    },
+    {
+      "key": "stmt.raw",
+      "value": "rohes C# {0}"
+    },
+    {
+      "key": "stmt.return",
+      "value": "gib zurück {0}"
+    },
+    {
+      "key": "stmt.sub",
+      "value": "verringere {0} um {1}"
+    },
+    {
+      "key": "stmt.while",
+      "value": "wiederhole solange {0}"
+    }
+  ]
+}

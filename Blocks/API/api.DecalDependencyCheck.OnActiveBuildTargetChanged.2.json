@@ -1,0 +1,43 @@
+{
+    "id": "api.DecalDependencyCheck.OnActiveBuildTargetChanged.2",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecalDependencyCheck",
+    "categoryKey": "cat.api",
+    "label": "{0}DecalDependencyCheck.OnActiveBuildTargetChanged({1}, {2})",
+    "labelEn": "{0}DecalDependencyCheck.OnActiveBuildTargetChanged({1}, {2})",
+    "labelRu": "{0}DecalDependencyCheck.OnActiveBuildTargetChanged({1}, {2})",
+    "sockets": [
+        {
+            "name": "target",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "previousTarget",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "newTarget",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalDependencyCheck.OnActiveBuildTargetChanged",
+    "matchArity": 2,
+    "builtin": true,
+    "manual": "DecalDependencyCheck.OnActiveBuildTargetChanged(previousTarget, newTarget) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

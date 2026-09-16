@@ -1,0 +1,36 @@
+{
+    "id": "api.DecalLightmaps.RefreshScene2.2",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecalLightmaps",
+    "categoryKey": "cat.api",
+    "label": "DecalLightmaps.RefreshScene2({0}, {1})",
+    "labelEn": "DecalLightmaps.RefreshScene2({0}, {1})",
+    "labelRu": "DecalLightmaps.RefreshScene2({0}, {1})",
+    "sockets": [
+        {
+            "name": "scene",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "storage",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalLightmaps.RefreshScene2",
+    "matchArity": 2,
+    "builtin": true,
+    "manual": "DecalLightmaps.RefreshScene2(scene, storage) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

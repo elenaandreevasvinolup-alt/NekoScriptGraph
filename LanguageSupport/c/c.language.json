@@ -1,0 +1,11 @@
+{
+  "apiVersion": 1,
+  "id": "c",
+  "displayName": "C",
+  "icon": "C",
+  "extensions": [".c", ".h"],
+  "blocksFolder": "blocks",
+  "engineType": "NekoScriptGraph.Nsg_CLanguage",
+  "author": "",
+  "note": "Устанавливаемый язык: удалите папку — и язык исчезнет из плагина."
+}

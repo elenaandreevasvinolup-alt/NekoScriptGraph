@@ -1,0 +1,11 @@
+{
+  "apiVersion": 1,
+  "id": "java",
+  "displayName": "Java",
+  "icon": "JAVA",
+  "extensions": [".java"],
+  "blocksFolder": "blocks",
+  "engineType": "NekoScriptGraph.Nsg_JavaLanguage",
+  "author": "",
+  "note": "Устанавливаемый язык: удалите папку — и язык исчезнет из плагина."
+}

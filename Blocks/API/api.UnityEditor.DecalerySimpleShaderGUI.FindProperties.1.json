@@ -1,0 +1,36 @@
+{
+    "id": "api.UnityEditor.DecalerySimpleShaderGUI.FindProperties.1",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecalerySimpleShaderGUI",
+    "categoryKey": "cat.api",
+    "label": "{0}DecalerySimpleShaderGUI.FindProperties({1})",
+    "labelEn": "{0}DecalerySimpleShaderGUI.FindProperties({1})",
+    "labelRu": "{0}DecalerySimpleShaderGUI.FindProperties({1})",
+    "sockets": [
+        {
+            "name": "target",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "props",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalerySimpleShaderGUI.FindProperties",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "UnityEditor.DecalerySimpleShaderGUI.FindProperties(props) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

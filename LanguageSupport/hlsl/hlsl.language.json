@@ -1,0 +1,11 @@
+{
+  "apiVersion": 1,
+  "id": "hlsl",
+  "displayName": "HLSL",
+  "icon": "HLSL",
+  "extensions": [".hlsl", ".shader", ".cginc", ".compute"],
+  "blocksFolder": "blocks",
+  "engineType": "NekoScriptGraph.Nsg_HlslLanguage",
+  "author": "",
+  "note": "Требует папку _cstyle (общий движок C-семейства). Удалите обе — и шейдеры исчезнут из плагина."
+}

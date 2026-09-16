@@ -1,0 +1,43 @@
+{
+    "id": "expr.conditional",
+    "level": "high",
+    "shape": "expression",
+    "category": "如果 {0} 就 {1} 否则 {2}",
+    "categoryKey": "cat.expr",
+    "label": "if {0} then {1} else {2}",
+    "labelEn": "if {0} then {1} else {2}",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "cond",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "then",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "else",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "conditional",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": true,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

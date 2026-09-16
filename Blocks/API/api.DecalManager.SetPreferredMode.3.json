@@ -1,0 +1,43 @@
+{
+    "id": "api.DecalManager.SetPreferredMode.3",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecalManager",
+    "categoryKey": "cat.api",
+    "label": "DecalManager.SetPreferredMode({0}, {1}, {2})",
+    "labelEn": "DecalManager.SetPreferredMode({0}, {1}, {2})",
+    "labelRu": "DecalManager.SetPreferredMode({0}, {1}, {2})",
+    "sockets": [
+        {
+            "name": "mode",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "drawIndirect",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "shaderPass",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalManager.SetPreferredMode",
+    "matchArity": 3,
+    "builtin": true,
+    "manual": "DecalManager.SetPreferredMode(mode, drawIndirect, shaderPass) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

@@ -1,0 +1,29 @@
+{
+    "id": "expr.ident",
+    "level": "high",
+    "shape": "expression",
+    "category": "变量 {0}",
+    "categoryKey": "cat.expr",
+    "label": "variable {0}",
+    "labelEn": "variable {0}",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "name",
+            "kind": "var",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "{{0}}",
+    "node": "ident",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": false,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

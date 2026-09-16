@@ -1,0 +1,29 @@
+{
+    "id": "expr.literal",
+    "level": "high",
+    "shape": "expression",
+    "category": "{0}",
+    "categoryKey": "cat.expr",
+    "label": "{0}",
+    "labelEn": "{0}",
+    "labelRu": "{0}",
+    "sockets": [
+        {
+            "name": "text",
+            "kind": "text",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "{{0}}",
+    "node": "literal",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": false,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

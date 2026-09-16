@@ -1,0 +1,29 @@
+{
+    "id": "api.CPUBurstDecalUtils.CreateGroup.1",
+    "level": "high",
+    "shape": "expression",
+    "category": "CPUBurstDecalUtils",
+    "categoryKey": "cat.api",
+    "label": "CPUBurstDecalUtils.CreateGroup({0})",
+    "labelEn": "CPUBurstDecalUtils.CreateGroup({0})",
+    "labelRu": "CPUBurstDecalUtils.CreateGroup({0})",
+    "sockets": [
+        {
+            "name": "desc",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "CPUBurstDecalUtils.CreateGroup",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "CPUBurstDecalUtils.CreateGroup(desc) : DecalUtils.Group",
+    "variantGroup": "",
+    "variantLabel": ""
+}

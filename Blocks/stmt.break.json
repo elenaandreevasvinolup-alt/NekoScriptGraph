@@ -1,0 +1,21 @@
+{
+    "id": "stmt.break",
+    "level": "high",
+    "shape": "statement",
+    "category": "跳出循环",
+    "categoryKey": "cat.ctrl",
+    "label": "break out of loop",
+    "labelEn": "break out of loop",
+    "labelRu": "",
+    "sockets": [],
+    "emit": "break;",
+    "node": "break",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": false,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

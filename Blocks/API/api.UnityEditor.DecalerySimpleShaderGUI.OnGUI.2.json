@@ -1,0 +1,43 @@
+{
+    "id": "api.UnityEditor.DecalerySimpleShaderGUI.OnGUI.2",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecalerySimpleShaderGUI",
+    "categoryKey": "cat.api",
+    "label": "{0}DecalerySimpleShaderGUI.OnGUI({1}, {2})",
+    "labelEn": "{0}DecalerySimpleShaderGUI.OnGUI({1}, {2})",
+    "labelRu": "{0}DecalerySimpleShaderGUI.OnGUI({1}, {2})",
+    "sockets": [
+        {
+            "name": "target",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "materialEditor",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "props",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalerySimpleShaderGUI.OnGUI",
+    "matchArity": 2,
+    "builtin": true,
+    "manual": "UnityEditor.DecalerySimpleShaderGUI.OnGUI(materialEditor, props) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

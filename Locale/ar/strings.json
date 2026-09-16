@@ -1,0 +1,1779 @@
+{
+  "schemaVersion": 1,
+  "code": "ar",
+  "name": "العربية",
+  "rtl": true,
+  "order": 130,
+  "ui": [
+    {
+      "key": "api.done",
+      "value": "أُنشئت {0} كتلة API (تُخطّي {1})."
+    },
+    {
+      "key": "api.folder",
+      "value": "مجلد مصدر كتل API"
+    },
+    {
+      "key": "api.noFolder",
+      "value": "العنصر المحدد ليس مجلدًا."
+    },
+    {
+      "key": "api.noSources",
+      "value": "لم يُعثر على أي ملف مصدر."
+    },
+    {
+      "key": "api.projectPrompt",
+      "value": "فُحص {0} ملف مصدر. ستُولَّد كتل API لكل دوال public في:\n{1}\n\nفي مشروع كبير قد يعني ذلك آلاف الكتل ووقتًا طويلًا. هل تريد المتابعة؟"
+    },
+    {
+      "key": "api.prompt",
+      "value": "أنشئ كتل API للمجلد المحدد؟"
+    },
+    {
+      "key": "api.title",
+      "value": "أنشئ مكتبة كتل API"
+    },
+    {
+      "key": "blk.body",
+      "value": "الجسم"
+    },
+    {
+      "key": "blk.del",
+      "value": "احذف"
+    },
+    {
+      "key": "blk.down",
+      "value": "انقل لأسفل"
+    },
+    {
+      "key": "blk.dup",
+      "value": "كرّر"
+    },
+    {
+      "key": "blk.editRaw",
+      "value": "حرّر المقتطف الخام"
+    },
+    {
+      "key": "blk.else",
+      "value": "وإلا"
+    },
+    {
+      "key": "blk.insertAbove",
+      "value": "أدرج فوق"
+    },
+    {
+      "key": "blk.insertBelow",
+      "value": "أدرج تحت"
+    },
+    {
+      "key": "blk.menu",
+      "value": "إجراءات الكتلة"
+    },
+    {
+      "key": "blk.rename",
+      "value": "أعد التسمية"
+    },
+    {
+      "key": "blk.replace",
+      "value": "استبدل"
+    },
+    {
+      "key": "blk.up",
+      "value": "انقل لأعلى"
+    },
+    {
+      "key": "bp.tidy",
+      "value": "ترتيب تلقائي"
+    },
+    {
+      "key": "btn.api",
+      "value": "أنشئ كتل API للمجلد المحدد"
+    },
+    {
+      "key": "btn.apiAll",
+      "value": "ابنِ مكتبة API للمشروع كله"
+    },
+    {
+      "key": "btn.checkpoint",
+      "value": "نقاط الحفظ"
+    },
+    {
+      "key": "btn.collapseAll",
+      "value": "اطوِ الكل"
+    },
+    {
+      "key": "btn.errors",
+      "value": "المشكلات"
+    },
+    {
+      "key": "btn.expandAll",
+      "value": "وسّع الكل"
+    },
+    {
+      "key": "btn.fit",
+      "value": "ملاءمة النافذة"
+    },
+    {
+      "key": "btn.generate",
+      "value": "الكتل → الكود"
+    },
+    {
+      "key": "btn.git",
+      "value": "نقطة Git"
+    },
+    {
+      "key": "btn.import",
+      "value": "الكود → الكتل"
+    },
+    {
+      "key": "btn.library",
+      "value": "أعد تحميل مكتبة الكتل"
+    },
+    {
+      "key": "btn.manage",
+      "value": "ضع تحت الإدارة"
+    },
+    {
+      "key": "btn.manageAll",
+      "value": "ضع المشروع كله تحت الإدارة"
+    },
+    {
+      "key": "btn.manageFolder",
+      "value": "ضع المجلد المحدد تحت الإدارة"
+    },
+    {
+      "key": "btn.open",
+      "value": "افتح البرنامج النصي المحدد"
+    },
+    {
+      "key": "btn.preview",
+      "value": "معاينة"
+    },
+    {
+      "key": "btn.redo",
+      "value": "إعادة"
+    },
+    {
+      "key": "btn.selftest",
+      "value": "اختبار ذاتي"
+    },
+    {
+      "key": "btn.shell",
+      "value": "أنشئ هيكل خط المعالجة"
+    },
+    {
+      "key": "btn.sprites",
+      "value": "استخدم الصور"
+    },
+    {
+      "key": "btn.undo",
+      "value": "تراجع"
+    },
+    {
+      "key": "btn.unmanage",
+      "value": "حرّر من الإدارة"
+    },
+    {
+      "key": "btn.unmanageAll",
+      "value": "فكّ إعداد الكتل للمشروع كله"
+    },
+    {
+      "key": "btn.unmanageFolder",
+      "value": "فكّ إعداد الكتل للمجلد المحدد"
+    },
+    {
+      "key": "cat.api",
+      "value": "API"
+    },
+    {
+      "key": "cat.apiAll",
+      "value": "الكل"
+    },
+    {
+      "key": "cat.ctrl",
+      "value": "التحكم"
+    },
+    {
+      "key": "cat.expr",
+      "value": "التعبيرات"
+    },
+    {
+      "key": "cat.frame",
+      "value": "البنية"
+    },
+    {
+      "key": "cat.macro",
+      "value": "الكتل الخاصة"
+    },
+    {
+      "key": "cat.raw",
+      "value": "المخرج الاحتياطي"
+    },
+    {
+      "key": "cat.var",
+      "value": "المتغيرات"
+    },
+    {
+      "key": "confirm.alreadyManaged",
+      "value": "خاضع للإدارة بالفعل."
+    },
+    {
+      "key": "confirm.cancel",
+      "value": "إلغاء"
+    },
+    {
+      "key": "confirm.continue",
+      "value": "متابعة"
+    },
+    {
+      "key": "confirm.manage",
+      "value": "إنشاء ملف الكتل واستيراده الآن؟"
+    },
+    {
+      "key": "confirm.manageYes",
+      "value": "أنشئ واستورد"
+    },
+    {
+      "key": "confirm.notManaged",
+      "value": "لا ملف كتل له؛ إنه برنامج نصي حر أصلًا."
+    },
+    {
+      "key": "confirm.ok",
+      "value": "حسنًا"
+    },
+    {
+      "key": "confirm.overwriteConflict",
+      "value": "تغيّر الطرفان. الكتابة فوق ستُضيع التعديلات اليدوية داخل أجسام الدوال (تُحفظ الحقول والسمات والتعليقات). هل تريد المتابعة؟"
+    },
+    {
+      "key": "confirm.reimportConflict",
+      "value": "في الكتل تغييرات لم تُكتب إلى الكود قط. إعادة الاستيراد ستُضيعها. هل تريد المتابعة؟"
+    },
+    {
+      "key": "confirm.selectCs",
+      "value": "اختر أولًا ملف مصدر في نافذة Project."
+    },
+    {
+      "key": "confirm.selectFolder",
+      "value": "اختر أولًا مجلدًا في نافذة Project."
+    },
+    {
+      "key": "confirm.title",
+      "value": "NekoScriptGraph"
+    },
+    {
+      "key": "confirm.unmanage",
+      "value": "حذف ملف الكتل؟ سيعود البرنامج النصي حرًّا."
+    },
+    {
+      "key": "confirm.unmanageYes",
+      "value": "احذف ملف الكتل"
+    },
+    {
+      "key": "cp.confirmLoad",
+      "value": "تحميل نقطة حفظ سيستبدل الكود والكتل الحالية. هل تريد المتابعة؟"
+    },
+    {
+      "key": "cp.delete",
+      "value": "احذف نقطة الحفظ {0}"
+    },
+    {
+      "key": "cp.empty",
+      "value": "نقطة الحفظ {0} (فارغة)"
+    },
+    {
+      "key": "cp.load",
+      "value": "حمّل نقطة الحفظ {0} ({1})"
+    },
+    {
+      "key": "cp.loaded",
+      "value": "حُمّلت نقطة الحفظ {0}"
+    },
+    {
+      "key": "cp.overwrite",
+      "value": "احفظ في نقطة الحفظ {0} (كتابة فوق: {1})"
+    },
+    {
+      "key": "cp.save",
+      "value": "احفظ في نقطة الحفظ {0}"
+    },
+    {
+      "key": "cp.saved",
+      "value": "حُفظت في نقطة الحفظ {0}"
+    },
+    {
+      "key": "diag.summary",
+      "value": "أخطاء {0} / تحذيرات {1} / معلومات {2}"
+    },
+    {
+      "key": "drag.blocks",
+      "value": "{0} كتلة"
+    },
+    {
+      "key": "err.clear",
+      "value": "امسح"
+    },
+    {
+      "key": "err.count",
+      "value": "أخطاء {0} / تحذيرات {1} / معلومات {2}"
+    },
+    {
+      "key": "err.details",
+      "value": "راجع نافذة المشكلات للتفاصيل."
+    },
+    {
+      "key": "err.error",
+      "value": "خطأ"
+    },
+    {
+      "key": "err.generateFailed",
+      "value": "فشلت الكتابة فوق"
+    },
+    {
+      "key": "err.goto",
+      "value": "اذهب"
+    },
+    {
+      "key": "err.info",
+      "value": "معلومة"
+    },
+    {
+      "key": "err.manageFailed",
+      "value": "فشل الاستيراد"
+    },
+    {
+      "key": "err.none",
+      "value": "لا تشخيصات."
+    },
+    {
+      "key": "err.reimportFailed",
+      "value": "فشلت إعادة الاستيراد"
+    },
+    {
+      "key": "err.title",
+      "value": "مشكلات NekoScriptGraph"
+    },
+    {
+      "key": "err.warning",
+      "value": "تحذير"
+    },
+    {
+      "key": "files.btnHide",
+      "value": "إخفاء ملفات الإعداد"
+    },
+    {
+      "key": "files.btnShow",
+      "value": "إظهار ملفات الإعداد"
+    },
+    {
+      "key": "files.hidden",
+      "value": "تم إخفاء {0} من ملفات الإعداد"
+    },
+    {
+      "key": "files.hotkeyHint",
+      "value": "اختصار: Ctrl/Cmd+Shift+H"
+    },
+    {
+      "key": "files.shown",
+      "value": "تم إظهار {0} من ملفات الإعداد"
+    },
+    {
+      "key": "git.done",
+      "value": "أُنشئت نقطة Git."
+    },
+    {
+      "key": "git.failed",
+      "value": "فشل إيداع Git: "
+    },
+    {
+      "key": "git.noChanges",
+      "value": "لا تغييرات لهذا البرنامج النصي."
+    },
+    {
+      "key": "git.notRepo",
+      "value": "هذا المشروع ليس مستودع git."
+    },
+    {
+      "key": "git.note",
+      "value": "نقاط الحفظ المدمجة في .checkpoints (يتجاهلها git) ولا تتعارض أبدًا مع تاريخ المستودع."
+    },
+    {
+      "key": "health.afterReturn",
+      "value": "التعليمات بعد return لا تُنفّذ أبدًا"
+    },
+    {
+      "key": "health.btn",
+      "value": "فحص السلامة"
+    },
+    {
+      "key": "health.constantCondition",
+      "value": "الشرط دائمًا {0}؛ الفرع كود ميت"
+    },
+    {
+      "key": "health.cycle",
+      "value": "اعتماد دائري: التعبير يعود إلى نفسه عبر مدخلاته، فلا يمكن توليد الكود"
+    },
+    {
+      "key": "health.danglingInput",
+      "value": "المدخل المطلوب '{0}' فارغ؛ سينقص الكودَ وسيط"
+    },
+    {
+      "key": "health.duplicate",
+      "value": "مقتطف مكرر: هذا التركيب يظهر {0} مرات"
+    },
+    {
+      "key": "health.emptyBody",
+      "value": "كتلة التحكم بلا جسم ولا تفعل شيئًا"
+    },
+    {
+      "key": "health.emptyMethod",
+      "value": "جسم الدالة فارغ"
+    },
+    {
+      "key": "health.escapeRatio",
+      "value": "المقتطفات الخامة تشكّل {0}% من الكود (الحد {1}%)، أي أن المجموعة الفرعية ضيقة جدًا"
+    },
+    {
+      "key": "health.expressionSize",
+      "value": "التعبير كبير: {0} عقدة (الحد {1})"
+    },
+    {
+      "key": "health.fix",
+      "value": "الإصلاح المقترح"
+    },
+    {
+      "key": "health.fixAddRelease",
+      "value": "أضف نداء التحرير"
+    },
+    {
+      "key": "health.fixApply",
+      "value": "تطبيق"
+    },
+    {
+      "key": "health.fixBreakLink",
+      "value": "اقطع الرابط الذي يُغلق الدورة"
+    },
+    {
+      "key": "health.fixFillZero",
+      "value": "املأ بالقيمة 0"
+    },
+    {
+      "key": "health.fixNone",
+      "value": "لا إصلاح تلقائي"
+    },
+    {
+      "key": "health.leak",
+      "value": "تسرب محتمل: {0} استُخدم {2} مرة، و{1} {3} فقط"
+    },
+    {
+      "key": "health.locals",
+      "value": "متغيرات محلية كثيرة: {0} (الحد {1})"
+    },
+    {
+      "key": "health.magicNumber",
+      "value": "الرقم السحري {0} يظهر {1} مرات"
+    },
+    {
+      "key": "health.memberChain",
+      "value": "سلسلة الوصول للعضو طويلة: {0} (الحد {1})"
+    },
+    {
+      "key": "health.methodLength",
+      "value": "الدالة طويلة: {0} تعليمة (الحد {1})"
+    },
+    {
+      "key": "health.methods",
+      "value": "الدالة"
+    },
+    {
+      "key": "health.metric.escapes",
+      "value": "مقتطفات خامة {0} ({1:F1}%)"
+    },
+    {
+      "key": "health.metric.methods",
+      "value": "دوال {0}"
+    },
+    {
+      "key": "health.metric.statements",
+      "value": "كتل تعليمات {0}"
+    },
+    {
+      "key": "health.nesting",
+      "value": "التداخل عميق: {0} مستويات (الحد {1})"
+    },
+    {
+      "key": "health.none",
+      "value": "لم تُوجد مشكلات."
+    },
+    {
+      "key": "health.optimizerNone",
+      "value": "التحسين التلقائي غير مفعّل بعد (سيأتي مع الكتل منخفضة المستوى). المنفذ جاهز: سجّل INsg_Pass(Optimizer)."
+    },
+    {
+      "key": "health.optimizerReady",
+      "value": "منفذ التحسين التلقائي جاهز: سُجّلت {0} تمريرة تحسين."
+    },
+    {
+      "key": "health.passes",
+      "value": "التمريرات المسجلة: {0}"
+    },
+    {
+      "key": "health.placeholderName",
+      "value": "اسم مؤقت: '{0}'"
+    },
+    {
+      "key": "health.rerun",
+      "value": "أعد التشغيل"
+    },
+    {
+      "key": "health.score",
+      "value": "الدرجة {0}/100"
+    },
+    {
+      "key": "health.shortName",
+      "value": "الاسم قصير جدًا: '{0}'"
+    },
+    {
+      "key": "health.summary",
+      "value": "أخطاء {0} / تحذيرات {1} / ملاحظات {2}"
+    },
+    {
+      "key": "health.title",
+      "value": "سلامة المعمار"
+    },
+    {
+      "key": "health.unusedLocal",
+      "value": "المتغير المحلي '{0}' لا يُقرأ بعد تعريفه"
+    },
+    {
+      "key": "info.canonicalized",
+      "value": "{0} دالة ليست بالصيغة القياسية؛ أول «الكتل → الكود» سيعيد تنسيقها (المعنى لا يتغير)."
+    },
+    {
+      "key": "info.exported",
+      "value": "كُتبت مكتبة الكتل الافتراضية في {0}"
+    },
+    {
+      "key": "info.libraryReloaded",
+      "value": "أُعيد تحميل مكتبة الكتل: {0} كتلة."
+    },
+    {
+      "key": "info.managed",
+      "value": "تحت الإدارة: {0}"
+    },
+    {
+      "key": "info.unmanaged",
+      "value": "حُرّر: {0}"
+    },
+    {
+      "key": "macro.cannot",
+      "value": "لا يمكن تحويل هذه العقدة إلى كتلة"
+    },
+    {
+      "key": "macro.create",
+      "value": "أنشئ كتلة خاصة"
+    },
+    {
+      "key": "macro.saved",
+      "value": "تم حفظ الكتلة الخاصة: {0}"
+    },
+    {
+      "key": "manage.done",
+      "value": "وُضع {0} ملف تحت الإدارة، وفشل {1}."
+    },
+    {
+      "key": "manage.nothing",
+      "value": "لا ملفات جديدة للإدارة."
+    },
+    {
+      "key": "manage.prompt",
+      "value": "سيُوضع {0} ملف مصدر تحت الإدارة؛ لكل ملف .nsg.json خاص به ويُستورد إلى كتل. في مشروع كبير يستغرق ذلك وقتًا. هل تريد المتابعة؟"
+    },
+    {
+      "key": "manage.title",
+      "value": "إدارة جماعية"
+    },
+    {
+      "key": "manage.unmanageDone",
+      "value": "فُكّ {0} ملف، وفشل {1}."
+    },
+    {
+      "key": "manage.unmanageNothing",
+      "value": "لا إعداد كتل لفكّه."
+    },
+    {
+      "key": "manage.unmanagePrompt",
+      "value": "سيُفكّ إعداد الكتل لـ{0} ملف: يُحذف ملف .nsg.json المجاور ويعود كل برنامج نصي ملفًا عاديًا. لا يُمسّ ملف .cs نفسه أبدًا. هل تريد المتابعة؟"
+    },
+    {
+      "key": "msg.canonicalized",
+      "value": "{0} دالة ليست بالصيغة القياسية (أقواس ناقصة أو إزاحة غير متسقة أو أحد عدة أشكال مكافئة). أول «الكتل → الكود» سيطبّعها؛ المعنى لا يتغير والتنسيق يتغير."
+    },
+    {
+      "key": "msg.expect",
+      "value": "كان المتوقع '{0}'، ووُجد '{1}'"
+    },
+    {
+      "key": "msg.expectIdent",
+      "value": "كان المتوقع معرّفًا، ووُجد '{0}'"
+    },
+    {
+      "key": "msg.foreachName",
+      "value": "في foreach اسم متغير التكرار مفقود"
+    },
+    {
+      "key": "msg.lexUnknown",
+      "value": "حرف غير معروف '{0}'"
+    },
+    {
+      "key": "msg.methodCount",
+      "value": "عدد الدوال على القرص ({0}) لا يطابق ملف الكتل ({1}). أعد استيراد الكود أولًا أو حاذِه يدويًا ثم ولّد."
+    },
+    {
+      "key": "msg.methodName",
+      "value": "الدالة رقم {0} غير مطابقة: على القرص '{1}'، وفي ملف الكتل '{2}'."
+    },
+    {
+      "key": "msg.noModelGenerate",
+      "value": "لا نموذج كتل للتوليد."
+    },
+    {
+      "key": "msg.noModelRender",
+      "value": "لا نموذج كتل للعرض."
+    },
+    {
+      "key": "msg.noSource",
+      "value": "لم يُعثر على الملف المصدر: {0}"
+    },
+    {
+      "key": "msg.outOfSubset",
+      "value": "هذه التعليمة خارج المجموعة الفرعية؛ حُفظت كمقتطف خام (لا يمكن إرجاعها إلى كتل)"
+    },
+    {
+      "key": "msg.unknownBlock",
+      "value": "‏'{0}' ليس في المكتبة."
+    },
+    {
+      "key": "msg.unknownBlockHint",
+      "value": "‏'{0}' ليس في المكتبة؛ أضف ملف JSON المطابق في Blocks/."
+    },
+    {
+      "key": "msg.unknownExpr",
+      "value": "كتلة تعبير غير معروفة '{0}'، لا يمكن ترجمتها إلى كود."
+    },
+    {
+      "key": "msg.unknownStmt",
+      "value": "كتلة غير معروفة '{0}'، لا يمكن ترجمتها إلى كود. ثبّت تعريف الكتلة المطابق أو استخدم كتلة المقتطف الخام."
+    },
+    {
+      "key": "palette.empty",
+      "value": "(لا كتل متاحة)"
+    },
+    {
+      "key": "palette.found",
+      "value": "عدد الكتل: {0}"
+    },
+    {
+      "key": "palette.noMatch",
+      "value": "لا كتل مطابقة"
+    },
+    {
+      "key": "palette.other",
+      "value": "أخرى"
+    },
+    {
+      "key": "palette.search",
+      "value": "ابحث عن الكتل…"
+    },
+    {
+      "key": "pick.clickToAdd",
+      "value": "انقر لإضافة كتلة"
+    },
+    {
+      "key": "pick.empty",
+      "value": "(فارغ)"
+    },
+    {
+      "key": "pick.expression",
+      "value": "أدرج كتلة تعبير"
+    },
+    {
+      "key": "pick.noMatch",
+      "value": "لا كتلة مطابقة"
+    },
+    {
+      "key": "pick.search",
+      "value": "بحث"
+    },
+    {
+      "key": "pick.statement",
+      "value": "أدرج كتلة تعليمة"
+    },
+    {
+      "key": "ribbon.group.api",
+      "value": "API"
+    },
+    {
+      "key": "ribbon.group.edit",
+      "value": "تحرير"
+    },
+    {
+      "key": "ribbon.group.file",
+      "value": "هذا الملف"
+    },
+    {
+      "key": "ribbon.group.files",
+      "value": "ملفات الإعداد"
+    },
+    {
+      "key": "ribbon.group.folder",
+      "value": "مجلد"
+    },
+    {
+      "key": "ribbon.group.inspect",
+      "value": "فحص"
+    },
+    {
+      "key": "ribbon.group.lang",
+      "value": "اللغة"
+    },
+    {
+      "key": "ribbon.group.library",
+      "value": "مكتبة"
+    },
+    {
+      "key": "ribbon.group.mode",
+      "value": "الوضع"
+    },
+    {
+      "key": "ribbon.group.project",
+      "value": "المشروع كامل"
+    },
+    {
+      "key": "ribbon.group.script",
+      "value": "برنامج نصي"
+    },
+    {
+      "key": "ribbon.group.version",
+      "value": "إصدار"
+    },
+    {
+      "key": "ribbon.group.zoom",
+      "value": "تكبير"
+    },
+    {
+      "key": "ribbon.tab.home",
+      "value": "الصفحة الرئيسية"
+    },
+    {
+      "key": "ribbon.tab.manage",
+      "value": "إدارة"
+    },
+    {
+      "key": "ribbon.tab.tools",
+      "value": "أدوات"
+    },
+    {
+      "key": "ribbon.tab.view",
+      "value": "عرض"
+    },
+    {
+      "key": "scratch.hint",
+      "value": "كتل غير موصولة (لا تُترجم)"
+    },
+    {
+      "key": "selftest.fail",
+      "value": "FAIL"
+    },
+    {
+      "key": "selftest.pass",
+      "value": "PASS"
+    },
+    {
+      "key": "selftest.summary",
+      "value": "{0} فحصًا، نجح {1}، فشل {2}"
+    },
+    {
+      "key": "selftest.title",
+      "value": "نتيجة الاختبار الذاتي"
+    },
+    {
+      "key": "shader.needShader",
+      "value": "اختر أولًا ملف .shader."
+    },
+    {
+      "key": "shader.shellDone",
+      "value": "أُنشئ هيكل خط المعالجة {0}: {1}"
+    },
+    {
+      "key": "shader.shellPrompt",
+      "value": "سيُستبدل الملف الحالي بهيكل ShaderLab كامل لخط المعالجة {0}. كل ما في الملف سيُفقد. هل تريد المتابعة؟"
+    },
+    {
+      "key": "shader.shellTitle",
+      "value": "أنشئ هيكل ShaderLab"
+    },
+    {
+      "key": "state.blocksdirty",
+      "value": "تغيّرت الكتل"
+    },
+    {
+      "key": "state.conflict",
+      "value": "تعارض: تغيّر الطرفان"
+    },
+    {
+      "key": "state.csdirty",
+      "value": "تغيّر الكود"
+    },
+    {
+      "key": "state.synced",
+      "value": "متزامن"
+    },
+    {
+      "key": "state.unmanaged",
+      "value": "برنامج نصي حر (لا ملف كتل)"
+    },
+    {
+      "key": "tree.base",
+      "value": "يورث"
+    },
+    {
+      "key": "tree.bodyEmpty",
+      "value": "(فارغ)"
+    },
+    {
+      "key": "tree.class",
+      "value": "صنف"
+    },
+    {
+      "key": "tree.customBase",
+      "value": "مخصص…"
+    },
+    {
+      "key": "tree.enum",
+      "value": "تعداد"
+    },
+    {
+      "key": "tree.interface",
+      "value": "واجهة"
+    },
+    {
+      "key": "tree.method",
+      "value": "دالة"
+    },
+    {
+      "key": "tree.namespace",
+      "value": "مساحة الاسم"
+    },
+    {
+      "key": "tree.noBase",
+      "value": "(لا شيء)"
+    },
+    {
+      "key": "tree.raw",
+      "value": "عضو (يُحفظ كما هو)"
+    },
+    {
+      "key": "tree.struct",
+      "value": "بنية"
+    },
+    {
+      "key": "tree.using",
+      "value": "using"
+    },
+    {
+      "key": "view.blueprint",
+      "value": "Blueprint (UE)"
+    },
+    {
+      "key": "view.mode",
+      "value": "العرض"
+    },
+    {
+      "key": "view.stack",
+      "value": "مكدّس (Scratch)"
+    },
+    {
+      "key": "win.lang",
+      "value": "اللغة"
+    },
+    {
+      "key": "win.noDoc",
+      "value": "لا ملف مفتوح"
+    },
+    {
+      "key": "win.none",
+      "value": "—"
+    },
+    {
+      "key": "win.pipeline",
+      "value": "خط المعالجة"
+    },
+    {
+      "key": "win.pipelineAuto",
+      "value": "تلقائي ({0})"
+    },
+    {
+      "key": "win.title",
+      "value": "محرر كتل NekoScriptGraph"
+    }
+  ],
+  "blocks": [
+    {
+      "key": "c.abs",
+      "value": "القيمة المطلقة {0}"
+    },
+    {
+      "key": "c.assert",
+      "value": "تأكيد {0}"
+    },
+    {
+      "key": "c.atof",
+      "value": "نص إلى عدد عشري {0}"
+    },
+    {
+      "key": "c.atoi",
+      "value": "نص إلى عدد صحيح {0}"
+    },
+    {
+      "key": "c.exit",
+      "value": "أنهِ البرنامج {0}"
+    },
+    {
+      "key": "c.fabs",
+      "value": "القيمة المطلقة العشرية {0}"
+    },
+    {
+      "key": "c.fclose",
+      "value": "أغلق الملف {0}"
+    },
+    {
+      "key": "c.fgets",
+      "value": "اقرأ سطرًا من {0} إلى {1}، حتى {2} بايت"
+    },
+    {
+      "key": "c.fopen",
+      "value": "افتح الملف {0} بالوضع {1}"
+    },
+    {
+      "key": "c.fprintf",
+      "value": "اكتب {1} في {0}"
+    },
+    {
+      "key": "c.free",
+      "value": "حرّر {0}"
+    },
+    {
+      "key": "c.malloc",
+      "value": "احجز {0} بايت"
+    },
+    {
+      "key": "c.memcpy",
+      "value": "انسخ {2} بايت {1}→{0}"
+    },
+    {
+      "key": "c.memset",
+      "value": "املأ {0} بـ {1} لـ {2} بايت"
+    },
+    {
+      "key": "c.perror",
+      "value": "أبلغ عن الخطأ {0}"
+    },
+    {
+      "key": "c.pow",
+      "value": "قوة {0}^{1}"
+    },
+    {
+      "key": "c.printf",
+      "value": "printf({0})"
+    },
+    {
+      "key": "c.sizeof",
+      "value": "sizeof({0})"
+    },
+    {
+      "key": "c.sqrt",
+      "value": "الجذر التربيعي {0}"
+    },
+    {
+      "key": "c.strcat",
+      "value": "اربط النصوص {0}+{1}"
+    },
+    {
+      "key": "c.strcmp",
+      "value": "قارن النصوص {0} {1}"
+    },
+    {
+      "key": "c.strcpy",
+      "value": "انسخ النص {1}→{0}"
+    },
+    {
+      "key": "c.strlen",
+      "value": "طول النص {0}"
+    },
+    {
+      "key": "cpp.at",
+      "value": "العنصر {1} من {0}"
+    },
+    {
+      "key": "cpp.cin",
+      "value": "إدخال إلى {0}"
+    },
+    {
+      "key": "cpp.cout",
+      "value": "أخرج {0}"
+    },
+    {
+      "key": "cpp.delete",
+      "value": "حرّر {0}"
+    },
+    {
+      "key": "cpp.getline",
+      "value": "اقرأ سطرًا إلى {0}"
+    },
+    {
+      "key": "cpp.make_shared",
+      "value": "مؤشر مشترك {0} = جديد"
+    },
+    {
+      "key": "cpp.map",
+      "value": "خريطة {0}<{1}, {2}>"
+    },
+    {
+      "key": "cpp.move",
+      "value": "حرّك {0}"
+    },
+    {
+      "key": "cpp.printf",
+      "value": "printf({0})"
+    },
+    {
+      "key": "cpp.push_back",
+      "value": "أضف {1} إلى {0}"
+    },
+    {
+      "key": "cpp.size",
+      "value": "حجم {0}"
+    },
+    {
+      "key": "cpp.sizeof",
+      "value": "sizeof({0})"
+    },
+    {
+      "key": "cpp.stoi",
+      "value": "نص إلى عدد صحيح {0}"
+    },
+    {
+      "key": "cpp.string",
+      "value": "نص {0} = {1}"
+    },
+    {
+      "key": "cpp.throw",
+      "value": "ارمِ {0}"
+    },
+    {
+      "key": "cpp.to_string",
+      "value": "إلى نص {0}"
+    },
+    {
+      "key": "cpp.unique_ptr",
+      "value": "مؤشر فريد {0} = جديد {1}"
+    },
+    {
+      "key": "cpp.vector",
+      "value": "متجه {0}<{1}>"
+    },
+    {
+      "key": "expr.binary",
+      "value": "{0} {1} {2}"
+    },
+    {
+      "key": "expr.call",
+      "value": "استدعِ {0}"
+    },
+    {
+      "key": "expr.cast",
+      "value": "حوّل {1} إلى {0}"
+    },
+    {
+      "key": "expr.conditional",
+      "value": "إذا {0} فإن {1} وإلا {2}"
+    },
+    {
+      "key": "expr.ident",
+      "value": "متغير {0}"
+    },
+    {
+      "key": "expr.index",
+      "value": "العنصر {1} من {0}"
+    },
+    {
+      "key": "expr.literal",
+      "value": "{0}"
+    },
+    {
+      "key": "expr.member",
+      "value": "{1} من {0}"
+    },
+    {
+      "key": "expr.new",
+      "value": "أنشئ {0}"
+    },
+    {
+      "key": "expr.postfix",
+      "value": "{0}{1}"
+    },
+    {
+      "key": "expr.raw",
+      "value": "C# خام {0}"
+    },
+    {
+      "key": "expr.unary",
+      "value": "{0}{1}"
+    },
+    {
+      "key": "hlsl.abs",
+      "value": "القيمة المطلقة {0}"
+    },
+    {
+      "key": "hlsl.acos",
+      "value": "قوس جيب التمام {0}"
+    },
+    {
+      "key": "hlsl.all",
+      "value": "كل {0} صحيحة"
+    },
+    {
+      "key": "hlsl.any",
+      "value": "أي من {0} صحيح"
+    },
+    {
+      "key": "hlsl.asin",
+      "value": "قوس الجيب {0}"
+    },
+    {
+      "key": "hlsl.atan",
+      "value": "قوس الظل {0}"
+    },
+    {
+      "key": "hlsl.atan2",
+      "value": "قوس الظل {0}/{1}"
+    },
+    {
+      "key": "hlsl.ceil",
+      "value": "قرّب لأعلى {0}"
+    },
+    {
+      "key": "hlsl.clamp",
+      "value": "حدّ {0} إلى {1}..{2}"
+    },
+    {
+      "key": "hlsl.clip",
+      "value": "اقتطع {0}"
+    },
+    {
+      "key": "hlsl.clipPos",
+      "value": "إحداثي clip {0}"
+    },
+    {
+      "key": "hlsl.cos",
+      "value": "جيب التمام {0}"
+    },
+    {
+      "key": "hlsl.cross",
+      "value": "حاصل الضرب الاتجاهي {0}×{1}"
+    },
+    {
+      "key": "hlsl.ddx",
+      "value": "تغيّر الشاشة الأفقي لـ {0}"
+    },
+    {
+      "key": "hlsl.ddy",
+      "value": "تغيّر الشاشة الرأسي لـ {0}"
+    },
+    {
+      "key": "hlsl.determinant",
+      "value": "المحدد {0}"
+    },
+    {
+      "key": "hlsl.discard",
+      "value": "تجاهل البكسل"
+    },
+    {
+      "key": "hlsl.distance",
+      "value": "المسافة {0}→{1}"
+    },
+    {
+      "key": "hlsl.dot",
+      "value": "الضرب القياسي {0}·{1}"
+    },
+    {
+      "key": "hlsl.exp",
+      "value": "e أس {0}"
+    },
+    {
+      "key": "hlsl.exp2",
+      "value": "2 أس {0}"
+    },
+    {
+      "key": "hlsl.floor",
+      "value": "قرّب لأسفل {0}"
+    },
+    {
+      "key": "hlsl.fmod",
+      "value": "باقي عشري {0} {1}"
+    },
+    {
+      "key": "hlsl.frac",
+      "value": "الجزء العشري {0}"
+    },
+    {
+      "key": "hlsl.length",
+      "value": "الطول {0}"
+    },
+    {
+      "key": "hlsl.lerp",
+      "value": "استوفِ {0}→{1} بـ {2}"
+    },
+    {
+      "key": "hlsl.log",
+      "value": "اللوغاريتم الطبيعي {0}"
+    },
+    {
+      "key": "hlsl.log2",
+      "value": "لوغاريتم للأساس 2 لـ {0}"
+    },
+    {
+      "key": "hlsl.mad",
+      "value": "ضرب-جمع {0}×{1}+{2}"
+    },
+    {
+      "key": "hlsl.max",
+      "value": "الأكبر {0} {1}"
+    },
+    {
+      "key": "hlsl.min",
+      "value": "الأصغر {0} {1}"
+    },
+    {
+      "key": "hlsl.mul",
+      "value": "ضرب المصفوفات {0}×{1}"
+    },
+    {
+      "key": "hlsl.normalize",
+      "value": "طبّع {0}"
+    },
+    {
+      "key": "hlsl.pow",
+      "value": "قوة {0}^{1}"
+    },
+    {
+      "key": "hlsl.rcp",
+      "value": "المقلوب {0}"
+    },
+    {
+      "key": "hlsl.reflect",
+      "value": "اعكس {0} على {1}"
+    },
+    {
+      "key": "hlsl.refract",
+      "value": "اكسر {0} عند {1} معامل {2}"
+    },
+    {
+      "key": "hlsl.round",
+      "value": "قرّب {0}"
+    },
+    {
+      "key": "hlsl.rsqrt",
+      "value": "مقلوب الجذر {0}"
+    },
+    {
+      "key": "hlsl.sample",
+      "value": "عيّن {0} عند {1}"
+    },
+    {
+      "key": "hlsl.saturate",
+      "value": "saturate({0})"
+    },
+    {
+      "key": "hlsl.sign",
+      "value": "الإشارة {0}"
+    },
+    {
+      "key": "hlsl.sin",
+      "value": "الجيب {0}"
+    },
+    {
+      "key": "hlsl.smoothstep",
+      "value": "انتقال ناعم {0}..{1} عند {2}"
+    },
+    {
+      "key": "hlsl.sqrt",
+      "value": "الجذر التربيعي {0}"
+    },
+    {
+      "key": "hlsl.step",
+      "value": "درجة {0} عتبة {1}"
+    },
+    {
+      "key": "hlsl.tan",
+      "value": "الظل {0}"
+    },
+    {
+      "key": "hlsl.tex2D",
+      "value": "عيّن {0} عند {1}"
+    },
+    {
+      "key": "hlsl.tex2Dlod",
+      "value": "عيّن {0} عند {1}"
+    },
+    {
+      "key": "hlsl.texCUBE",
+      "value": "عيّنة مكعبة {0} اتجاه {1}"
+    },
+    {
+      "key": "hlsl.transpose",
+      "value": "انقل {0}"
+    },
+    {
+      "key": "hlsl.trunc",
+      "value": "اقتطع {0}"
+    },
+    {
+      "key": "java.add",
+      "value": "أضف {1} إلى {0}"
+    },
+    {
+      "key": "java.arraysSort",
+      "value": "رتّب {0}"
+    },
+    {
+      "key": "java.equals",
+      "value": "{0} يساوي {1}"
+    },
+    {
+      "key": "java.format",
+      "value": "نسّق {0} بـ {1}"
+    },
+    {
+      "key": "java.get",
+      "value": "العنصر {1} من {0}"
+    },
+    {
+      "key": "java.length",
+      "value": "طول {0}"
+    },
+    {
+      "key": "java.list",
+      "value": "قائمة {0}"
+    },
+    {
+      "key": "java.map",
+      "value": "خريطة {0}"
+    },
+    {
+      "key": "java.mathAbs",
+      "value": "القيمة المطلقة {0}"
+    },
+    {
+      "key": "java.mathMax",
+      "value": "الأكبر {0} {1}"
+    },
+    {
+      "key": "java.mathMin",
+      "value": "الأصغر {0} {1}"
+    },
+    {
+      "key": "java.mathPow",
+      "value": "قوة {0}^{1}"
+    },
+    {
+      "key": "java.mathRandom",
+      "value": "عدد عشوائي"
+    },
+    {
+      "key": "java.mathSqrt",
+      "value": "الجذر التربيعي {0}"
+    },
+    {
+      "key": "java.parseDouble",
+      "value": "نص إلى عدد عشري {0}"
+    },
+    {
+      "key": "java.parseInt",
+      "value": "نص إلى عدد صحيح {0}"
+    },
+    {
+      "key": "java.print",
+      "value": "أخرج (بدون سطر جديد) {0}"
+    },
+    {
+      "key": "java.println",
+      "value": "أخرج {0}"
+    },
+    {
+      "key": "java.put",
+      "value": "ضع {1} → {2} في {0}"
+    },
+    {
+      "key": "java.split",
+      "value": "اقسم {0} بـ {1}"
+    },
+    {
+      "key": "java.substring",
+      "value": "سلسلة فرعية {1}..{2} من {0}"
+    },
+    {
+      "key": "java.throw",
+      "value": "ارمِ {0}"
+    },
+    {
+      "key": "java.toString",
+      "value": "{0} إلى نص"
+    },
+    {
+      "key": "java.valueOf",
+      "value": "إلى نص {0}"
+    },
+    {
+      "key": "py.abs",
+      "value": "القيمة المطلقة {0}"
+    },
+    {
+      "key": "py.append",
+      "value": "أضف {0} إلى {1}"
+    },
+    {
+      "key": "py.assert",
+      "value": "تأكيد {0}"
+    },
+    {
+      "key": "py.chr",
+      "value": "من الرمز إلى الحرف {0}"
+    },
+    {
+      "key": "py.del",
+      "value": "احذف {0}"
+    },
+    {
+      "key": "py.dict",
+      "value": "قاموس {0}"
+    },
+    {
+      "key": "py.enumerate",
+      "value": "مع فهرس {0}"
+    },
+    {
+      "key": "py.float",
+      "value": "إلى عدد عشري {0}"
+    },
+    {
+      "key": "py.format",
+      "value": "نسّق {0} بـ {1}"
+    },
+    {
+      "key": "py.fromImport",
+      "value": "من {0} استورد {1}"
+    },
+    {
+      "key": "py.global",
+      "value": "عام {0}"
+    },
+    {
+      "key": "py.import",
+      "value": "استورد {0}"
+    },
+    {
+      "key": "py.input",
+      "value": "اقرأ المدخل {0}"
+    },
+    {
+      "key": "py.int",
+      "value": "إلى عدد صحيح {0}"
+    },
+    {
+      "key": "py.isinstance",
+      "value": "{0} يساوي {1}"
+    },
+    {
+      "key": "py.items",
+      "value": "أزواج {0}"
+    },
+    {
+      "key": "py.join",
+      "value": "اربط {1} بـ {0}"
+    },
+    {
+      "key": "py.keys",
+      "value": "مفاتيح {0}"
+    },
+    {
+      "key": "py.len",
+      "value": "الطول {0}"
+    },
+    {
+      "key": "py.list",
+      "value": "قائمة {0}"
+    },
+    {
+      "key": "py.lower",
+      "value": "{0} إلى أحرف صغيرة"
+    },
+    {
+      "key": "py.max",
+      "value": "أقصى {0}"
+    },
+    {
+      "key": "py.min",
+      "value": "أدنى {0}"
+    },
+    {
+      "key": "py.ord",
+      "value": "رمز الحرف {0}"
+    },
+    {
+      "key": "py.pass",
+      "value": "pass"
+    },
+    {
+      "key": "py.print",
+      "value": "print({0})"
+    },
+    {
+      "key": "py.raise",
+      "value": "ارمِ {0}"
+    },
+    {
+      "key": "py.range",
+      "value": "المدى {0}"
+    },
+    {
+      "key": "py.replace",
+      "value": "استبدل {1} بـ {2} في {0}"
+    },
+    {
+      "key": "py.repr",
+      "value": "التمثيل {0}"
+    },
+    {
+      "key": "py.round",
+      "value": "قرّب {0}"
+    },
+    {
+      "key": "py.set",
+      "value": "مجموعة {0}"
+    },
+    {
+      "key": "py.sorted",
+      "value": "رتّب {0}"
+    },
+    {
+      "key": "py.split",
+      "value": "اقسم {1} بـ {0}"
+    },
+    {
+      "key": "py.str",
+      "value": "إلى نص {0}"
+    },
+    {
+      "key": "py.strip",
+      "value": "أزل الفراغات {0}"
+    },
+    {
+      "key": "py.sum",
+      "value": "مجموع {0}"
+    },
+    {
+      "key": "py.tuple",
+      "value": "صف {0}"
+    },
+    {
+      "key": "py.type",
+      "value": "النوع {0}"
+    },
+    {
+      "key": "py.upper",
+      "value": "{0} إلى أحرف كبيرة"
+    },
+    {
+      "key": "py.yield",
+      "value": "أنشئ {0}"
+    },
+    {
+      "key": "py.zip",
+      "value": "اقرن {0} {1}"
+    },
+    {
+      "key": "rust.assert",
+      "value": "تأكيد {0}"
+    },
+    {
+      "key": "rust.collect",
+      "value": "اجمع {0}"
+    },
+    {
+      "key": "rust.eprintln",
+      "value": "خرج الخطأ {0}"
+    },
+    {
+      "key": "rust.err",
+      "value": "Err({0})"
+    },
+    {
+      "key": "rust.expect",
+      "value": "افتح {0} وإلا خطأ {1}"
+    },
+    {
+      "key": "rust.filter",
+      "value": "رشّح {0} بـ {1}"
+    },
+    {
+      "key": "rust.format",
+      "value": "نسّق {0}"
+    },
+    {
+      "key": "rust.hashmap",
+      "value": "خريطة {0}"
+    },
+    {
+      "key": "rust.is_ok",
+      "value": "{0} هو Ok"
+    },
+    {
+      "key": "rust.iter",
+      "value": "اجتز {0}"
+    },
+    {
+      "key": "rust.len",
+      "value": "طول {0}"
+    },
+    {
+      "key": "rust.map",
+      "value": "على {0} طبّق لكل {1}"
+    },
+    {
+      "key": "rust.none",
+      "value": "None"
+    },
+    {
+      "key": "rust.ok",
+      "value": "Ok({0})"
+    },
+    {
+      "key": "rust.panic",
+      "value": "panic!({0})"
+    },
+    {
+      "key": "rust.parse",
+      "value": "حلّل {0}"
+    },
+    {
+      "key": "rust.pop",
+      "value": "{0} استخرج الأخير"
+    },
+    {
+      "key": "rust.println",
+      "value": "println!({0})"
+    },
+    {
+      "key": "rust.push",
+      "value": "أضف {1} إلى {0}"
+    },
+    {
+      "key": "rust.some",
+      "value": "Some({0})"
+    },
+    {
+      "key": "rust.string_from",
+      "value": "نص {0}"
+    },
+    {
+      "key": "rust.to_string",
+      "value": "{0} إلى نص"
+    },
+    {
+      "key": "rust.todo",
+      "value": "عنصر todo مؤقت"
+    },
+    {
+      "key": "rust.unreachable",
+      "value": "غير قابل للوصول"
+    },
+    {
+      "key": "rust.unwrap",
+      "value": "افتح {0}"
+    },
+    {
+      "key": "rust.unwrap_or",
+      "value": "افتح {0} وإلا {1}"
+    },
+    {
+      "key": "rust.vec",
+      "value": "أنشئ متجهًا {0}"
+    },
+    {
+      "key": "stmt.add",
+      "value": "زد {0} بمقدار {1}"
+    },
+    {
+      "key": "stmt.assign",
+      "value": "اجعل {0} = {1}"
+    },
+    {
+      "key": "stmt.break",
+      "value": "اخرج من الحلقة"
+    },
+    {
+      "key": "stmt.continue",
+      "value": "التكرار التالي"
+    },
+    {
+      "key": "stmt.div",
+      "value": "اقسم {0} على {1}"
+    },
+    {
+      "key": "stmt.expr",
+      "value": "نفّذ {0}"
+    },
+    {
+      "key": "stmt.for",
+      "value": "حلقة معدودة"
+    },
+    {
+      "key": "stmt.foreach",
+      "value": "لكل {0} {1} في {2}"
+    },
+    {
+      "key": "stmt.if",
+      "value": "إذا {0}"
+    },
+    {
+      "key": "stmt.localDecl",
+      "value": "عرّف {0} {1} = {2}"
+    },
+    {
+      "key": "stmt.mod",
+      "value": "{0} باقي {1}"
+    },
+    {
+      "key": "stmt.mul",
+      "value": "اضرب {0} في {1}"
+    },
+    {
+      "key": "stmt.raw",
+      "value": "C# خام {0}"
+    },
+    {
+      "key": "stmt.return",
+      "value": "أرجِع {0}"
+    },
+    {
+      "key": "stmt.sub",
+      "value": "أنقص {0} بمقدار {1}"
+    },
+    {
+      "key": "stmt.while",
+      "value": "أعد ما دام {0}"
+    }
+  ]
+}

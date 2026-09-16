@@ -1,0 +1,16 @@
+{
+    "viewMode": 0,
+    "hideBlockFiles": false,
+    "useSprites": false,
+    "headerSprite": "block_header",
+    "bodySprite": "block_body",
+    "footerSprite": "block_footer",
+    "exprSprite": "block_expr",
+    "bodyIndent": 14,
+    "cornerRadius": 6,
+    "footerHeight": 10,
+    "rightPaneWidth": 240.0,
+    "presetPaneHeight": 241.0,
+    "shaderPipeline": "auto",
+    "apiOutputFolder": "Assets/NekoScriptGraph/Blocks/API"
+}

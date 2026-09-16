@@ -1,0 +1,50 @@
+{
+    "id": "api.DecalUtils.AddDecal.4",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecalUtils",
+    "categoryKey": "cat.api",
+    "label": "DecalUtils.AddDecal({0}, {1}, {2}, {3})",
+    "labelEn": "DecalUtils.AddDecal({0}, {1}, {2}, {3})",
+    "labelRu": "DecalUtils.AddDecal({0}, {1}, {2}, {3})",
+    "sockets": [
+        {
+            "name": "group",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "desc",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "receiver",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "mode",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalUtils.AddDecal",
+    "matchArity": 4,
+    "builtin": true,
+    "manual": "DecalUtils.AddDecal(group, desc, receiver, mode) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

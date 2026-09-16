@@ -1,0 +1,36 @@
+{
+    "id": "expr.call",
+    "level": "high",
+    "shape": "expression",
+    "category": "调用 {0}",
+    "categoryKey": "cat.expr",
+    "label": "call {0}",
+    "labelEn": "call {0}",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "target",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "args",
+            "kind": "expr",
+            "required": false,
+            "variadic": true,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": true,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

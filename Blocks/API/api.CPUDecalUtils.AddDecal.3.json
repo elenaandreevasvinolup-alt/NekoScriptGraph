@@ -1,0 +1,43 @@
+{
+    "id": "api.CPUDecalUtils.AddDecal.3",
+    "level": "high",
+    "shape": "statement",
+    "category": "CPUDecalUtils",
+    "categoryKey": "cat.api",
+    "label": "CPUDecalUtils.AddDecal({0}, {1}, {2})",
+    "labelEn": "CPUDecalUtils.AddDecal({0}, {1}, {2})",
+    "labelRu": "CPUDecalUtils.AddDecal({0}, {1}, {2})",
+    "sockets": [
+        {
+            "name": "group",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "desc",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "receiver",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "CPUDecalUtils.AddDecal",
+    "matchArity": 3,
+    "builtin": true,
+    "manual": "CPUDecalUtils.AddDecal(group, desc, receiver) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

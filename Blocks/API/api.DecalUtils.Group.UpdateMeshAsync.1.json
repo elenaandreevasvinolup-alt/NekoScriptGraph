@@ -1,0 +1,36 @@
+{
+    "id": "api.DecalUtils.Group.UpdateMeshAsync.1",
+    "level": "high",
+    "shape": "statement",
+    "category": "Group",
+    "categoryKey": "cat.api",
+    "label": "{0}Group.UpdateMeshAsync({1})",
+    "labelEn": "{0}Group.UpdateMeshAsync({1})",
+    "labelRu": "{0}Group.UpdateMeshAsync({1})",
+    "sockets": [
+        {
+            "name": "target",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "req",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "Group.UpdateMeshAsync",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "DecalUtils.Group.UpdateMeshAsync(req) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

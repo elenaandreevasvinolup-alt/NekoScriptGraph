@@ -1,0 +1,29 @@
+{
+    "id": "api.GPUDecalUtils.RemoveDecal.1",
+    "level": "high",
+    "shape": "statement",
+    "category": "GPUDecalUtils",
+    "categoryKey": "cat.api",
+    "label": "GPUDecalUtils.RemoveDecal({0})",
+    "labelEn": "GPUDecalUtils.RemoveDecal({0})",
+    "labelRu": "GPUDecalUtils.RemoveDecal({0})",
+    "sockets": [
+        {
+            "name": "handle",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "GPUDecalUtils.RemoveDecal",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "GPUDecalUtils.RemoveDecal(handle) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

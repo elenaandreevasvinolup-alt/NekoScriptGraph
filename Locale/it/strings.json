@@ -1,0 +1,1835 @@
+{
+  "schemaVersion": 1,
+  "code": "it",
+  "name": "Italiano",
+  "rtl": false,
+  "order": 60,
+  "ui": [
+    {
+      "key": "api.done",
+      "value": "{0} blocchi API generati ({1} ignorati)."
+    },
+    {
+      "key": "api.folder",
+      "value": "Cartella di origine dei blocchi API"
+    },
+    {
+      "key": "api.noFolder",
+      "value": "La selezione non è una cartella."
+    },
+    {
+      "key": "api.noSources",
+      "value": "Nessun file sorgente trovato."
+    },
+    {
+      "key": "api.projectPrompt",
+      "value": "File sorgente analizzati: {0}. Verranno generati blocchi API per ogni metodo pubblico in:\n{1}\n\nSu un progetto grande possono essere migliaia di blocchi. Continuare?"
+    },
+    {
+      "key": "api.prompt",
+      "value": "Generare i blocchi API per la cartella selezionata?"
+    },
+    {
+      "key": "api.title",
+      "value": "Genera libreria blocchi API"
+    },
+    {
+      "key": "blk.body",
+      "value": "corpo"
+    },
+    {
+      "key": "blk.del",
+      "value": "Elimina"
+    },
+    {
+      "key": "blk.down",
+      "value": "Sposta giù"
+    },
+    {
+      "key": "blk.dup",
+      "value": "Duplica"
+    },
+    {
+      "key": "blk.editRaw",
+      "value": "Modifica frammento grezzo"
+    },
+    {
+      "key": "blk.else",
+      "value": "altrimenti"
+    },
+    {
+      "key": "blk.insertAbove",
+      "value": "Inserisci sopra"
+    },
+    {
+      "key": "blk.insertBelow",
+      "value": "Inserisci sotto"
+    },
+    {
+      "key": "blk.menu",
+      "value": "Azioni blocco"
+    },
+    {
+      "key": "blk.rename",
+      "value": "Rinomina"
+    },
+    {
+      "key": "blk.replace",
+      "value": "Sostituisci"
+    },
+    {
+      "key": "blk.up",
+      "value": "Sposta su"
+    },
+    {
+      "key": "bp.tidy",
+      "value": "Disponi automaticamente"
+    },
+    {
+      "key": "btn.api",
+      "value": "Genera blocchi API per la cartella selezionata"
+    },
+    {
+      "key": "btn.apiAll",
+      "value": "Crea libreria API dell'intero progetto"
+    },
+    {
+      "key": "btn.checkpoint",
+      "value": "Punti di salvataggio"
+    },
+    {
+      "key": "btn.collapseAll",
+      "value": "Comprimi tutto"
+    },
+    {
+      "key": "btn.errors",
+      "value": "Problemi"
+    },
+    {
+      "key": "btn.expandAll",
+      "value": "Espandi tutto"
+    },
+    {
+      "key": "btn.fit",
+      "value": "Adatta alla finestra"
+    },
+    {
+      "key": "btn.generate",
+      "value": "Blocchi → Codice"
+    },
+    {
+      "key": "btn.git",
+      "value": "Punto Git"
+    },
+    {
+      "key": "btn.import",
+      "value": "Codice → Blocchi"
+    },
+    {
+      "key": "btn.library",
+      "value": "Ricarica libreria blocchi"
+    },
+    {
+      "key": "btn.manage",
+      "value": "Prendi in gestione"
+    },
+    {
+      "key": "btn.manageAll",
+      "value": "Prendi in gestione l'intero progetto"
+    },
+    {
+      "key": "btn.manageFolder",
+      "value": "Prendi in gestione la cartella selezionata"
+    },
+    {
+      "key": "btn.open",
+      "value": "Apri script selezionato"
+    },
+    {
+      "key": "btn.preview",
+      "value": "Anteprima"
+    },
+    {
+      "key": "btn.redo",
+      "value": "Ripeti"
+    },
+    {
+      "key": "btn.selftest",
+      "value": "Autotest"
+    },
+    {
+      "key": "btn.shell",
+      "value": "Genera guscio pipeline"
+    },
+    {
+      "key": "btn.sprites",
+      "value": "Usa sprite"
+    },
+    {
+      "key": "btn.undo",
+      "value": "Annulla"
+    },
+    {
+      "key": "btn.unmanage",
+      "value": "Rilascia"
+    },
+    {
+      "key": "btn.unmanageAll",
+      "value": "Smonta i blocchi dell'intero progetto"
+    },
+    {
+      "key": "btn.unmanageFolder",
+      "value": "Smonta i blocchi della cartella selezionata"
+    },
+    {
+      "key": "cat.api",
+      "value": "API"
+    },
+    {
+      "key": "cat.apiAll",
+      "value": "Tutti"
+    },
+    {
+      "key": "cat.ctrl",
+      "value": "Controllo"
+    },
+    {
+      "key": "cat.expr",
+      "value": "Espressioni"
+    },
+    {
+      "key": "cat.frame",
+      "value": "Struttura"
+    },
+    {
+      "key": "cat.macro",
+      "value": "I miei blocchi"
+    },
+    {
+      "key": "cat.raw",
+      "value": "Via di fuga"
+    },
+    {
+      "key": "cat.var",
+      "value": "Variabili"
+    },
+    {
+      "key": "confirm.alreadyManaged",
+      "value": "è già in gestione."
+    },
+    {
+      "key": "confirm.cancel",
+      "value": "Annulla"
+    },
+    {
+      "key": "confirm.continue",
+      "value": "Continua"
+    },
+    {
+      "key": "confirm.manage",
+      "value": "Creare il file di blocchi e importare ora?"
+    },
+    {
+      "key": "confirm.manageYes",
+      "value": "Crea e importa"
+    },
+    {
+      "key": "confirm.notManaged",
+      "value": "non ha file di blocchi; è già uno script libero."
+    },
+    {
+      "key": "confirm.ok",
+      "value": "OK"
+    },
+    {
+      "key": "confirm.overwriteConflict",
+      "value": "Entrambi modificati. Sovrascrivere elimina le modifiche manuali nei corpi dei metodi (campi, attributi e commenti sono conservati). Continuare?"
+    },
+    {
+      "key": "confirm.reimportConflict",
+      "value": "I blocchi hanno modifiche mai scritte nel codice. Reimportare le eliminerà. Continuare?"
+    },
+    {
+      "key": "confirm.selectCs",
+      "value": "Seleziona prima un file sorgente nella finestra Project."
+    },
+    {
+      "key": "confirm.selectFolder",
+      "value": "Seleziona prima una cartella nella finestra Project."
+    },
+    {
+      "key": "confirm.title",
+      "value": "NekoScriptGraph"
+    },
+    {
+      "key": "confirm.unmanage",
+      "value": "Eliminare il file di blocchi? Lo script tornerà libero."
+    },
+    {
+      "key": "confirm.unmanageYes",
+      "value": "Elimina file blocchi"
+    },
+    {
+      "key": "cp.confirmLoad",
+      "value": "Caricare un punto sovrascriverà codice e blocchi attuali. Continuare?"
+    },
+    {
+      "key": "cp.delete",
+      "value": "Elimina punto {0}"
+    },
+    {
+      "key": "cp.empty",
+      "value": "Punto {0} (vuoto)"
+    },
+    {
+      "key": "cp.load",
+      "value": "Carica punto {0} ({1})"
+    },
+    {
+      "key": "cp.loaded",
+      "value": "Punto {0} caricato"
+    },
+    {
+      "key": "cp.overwrite",
+      "value": "Salva nel punto {0} (sovrascrivi: {1})"
+    },
+    {
+      "key": "cp.save",
+      "value": "Salva nel punto {0}"
+    },
+    {
+      "key": "cp.saved",
+      "value": "Salvato nel punto {0}"
+    },
+    {
+      "key": "diag.summary",
+      "value": "errori {0} / avvisi {1} / info {2}"
+    },
+    {
+      "key": "drag.blocks",
+      "value": "{0} blocchi"
+    },
+    {
+      "key": "err.clear",
+      "value": "Svuota"
+    },
+    {
+      "key": "err.count",
+      "value": "errori {0} / avvisi {1} / info {2}"
+    },
+    {
+      "key": "err.details",
+      "value": "Vedi la finestra Problemi."
+    },
+    {
+      "key": "err.error",
+      "value": "Errore"
+    },
+    {
+      "key": "err.generateFailed",
+      "value": "Sovrascrittura non riuscita"
+    },
+    {
+      "key": "err.goto",
+      "value": "Vai a"
+    },
+    {
+      "key": "err.info",
+      "value": "Info"
+    },
+    {
+      "key": "err.manageFailed",
+      "value": "Importazione non riuscita"
+    },
+    {
+      "key": "err.none",
+      "value": "Nessuna diagnostica."
+    },
+    {
+      "key": "err.reimportFailed",
+      "value": "Reimportazione non riuscita"
+    },
+    {
+      "key": "err.title",
+      "value": "Problemi NekoScriptGraph"
+    },
+    {
+      "key": "err.warning",
+      "value": "Avviso"
+    },
+    {
+      "key": "files.btnHide",
+      "value": "Nascondi file di configurazione"
+    },
+    {
+      "key": "files.btnShow",
+      "value": "Mostra file di configurazione"
+    },
+    {
+      "key": "files.hidden",
+      "value": "{0} file di configurazione nascosti"
+    },
+    {
+      "key": "files.hotkeyHint",
+      "value": "Scorciatoia: Ctrl/Cmd+Shift+H"
+    },
+    {
+      "key": "files.shown",
+      "value": "{0} file di configurazione mostrati"
+    },
+    {
+      "key": "git.done",
+      "value": "Punto Git creato."
+    },
+    {
+      "key": "git.failed",
+      "value": "Commit Git non riuscito: "
+    },
+    {
+      "key": "git.noChanges",
+      "value": "Nessuna modifica per questo script."
+    },
+    {
+      "key": "git.notRepo",
+      "value": "Questo progetto non è un repository git."
+    },
+    {
+      "key": "git.note",
+      "value": "I punti integrati sono in .checkpoints (ignorato da git) e non possono mai entrare in conflitto con la cronologia."
+    },
+    {
+      "key": "health.afterReturn",
+      "value": "istruzioni dopo return non verranno mai eseguite"
+    },
+    {
+      "key": "health.btn",
+      "value": "Controllo qualità"
+    },
+    {
+      "key": "health.constantCondition",
+      "value": "la condizione è sempre {0}; il ramo è codice morto"
+    },
+    {
+      "key": "health.cycle",
+      "value": "dipendenza circolare: l'espressione torna a se stessa tramite gli input, generazione impossibile"
+    },
+    {
+      "key": "health.danglingInput",
+      "value": "l'input obbligatorio '{0}' è vuoto; nel codice generato mancherà un argomento"
+    },
+    {
+      "key": "health.duplicate",
+      "value": "frammento duplicato: questa struttura appare {0} volte"
+    },
+    {
+      "key": "health.emptyBody",
+      "value": "il blocco di controllo non ha corpo e non fa nulla"
+    },
+    {
+      "key": "health.emptyMethod",
+      "value": "il corpo del metodo è vuoto"
+    },
+    {
+      "key": "health.escapeRatio",
+      "value": "i frammenti grezzi sono il {0}% del codice (soglia {1}%), il sottoinsieme è troppo stretto"
+    },
+    {
+      "key": "health.expressionSize",
+      "value": "espressione troppo grande: {0} nodi (soglia {1})"
+    },
+    {
+      "key": "health.fix",
+      "value": "Correzione proposta"
+    },
+    {
+      "key": "health.fixAddRelease",
+      "value": "Aggiungi la chiamata di rilascio"
+    },
+    {
+      "key": "health.fixApply",
+      "value": "Applica"
+    },
+    {
+      "key": "health.fixBreakLink",
+      "value": "Spezza il collegamento che chiude il ciclo"
+    },
+    {
+      "key": "health.fixFillZero",
+      "value": "Riempi con 0"
+    },
+    {
+      "key": "health.fixNone",
+      "value": "Nessuna correzione applicabile automaticamente"
+    },
+    {
+      "key": "health.leak",
+      "value": "possibile perdita: {0} usato {2} volte, {1} solo {3}"
+    },
+    {
+      "key": "health.locals",
+      "value": "troppe variabili locali: {0} (soglia {1})"
+    },
+    {
+      "key": "health.magicNumber",
+      "value": "il numero magico {0} appare {1} volte"
+    },
+    {
+      "key": "health.memberChain",
+      "value": "catena di accesso lunga: {0} (soglia {1})"
+    },
+    {
+      "key": "health.methodLength",
+      "value": "metodo lungo: {0} istruzioni (soglia {1})"
+    },
+    {
+      "key": "health.methods",
+      "value": "Metodo"
+    },
+    {
+      "key": "health.metric.escapes",
+      "value": "frammenti grezzi {0} ({1:F1}%)"
+    },
+    {
+      "key": "health.metric.methods",
+      "value": "metodi {0}"
+    },
+    {
+      "key": "health.metric.statements",
+      "value": "blocchi istruzione {0}"
+    },
+    {
+      "key": "health.nesting",
+      "value": "annidamento profondo: {0} livelli (soglia {1})"
+    },
+    {
+      "key": "health.none",
+      "value": "Nessun problema trovato."
+    },
+    {
+      "key": "health.optimizerNone",
+      "value": "L'ottimizzazione automatica non è ancora attiva (arriverà con i blocchi di basso livello). L'interfaccia è pronta: registra un INsg_Pass(Optimizer)."
+    },
+    {
+      "key": "health.optimizerReady",
+      "value": "Interfaccia di ottimizzazione pronta: {0} pass di ottimizzazione registrati."
+    },
+    {
+      "key": "health.passes",
+      "value": "pass registrate: {0}"
+    },
+    {
+      "key": "health.placeholderName",
+      "value": "nome segnaposto: '{0}'"
+    },
+    {
+      "key": "health.rerun",
+      "value": "Ripeti"
+    },
+    {
+      "key": "health.score",
+      "value": "Punteggio {0}/100"
+    },
+    {
+      "key": "health.shortName",
+      "value": "nome troppo corto: '{0}'"
+    },
+    {
+      "key": "health.summary",
+      "value": "errori {0} / avvisi {1} / suggerimenti {2}"
+    },
+    {
+      "key": "health.title",
+      "value": "Salute dell'architettura"
+    },
+    {
+      "key": "health.unusedLocal",
+      "value": "la variabile locale '{0}' non viene mai letta dopo la dichiarazione"
+    },
+    {
+      "key": "info.canonicalized",
+      "value": "{0} metodi non sono in forma canonica; il primo «Blocchi → Codice» li normalizzerà (semantica invariata)."
+    },
+    {
+      "key": "info.exported",
+      "value": "Libreria predefinita scritta in {0}"
+    },
+    {
+      "key": "info.libraryReloaded",
+      "value": "Libreria ricaricata: {0} blocchi."
+    },
+    {
+      "key": "info.managed",
+      "value": "In gestione: {0}"
+    },
+    {
+      "key": "info.unmanaged",
+      "value": "Rilasciato: {0}"
+    },
+    {
+      "key": "macro.cannot",
+      "value": "questo nodo non può diventare un blocco"
+    },
+    {
+      "key": "macro.create",
+      "value": "Crea blocco personalizzato"
+    },
+    {
+      "key": "macro.saved",
+      "value": "blocco personale salvato: {0}"
+    },
+    {
+      "key": "manage.done",
+      "value": "{0} file presi in gestione, {1} non riusciti."
+    },
+    {
+      "key": "manage.nothing",
+      "value": "Nessun nuovo file da gestire."
+    },
+    {
+      "key": "manage.prompt",
+      "value": "{0} file sorgente saranno presi in gestione; ognuno avrà il suo .nsg.json e sarà importato in blocchi. Su un progetto grande richiede tempo. Continuare?"
+    },
+    {
+      "key": "manage.title",
+      "value": "Gestione in blocco"
+    },
+    {
+      "key": "manage.unmanageDone",
+      "value": "{0} file smontati, {1} non riusciti."
+    },
+    {
+      "key": "manage.unmanageNothing",
+      "value": "Nessun file da smontare."
+    },
+    {
+      "key": "manage.unmanagePrompt",
+      "value": "{0} file saranno smontati: il .nsg.json accanto viene eliminato e ogni script torna un file normale. Il .cs stesso non viene mai toccato. Continuare?"
+    },
+    {
+      "key": "menu.api",
+      "value": "Genera blocchi API per la cartella selezionata"
+    },
+    {
+      "key": "menu.apiAll",
+      "value": "Crea libreria API dell'intero progetto"
+    },
+    {
+      "key": "menu.export",
+      "value": "Esporta libreria predefinita"
+    },
+    {
+      "key": "menu.health",
+      "value": "Salute dell'architettura"
+    },
+    {
+      "key": "menu.languages",
+      "value": "Lingue: mostra caricate"
+    },
+    {
+      "key": "menu.manage",
+      "value": "Prendi in gestione lo script selezionato"
+    },
+    {
+      "key": "menu.manageAll",
+      "value": "Prendi in gestione l'intero progetto"
+    },
+    {
+      "key": "menu.manageFolder",
+      "value": "Prendi in gestione la cartella selezionata"
+    },
+    {
+      "key": "menu.open",
+      "value": "Apri editor blocchi"
+    },
+    {
+      "key": "menu.problems",
+      "value": "Problemi"
+    },
+    {
+      "key": "menu.reload",
+      "value": "Ricarica libreria blocchi"
+    },
+    {
+      "key": "menu.selftest",
+      "value": "Autotest: andata e ritorno"
+    },
+    {
+      "key": "menu.shell",
+      "value": "Genera guscio ShaderLab"
+    },
+    {
+      "key": "menu.unmanage",
+      "value": "Rilascia lo script selezionato"
+    },
+    {
+      "key": "msg.canonicalized",
+      "value": "{0} metodi non sono in forma canonica (parentesi mancanti, indentazione incoerente o più scritture equivalenti). Il primo «Blocchi → Codice» li normalizzerà; la semantica non cambia, il formato sì."
+    },
+    {
+      "key": "msg.expect",
+      "value": "atteso '{0}', trovato '{1}'"
+    },
+    {
+      "key": "msg.expectIdent",
+      "value": "atteso un identificatore, trovato '{0}'"
+    },
+    {
+      "key": "msg.foreachName",
+      "value": "foreach: manca il nome della variabile di iterazione"
+    },
+    {
+      "key": "msg.lexUnknown",
+      "value": "carattere non riconosciuto '{0}'"
+    },
+    {
+      "key": "msg.methodCount",
+      "value": "il numero di metodi su disco ({0}) non corrisponde al file di blocchi ({1}). Reimporta il codice o allinea a mano, poi genera."
+    },
+    {
+      "key": "msg.methodName",
+      "value": "il metodo n.{0} non corrisponde: disco '{1}', file di blocchi '{2}'."
+    },
+    {
+      "key": "msg.noModelGenerate",
+      "value": "nessun modello di blocchi da generare."
+    },
+    {
+      "key": "msg.noModelRender",
+      "value": "nessun modello di blocchi da renderizzare."
+    },
+    {
+      "key": "msg.noSource",
+      "value": "file sorgente non trovato: {0}"
+    },
+    {
+      "key": "msg.outOfSubset",
+      "value": "questa istruzione è fuori dal sottoinsieme; mantenuta come frammento grezzo (non riconvertibile in blocchi)"
+    },
+    {
+      "key": "msg.unknownBlock",
+      "value": "'{0}' non è nella libreria."
+    },
+    {
+      "key": "msg.unknownBlockHint",
+      "value": "'{0}' non è nella libreria; aggiungi il JSON corrispondente in Blocks/."
+    },
+    {
+      "key": "msg.unknownExpr",
+      "value": "blocco espressione sconosciuto '{0}', impossibile tornare al codice."
+    },
+    {
+      "key": "msg.unknownStmt",
+      "value": "blocco sconosciuto '{0}', impossibile tornare al codice. Installa la definizione corrispondente o usa un frammento grezzo."
+    },
+    {
+      "key": "palette.empty",
+      "value": "(nessun blocco disponibile)"
+    },
+    {
+      "key": "palette.found",
+      "value": "{0} blocchi trovati"
+    },
+    {
+      "key": "palette.noMatch",
+      "value": "Nessun blocco corrispondente"
+    },
+    {
+      "key": "palette.other",
+      "value": "Altro"
+    },
+    {
+      "key": "palette.search",
+      "value": "Cerca blocchi…"
+    },
+    {
+      "key": "pick.clickToAdd",
+      "value": "Clicca per aggiungere un blocco"
+    },
+    {
+      "key": "pick.empty",
+      "value": "(vuoto)"
+    },
+    {
+      "key": "pick.expression",
+      "value": "Inserisci blocco espressione"
+    },
+    {
+      "key": "pick.noMatch",
+      "value": "Nessun blocco corrispondente"
+    },
+    {
+      "key": "pick.search",
+      "value": "Cerca"
+    },
+    {
+      "key": "pick.statement",
+      "value": "Inserisci blocco istruzione"
+    },
+    {
+      "key": "ribbon.group.api",
+      "value": "API"
+    },
+    {
+      "key": "ribbon.group.edit",
+      "value": "Modifica"
+    },
+    {
+      "key": "ribbon.group.file",
+      "value": "Questo file"
+    },
+    {
+      "key": "ribbon.group.files",
+      "value": "File di configurazione"
+    },
+    {
+      "key": "ribbon.group.folder",
+      "value": "Cartella"
+    },
+    {
+      "key": "ribbon.group.inspect",
+      "value": "Ispeziona"
+    },
+    {
+      "key": "ribbon.group.lang",
+      "value": "Lingua"
+    },
+    {
+      "key": "ribbon.group.library",
+      "value": "Libreria"
+    },
+    {
+      "key": "ribbon.group.mode",
+      "value": "Modalità"
+    },
+    {
+      "key": "ribbon.group.project",
+      "value": "Progetto intero"
+    },
+    {
+      "key": "ribbon.group.script",
+      "value": "Script"
+    },
+    {
+      "key": "ribbon.group.version",
+      "value": "Versione"
+    },
+    {
+      "key": "ribbon.group.zoom",
+      "value": "Zoom"
+    },
+    {
+      "key": "ribbon.tab.home",
+      "value": "Home"
+    },
+    {
+      "key": "ribbon.tab.manage",
+      "value": "Gestisci"
+    },
+    {
+      "key": "ribbon.tab.tools",
+      "value": "Strumenti"
+    },
+    {
+      "key": "ribbon.tab.view",
+      "value": "Vista"
+    },
+    {
+      "key": "scratch.hint",
+      "value": "Blocchi scollegati (non compilati)"
+    },
+    {
+      "key": "selftest.fail",
+      "value": "FAIL"
+    },
+    {
+      "key": "selftest.pass",
+      "value": "PASS"
+    },
+    {
+      "key": "selftest.summary",
+      "value": "{0} controlli, {1} superati, {2} falliti"
+    },
+    {
+      "key": "selftest.title",
+      "value": "Risultato dell'autotest"
+    },
+    {
+      "key": "shader.needShader",
+      "value": "Seleziona prima un file .shader."
+    },
+    {
+      "key": "shader.shellDone",
+      "value": "Guscio pipeline {0} generato: {1}"
+    },
+    {
+      "key": "shader.shellPrompt",
+      "value": "Il file corrente verrà sovrascritto con un guscio ShaderLab completo per la pipeline {0}. Tutto il contenuto attuale andrà perso. Continuare?"
+    },
+    {
+      "key": "shader.shellTitle",
+      "value": "Genera guscio ShaderLab"
+    },
+    {
+      "key": "state.blocksdirty",
+      "value": "Blocchi modificati"
+    },
+    {
+      "key": "state.conflict",
+      "value": "Conflitto: entrambi modificati"
+    },
+    {
+      "key": "state.csdirty",
+      "value": "Codice modificato"
+    },
+    {
+      "key": "state.synced",
+      "value": "Sincronizzato"
+    },
+    {
+      "key": "state.unmanaged",
+      "value": "Script libero (nessun file di blocchi)"
+    },
+    {
+      "key": "tree.base",
+      "value": "estende"
+    },
+    {
+      "key": "tree.bodyEmpty",
+      "value": "(vuoto)"
+    },
+    {
+      "key": "tree.class",
+      "value": "classe"
+    },
+    {
+      "key": "tree.customBase",
+      "value": "Personalizzato…"
+    },
+    {
+      "key": "tree.enum",
+      "value": "enumerazione"
+    },
+    {
+      "key": "tree.interface",
+      "value": "interfaccia"
+    },
+    {
+      "key": "tree.method",
+      "value": "metodo"
+    },
+    {
+      "key": "tree.namespace",
+      "value": "spazio dei nomi"
+    },
+    {
+      "key": "tree.noBase",
+      "value": "(nessuno)"
+    },
+    {
+      "key": "tree.raw",
+      "value": "membro (mantenuto tale)"
+    },
+    {
+      "key": "tree.struct",
+      "value": "struttura"
+    },
+    {
+      "key": "tree.using",
+      "value": "using"
+    },
+    {
+      "key": "view.blueprint",
+      "value": "Blueprint (UE)"
+    },
+    {
+      "key": "view.mode",
+      "value": "Vista"
+    },
+    {
+      "key": "view.stack",
+      "value": "Pila (Scratch)"
+    },
+    {
+      "key": "win.lang",
+      "value": "Lingua"
+    },
+    {
+      "key": "win.noDoc",
+      "value": "Nessun file aperto"
+    },
+    {
+      "key": "win.none",
+      "value": "—"
+    },
+    {
+      "key": "win.pipeline",
+      "value": "Pipeline"
+    },
+    {
+      "key": "win.pipelineAuto",
+      "value": "Auto ({0})"
+    },
+    {
+      "key": "win.title",
+      "value": "Editor a blocchi NekoScriptGraph"
+    }
+  ],
+  "blocks": [
+    {
+      "key": "c.abs",
+      "value": "valore assoluto {0}"
+    },
+    {
+      "key": "c.assert",
+      "value": "asserzione {0}"
+    },
+    {
+      "key": "c.atof",
+      "value": "stringa a decimale {0}"
+    },
+    {
+      "key": "c.atoi",
+      "value": "stringa a intero {0}"
+    },
+    {
+      "key": "c.exit",
+      "value": "esci dal programma {0}"
+    },
+    {
+      "key": "c.fabs",
+      "value": "valore assoluto decimale {0}"
+    },
+    {
+      "key": "c.fclose",
+      "value": "chiudi file {0}"
+    },
+    {
+      "key": "c.fgets",
+      "value": "leggi una riga da {0} a {1}, max {2} byte"
+    },
+    {
+      "key": "c.fopen",
+      "value": "apri file {0} in modalità {1}"
+    },
+    {
+      "key": "c.fprintf",
+      "value": "scrivi {1} in {0}"
+    },
+    {
+      "key": "c.free",
+      "value": "libera {0}"
+    },
+    {
+      "key": "c.malloc",
+      "value": "alloca {0} byte"
+    },
+    {
+      "key": "c.memcpy",
+      "value": "copia {2} byte {1}→{0}"
+    },
+    {
+      "key": "c.memset",
+      "value": "riempi {0} con {1} per {2} byte"
+    },
+    {
+      "key": "c.perror",
+      "value": "segnala errore {0}"
+    },
+    {
+      "key": "c.pow",
+      "value": "potenza {0}^{1}"
+    },
+    {
+      "key": "c.printf",
+      "value": "printf({0})"
+    },
+    {
+      "key": "c.sizeof",
+      "value": "sizeof({0})"
+    },
+    {
+      "key": "c.sqrt",
+      "value": "radice quadrata {0}"
+    },
+    {
+      "key": "c.strcat",
+      "value": "concatena stringhe {0}+{1}"
+    },
+    {
+      "key": "c.strcmp",
+      "value": "confronta stringhe {0} {1}"
+    },
+    {
+      "key": "c.strcpy",
+      "value": "copia stringa {1}→{0}"
+    },
+    {
+      "key": "c.strlen",
+      "value": "lunghezza della stringa {0}"
+    },
+    {
+      "key": "cpp.at",
+      "value": "elemento {1} di {0}"
+    },
+    {
+      "key": "cpp.cin",
+      "value": "input a {0}"
+    },
+    {
+      "key": "cpp.cout",
+      "value": "stampa {0}"
+    },
+    {
+      "key": "cpp.delete",
+      "value": "libera {0}"
+    },
+    {
+      "key": "cpp.getline",
+      "value": "leggi una riga in {0}"
+    },
+    {
+      "key": "cpp.make_shared",
+      "value": "puntatore condiviso {0} = nuovo"
+    },
+    {
+      "key": "cpp.map",
+      "value": "mappa {0}<{1}, {2}>"
+    },
+    {
+      "key": "cpp.move",
+      "value": "sposta {0}"
+    },
+    {
+      "key": "cpp.printf",
+      "value": "printf({0})"
+    },
+    {
+      "key": "cpp.push_back",
+      "value": "aggiungi {1} a {0}"
+    },
+    {
+      "key": "cpp.size",
+      "value": "dimensione di {0}"
+    },
+    {
+      "key": "cpp.sizeof",
+      "value": "sizeof({0})"
+    },
+    {
+      "key": "cpp.stoi",
+      "value": "stringa a intero {0}"
+    },
+    {
+      "key": "cpp.string",
+      "value": "stringa {0} = {1}"
+    },
+    {
+      "key": "cpp.throw",
+      "value": "lancia {0}"
+    },
+    {
+      "key": "cpp.to_string",
+      "value": "in stringa {0}"
+    },
+    {
+      "key": "cpp.unique_ptr",
+      "value": "puntatore unico {0} = nuovo {1}"
+    },
+    {
+      "key": "cpp.vector",
+      "value": "vettore {0}<{1}>"
+    },
+    {
+      "key": "expr.binary",
+      "value": "{0} {1} {2}"
+    },
+    {
+      "key": "expr.call",
+      "value": "chiama {0}"
+    },
+    {
+      "key": "expr.cast",
+      "value": "converti {1} in {0}"
+    },
+    {
+      "key": "expr.conditional",
+      "value": "se {0} allora {1} altrimenti {2}"
+    },
+    {
+      "key": "expr.ident",
+      "value": "variabile {0}"
+    },
+    {
+      "key": "expr.index",
+      "value": "elemento {1} di {0}"
+    },
+    {
+      "key": "expr.literal",
+      "value": "{0}"
+    },
+    {
+      "key": "expr.member",
+      "value": "{1} di {0}"
+    },
+    {
+      "key": "expr.new",
+      "value": "crea {0}"
+    },
+    {
+      "key": "expr.postfix",
+      "value": "{0}{1}"
+    },
+    {
+      "key": "expr.raw",
+      "value": "C# grezzo {0}"
+    },
+    {
+      "key": "expr.unary",
+      "value": "{0}{1}"
+    },
+    {
+      "key": "hlsl.abs",
+      "value": "valore assoluto {0}"
+    },
+    {
+      "key": "hlsl.acos",
+      "value": "arcocoseno {0}"
+    },
+    {
+      "key": "hlsl.all",
+      "value": "tutti i {0} veri"
+    },
+    {
+      "key": "hlsl.any",
+      "value": "almeno uno di {0} vero"
+    },
+    {
+      "key": "hlsl.asin",
+      "value": "arcoseno {0}"
+    },
+    {
+      "key": "hlsl.atan",
+      "value": "arcotangente {0}"
+    },
+    {
+      "key": "hlsl.atan2",
+      "value": "arcotangente {0}/{1}"
+    },
+    {
+      "key": "hlsl.ceil",
+      "value": "arrotonda su {0}"
+    },
+    {
+      "key": "hlsl.clamp",
+      "value": "limita {0} a {1}..{2}"
+    },
+    {
+      "key": "hlsl.clip",
+      "value": "ritaglia {0}"
+    },
+    {
+      "key": "hlsl.clipPos",
+      "value": "coordinata clip {0}"
+    },
+    {
+      "key": "hlsl.cos",
+      "value": "coseno {0}"
+    },
+    {
+      "key": "hlsl.cross",
+      "value": "prodotto vettoriale {0}×{1}"
+    },
+    {
+      "key": "hlsl.ddx",
+      "value": "variazione schermo X di {0}"
+    },
+    {
+      "key": "hlsl.ddy",
+      "value": "variazione schermo Y di {0}"
+    },
+    {
+      "key": "hlsl.determinant",
+      "value": "determinante {0}"
+    },
+    {
+      "key": "hlsl.discard",
+      "value": "scarta il pixel"
+    },
+    {
+      "key": "hlsl.distance",
+      "value": "distanza {0}→{1}"
+    },
+    {
+      "key": "hlsl.dot",
+      "value": "prodotto scalare {0}·{1}"
+    },
+    {
+      "key": "hlsl.exp",
+      "value": "e elevato a {0}"
+    },
+    {
+      "key": "hlsl.exp2",
+      "value": "2 elevato a {0}"
+    },
+    {
+      "key": "hlsl.floor",
+      "value": "arrotonda giù {0}"
+    },
+    {
+      "key": "hlsl.fmod",
+      "value": "modulo decimale {0} {1}"
+    },
+    {
+      "key": "hlsl.frac",
+      "value": "parte decimale {0}"
+    },
+    {
+      "key": "hlsl.length",
+      "value": "lunghezza {0}"
+    },
+    {
+      "key": "hlsl.lerp",
+      "value": "interpola {0}→{1} con {2}"
+    },
+    {
+      "key": "hlsl.log",
+      "value": "logaritmo naturale {0}"
+    },
+    {
+      "key": "hlsl.log2",
+      "value": "logaritmo in base 2 di {0}"
+    },
+    {
+      "key": "hlsl.mad",
+      "value": "moltiplica-somma {0}×{1}+{2}"
+    },
+    {
+      "key": "hlsl.max",
+      "value": "maggiore {0} {1}"
+    },
+    {
+      "key": "hlsl.min",
+      "value": "minore {0} {1}"
+    },
+    {
+      "key": "hlsl.mul",
+      "value": "prodotto matriciale {0}×{1}"
+    },
+    {
+      "key": "hlsl.normalize",
+      "value": "normalizza {0}"
+    },
+    {
+      "key": "hlsl.pow",
+      "value": "potenza {0}^{1}"
+    },
+    {
+      "key": "hlsl.rcp",
+      "value": "reciproco {0}"
+    },
+    {
+      "key": "hlsl.reflect",
+      "value": "rifletti {0} su {1}"
+    },
+    {
+      "key": "hlsl.refract",
+      "value": "rifrangi {0} su {1} indice {2}"
+    },
+    {
+      "key": "hlsl.round",
+      "value": "arrotonda {0}"
+    },
+    {
+      "key": "hlsl.rsqrt",
+      "value": "reciproco della radice {0}"
+    },
+    {
+      "key": "hlsl.sample",
+      "value": "campiona {0} a {1}"
+    },
+    {
+      "key": "hlsl.saturate",
+      "value": "saturate({0})"
+    },
+    {
+      "key": "hlsl.sign",
+      "value": "segno {0}"
+    },
+    {
+      "key": "hlsl.sin",
+      "value": "seno {0}"
+    },
+    {
+      "key": "hlsl.smoothstep",
+      "value": "transizione morbida {0}..{1} a {2}"
+    },
+    {
+      "key": "hlsl.sqrt",
+      "value": "radice quadrata {0}"
+    },
+    {
+      "key": "hlsl.step",
+      "value": "gradino {0} soglia {1}"
+    },
+    {
+      "key": "hlsl.tan",
+      "value": "tangente {0}"
+    },
+    {
+      "key": "hlsl.tex2D",
+      "value": "campiona {0} a {1}"
+    },
+    {
+      "key": "hlsl.tex2Dlod",
+      "value": "campiona {0} a {1}"
+    },
+    {
+      "key": "hlsl.texCUBE",
+      "value": "campiona cubo {0} direzione {1}"
+    },
+    {
+      "key": "hlsl.transpose",
+      "value": "traspone {0}"
+    },
+    {
+      "key": "hlsl.trunc",
+      "value": "tronca {0}"
+    },
+    {
+      "key": "java.add",
+      "value": "aggiungi {1} a {0}"
+    },
+    {
+      "key": "java.arraysSort",
+      "value": "ordina {0}"
+    },
+    {
+      "key": "java.equals",
+      "value": "{0} uguale a {1}"
+    },
+    {
+      "key": "java.format",
+      "value": "formatta {0} con {1}"
+    },
+    {
+      "key": "java.get",
+      "value": "elemento {1} di {0}"
+    },
+    {
+      "key": "java.length",
+      "value": "lunghezza di {0}"
+    },
+    {
+      "key": "java.list",
+      "value": "lista {0}"
+    },
+    {
+      "key": "java.map",
+      "value": "mappa {0}"
+    },
+    {
+      "key": "java.mathAbs",
+      "value": "valore assoluto {0}"
+    },
+    {
+      "key": "java.mathMax",
+      "value": "maggiore {0} {1}"
+    },
+    {
+      "key": "java.mathMin",
+      "value": "minore {0} {1}"
+    },
+    {
+      "key": "java.mathPow",
+      "value": "potenza {0}^{1}"
+    },
+    {
+      "key": "java.mathRandom",
+      "value": "numero casuale"
+    },
+    {
+      "key": "java.mathSqrt",
+      "value": "radice quadrata {0}"
+    },
+    {
+      "key": "java.parseDouble",
+      "value": "stringa a decimale {0}"
+    },
+    {
+      "key": "java.parseInt",
+      "value": "stringa a intero {0}"
+    },
+    {
+      "key": "java.print",
+      "value": "stampa (senza a capo) {0}"
+    },
+    {
+      "key": "java.println",
+      "value": "stampa {0}"
+    },
+    {
+      "key": "java.put",
+      "value": "metti {1} → {2} in {0}"
+    },
+    {
+      "key": "java.split",
+      "value": "dividi {0} per {1}"
+    },
+    {
+      "key": "java.substring",
+      "value": "sottostringa {1}..{2} di {0}"
+    },
+    {
+      "key": "java.throw",
+      "value": "lancia {0}"
+    },
+    {
+      "key": "java.toString",
+      "value": "{0} in stringa"
+    },
+    {
+      "key": "java.valueOf",
+      "value": "in stringa {0}"
+    },
+    {
+      "key": "py.abs",
+      "value": "valore assoluto {0}"
+    },
+    {
+      "key": "py.append",
+      "value": "aggiungi {0} a {1}"
+    },
+    {
+      "key": "py.assert",
+      "value": "asserzione {0}"
+    },
+    {
+      "key": "py.chr",
+      "value": "codice a carattere {0}"
+    },
+    {
+      "key": "py.del",
+      "value": "elimina {0}"
+    },
+    {
+      "key": "py.dict",
+      "value": "dizionario {0}"
+    },
+    {
+      "key": "py.enumerate",
+      "value": "con indice {0}"
+    },
+    {
+      "key": "py.float",
+      "value": "in decimale {0}"
+    },
+    {
+      "key": "py.format",
+      "value": "formatta {0} con {1}"
+    },
+    {
+      "key": "py.fromImport",
+      "value": "da {0} importa {1}"
+    },
+    {
+      "key": "py.global",
+      "value": "globale {0}"
+    },
+    {
+      "key": "py.import",
+      "value": "importa {0}"
+    },
+    {
+      "key": "py.input",
+      "value": "leggi input {0}"
+    },
+    {
+      "key": "py.int",
+      "value": "in intero {0}"
+    },
+    {
+      "key": "py.isinstance",
+      "value": "{0} è {1}"
+    },
+    {
+      "key": "py.items",
+      "value": "coppie di {0}"
+    },
+    {
+      "key": "py.join",
+      "value": "unisci {1} con {0}"
+    },
+    {
+      "key": "py.keys",
+      "value": "chiavi di {0}"
+    },
+    {
+      "key": "py.len",
+      "value": "lunghezza {0}"
+    },
+    {
+      "key": "py.list",
+      "value": "lista {0}"
+    },
+    {
+      "key": "py.lower",
+      "value": "{0} in minuscolo"
+    },
+    {
+      "key": "py.max",
+      "value": "massimo di {0}"
+    },
+    {
+      "key": "py.min",
+      "value": "minimo di {0}"
+    },
+    {
+      "key": "py.ord",
+      "value": "codice carattere {0}"
+    },
+    {
+      "key": "py.pass",
+      "value": "pass"
+    },
+    {
+      "key": "py.print",
+      "value": "print({0})"
+    },
+    {
+      "key": "py.raise",
+      "value": "lancia {0}"
+    },
+    {
+      "key": "py.range",
+      "value": "intervallo {0}"
+    },
+    {
+      "key": "py.replace",
+      "value": "sostituisci {1} con {2} in {0}"
+    },
+    {
+      "key": "py.repr",
+      "value": "rappresentazione {0}"
+    },
+    {
+      "key": "py.round",
+      "value": "arrotonda {0}"
+    },
+    {
+      "key": "py.set",
+      "value": "insieme {0}"
+    },
+    {
+      "key": "py.sorted",
+      "value": "ordina {0}"
+    },
+    {
+      "key": "py.split",
+      "value": "dividi {1} per {0}"
+    },
+    {
+      "key": "py.str",
+      "value": "in stringa {0}"
+    },
+    {
+      "key": "py.strip",
+      "value": "rimuovi spazi {0}"
+    },
+    {
+      "key": "py.sum",
+      "value": "somma di {0}"
+    },
+    {
+      "key": "py.tuple",
+      "value": "tupla {0}"
+    },
+    {
+      "key": "py.type",
+      "value": "tipo {0}"
+    },
+    {
+      "key": "py.upper",
+      "value": "{0} in maiuscolo"
+    },
+    {
+      "key": "py.yield",
+      "value": "produci {0}"
+    },
+    {
+      "key": "py.zip",
+      "value": "abbina {0} {1}"
+    },
+    {
+      "key": "rust.assert",
+      "value": "asserzione {0}"
+    },
+    {
+      "key": "rust.collect",
+      "value": "raccogli {0}"
+    },
+    {
+      "key": "rust.eprintln",
+      "value": "uscita di errore {0}"
+    },
+    {
+      "key": "rust.err",
+      "value": "Err({0})"
+    },
+    {
+      "key": "rust.expect",
+      "value": "estrai {0} altrimenti errore {1}"
+    },
+    {
+      "key": "rust.filter",
+      "value": "filtra {0} con {1}"
+    },
+    {
+      "key": "rust.format",
+      "value": "formatta {0}"
+    },
+    {
+      "key": "rust.hashmap",
+      "value": "mappa {0}"
+    },
+    {
+      "key": "rust.is_ok",
+      "value": "{0} è Ok"
+    },
+    {
+      "key": "rust.iter",
+      "value": "scorri {0}"
+    },
+    {
+      "key": "rust.len",
+      "value": "lunghezza di {0}"
+    },
+    {
+      "key": "rust.map",
+      "value": "su {0} applica a ciascuno {1}"
+    },
+    {
+      "key": "rust.none",
+      "value": "None"
+    },
+    {
+      "key": "rust.ok",
+      "value": "Ok({0})"
+    },
+    {
+      "key": "rust.panic",
+      "value": "panic!({0})"
+    },
+    {
+      "key": "rust.parse",
+      "value": "analizza {0}"
+    },
+    {
+      "key": "rust.pop",
+      "value": "{0} estrai l'ultimo"
+    },
+    {
+      "key": "rust.println",
+      "value": "println!({0})"
+    },
+    {
+      "key": "rust.push",
+      "value": "aggiungi {1} a {0}"
+    },
+    {
+      "key": "rust.some",
+      "value": "Some({0})"
+    },
+    {
+      "key": "rust.string_from",
+      "value": "stringa {0}"
+    },
+    {
+      "key": "rust.to_string",
+      "value": "{0} in stringa"
+    },
+    {
+      "key": "rust.todo",
+      "value": "segnaposto todo"
+    },
+    {
+      "key": "rust.unreachable",
+      "value": "irraggiungibile"
+    },
+    {
+      "key": "rust.unwrap",
+      "value": "estrai {0}"
+    },
+    {
+      "key": "rust.unwrap_or",
+      "value": "estrai {0} altrimenti {1}"
+    },
+    {
+      "key": "rust.vec",
+      "value": "crea vettore {0}"
+    },
+    {
+      "key": "stmt.add",
+      "value": "aumenta {0} di {1}"
+    },
+    {
+      "key": "stmt.assign",
+      "value": "imposta {0} a {1}"
+    },
+    {
+      "key": "stmt.break",
+      "value": "esci dal ciclo"
+    },
+    {
+      "key": "stmt.continue",
+      "value": "iterazione successiva"
+    },
+    {
+      "key": "stmt.div",
+      "value": "dividi {0} per {1}"
+    },
+    {
+      "key": "stmt.expr",
+      "value": "esegui {0}"
+    },
+    {
+      "key": "stmt.for",
+      "value": "ciclo contato"
+    },
+    {
+      "key": "stmt.foreach",
+      "value": "per ogni {0} {1} in {2}"
+    },
+    {
+      "key": "stmt.if",
+      "value": "se {0}"
+    },
+    {
+      "key": "stmt.localDecl",
+      "value": "dichiara {0} {1} = {2}"
+    },
+    {
+      "key": "stmt.mod",
+      "value": "{0} modulo {1}"
+    },
+    {
+      "key": "stmt.mul",
+      "value": "moltiplica {0} per {1}"
+    },
+    {
+      "key": "stmt.raw",
+      "value": "C# grezzo {0}"
+    },
+    {
+      "key": "stmt.return",
+      "value": "restituisci {0}"
+    },
+    {
+      "key": "stmt.sub",
+      "value": "riduci {0} di {1}"
+    },
+    {
+      "key": "stmt.while",
+      "value": "ripeti finché {0}"
+    }
+  ]
+}

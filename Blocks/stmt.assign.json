@@ -1,0 +1,36 @@
+{
+    "id": "stmt.assign",
+    "level": "high",
+    "shape": "statement",
+    "category": "把 {0} 设为 {1}",
+    "categoryKey": "cat.var",
+    "label": "set {0} to {1}",
+    "labelEn": "set {0} to {1}",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "target",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "value",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "{{0}} = {{1}};",
+    "node": "assign",
+    "op": "=",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": false,
+    "manual": "",
+    "variantGroup": "assign",
+    "variantLabel": "="
+}

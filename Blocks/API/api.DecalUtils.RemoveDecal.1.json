@@ -1,0 +1,29 @@
+{
+    "id": "api.DecalUtils.RemoveDecal.1",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecalUtils",
+    "categoryKey": "cat.api",
+    "label": "DecalUtils.RemoveDecal({0})",
+    "labelEn": "DecalUtils.RemoveDecal({0})",
+    "labelRu": "DecalUtils.RemoveDecal({0})",
+    "sockets": [
+        {
+            "name": "handle",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalUtils.RemoveDecal",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "DecalUtils.RemoveDecal(handle) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

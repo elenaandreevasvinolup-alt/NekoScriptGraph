@@ -1,0 +1,36 @@
+{
+    "id": "api.DecalUtils.AverageNormals.2",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecalUtils",
+    "categoryKey": "cat.api",
+    "label": "DecalUtils.AverageNormals({0}, {1})",
+    "labelEn": "DecalUtils.AverageNormals({0}, {1})",
+    "labelRu": "DecalUtils.AverageNormals({0}, {1})",
+    "sockets": [
+        {
+            "name": "meshes",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "tangents",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalUtils.AverageNormals",
+    "matchArity": 2,
+    "builtin": true,
+    "manual": "DecalUtils.AverageNormals(meshes, tangents) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

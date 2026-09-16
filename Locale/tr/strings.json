@@ -1,0 +1,1779 @@
+{
+  "schemaVersion": 1,
+  "code": "tr",
+  "name": "Türkçe",
+  "rtl": false,
+  "order": 110,
+  "ui": [
+    {
+      "key": "api.done",
+      "value": "{0} API bloğu üretildi ({1} atlandı)."
+    },
+    {
+      "key": "api.folder",
+      "value": "API blok kaynak klasörü"
+    },
+    {
+      "key": "api.noFolder",
+      "value": "Seçim bir klasör değil."
+    },
+    {
+      "key": "api.noSources",
+      "value": "Hiç kaynak dosya bulunamadı."
+    },
+    {
+      "key": "api.projectPrompt",
+      "value": "{0} kaynak dosya tarandı. Tüm public yöntemler için API blokları şuraya üretilecek:\n{1}\n\nBüyük bir projede bu binlerce blok oluşturabilir ve uzun sürebilir. Devam edilsin mi?"
+    },
+    {
+      "key": "api.prompt",
+      "value": "Seçili klasör için API blokları üretilsin mi?"
+    },
+    {
+      "key": "api.title",
+      "value": "API blok kütüphanesi üret"
+    },
+    {
+      "key": "blk.body",
+      "value": "gövde"
+    },
+    {
+      "key": "blk.del",
+      "value": "Sil"
+    },
+    {
+      "key": "blk.down",
+      "value": "Aşağı taşı"
+    },
+    {
+      "key": "blk.dup",
+      "value": "Çoğalt"
+    },
+    {
+      "key": "blk.editRaw",
+      "value": "Ham parçayı düzenle"
+    },
+    {
+      "key": "blk.else",
+      "value": "değilse"
+    },
+    {
+      "key": "blk.insertAbove",
+      "value": "Üste ekle"
+    },
+    {
+      "key": "blk.insertBelow",
+      "value": "Alta ekle"
+    },
+    {
+      "key": "blk.menu",
+      "value": "Blok işlemleri"
+    },
+    {
+      "key": "blk.rename",
+      "value": "Yeniden adlandır"
+    },
+    {
+      "key": "blk.replace",
+      "value": "Değiştir"
+    },
+    {
+      "key": "blk.up",
+      "value": "Yukarı taşı"
+    },
+    {
+      "key": "bp.tidy",
+      "value": "Otomatik düzenle"
+    },
+    {
+      "key": "btn.api",
+      "value": "Seçili klasör için API blokları üret"
+    },
+    {
+      "key": "btn.apiAll",
+      "value": "Tüm proje için API kütüphanesi oluştur"
+    },
+    {
+      "key": "btn.checkpoint",
+      "value": "Kayıt noktaları"
+    },
+    {
+      "key": "btn.collapseAll",
+      "value": "Tümünü daralt"
+    },
+    {
+      "key": "btn.errors",
+      "value": "Sorunlar"
+    },
+    {
+      "key": "btn.expandAll",
+      "value": "Tümünü genişlet"
+    },
+    {
+      "key": "btn.fit",
+      "value": "Pencereye sığdır"
+    },
+    {
+      "key": "btn.generate",
+      "value": "Bloklar → Kod"
+    },
+    {
+      "key": "btn.git",
+      "value": "Git noktası"
+    },
+    {
+      "key": "btn.import",
+      "value": "Kod → Bloklar"
+    },
+    {
+      "key": "btn.library",
+      "value": "Blok kütüphanesini yenile"
+    },
+    {
+      "key": "btn.manage",
+      "value": "Yönetime al"
+    },
+    {
+      "key": "btn.manageAll",
+      "value": "Tüm projeyi yönetime al"
+    },
+    {
+      "key": "btn.manageFolder",
+      "value": "Seçili klasörü yönetime al"
+    },
+    {
+      "key": "btn.open",
+      "value": "Seçili betiği aç"
+    },
+    {
+      "key": "btn.preview",
+      "value": "Önizleme"
+    },
+    {
+      "key": "btn.redo",
+      "value": "Yinele"
+    },
+    {
+      "key": "btn.selftest",
+      "value": "Kendi testi"
+    },
+    {
+      "key": "btn.shell",
+      "value": "İşlem hattı kabuğu üret"
+    },
+    {
+      "key": "btn.sprites",
+      "value": "Sprite kullan"
+    },
+    {
+      "key": "btn.undo",
+      "value": "Geri al"
+    },
+    {
+      "key": "btn.unmanage",
+      "value": "Yönetimi bırak"
+    },
+    {
+      "key": "btn.unmanageAll",
+      "value": "Tüm projenin blok yapılandırmasını sök"
+    },
+    {
+      "key": "btn.unmanageFolder",
+      "value": "Seçili klasörün blok yapılandırmasını sök"
+    },
+    {
+      "key": "cat.api",
+      "value": "API"
+    },
+    {
+      "key": "cat.apiAll",
+      "value": "Tümü"
+    },
+    {
+      "key": "cat.ctrl",
+      "value": "Denetim"
+    },
+    {
+      "key": "cat.expr",
+      "value": "İfadeler"
+    },
+    {
+      "key": "cat.frame",
+      "value": "Yapı"
+    },
+    {
+      "key": "cat.macro",
+      "value": "Kendi bloklarım"
+    },
+    {
+      "key": "cat.raw",
+      "value": "Kaçış yolu"
+    },
+    {
+      "key": "cat.var",
+      "value": "Değişkenler"
+    },
+    {
+      "key": "confirm.alreadyManaged",
+      "value": "zaten yönetim altında."
+    },
+    {
+      "key": "confirm.cancel",
+      "value": "İptal"
+    },
+    {
+      "key": "confirm.continue",
+      "value": "Devam"
+    },
+    {
+      "key": "confirm.manage",
+      "value": "Blok dosyası oluşturulup içe aktarılsın mı?"
+    },
+    {
+      "key": "confirm.manageYes",
+      "value": "Oluştur ve içe aktar"
+    },
+    {
+      "key": "confirm.notManaged",
+      "value": "blok dosyası yok; zaten serbest bir betik."
+    },
+    {
+      "key": "confirm.ok",
+      "value": "Tamam"
+    },
+    {
+      "key": "confirm.overwriteConflict",
+      "value": "İki taraf da değişti. Üzerine yazmak yöntem gövdelerindeki elle yapılan değişiklikleri siler (alanlar, öznitelikler ve açıklamalar korunur). Devam edilsin mi?"
+    },
+    {
+      "key": "confirm.reimportConflict",
+      "value": "Bloklarda koda hiç yazılmamış değişiklikler var. Yeniden içe aktarma bunları siler. Devam edilsin mi?"
+    },
+    {
+      "key": "confirm.selectCs",
+      "value": "Önce Project penceresinde bir kaynak dosya seçin."
+    },
+    {
+      "key": "confirm.selectFolder",
+      "value": "Önce Project penceresinde bir klasör seçin."
+    },
+    {
+      "key": "confirm.title",
+      "value": "NekoScriptGraph"
+    },
+    {
+      "key": "confirm.unmanage",
+      "value": "Blok dosyası silinsin mi? Betik yeniden serbest olur."
+    },
+    {
+      "key": "confirm.unmanageYes",
+      "value": "Blok dosyasını sil"
+    },
+    {
+      "key": "cp.confirmLoad",
+      "value": "Kayıt noktası yüklemek geçerli kodu ve blokları üzerine yazar. Devam edilsin mi?"
+    },
+    {
+      "key": "cp.delete",
+      "value": "Kayıt noktası {0} sil"
+    },
+    {
+      "key": "cp.empty",
+      "value": "Kayıt noktası {0} (boş)"
+    },
+    {
+      "key": "cp.load",
+      "value": "Kayıt noktası {0} yükle ({1})"
+    },
+    {
+      "key": "cp.loaded",
+      "value": "Kayıt noktası {0} yüklendi"
+    },
+    {
+      "key": "cp.overwrite",
+      "value": "Kayıt noktası {0} içine kaydet (üzerine yaz: {1})"
+    },
+    {
+      "key": "cp.save",
+      "value": "Kayıt noktası {0} içine kaydet"
+    },
+    {
+      "key": "cp.saved",
+      "value": "Kayıt noktası {0} içine kaydedildi"
+    },
+    {
+      "key": "diag.summary",
+      "value": "hata {0} / uyarı {1} / bilgi {2}"
+    },
+    {
+      "key": "drag.blocks",
+      "value": "{0} blok"
+    },
+    {
+      "key": "err.clear",
+      "value": "Temizle"
+    },
+    {
+      "key": "err.count",
+      "value": "hata {0} / uyarı {1} / bilgi {2}"
+    },
+    {
+      "key": "err.details",
+      "value": "Ayrıntılar için Sorunlar penceresine bakın."
+    },
+    {
+      "key": "err.error",
+      "value": "Hata"
+    },
+    {
+      "key": "err.generateFailed",
+      "value": "Üzerine yazma başarısız"
+    },
+    {
+      "key": "err.goto",
+      "value": "Git"
+    },
+    {
+      "key": "err.info",
+      "value": "Bilgi"
+    },
+    {
+      "key": "err.manageFailed",
+      "value": "İçe aktarma başarısız"
+    },
+    {
+      "key": "err.none",
+      "value": "Tanılama yok."
+    },
+    {
+      "key": "err.reimportFailed",
+      "value": "Yeniden içe aktarma başarısız"
+    },
+    {
+      "key": "err.title",
+      "value": "NekoScriptGraph Sorunlar"
+    },
+    {
+      "key": "err.warning",
+      "value": "Uyarı"
+    },
+    {
+      "key": "files.btnHide",
+      "value": "Ayar dosyalarını gizle"
+    },
+    {
+      "key": "files.btnShow",
+      "value": "Ayar dosyalarını göster"
+    },
+    {
+      "key": "files.hidden",
+      "value": "{0} ayar dosyası gizlendi"
+    },
+    {
+      "key": "files.hotkeyHint",
+      "value": "Kısayol: Ctrl/Cmd+Shift+H"
+    },
+    {
+      "key": "files.shown",
+      "value": "{0} ayar dosyası gösterildi"
+    },
+    {
+      "key": "git.done",
+      "value": "Git kayıt noktası oluşturuldu."
+    },
+    {
+      "key": "git.failed",
+      "value": "Git işlemesi başarısız: "
+    },
+    {
+      "key": "git.noChanges",
+      "value": "Bu betik için değişiklik yok."
+    },
+    {
+      "key": "git.notRepo",
+      "value": "Bu proje bir git deposu değil."
+    },
+    {
+      "key": "git.note",
+      "value": "Yerleşik kayıt noktaları .checkpoints içinde tutulur (git tarafından yok sayılır) ve depo geçmişiyle asla çakışmaz."
+    },
+    {
+      "key": "health.afterReturn",
+      "value": "return sonrası deyimler hiç çalışmaz"
+    },
+    {
+      "key": "health.btn",
+      "value": "Sağlık denetimi"
+    },
+    {
+      "key": "health.constantCondition",
+      "value": "koşul her zaman {0}; dal ölü kod"
+    },
+    {
+      "key": "health.cycle",
+      "value": "döngüsel bağımlılık: ifade girdileri üzerinden kendine dönüyor, kod üretilemez"
+    },
+    {
+      "key": "health.danglingInput",
+      "value": "zorunlu giriş '{0}' boş; üretilen kodda argüman eksik olur"
+    },
+    {
+      "key": "health.duplicate",
+      "value": "yinelenen parça: bu yapı dosyada {0} kez geçiyor"
+    },
+    {
+      "key": "health.emptyBody",
+      "value": "denetim bloğunun gövdesi yok, hiçbir şey yapmaz"
+    },
+    {
+      "key": "health.emptyMethod",
+      "value": "yöntem gövdesi boş"
+    },
+    {
+      "key": "health.escapeRatio",
+      "value": "ham parçalar kodun %{0}'i (eşik %{1}), yani alt küme çok dar"
+    },
+    {
+      "key": "health.expressionSize",
+      "value": "ifade büyük: {0} düğüm (eşik {1})"
+    },
+    {
+      "key": "health.fix",
+      "value": "Önerilen düzeltme"
+    },
+    {
+      "key": "health.fixAddRelease",
+      "value": "Serbest bırakma çağrısını ekle"
+    },
+    {
+      "key": "health.fixApply",
+      "value": "Uygula"
+    },
+    {
+      "key": "health.fixBreakLink",
+      "value": "Döngüyü kapatan bağlantıyı kes"
+    },
+    {
+      "key": "health.fixFillZero",
+      "value": "0 ile doldur"
+    },
+    {
+      "key": "health.fixNone",
+      "value": "Otomatik uygulanabilir düzeltme yok"
+    },
+    {
+      "key": "health.leak",
+      "value": "olası bellek sızıntısı: {0} {2} kez, {1} yalnızca {3} kez"
+    },
+    {
+      "key": "health.locals",
+      "value": "çok fazla yerel değişken: {0} (eşik {1})"
+    },
+    {
+      "key": "health.magicNumber",
+      "value": "sihirli sayı {0} dosyada {1} kez geçiyor"
+    },
+    {
+      "key": "health.memberChain",
+      "value": "üye erişim zinciri uzun: {0} (eşik {1})"
+    },
+    {
+      "key": "health.methodLength",
+      "value": "yöntem uzun: {0} deyim (eşik {1})"
+    },
+    {
+      "key": "health.methods",
+      "value": "Yöntem"
+    },
+    {
+      "key": "health.metric.escapes",
+      "value": "ham parça {0} ({1:F1}%)"
+    },
+    {
+      "key": "health.metric.methods",
+      "value": "yöntem {0}"
+    },
+    {
+      "key": "health.metric.statements",
+      "value": "deyim bloğu {0}"
+    },
+    {
+      "key": "health.nesting",
+      "value": "iç içe geçme derin: {0} düzey (eşik {1})"
+    },
+    {
+      "key": "health.none",
+      "value": "Sorun bulunamadı."
+    },
+    {
+      "key": "health.optimizerNone",
+      "value": "Otomatik iyileştirme henüz etkin değil (alt düzey bloklarla gelecek). Kanca hazır: bir INsg_Pass(Optimizer) kaydedin."
+    },
+    {
+      "key": "health.optimizerReady",
+      "value": "Otomatik iyileştirme kancası hazır: {0} iyileştirici geçiş kayıtlı."
+    },
+    {
+      "key": "health.passes",
+      "value": "kayıtlı geçişler: {0}"
+    },
+    {
+      "key": "health.placeholderName",
+      "value": "yer tutucu ad: '{0}'"
+    },
+    {
+      "key": "health.rerun",
+      "value": "Yeniden çalıştır"
+    },
+    {
+      "key": "health.score",
+      "value": "Puan {0}/100"
+    },
+    {
+      "key": "health.shortName",
+      "value": "ad çok kısa: '{0}'"
+    },
+    {
+      "key": "health.summary",
+      "value": "hata {0} / uyarı {1} / öneri {2}"
+    },
+    {
+      "key": "health.title",
+      "value": "Mimari sağlık"
+    },
+    {
+      "key": "health.unusedLocal",
+      "value": "'{0}' yereli bildirildikten sonra hiç okunmuyor"
+    },
+    {
+      "key": "info.canonicalized",
+      "value": "{0} yöntem kurallı biçimde değil; ilk \"Bloklar → Kod\" bunları yeniden biçimlendirir (anlam değişmez)."
+    },
+    {
+      "key": "info.exported",
+      "value": "Varsayılan blok kütüphanesi şuraya yazıldı: {0}"
+    },
+    {
+      "key": "info.libraryReloaded",
+      "value": "Blok kütüphanesi yenilendi: {0} blok."
+    },
+    {
+      "key": "info.managed",
+      "value": "Yönetime alındı: {0}"
+    },
+    {
+      "key": "info.unmanaged",
+      "value": "Yönetimden çıkarıldı: {0}"
+    },
+    {
+      "key": "macro.cannot",
+      "value": "bu düğüm blok olamaz"
+    },
+    {
+      "key": "macro.create",
+      "value": "Özel blok oluştur"
+    },
+    {
+      "key": "macro.saved",
+      "value": "özel blok kaydedildi: {0}"
+    },
+    {
+      "key": "manage.done",
+      "value": "{0} dosya yönetime alındı, {1} başarısız."
+    },
+    {
+      "key": "manage.nothing",
+      "value": "Yönetilecek yeni dosya yok."
+    },
+    {
+      "key": "manage.prompt",
+      "value": "{0} kaynak dosya yönetime alınacak; her biri kendi .nsg.json dosyasını alıp bloklara aktarılacak. Büyük bir projede bu uzun sürer. Devam edilsin mi?"
+    },
+    {
+      "key": "manage.title",
+      "value": "Toplu yönetim"
+    },
+    {
+      "key": "manage.unmanageDone",
+      "value": "{0} dosya söküldü, {1} başarısız."
+    },
+    {
+      "key": "manage.unmanageNothing",
+      "value": "Sökülecek blok yapılandırması yok."
+    },
+    {
+      "key": "manage.unmanagePrompt",
+      "value": "{0} dosyanın blok yapılandırması sökülecek: yanlarındaki .nsg.json silinir ve betikler yeniden sıradan dosya olur. .cs dosyasının kendisine dokunulmaz. Devam edilsin mi?"
+    },
+    {
+      "key": "msg.canonicalized",
+      "value": "{0} yöntem kurallı biçimde değil (eksik ayraç, tutarsız girinti veya birkaç eşdeğer yazım). İlk \"Bloklar → Kod\" bunları normalleştirir; anlam değişmez, biçim değişir."
+    },
+    {
+      "key": "msg.expect",
+      "value": "'{0}' bekleniyordu, '{1}' bulundu"
+    },
+    {
+      "key": "msg.expectIdent",
+      "value": "tanımlayıcı bekleniyordu, '{0}' bulundu"
+    },
+    {
+      "key": "msg.foreachName",
+      "value": "foreach yineleme değişkeni adı eksik"
+    },
+    {
+      "key": "msg.lexUnknown",
+      "value": "tanınmayan karakter '{0}'"
+    },
+    {
+      "key": "msg.methodCount",
+      "value": "diskteki yöntem sayısı ({0}) blok dosyasındakiyle ({1}) uyuşmuyor. Önce kodu yeniden içe aktarın ya da elle hizalayın, sonra üretin."
+    },
+    {
+      "key": "msg.methodName",
+      "value": "{0}. yöntem uyuşmuyor: diskte '{1}', blok dosyasında '{2}'."
+    },
+    {
+      "key": "msg.noModelGenerate",
+      "value": "üretilecek blok modeli yok."
+    },
+    {
+      "key": "msg.noModelRender",
+      "value": "işlenecek blok modeli yok."
+    },
+    {
+      "key": "msg.noSource",
+      "value": "kaynak dosya bulunamadı: {0}"
+    },
+    {
+      "key": "msg.outOfSubset",
+      "value": "bu deyim alt kümenin dışında; ham parça olarak korundu (bloklara geri çevrilemez)"
+    },
+    {
+      "key": "msg.unknownBlock",
+      "value": "'{0}' kütüphanede yok."
+    },
+    {
+      "key": "msg.unknownBlockHint",
+      "value": "'{0}' kütüphanede yok; Blocks/ altına ilgili JSON'u ekleyin."
+    },
+    {
+      "key": "msg.unknownExpr",
+      "value": "bilinmeyen ifade bloğu '{0}', koda geri çevrilemez."
+    },
+    {
+      "key": "msg.unknownStmt",
+      "value": "bilinmeyen blok '{0}', koda geri çevrilemez. İlgili blok tanımını kurun ya da ham parça bloğunu kullanın."
+    },
+    {
+      "key": "palette.empty",
+      "value": "(kullanılabilir blok yok)"
+    },
+    {
+      "key": "palette.found",
+      "value": "{0} blok bulundu"
+    },
+    {
+      "key": "palette.noMatch",
+      "value": "Eşleşen blok yok"
+    },
+    {
+      "key": "palette.other",
+      "value": "Diğer"
+    },
+    {
+      "key": "palette.search",
+      "value": "Blok ara…"
+    },
+    {
+      "key": "pick.clickToAdd",
+      "value": "Blok eklemek için tıklayın"
+    },
+    {
+      "key": "pick.empty",
+      "value": "(boş)"
+    },
+    {
+      "key": "pick.expression",
+      "value": "İfade bloğu ekle"
+    },
+    {
+      "key": "pick.noMatch",
+      "value": "Eşleşen blok yok"
+    },
+    {
+      "key": "pick.search",
+      "value": "Ara"
+    },
+    {
+      "key": "pick.statement",
+      "value": "Deyim bloğu ekle"
+    },
+    {
+      "key": "ribbon.group.api",
+      "value": "API"
+    },
+    {
+      "key": "ribbon.group.edit",
+      "value": "Düzenle"
+    },
+    {
+      "key": "ribbon.group.file",
+      "value": "Bu dosya"
+    },
+    {
+      "key": "ribbon.group.files",
+      "value": "Ayar dosyaları"
+    },
+    {
+      "key": "ribbon.group.folder",
+      "value": "Klasör"
+    },
+    {
+      "key": "ribbon.group.inspect",
+      "value": "Denetle"
+    },
+    {
+      "key": "ribbon.group.lang",
+      "value": "Dil"
+    },
+    {
+      "key": "ribbon.group.library",
+      "value": "Kitaplık"
+    },
+    {
+      "key": "ribbon.group.mode",
+      "value": "Mod"
+    },
+    {
+      "key": "ribbon.group.project",
+      "value": "Tüm proje"
+    },
+    {
+      "key": "ribbon.group.script",
+      "value": "Betik"
+    },
+    {
+      "key": "ribbon.group.version",
+      "value": "Sürüm"
+    },
+    {
+      "key": "ribbon.group.zoom",
+      "value": "Yakınlaştır"
+    },
+    {
+      "key": "ribbon.tab.home",
+      "value": "Giriş"
+    },
+    {
+      "key": "ribbon.tab.manage",
+      "value": "Yönet"
+    },
+    {
+      "key": "ribbon.tab.tools",
+      "value": "Araçlar"
+    },
+    {
+      "key": "ribbon.tab.view",
+      "value": "Görünüm"
+    },
+    {
+      "key": "scratch.hint",
+      "value": "Bağlanmamış bloklar (derlenmez)"
+    },
+    {
+      "key": "selftest.fail",
+      "value": "FAIL"
+    },
+    {
+      "key": "selftest.pass",
+      "value": "PASS"
+    },
+    {
+      "key": "selftest.summary",
+      "value": "{0} denetim, {1} başarılı, {2} başarısız"
+    },
+    {
+      "key": "selftest.title",
+      "value": "Gidiş-dönüş kendi testi"
+    },
+    {
+      "key": "shader.needShader",
+      "value": "Önce bir .shader dosyası seçin."
+    },
+    {
+      "key": "shader.shellDone",
+      "value": "{0} işlem hattı kabuğu üretildi: {1}"
+    },
+    {
+      "key": "shader.shellPrompt",
+      "value": "Geçerli dosya {0} işlem hattı için eksiksiz bir ShaderLab kabuğuyla üzerine yazılacak. Dosyadaki her şey kaybolur. Devam edilsin mi?"
+    },
+    {
+      "key": "shader.shellTitle",
+      "value": "ShaderLab kabuğu üret"
+    },
+    {
+      "key": "state.blocksdirty",
+      "value": "Bloklar değişti"
+    },
+    {
+      "key": "state.conflict",
+      "value": "Çakışma: iki taraf da değişti"
+    },
+    {
+      "key": "state.csdirty",
+      "value": "Kod değişti"
+    },
+    {
+      "key": "state.synced",
+      "value": "Eşitlendi"
+    },
+    {
+      "key": "state.unmanaged",
+      "value": "Serbest betik (blok dosyası yok)"
+    },
+    {
+      "key": "tree.base",
+      "value": "şundan türer"
+    },
+    {
+      "key": "tree.bodyEmpty",
+      "value": "(boş)"
+    },
+    {
+      "key": "tree.class",
+      "value": "sınıf"
+    },
+    {
+      "key": "tree.customBase",
+      "value": "Özel…"
+    },
+    {
+      "key": "tree.enum",
+      "value": "numaralandırma"
+    },
+    {
+      "key": "tree.interface",
+      "value": "arayüz"
+    },
+    {
+      "key": "tree.method",
+      "value": "yöntem"
+    },
+    {
+      "key": "tree.namespace",
+      "value": "ad alanı"
+    },
+    {
+      "key": "tree.noBase",
+      "value": "(yok)"
+    },
+    {
+      "key": "tree.raw",
+      "value": "üye (olduğu gibi korunur)"
+    },
+    {
+      "key": "tree.struct",
+      "value": "yapı"
+    },
+    {
+      "key": "tree.using",
+      "value": "using"
+    },
+    {
+      "key": "view.blueprint",
+      "value": "Blueprint (UE)"
+    },
+    {
+      "key": "view.mode",
+      "value": "Görünüm"
+    },
+    {
+      "key": "view.stack",
+      "value": "Yığın (Scratch)"
+    },
+    {
+      "key": "win.lang",
+      "value": "Dil"
+    },
+    {
+      "key": "win.noDoc",
+      "value": "Açık dosya yok"
+    },
+    {
+      "key": "win.none",
+      "value": "—"
+    },
+    {
+      "key": "win.pipeline",
+      "value": "İşlem hattı"
+    },
+    {
+      "key": "win.pipelineAuto",
+      "value": "Otomatik ({0})"
+    },
+    {
+      "key": "win.title",
+      "value": "NekoScriptGraph Blok Düzenleyici"
+    }
+  ],
+  "blocks": [
+    {
+      "key": "c.abs",
+      "value": "mutlak değer {0}"
+    },
+    {
+      "key": "c.assert",
+      "value": "doğrulama {0}"
+    },
+    {
+      "key": "c.atof",
+      "value": "metinden ondalık {0}"
+    },
+    {
+      "key": "c.atoi",
+      "value": "metinden tam sayı {0}"
+    },
+    {
+      "key": "c.exit",
+      "value": "programdan çık {0}"
+    },
+    {
+      "key": "c.fabs",
+      "value": "ondalık mutlak değer {0}"
+    },
+    {
+      "key": "c.fclose",
+      "value": "{0} dosyasını kapat"
+    },
+    {
+      "key": "c.fgets",
+      "value": "{0} içinden {1} içine satır oku, en çok {2} bayt"
+    },
+    {
+      "key": "c.fopen",
+      "value": "{0} dosyasını {1} kipinde aç"
+    },
+    {
+      "key": "c.fprintf",
+      "value": "{0} içine {1} yaz"
+    },
+    {
+      "key": "c.free",
+      "value": "{0} serbest bırak"
+    },
+    {
+      "key": "c.malloc",
+      "value": "{0} bayt ayır"
+    },
+    {
+      "key": "c.memcpy",
+      "value": "{2} bayt kopyala {1}→{0}"
+    },
+    {
+      "key": "c.memset",
+      "value": "{0} öğesini {1} ile {2} bayt doldur"
+    },
+    {
+      "key": "c.perror",
+      "value": "hata bildir {0}"
+    },
+    {
+      "key": "c.pow",
+      "value": "kuvvet {0}^{1}"
+    },
+    {
+      "key": "c.printf",
+      "value": "printf({0})"
+    },
+    {
+      "key": "c.sizeof",
+      "value": "sizeof({0})"
+    },
+    {
+      "key": "c.sqrt",
+      "value": "karekök {0}"
+    },
+    {
+      "key": "c.strcat",
+      "value": "metinleri birleştir {0}+{1}"
+    },
+    {
+      "key": "c.strcmp",
+      "value": "metinleri karşılaştır {0} {1}"
+    },
+    {
+      "key": "c.strcpy",
+      "value": "metni kopyala {1}→{0}"
+    },
+    {
+      "key": "c.strlen",
+      "value": "metin uzunluğu {0}"
+    },
+    {
+      "key": "cpp.at",
+      "value": "{0} öğesinin {1}. öğesi"
+    },
+    {
+      "key": "cpp.cin",
+      "value": "{0} içine girdi"
+    },
+    {
+      "key": "cpp.cout",
+      "value": "{0} yazdır"
+    },
+    {
+      "key": "cpp.delete",
+      "value": "{0} serbest bırak"
+    },
+    {
+      "key": "cpp.getline",
+      "value": "{0} içine satır oku"
+    },
+    {
+      "key": "cpp.make_shared",
+      "value": "paylaşılan işaretçi {0} = yeni"
+    },
+    {
+      "key": "cpp.map",
+      "value": "eşleme {0}<{1}, {2}>"
+    },
+    {
+      "key": "cpp.move",
+      "value": "{0} taşı"
+    },
+    {
+      "key": "cpp.printf",
+      "value": "printf({0})"
+    },
+    {
+      "key": "cpp.push_back",
+      "value": "{0} içine {1} ekle"
+    },
+    {
+      "key": "cpp.size",
+      "value": "{0} boyutu"
+    },
+    {
+      "key": "cpp.sizeof",
+      "value": "sizeof({0})"
+    },
+    {
+      "key": "cpp.stoi",
+      "value": "metinden tam sayı {0}"
+    },
+    {
+      "key": "cpp.string",
+      "value": "metin {0} = {1}"
+    },
+    {
+      "key": "cpp.throw",
+      "value": "{0} fırlat"
+    },
+    {
+      "key": "cpp.to_string",
+      "value": "metne {0}"
+    },
+    {
+      "key": "cpp.unique_ptr",
+      "value": "benzersiz işaretçi {0} = yeni {1}"
+    },
+    {
+      "key": "cpp.vector",
+      "value": "vektör {0}<{1}>"
+    },
+    {
+      "key": "expr.binary",
+      "value": "{0} {1} {2}"
+    },
+    {
+      "key": "expr.call",
+      "value": "{0} çağır"
+    },
+    {
+      "key": "expr.cast",
+      "value": "{1} değerini {0} türüne çevir"
+    },
+    {
+      "key": "expr.conditional",
+      "value": "eğer {0} ise {1} değilse {2}"
+    },
+    {
+      "key": "expr.ident",
+      "value": "değişken {0}"
+    },
+    {
+      "key": "expr.index",
+      "value": "{0} öğesinin {1}. öğesi"
+    },
+    {
+      "key": "expr.literal",
+      "value": "{0}"
+    },
+    {
+      "key": "expr.member",
+      "value": "{0} öğesinin {1}"
+    },
+    {
+      "key": "expr.new",
+      "value": "{0} oluştur"
+    },
+    {
+      "key": "expr.postfix",
+      "value": "{0}{1}"
+    },
+    {
+      "key": "expr.raw",
+      "value": "ham C# {0}"
+    },
+    {
+      "key": "expr.unary",
+      "value": "{0}{1}"
+    },
+    {
+      "key": "hlsl.abs",
+      "value": "mutlak değer {0}"
+    },
+    {
+      "key": "hlsl.acos",
+      "value": "ark kosinüs {0}"
+    },
+    {
+      "key": "hlsl.all",
+      "value": "{0} hepsi doğru"
+    },
+    {
+      "key": "hlsl.any",
+      "value": "{0} içinden herhangi biri doğru"
+    },
+    {
+      "key": "hlsl.asin",
+      "value": "ark sinüs {0}"
+    },
+    {
+      "key": "hlsl.atan",
+      "value": "ark tanjant {0}"
+    },
+    {
+      "key": "hlsl.atan2",
+      "value": "ark tanjant {0}/{1}"
+    },
+    {
+      "key": "hlsl.ceil",
+      "value": "yukarı yuvarla {0}"
+    },
+    {
+      "key": "hlsl.clamp",
+      "value": "{0} sınırla {1}..{2}"
+    },
+    {
+      "key": "hlsl.clip",
+      "value": "{0} kırp"
+    },
+    {
+      "key": "hlsl.clipPos",
+      "value": "clip koordinatı {0}"
+    },
+    {
+      "key": "hlsl.cos",
+      "value": "kosinüs {0}"
+    },
+    {
+      "key": "hlsl.cross",
+      "value": "vektörel çarpım {0}×{1}"
+    },
+    {
+      "key": "hlsl.ddx",
+      "value": "{0} ekran X değişimi"
+    },
+    {
+      "key": "hlsl.ddy",
+      "value": "{0} ekran Y değişimi"
+    },
+    {
+      "key": "hlsl.determinant",
+      "value": "determinant {0}"
+    },
+    {
+      "key": "hlsl.discard",
+      "value": "pikseli at"
+    },
+    {
+      "key": "hlsl.distance",
+      "value": "mesafe {0}→{1}"
+    },
+    {
+      "key": "hlsl.dot",
+      "value": "skaler çarpım {0}·{1}"
+    },
+    {
+      "key": "hlsl.exp",
+      "value": "e üzeri {0}"
+    },
+    {
+      "key": "hlsl.exp2",
+      "value": "2 üzeri {0}"
+    },
+    {
+      "key": "hlsl.floor",
+      "value": "aşağı yuvarla {0}"
+    },
+    {
+      "key": "hlsl.fmod",
+      "value": "ondalık mod {0} {1}"
+    },
+    {
+      "key": "hlsl.frac",
+      "value": "ondalık kısım {0}"
+    },
+    {
+      "key": "hlsl.length",
+      "value": "uzunluk {0}"
+    },
+    {
+      "key": "hlsl.lerp",
+      "value": "{0}→{1} arasında {2} ile ara değer"
+    },
+    {
+      "key": "hlsl.log",
+      "value": "doğal logaritma {0}"
+    },
+    {
+      "key": "hlsl.log2",
+      "value": "{0} 2 tabanında logaritma"
+    },
+    {
+      "key": "hlsl.mad",
+      "value": "çarp-topla {0}×{1}+{2}"
+    },
+    {
+      "key": "hlsl.max",
+      "value": "büyük olan {0} {1}"
+    },
+    {
+      "key": "hlsl.min",
+      "value": "küçük olan {0} {1}"
+    },
+    {
+      "key": "hlsl.mul",
+      "value": "matris çarpımı {0}×{1}"
+    },
+    {
+      "key": "hlsl.normalize",
+      "value": "{0} normalleştir"
+    },
+    {
+      "key": "hlsl.pow",
+      "value": "kuvvet {0}^{1}"
+    },
+    {
+      "key": "hlsl.rcp",
+      "value": "tersi {0}"
+    },
+    {
+      "key": "hlsl.reflect",
+      "value": "{0} yansıt {1} üzerinden"
+    },
+    {
+      "key": "hlsl.refract",
+      "value": "{0} kır {1} üzerinden kırılma {2}"
+    },
+    {
+      "key": "hlsl.round",
+      "value": "yuvarla {0}"
+    },
+    {
+      "key": "hlsl.rsqrt",
+      "value": "karekökün tersi {0}"
+    },
+    {
+      "key": "hlsl.sample",
+      "value": "{0} örnekle {1} noktasında"
+    },
+    {
+      "key": "hlsl.saturate",
+      "value": "saturate({0})"
+    },
+    {
+      "key": "hlsl.sign",
+      "value": "işaret {0}"
+    },
+    {
+      "key": "hlsl.sin",
+      "value": "sinüs {0}"
+    },
+    {
+      "key": "hlsl.smoothstep",
+      "value": "yumuşak geçiş {0}..{1} değer {2}"
+    },
+    {
+      "key": "hlsl.sqrt",
+      "value": "karekök {0}"
+    },
+    {
+      "key": "hlsl.step",
+      "value": "basamak {0} eşik {1}"
+    },
+    {
+      "key": "hlsl.tan",
+      "value": "tanjant {0}"
+    },
+    {
+      "key": "hlsl.tex2D",
+      "value": "{0} örnekle {1} noktasında"
+    },
+    {
+      "key": "hlsl.tex2Dlod",
+      "value": "{0} örnekle {1} noktasında"
+    },
+    {
+      "key": "hlsl.texCUBE",
+      "value": "küp örnekleme {0} yön {1}"
+    },
+    {
+      "key": "hlsl.transpose",
+      "value": "{0} devrik"
+    },
+    {
+      "key": "hlsl.trunc",
+      "value": "{0} kırp"
+    },
+    {
+      "key": "java.add",
+      "value": "{0} içine {1} ekle"
+    },
+    {
+      "key": "java.arraysSort",
+      "value": "{0} sırala"
+    },
+    {
+      "key": "java.equals",
+      "value": "{0} eşit {1}"
+    },
+    {
+      "key": "java.format",
+      "value": "{0} biçimle {1} ile"
+    },
+    {
+      "key": "java.get",
+      "value": "{0} öğesinin {1}. öğesi"
+    },
+    {
+      "key": "java.length",
+      "value": "{0} uzunluğu"
+    },
+    {
+      "key": "java.list",
+      "value": "liste {0}"
+    },
+    {
+      "key": "java.map",
+      "value": "eşleme {0}"
+    },
+    {
+      "key": "java.mathAbs",
+      "value": "mutlak değer {0}"
+    },
+    {
+      "key": "java.mathMax",
+      "value": "büyük olan {0} {1}"
+    },
+    {
+      "key": "java.mathMin",
+      "value": "küçük olan {0} {1}"
+    },
+    {
+      "key": "java.mathPow",
+      "value": "kuvvet {0}^{1}"
+    },
+    {
+      "key": "java.mathRandom",
+      "value": "rastgele sayı"
+    },
+    {
+      "key": "java.mathSqrt",
+      "value": "karekök {0}"
+    },
+    {
+      "key": "java.parseDouble",
+      "value": "metinden ondalık {0}"
+    },
+    {
+      "key": "java.parseInt",
+      "value": "metinden tam sayı {0}"
+    },
+    {
+      "key": "java.print",
+      "value": "{0} yazdır (satırsız)"
+    },
+    {
+      "key": "java.println",
+      "value": "{0} yazdır"
+    },
+    {
+      "key": "java.put",
+      "value": "{1} → {2} değerini {0} içine koy"
+    },
+    {
+      "key": "java.split",
+      "value": "{0} bölü {1}"
+    },
+    {
+      "key": "java.substring",
+      "value": "{0} alt dizesi {1}..{2}"
+    },
+    {
+      "key": "java.throw",
+      "value": "{0} fırlat"
+    },
+    {
+      "key": "java.toString",
+      "value": "{0} metne"
+    },
+    {
+      "key": "java.valueOf",
+      "value": "metne {0}"
+    },
+    {
+      "key": "py.abs",
+      "value": "mutlak değer {0}"
+    },
+    {
+      "key": "py.append",
+      "value": "{1} içine {0} ekle"
+    },
+    {
+      "key": "py.assert",
+      "value": "doğrulama {0}"
+    },
+    {
+      "key": "py.chr",
+      "value": "koddan karaktere {0}"
+    },
+    {
+      "key": "py.del",
+      "value": "{0} sil"
+    },
+    {
+      "key": "py.dict",
+      "value": "sözlük {0}"
+    },
+    {
+      "key": "py.enumerate",
+      "value": "{0} indeksiyle"
+    },
+    {
+      "key": "py.float",
+      "value": "ondalığa {0}"
+    },
+    {
+      "key": "py.format",
+      "value": "{0} biçimle {1} ile"
+    },
+    {
+      "key": "py.fromImport",
+      "value": "{0} içinden {1} içe aktar"
+    },
+    {
+      "key": "py.global",
+      "value": "genel {0}"
+    },
+    {
+      "key": "py.import",
+      "value": "{0} içe aktar"
+    },
+    {
+      "key": "py.input",
+      "value": "girdi oku {0}"
+    },
+    {
+      "key": "py.int",
+      "value": "tam sayıya {0}"
+    },
+    {
+      "key": "py.isinstance",
+      "value": "{0} eşittir {1}"
+    },
+    {
+      "key": "py.items",
+      "value": "{0} çiftleri"
+    },
+    {
+      "key": "py.join",
+      "value": "{1} birleştir {0} ile"
+    },
+    {
+      "key": "py.keys",
+      "value": "{0} anahtarları"
+    },
+    {
+      "key": "py.len",
+      "value": "uzunluk {0}"
+    },
+    {
+      "key": "py.list",
+      "value": "liste {0}"
+    },
+    {
+      "key": "py.lower",
+      "value": "{0} küçük harfe"
+    },
+    {
+      "key": "py.max",
+      "value": "{0} en büyüğü"
+    },
+    {
+      "key": "py.min",
+      "value": "{0} en küçüğü"
+    },
+    {
+      "key": "py.ord",
+      "value": "karakter kodu {0}"
+    },
+    {
+      "key": "py.pass",
+      "value": "pass"
+    },
+    {
+      "key": "py.print",
+      "value": "print({0})"
+    },
+    {
+      "key": "py.raise",
+      "value": "{0} fırlat"
+    },
+    {
+      "key": "py.range",
+      "value": "aralık {0}"
+    },
+    {
+      "key": "py.replace",
+      "value": "{0} içinde {1} yerine {2} koy"
+    },
+    {
+      "key": "py.repr",
+      "value": "gösterim {0}"
+    },
+    {
+      "key": "py.round",
+      "value": "yuvarla {0}"
+    },
+    {
+      "key": "py.set",
+      "value": "küme {0}"
+    },
+    {
+      "key": "py.sorted",
+      "value": "{0} sırala"
+    },
+    {
+      "key": "py.split",
+      "value": "{1} bölü {0}"
+    },
+    {
+      "key": "py.str",
+      "value": "metne {0}"
+    },
+    {
+      "key": "py.strip",
+      "value": "boşlukları kırp {0}"
+    },
+    {
+      "key": "py.sum",
+      "value": "{0} toplamı"
+    },
+    {
+      "key": "py.tuple",
+      "value": "demet {0}"
+    },
+    {
+      "key": "py.type",
+      "value": "tür {0}"
+    },
+    {
+      "key": "py.upper",
+      "value": "{0} büyük harfe"
+    },
+    {
+      "key": "py.yield",
+      "value": "{0} üret"
+    },
+    {
+      "key": "py.zip",
+      "value": "{0} {1} eşle"
+    },
+    {
+      "key": "rust.assert",
+      "value": "doğrulama {0}"
+    },
+    {
+      "key": "rust.collect",
+      "value": "{0} topla"
+    },
+    {
+      "key": "rust.eprintln",
+      "value": "hata çıktısı {0}"
+    },
+    {
+      "key": "rust.err",
+      "value": "Err({0})"
+    },
+    {
+      "key": "rust.expect",
+      "value": "{0} aç yoksa hata {1}"
+    },
+    {
+      "key": "rust.filter",
+      "value": "{0} süz {1} ile"
+    },
+    {
+      "key": "rust.format",
+      "value": "{0} biçimle"
+    },
+    {
+      "key": "rust.hashmap",
+      "value": "eşleme {0}"
+    },
+    {
+      "key": "rust.is_ok",
+      "value": "{0} Ok"
+    },
+    {
+      "key": "rust.iter",
+      "value": "{0} gez"
+    },
+    {
+      "key": "rust.len",
+      "value": "{0} uzunluğu"
+    },
+    {
+      "key": "rust.map",
+      "value": "{0} üzerinde her birine {1} uygula"
+    },
+    {
+      "key": "rust.none",
+      "value": "None"
+    },
+    {
+      "key": "rust.ok",
+      "value": "Ok({0})"
+    },
+    {
+      "key": "rust.panic",
+      "value": "panic!({0})"
+    },
+    {
+      "key": "rust.parse",
+      "value": "{0} çözümle"
+    },
+    {
+      "key": "rust.pop",
+      "value": "{0} sonuncuyu çıkar"
+    },
+    {
+      "key": "rust.println",
+      "value": "println!({0})"
+    },
+    {
+      "key": "rust.push",
+      "value": "{0} içine {1} ekle"
+    },
+    {
+      "key": "rust.some",
+      "value": "Some({0})"
+    },
+    {
+      "key": "rust.string_from",
+      "value": "metin {0}"
+    },
+    {
+      "key": "rust.to_string",
+      "value": "{0} metne"
+    },
+    {
+      "key": "rust.todo",
+      "value": "todo yer tutucu"
+    },
+    {
+      "key": "rust.unreachable",
+      "value": "ulaşılamaz"
+    },
+    {
+      "key": "rust.unwrap",
+      "value": "{0} aç"
+    },
+    {
+      "key": "rust.unwrap_or",
+      "value": "{0} aç yoksa {1}"
+    },
+    {
+      "key": "rust.vec",
+      "value": "vektör oluştur {0}"
+    },
+    {
+      "key": "stmt.add",
+      "value": "{0} değerini {1} artır"
+    },
+    {
+      "key": "stmt.assign",
+      "value": "{0} değerini {1} yap"
+    },
+    {
+      "key": "stmt.break",
+      "value": "döngüden çık"
+    },
+    {
+      "key": "stmt.continue",
+      "value": "sonraki yineleme"
+    },
+    {
+      "key": "stmt.div",
+      "value": "{0} bölü {1}"
+    },
+    {
+      "key": "stmt.expr",
+      "value": "{0} çalıştır"
+    },
+    {
+      "key": "stmt.for",
+      "value": "sayılı döngü"
+    },
+    {
+      "key": "stmt.foreach",
+      "value": "her {0} {1} için {2} içinde"
+    },
+    {
+      "key": "stmt.if",
+      "value": "eğer {0}"
+    },
+    {
+      "key": "stmt.localDecl",
+      "value": "{0} {1} = {2} bildir"
+    },
+    {
+      "key": "stmt.mod",
+      "value": "{0} mod {1}"
+    },
+    {
+      "key": "stmt.mul",
+      "value": "{0} ile {1} çarp"
+    },
+    {
+      "key": "stmt.raw",
+      "value": "ham C# {0}"
+    },
+    {
+      "key": "stmt.return",
+      "value": "{0} döndür"
+    },
+    {
+      "key": "stmt.sub",
+      "value": "{0} değerini {1} azalt"
+    },
+    {
+      "key": "stmt.while",
+      "value": "{0} iken yinele"
+    }
+  ]
+}

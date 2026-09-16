@@ -1,0 +1,29 @@
+{
+    "id": "api.CPUBurstDecalUtils.UpdateDecal.1",
+    "level": "high",
+    "shape": "statement",
+    "category": "CPUBurstDecalUtils",
+    "categoryKey": "cat.api",
+    "label": "CPUBurstDecalUtils.UpdateDecal({0})",
+    "labelEn": "CPUBurstDecalUtils.UpdateDecal({0})",
+    "labelRu": "CPUBurstDecalUtils.UpdateDecal({0})",
+    "sockets": [
+        {
+            "name": "decal",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "CPUBurstDecalUtils.UpdateDecal",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "CPUBurstDecalUtils.UpdateDecal(decal) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

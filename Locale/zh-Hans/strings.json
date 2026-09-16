@@ -1,0 +1,2379 @@
+{
+  "schemaVersion": 1,
+  "code": "zh-Hans",
+  "name": "简体中文",
+  "rtl": false,
+  "order": 0,
+  "ui": [
+    {
+      "key": "api.done",
+      "value": "已生成 {0} 个 API 积木（跳过 {1} 个）。"
+    },
+    {
+      "key": "api.folder",
+      "value": "API 积木来源文件夹"
+    },
+    {
+      "key": "api.noFolder",
+      "value": "选中的不是文件夹。"
+    },
+    {
+      "key": "api.noSources",
+      "value": "没有扫描到任何源文件。"
+    },
+    {
+      "key": "api.projectPrompt",
+      "value": "扫描到 {0} 个源文件。将为所有 public 方法生成积木库到：\n{1}\n\n文件多时可能生成上千个积木并花费较长时间，继续？"
+    },
+    {
+      "key": "api.prompt",
+      "value": "为选中文件夹生成 API 积木库？"
+    },
+    {
+      "key": "api.title",
+      "value": "生成 API 积木库"
+    },
+    {
+      "key": "blk.body",
+      "value": "体"
+    },
+    {
+      "key": "blk.del",
+      "value": "删除"
+    },
+    {
+      "key": "blk.down",
+      "value": "下移"
+    },
+    {
+      "key": "blk.dup",
+      "value": "复制"
+    },
+    {
+      "key": "blk.editRaw",
+      "value": "编辑原始片段"
+    },
+    {
+      "key": "blk.else",
+      "value": "否则"
+    },
+    {
+      "key": "blk.insertAbove",
+      "value": "在上方插入"
+    },
+    {
+      "key": "blk.insertBelow",
+      "value": "在下方插入"
+    },
+    {
+      "key": "blk.menu",
+      "value": "积木操作"
+    },
+    {
+      "key": "blk.rename",
+      "value": "重命名"
+    },
+    {
+      "key": "blk.replace",
+      "value": "替换"
+    },
+    {
+      "key": "blk.up",
+      "value": "上移"
+    },
+    {
+      "key": "bp.tidy",
+      "value": "自动整理"
+    },
+    {
+      "key": "btn.api",
+      "value": "为选中文件夹生成 API 积木库"
+    },
+    {
+      "key": "btn.apiAll",
+      "value": "一键构建全项目 API 库"
+    },
+    {
+      "key": "btn.checkpoint",
+      "value": "断点档"
+    },
+    {
+      "key": "btn.collapseAll",
+      "value": "折叠全部"
+    },
+    {
+      "key": "btn.errors",
+      "value": "报错窗口"
+    },
+    {
+      "key": "btn.expandAll",
+      "value": "展开全部"
+    },
+    {
+      "key": "btn.fit",
+      "value": "适应窗口"
+    },
+    {
+      "key": "btn.generate",
+      "value": "积木 → 代码"
+    },
+    {
+      "key": "btn.git",
+      "value": "Git 断点"
+    },
+    {
+      "key": "btn.import",
+      "value": "代码 → 积木"
+    },
+    {
+      "key": "btn.library",
+      "value": "重载积木库"
+    },
+    {
+      "key": "btn.manage",
+      "value": "纳入托管"
+    },
+    {
+      "key": "btn.manageAll",
+      "value": "给全项目代码托管积木"
+    },
+    {
+      "key": "btn.manageFolder",
+      "value": "给选中文件夹托管积木"
+    },
+    {
+      "key": "btn.open",
+      "value": "打开选中脚本"
+    },
+    {
+      "key": "btn.preview",
+      "value": "预览"
+    },
+    {
+      "key": "btn.redo",
+      "value": "重做"
+    },
+    {
+      "key": "btn.selftest",
+      "value": "自检"
+    },
+    {
+      "key": "btn.shell",
+      "value": "生成管线外壳"
+    },
+    {
+      "key": "btn.sprites",
+      "value": "启用精灵图"
+    },
+    {
+      "key": "btn.undo",
+      "value": "撤销"
+    },
+    {
+      "key": "btn.unmanage",
+      "value": "解除托管"
+    },
+    {
+      "key": "btn.unmanageAll",
+      "value": "拆除全项目的积木配置"
+    },
+    {
+      "key": "btn.unmanageFolder",
+      "value": "拆除选中文件夹的积木配置"
+    },
+    {
+      "key": "cat.api",
+      "value": "API"
+    },
+    {
+      "key": "cat.apiAll",
+      "value": "全部"
+    },
+    {
+      "key": "cat.ctrl",
+      "value": "控制"
+    },
+    {
+      "key": "cat.expr",
+      "value": "表达式"
+    },
+    {
+      "key": "cat.frame",
+      "value": "结构"
+    },
+    {
+      "key": "cat.macro",
+      "value": "自制积木"
+    },
+    {
+      "key": "cat.raw",
+      "value": "逃生舱"
+    },
+    {
+      "key": "cat.var",
+      "value": "变量"
+    },
+    {
+      "key": "confirm.alreadyManaged",
+      "value": "已经在托管中。"
+    },
+    {
+      "key": "confirm.cancel",
+      "value": "取消"
+    },
+    {
+      "key": "confirm.continue",
+      "value": "继续"
+    },
+    {
+      "key": "confirm.manage",
+      "value": "现在建立积木文件并导入吗？"
+    },
+    {
+      "key": "confirm.manageYes",
+      "value": "建立并导入"
+    },
+    {
+      "key": "confirm.notManaged",
+      "value": "没有积木文件，本来就是自由脚本。"
+    },
+    {
+      "key": "confirm.ok",
+      "value": "好"
+    },
+    {
+      "key": "confirm.overwriteConflict",
+      "value": "代码和积木都改过。覆盖会丢弃方法体里的手改（字段、特性、注释会保留）。继续？"
+    },
+    {
+      "key": "confirm.reimportConflict",
+      "value": "积木里有未写回代码的改动，反覆盖会丢弃它们。继续？"
+    },
+    {
+      "key": "confirm.selectCs",
+      "value": "请先在 Project 窗口里选中一个 .cs 文件。"
+    },
+    {
+      "key": "confirm.selectFolder",
+      "value": "请先在 Project 窗口里选中一个文件夹。"
+    },
+    {
+      "key": "confirm.title",
+      "value": "NekoScriptGraph"
+    },
+    {
+      "key": "confirm.unmanage",
+      "value": "删除积木文件？脚本会变回自由脚本。"
+    },
+    {
+      "key": "confirm.unmanageYes",
+      "value": "删除积木文件"
+    },
+    {
+      "key": "cp.confirmLoad",
+      "value": "读取断点会覆盖当前代码与积木。继续？"
+    },
+    {
+      "key": "cp.delete",
+      "value": "删除断点 {0}"
+    },
+    {
+      "key": "cp.empty",
+      "value": "断点 {0}（空）"
+    },
+    {
+      "key": "cp.load",
+      "value": "读取断点 {0}（{1}）"
+    },
+    {
+      "key": "cp.loaded",
+      "value": "已读取断点 {0}"
+    },
+    {
+      "key": "cp.overwrite",
+      "value": "保存到断点 {0}（覆盖：{1}）"
+    },
+    {
+      "key": "cp.save",
+      "value": "保存到断点 {0}"
+    },
+    {
+      "key": "cp.saved",
+      "value": "已保存到断点 {0}"
+    },
+    {
+      "key": "diag.summary",
+      "value": "错误 {0} / 警告 {1} / 提示 {2}"
+    },
+    {
+      "key": "drag.blocks",
+      "value": "{0} 块积木"
+    },
+    {
+      "key": "err.clear",
+      "value": "清空"
+    },
+    {
+      "key": "err.count",
+      "value": "错误 {0} / 警告 {1} / 提示 {2}"
+    },
+    {
+      "key": "err.details",
+      "value": "详情见报错窗口。"
+    },
+    {
+      "key": "err.error",
+      "value": "错误"
+    },
+    {
+      "key": "err.generateFailed",
+      "value": "覆盖失败"
+    },
+    {
+      "key": "err.goto",
+      "value": "定位"
+    },
+    {
+      "key": "err.info",
+      "value": "提示"
+    },
+    {
+      "key": "err.manageFailed",
+      "value": "导入失败"
+    },
+    {
+      "key": "err.none",
+      "value": "没有诊断信息。"
+    },
+    {
+      "key": "err.reimportFailed",
+      "value": "反覆盖失败"
+    },
+    {
+      "key": "err.title",
+      "value": "NekoScriptGraph 报错窗口"
+    },
+    {
+      "key": "err.warning",
+      "value": "警告"
+    },
+    {
+      "key": "files.btnHide",
+      "value": "隐藏配置文件"
+    },
+    {
+      "key": "files.btnShow",
+      "value": "显示配置文件"
+    },
+    {
+      "key": "files.hidden",
+      "value": "已隐藏 {0} 个积木配置文件"
+    },
+    {
+      "key": "files.hotkeyHint",
+      "value": "快捷键 Ctrl/Cmd+Shift+H"
+    },
+    {
+      "key": "files.shown",
+      "value": "已显示 {0} 个积木配置文件"
+    },
+    {
+      "key": "git.done",
+      "value": "已创建 Git 断点。"
+    },
+    {
+      "key": "git.failed",
+      "value": "Git 提交失败："
+    },
+    {
+      "key": "git.noChanges",
+      "value": "本脚本没有改动，无需提交。"
+    },
+    {
+      "key": "git.notRepo",
+      "value": "当前项目不是 git 仓库。"
+    },
+    {
+      "key": "git.note",
+      "value": "内置断点存放在 .checkpoints（已被 git 忽略），永远不会和仓库历史冲突。"
+    },
+    {
+      "key": "health.afterReturn",
+      "value": "return 之后还有语句，永远不会执行"
+    },
+    {
+      "key": "health.btn",
+      "value": "健康度检测"
+    },
+    {
+      "key": "health.constantCondition",
+      "value": "条件恒为 {0}，整个分支是死代码"
+    },
+    {
+      "key": "health.cycle",
+      "value": "循环依赖：表达式通过参数绕回自己，无法生成代码"
+    },
+    {
+      "key": "health.danglingInput",
+      "value": "必填输入 '{0}' 是空的，生成的代码会少一个参数"
+    },
+    {
+      "key": "health.duplicate",
+      "value": "重复片段：该结构在文件里出现 {0} 次"
+    },
+    {
+      "key": "health.emptyBody",
+      "value": "控制块没有主体，什么都不做"
+    },
+    {
+      "key": "health.emptyMethod",
+      "value": "方法体为空"
+    },
+    {
+      "key": "health.escapeRatio",
+      "value": "原始片段占比 {0}%（阈值 {1}%），说明子集覆盖不足"
+    },
+    {
+      "key": "health.expressionSize",
+      "value": "表达式过大：{0} 个节点（阈值 {1}）"
+    },
+    {
+      "key": "health.fix",
+      "value": "修复方案"
+    },
+    {
+      "key": "health.fixAddRelease",
+      "value": "在后面补上释放调用"
+    },
+    {
+      "key": "health.fixApply",
+      "value": "应用"
+    },
+    {
+      "key": "health.fixBreakLink",
+      "value": "断开循环的那条连线"
+    },
+    {
+      "key": "health.fixFillZero",
+      "value": "填入 0 占位"
+    },
+    {
+      "key": "health.fixNone",
+      "value": "没有可自动应用的修复方案"
+    },
+    {
+      "key": "health.leak",
+      "value": "可能的内存泄漏：{0} 用了 {2} 次，{1} 只用了 {3} 次"
+    },
+    {
+      "key": "health.locals",
+      "value": "局部变量过多：{0} 个（阈值 {1}）"
+    },
+    {
+      "key": "health.magicNumber",
+      "value": "魔法数字 {0} 在文件里出现 {1} 次"
+    },
+    {
+      "key": "health.memberChain",
+      "value": "成员访问链过长：{0} 层（阈值 {1}）"
+    },
+    {
+      "key": "health.methodLength",
+      "value": "方法过长：{0} 条语句（阈值 {1}）"
+    },
+    {
+      "key": "health.methods",
+      "value": "方法"
+    },
+    {
+      "key": "health.metric.escapes",
+      "value": "原始片段 {0}（{1:F1}%）"
+    },
+    {
+      "key": "health.metric.methods",
+      "value": "方法数 {0}"
+    },
+    {
+      "key": "health.metric.statements",
+      "value": "语句块 {0}"
+    },
+    {
+      "key": "health.nesting",
+      "value": "嵌套过深：{0} 层（阈值 {1}）"
+    },
+    {
+      "key": "health.none",
+      "value": "没有发现问题。"
+    },
+    {
+      "key": "health.optimizerNone",
+      "value": "自动优化尚未启用（等低级积木一起做）。接口已就绪：注册一个 INsg_Pass(Optimizer) 即可接入。"
+    },
+    {
+      "key": "health.optimizerReady",
+      "value": "自动优化接口已就绪：已注册 {0} 个优化 pass。"
+    },
+    {
+      "key": "health.passes",
+      "value": "已注册 pass：{0}"
+    },
+    {
+      "key": "health.placeholderName",
+      "value": "占位式命名：'{0}'"
+    },
+    {
+      "key": "health.rerun",
+      "value": "重新检测"
+    },
+    {
+      "key": "health.score",
+      "value": "健康度 {0}/100"
+    },
+    {
+      "key": "health.shortName",
+      "value": "变量名过短：'{0}'"
+    },
+    {
+      "key": "health.summary",
+      "value": "错误 {0} / 警告 {1} / 建议 {2}"
+    },
+    {
+      "key": "health.title",
+      "value": "架构健康度"
+    },
+    {
+      "key": "health.unusedLocal",
+      "value": "局部变量 '{0}' 声明后从未被读取"
+    },
+    {
+      "key": "info.canonicalized",
+      "value": "有 {0} 个方法不是规范形，第一次“积木 → 代码”会规范化它们的格式（语义不变）。"
+    },
+    {
+      "key": "info.exported",
+      "value": "已导出默认积木库到 {0}"
+    },
+    {
+      "key": "info.libraryReloaded",
+      "value": "积木库已重载，共 {0} 个积木。"
+    },
+    {
+      "key": "info.managed",
+      "value": "已托管 {0}"
+    },
+    {
+      "key": "info.unmanaged",
+      "value": "已解除托管 {0}"
+    },
+    {
+      "key": "macro.cannot",
+      "value": "这个节点不能变成积木"
+    },
+    {
+      "key": "macro.create",
+      "value": "生成自制积木"
+    },
+    {
+      "key": "macro.saved",
+      "value": "已保存自制积木：{0}"
+    },
+    {
+      "key": "manage.done",
+      "value": "已托管 {0} 个文件，失败 {1} 个。"
+    },
+    {
+      "key": "manage.nothing",
+      "value": "没有需要托管的新文件。"
+    },
+    {
+      "key": "manage.prompt",
+      "value": "将把 {0} 个源文件纳入托管，每个生成一个 .nsg.json 并导入积木。文件多时耗时较长，继续？"
+    },
+    {
+      "key": "manage.title",
+      "value": "批量托管"
+    },
+    {
+      "key": "manage.unmanageDone",
+      "value": "已拆除 {0} 个，失败 {1} 个。"
+    },
+    {
+      "key": "manage.unmanageNothing",
+      "value": "没有需要拆除的积木配置。"
+    },
+    {
+      "key": "manage.unmanagePrompt",
+      "value": "将拆除 {0} 个文件的积木配置：删除它们旁边的 .nsg.json，脚本恢复为普通文件。.cs 本身不受影响。继续？"
+    },
+    {
+      "key": "menu.api",
+      "value": "为选中文件夹生成 API 积木库"
+    },
+    {
+      "key": "menu.apiAll",
+      "value": "一键构建全项目 API 库"
+    },
+    {
+      "key": "menu.export",
+      "value": "导出默认积木库"
+    },
+    {
+      "key": "menu.health",
+      "value": "架构健康度"
+    },
+    {
+      "key": "menu.languages",
+      "value": "语言：显示已加载"
+    },
+    {
+      "key": "menu.manage",
+      "value": "把选中脚本纳入托管"
+    },
+    {
+      "key": "menu.manageAll",
+      "value": "给全项目代码托管积木"
+    },
+    {
+      "key": "menu.manageFolder",
+      "value": "给选中文件夹托管积木"
+    },
+    {
+      "key": "menu.open",
+      "value": "打开积木编辑器"
+    },
+    {
+      "key": "menu.problems",
+      "value": "报错窗口"
+    },
+    {
+      "key": "menu.reload",
+      "value": "重载积木库"
+    },
+    {
+      "key": "menu.selftest",
+      "value": "自检：往返测试"
+    },
+    {
+      "key": "menu.shell",
+      "value": "生成 ShaderLab 外壳"
+    },
+    {
+      "key": "menu.unmanage",
+      "value": "解除选中脚本的托管"
+    },
+    {
+      "key": "msg.canonicalized",
+      "value": "有 {0} 个方法不是规范形（缺花括号、缩进不一致或写法有多种等价形式）。第一次“积木 → 代码”会把它们规范化，语义不变但格式会变。"
+    },
+    {
+      "key": "msg.expect",
+      "value": "期望 '{0}'，实际遇到 '{1}'"
+    },
+    {
+      "key": "msg.expectIdent",
+      "value": "期望标识符，实际遇到 '{0}'"
+    },
+    {
+      "key": "msg.foreachName",
+      "value": "foreach 缺少迭代变量名"
+    },
+    {
+      "key": "msg.lexUnknown",
+      "value": "无法识别的字符 '{0}'"
+    },
+    {
+      "key": "msg.methodCount",
+      "value": "磁盘上的方法数 ({0}) 与积木文件记录的不一致 ({1})。请先重新导入代码，或手动对齐后再生成。"
+    },
+    {
+      "key": "msg.methodName",
+      "value": "第 {0} 个方法不匹配：磁盘为 '{1}'，积木文件为 '{2}'。"
+    },
+    {
+      "key": "msg.noModelGenerate",
+      "value": "没有可生成的积木模型。"
+    },
+    {
+      "key": "msg.noModelRender",
+      "value": "没有可渲染的积木模型。"
+    },
+    {
+      "key": "msg.noSource",
+      "value": "找不到源文件: {0}"
+    },
+    {
+      "key": "msg.outOfSubset",
+      "value": "该语句不在子集内，已保留为原始片段（不可反向翻译为积木）"
+    },
+    {
+      "key": "msg.unknownBlock",
+      "value": "积木库中不存在 '{0}'。"
+    },
+    {
+      "key": "msg.unknownBlockHint",
+      "value": "积木库中不存在 '{0}'，请在 Blocks/ 下补上对应 JSON。"
+    },
+    {
+      "key": "msg.unknownExpr",
+      "value": "未知表达式积木 '{0}'，无法翻译回代码。"
+    },
+    {
+      "key": "msg.unknownStmt",
+      "value": "未知积木 '{0}'，无法翻译回代码。请安装对应的积木定义或改用原始片段积木。"
+    },
+    {
+      "key": "palette.empty",
+      "value": "（没有可用积木）"
+    },
+    {
+      "key": "palette.found",
+      "value": "找到 {0} 个积木"
+    },
+    {
+      "key": "palette.noMatch",
+      "value": "没有匹配的积木"
+    },
+    {
+      "key": "palette.other",
+      "value": "其他"
+    },
+    {
+      "key": "palette.search",
+      "value": "搜索积木…"
+    },
+    {
+      "key": "pick.clickToAdd",
+      "value": "点击添加积木"
+    },
+    {
+      "key": "pick.empty",
+      "value": "（空）"
+    },
+    {
+      "key": "pick.expression",
+      "value": "插入表达式积木"
+    },
+    {
+      "key": "pick.noMatch",
+      "value": "没有匹配的积木"
+    },
+    {
+      "key": "pick.search",
+      "value": "搜索"
+    },
+    {
+      "key": "pick.statement",
+      "value": "插入语句积木"
+    },
+    {
+      "key": "preset.confirmDelete",
+      "value": "确定删除预设「{0}」？此操作不可撤销。"
+    },
+    {
+      "key": "preset.dragHint",
+      "value": "拖到画布上插入，单击则插到最后一次位置"
+    },
+    {
+      "key": "preset.empty",
+      "value": "预设里没有积木。"
+    },
+    {
+      "key": "preset.multiGraph",
+      "value": "选中的积木跨了多个方法。请只在一个方法内选择。"
+    },
+    {
+      "key": "preset.namePrompt",
+      "value": "预设名称"
+    },
+    {
+      "key": "preset.needName",
+      "value": "请输入预设名称。"
+    },
+    {
+      "key": "preset.noSelection",
+      "value": "请先选中积木。"
+    },
+    {
+      "key": "preset.none",
+      "value": "还没有预设。选中一坨积木后点上面的按钮。"
+    },
+    {
+      "key": "preset.notConnected",
+      "value": "选中的积木不是连成一坨的（有 {0} 个独立块）。请只选中一个连通组。"
+    },
+    {
+      "key": "preset.save",
+      "value": "把选中存为预设"
+    },
+    {
+      "key": "preset.title",
+      "value": "预设槽"
+    },
+    {
+      "key": "preset.tooBig",
+      "value": "太大了：{0} 块，上限 {1} 块。"
+    },
+    {
+      "key": "ribbon.group.api",
+      "value": "API 生成"
+    },
+    {
+      "key": "ribbon.group.edit",
+      "value": "编辑"
+    },
+    {
+      "key": "ribbon.group.file",
+      "value": "当前文件"
+    },
+    {
+      "key": "ribbon.group.files",
+      "value": "配置文件"
+    },
+    {
+      "key": "ribbon.group.folder",
+      "value": "文件夹"
+    },
+    {
+      "key": "ribbon.group.inspect",
+      "value": "检查"
+    },
+    {
+      "key": "ribbon.group.lang",
+      "value": "语言"
+    },
+    {
+      "key": "ribbon.group.library",
+      "value": "积木库"
+    },
+    {
+      "key": "ribbon.group.mode",
+      "value": "模式"
+    },
+    {
+      "key": "ribbon.group.project",
+      "value": "整个项目"
+    },
+    {
+      "key": "ribbon.group.script",
+      "value": "脚本"
+    },
+    {
+      "key": "ribbon.group.version",
+      "value": "版本"
+    },
+    {
+      "key": "ribbon.group.zoom",
+      "value": "缩放"
+    },
+    {
+      "key": "ribbon.tab.home",
+      "value": "开始"
+    },
+    {
+      "key": "ribbon.tab.manage",
+      "value": "管理"
+    },
+    {
+      "key": "ribbon.tab.tools",
+      "value": "工具"
+    },
+    {
+      "key": "ribbon.tab.view",
+      "value": "视图"
+    },
+    {
+      "key": "scratch.hint",
+      "value": "未连接的积木（不会被编译）"
+    },
+    {
+      "key": "selftest.fail",
+      "value": "FAIL"
+    },
+    {
+      "key": "selftest.pass",
+      "value": "PASS"
+    },
+    {
+      "key": "selftest.summary",
+      "value": "共 {0} 项，通过 {1}，失败 {2}"
+    },
+    {
+      "key": "selftest.title",
+      "value": "往返自检结果"
+    },
+    {
+      "key": "shader.needShader",
+      "value": "请先选中一个 .shader 文件。"
+    },
+    {
+      "key": "shader.shellDone",
+      "value": "已生成 {0} 管线外壳：{1}"
+    },
+    {
+      "key": "shader.shellPrompt",
+      "value": "将用 {0} 管线覆盖当前文件内容，生成完整 ShaderLab 外壳。这会丢弃文件里现有的一切。继续？"
+    },
+    {
+      "key": "shader.shellTitle",
+      "value": "生成 ShaderLab 外壳"
+    },
+    {
+      "key": "state.blocksdirty",
+      "value": "积木已改动"
+    },
+    {
+      "key": "state.conflict",
+      "value": "冲突：两边都改了"
+    },
+    {
+      "key": "state.csdirty",
+      "value": "代码已改动"
+    },
+    {
+      "key": "state.synced",
+      "value": "已同步"
+    },
+    {
+      "key": "state.unmanaged",
+      "value": "自由文件（无积木文件）"
+    },
+    {
+      "key": "tree.base",
+      "value": "继承"
+    },
+    {
+      "key": "tree.bodyEmpty",
+      "value": "（空）"
+    },
+    {
+      "key": "tree.class",
+      "value": "类"
+    },
+    {
+      "key": "tree.customBase",
+      "value": "自定义…"
+    },
+    {
+      "key": "tree.enum",
+      "value": "枚举"
+    },
+    {
+      "key": "tree.interface",
+      "value": "接口"
+    },
+    {
+      "key": "tree.method",
+      "value": "方法"
+    },
+    {
+      "key": "tree.namespace",
+      "value": "命名空间"
+    },
+    {
+      "key": "tree.noBase",
+      "value": "（无）"
+    },
+    {
+      "key": "tree.raw",
+      "value": "成员（原样保留）"
+    },
+    {
+      "key": "tree.struct",
+      "value": "结构体"
+    },
+    {
+      "key": "tree.using",
+      "value": "using"
+    },
+    {
+      "key": "view.blueprint",
+      "value": "蓝图（UE）"
+    },
+    {
+      "key": "view.mode",
+      "value": "视图"
+    },
+    {
+      "key": "view.stack",
+      "value": "堆叠（Scratch）"
+    },
+    {
+      "key": "win.lang",
+      "value": "语言"
+    },
+    {
+      "key": "win.noDoc",
+      "value": "未打开文件"
+    },
+    {
+      "key": "win.none",
+      "value": "—"
+    },
+    {
+      "key": "win.pipeline",
+      "value": "管线"
+    },
+    {
+      "key": "win.pipelineAuto",
+      "value": "自动（{0}）"
+    },
+    {
+      "key": "win.title",
+      "value": "NekoScriptGraph 积木编辑器"
+    },
+    {
+      "key": "menu.settings",
+      "value": "设置"
+    },
+    {
+      "key": "menu.extensions",
+      "value": "扩展"
+    },
+    {
+      "key": "adv.enabled",
+      "value": "进阶功能已开启：猫娘已安装，任何改动她都能解释。"
+    },
+    {
+      "key": "adv.disabled",
+      "value": "进阶功能已关闭：核心（解析、生成、诊断、积木）照常可用，但补全、自动修正和优化需要猫娘。"
+    },
+    {
+      "key": "adv.needAssistant",
+      "value": "这项需要猫娘。请在「扩展」里安装或重新启用 ProgramNeko。"
+    },
+    {
+      "key": "set.title",
+      "value": "NekoScriptGraph 设置"
+    },
+    {
+      "key": "set.versions",
+      "value": "插件 {0} · 核心 {1}（{2}）"
+    },
+    {
+      "key": "set.tab.general",
+      "value": "通用"
+    },
+    {
+      "key": "set.tab.assistant",
+      "value": "猫娘"
+    },
+    {
+      "key": "set.tab.extensions",
+      "value": "扩展"
+    },
+    {
+      "key": "set.tab.advanced",
+      "value": "进阶"
+    },
+    {
+      "key": "set.general.view",
+      "value": "编辑器"
+    },
+    {
+      "key": "set.general.api",
+      "value": "API 积木"
+    },
+    {
+      "key": "set.general.langNote",
+      "value": "界面语言。英文内置于代码、不可卸载：任何未完成的翻译都会回退到它。"
+    },
+    {
+      "key": "set.assistant.missing",
+      "value": "猫娘尚未安装"
+    },
+    {
+      "key": "set.assistant.missingNote",
+      "value": "没有她，插件依然可以解析、生成和报告诊断。安装之后，她的性格设置会出现在这里。"
+    },
+    {
+      "key": "set.assistant.noSchema",
+      "value": "这只猫娘没有描述任何设置项。"
+    },
+    {
+      "key": "set.assistant.presets",
+      "value": "预设"
+    },
+    {
+      "key": "set.assistant.persona",
+      "value": "性格"
+    },
+    {
+      "key": "set.persona.speakRate",
+      "value": "说话频率"
+    },
+    {
+      "key": "set.persona.speakRateNote",
+      "value": "缩放两句之间的间隔。越大，她越早开口。"
+    },
+    {
+      "key": "set.persona.chatter",
+      "value": "闲话量"
+    },
+    {
+      "key": "set.persona.chatterNote",
+      "value": "没有任何理由的搭话。调到 0，她就只对发生的事作反应。"
+    },
+    {
+      "key": "set.persona.serious",
+      "value": "正经程度"
+    },
+    {
+      "key": "set.persona.seriousNote",
+      "value": "在「玩笑」和「技术短句」之间调整措辞权重。它只是重新加权已有台词，不会新增句子。"
+    },
+    {
+      "key": "set.persona.alert",
+      "value": "新错误可以打断"
+    },
+    {
+      "key": "set.persona.alertNote",
+      "value": "开启时，新出现的错误会让她立刻开口，无视冷却。"
+    },
+    {
+      "key": "set.persona.stuckMoves",
+      "value": "发呆判定（鼠标移动次数）"
+    },
+    {
+      "key": "set.persona.stuckSeconds",
+      "value": "发呆判定（秒数）"
+    },
+    {
+      "key": "set.persona.idleSleep",
+      "value": "多久后打瞌睡"
+    },
+    {
+      "key": "set.persona.workRemind",
+      "value": "多久后提醒休息"
+    },
+    {
+      "key": "set.persona.explainBudget",
+      "value": "一次讲几层子积木"
+    },
+    {
+      "key": "set.persona.explainBudgetNote",
+      "value": "子积木太多时她会停下来，请你选中剩下的部分再看。"
+    },
+    {
+      "key": "set.preset.quiet",
+      "value": "安静"
+    },
+    {
+      "key": "set.preset.normal",
+      "value": "标准"
+    },
+    {
+      "key": "set.preset.chatty",
+      "value": "话痨"
+    },
+    {
+      "key": "set.preset.errorsOnly",
+      "value": "仅报错"
+    },
+    {
+      "key": "set.ext.locales",
+      "value": "语言包"
+    },
+    {
+      "key": "set.ext.localesNote",
+      "value": "英文内置于代码、不可卸载：任何缺失的翻译都会回退到它。其余语言包只是普通文件夹，随时可以卸载或装回。"
+    },
+    {
+      "key": "set.ext.none",
+      "value": "没有找到任何内容。"
+    },
+    {
+      "key": "set.ext.enable",
+      "value": "启用"
+    },
+    {
+      "key": "set.ext.disable",
+      "value": "卸载"
+    },
+    {
+      "key": "set.ext.assistant",
+      "value": "猫娘"
+    },
+    {
+      "key": "set.ext.assistantOn",
+      "value": "ProgramNeko 已安装"
+    },
+    {
+      "key": "set.ext.assistantOff",
+      "value": "ProgramNeko 已卸载（文件保留）"
+    },
+    {
+      "key": "set.ext.assistantAbsent",
+      "value": "ProgramNeko 不存在"
+    },
+    {
+      "key": "set.ext.assistantNote",
+      "value": "卸载会保留全部文件、关闭进阶功能，核心照常工作。想装回来只要一键。"
+    },
+    {
+      "key": "set.ext.engines",
+      "value": "外部引擎"
+    },
+    {
+      "key": "set.ext.enginesNote",
+      "value": "它们位于插件包之外，通过 Package Manager 安装。插件里没有它们的任何代码，所以卸载永远不会弄坏插件。"
+    },
+    {
+      "key": "set.ext.installed",
+      "value": "已安装"
+    },
+    {
+      "key": "set.ext.notInstalled",
+      "value": "未安装"
+    },
+    {
+      "key": "set.ext.install",
+      "value": "安装"
+    },
+    {
+      "key": "set.ext.uninstall",
+      "value": "卸载"
+    },
+    {
+      "key": "set.ext.catalog",
+      "value": "查看目录文件"
+    },
+    {
+      "key": "set.ext.refresh",
+      "value": "刷新"
+    },
+    {
+      "key": "ext.noSource",
+      "value": "这个扩展没有配置安装来源。请在 Extensions~/catalog.json 里填 git 地址或本地路径。"
+    },
+    {
+      "key": "ext.reloadFailed",
+      "value": "重载之后包状态与请求不一致。请检查 Package Manager。"
+    },
+    {
+      "key": "ext.completion.data",
+      "value": "内置积木提示"
+    },
+    {
+      "key": "ext.roslyn.name",
+      "value": "Roslyn 补全引擎"
+    },
+    {
+      "key": "ext.roslyn.desc",
+      "value": "可选。由 C# 编译器提供真实的成员与重载补全。以独立包安装，且需要猫娘。"
+    },
+    {
+      "key": "ext.roslyn.notFound",
+      "value": "没有找到 Roslyn 程序集。请把 Microsoft.CodeAnalysis.dll 和 Microsoft.CodeAnalysis.CSharp.dll 放到 {0}/ 下，或使用自带它们的编辑器。"
+    },
+    {
+      "key": "set.adv.gate",
+      "value": "门槛"
+    },
+    {
+      "key": "set.adv.providers",
+      "value": "提示来源"
+    },
+    {
+      "key": "set.adv.priority",
+      "value": "优先级"
+    },
+    {
+      "key": "set.adv.noProviders",
+      "value": "没有注册任何来源。"
+    },
+    {
+      "key": "set.adv.test",
+      "value": "试运行外部引擎"
+    },
+    {
+      "key": "set.adv.testNoFile",
+      "value": "请先在 Project 窗口里选中一个 .cs 文件。"
+    },
+    {
+      "key": "set.adv.testRunning",
+      "value": "运行中……"
+    },
+    {
+      "key": "set.adv.testDone",
+      "value": "返回 {0} 项"
+    },
+    {
+      "key": "set.adv.optimizers",
+      "value": "优化器"
+    },
+    {
+      "key": "set.adv.optimizerCount",
+      "value": "已注册 {0} 个优化器。没有猫娘时优化器永不运行。"
+    },
+    {
+      "key": "set.adv.state.ready",
+      "value": "就绪"
+    },
+    {
+      "key": "set.adv.state.warming",
+      "value": "预热中"
+    },
+    {
+      "key": "set.adv.state.failed",
+      "value": "失败"
+    },
+    {
+      "key": "set.adv.state.missing",
+      "value": "不可用"
+    }
+  ],
+  "blocks": [
+    {
+      "key": "c.abs",
+      "value": "绝对值 {0}"
+    },
+    {
+      "key": "c.assert",
+      "value": "断言 {0}"
+    },
+    {
+      "key": "c.atof",
+      "value": "字符串转浮点 {0}"
+    },
+    {
+      "key": "c.atoi",
+      "value": "字符串转整数 {0}"
+    },
+    {
+      "key": "c.exit",
+      "value": "退出程序 {0}"
+    },
+    {
+      "key": "c.fabs",
+      "value": "浮点绝对值 {0}"
+    },
+    {
+      "key": "c.fclose",
+      "value": "关闭文件 {0}"
+    },
+    {
+      "key": "c.fgets",
+      "value": "读一行 {0} 到 {1} 最多 {2} 字节"
+    },
+    {
+      "key": "c.fopen",
+      "value": "打开文件 {0} 模式 {1}"
+    },
+    {
+      "key": "c.fprintf",
+      "value": "写入 {0} 格式 {1}"
+    },
+    {
+      "key": "c.free",
+      "value": "释放 {0}"
+    },
+    {
+      "key": "c.malloc",
+      "value": "分配 {0} 字节"
+    },
+    {
+      "key": "c.memcpy",
+      "value": "复制 {2} 字节 {1}→{0}"
+    },
+    {
+      "key": "c.memset",
+      "value": "填充 {0} 为 {1} 共 {2} 字节"
+    },
+    {
+      "key": "c.perror",
+      "value": "报错 {0}"
+    },
+    {
+      "key": "c.pow",
+      "value": "幂 {0}^{1}"
+    },
+    {
+      "key": "c.printf",
+      "value": "printf({0})"
+    },
+    {
+      "key": "c.sizeof",
+      "value": "sizeof({0})"
+    },
+    {
+      "key": "c.sqrt",
+      "value": "平方根 {0}"
+    },
+    {
+      "key": "c.strcat",
+      "value": "拼接字符串 {0}+{1}"
+    },
+    {
+      "key": "c.strcmp",
+      "value": "比较字符串 {0} {1}"
+    },
+    {
+      "key": "c.strcpy",
+      "value": "复制字符串 {0}←{1}"
+    },
+    {
+      "key": "c.strlen",
+      "value": "字符串长度 {0}"
+    },
+    {
+      "key": "cpp.at",
+      "value": "{0} 的第 {1} 项"
+    },
+    {
+      "key": "cpp.cin",
+      "value": "输入到 {0}"
+    },
+    {
+      "key": "cpp.cout",
+      "value": "输出 {0}"
+    },
+    {
+      "key": "cpp.delete",
+      "value": "释放 {0}"
+    },
+    {
+      "key": "cpp.getline",
+      "value": "读一行到 {0}"
+    },
+    {
+      "key": "cpp.make_shared",
+      "value": "共享 {0} = 新建"
+    },
+    {
+      "key": "cpp.map",
+      "value": "映射 {0}<{1}, {2}>"
+    },
+    {
+      "key": "cpp.move",
+      "value": "移动 {0}"
+    },
+    {
+      "key": "cpp.printf",
+      "value": "printf({0})"
+    },
+    {
+      "key": "cpp.push_back",
+      "value": "追加 {1} 到 {0}"
+    },
+    {
+      "key": "cpp.size",
+      "value": "{0} 的大小"
+    },
+    {
+      "key": "cpp.sizeof",
+      "value": "sizeof({0})"
+    },
+    {
+      "key": "cpp.stoi",
+      "value": "字符串转整数 {0}"
+    },
+    {
+      "key": "cpp.string",
+      "value": "字符串 {0} = {1}"
+    },
+    {
+      "key": "cpp.throw",
+      "value": "抛出 {0}"
+    },
+    {
+      "key": "cpp.to_string",
+      "value": "转字符串 {0}"
+    },
+    {
+      "key": "cpp.unique_ptr",
+      "value": "独占指针 {0} = 新建 {1}"
+    },
+    {
+      "key": "cpp.vector",
+      "value": "向量 {0}<{1}>"
+    },
+    {
+      "key": "expr.binary",
+      "value": "{0} {1} {2}"
+    },
+    {
+      "key": "expr.call",
+      "value": "调用 {0}"
+    },
+    {
+      "key": "expr.cast",
+      "value": "把 {1} 转为 {0}"
+    },
+    {
+      "key": "expr.conditional",
+      "value": "如果 {0} 就 {1} 否则 {2}"
+    },
+    {
+      "key": "expr.ident",
+      "value": "变量 {0}"
+    },
+    {
+      "key": "expr.index",
+      "value": "{0} 的第 {1} 项"
+    },
+    {
+      "key": "expr.literal",
+      "value": "{0}"
+    },
+    {
+      "key": "expr.member",
+      "value": "{0} 的 {1}"
+    },
+    {
+      "key": "expr.new",
+      "value": "创建 {0}"
+    },
+    {
+      "key": "expr.postfix",
+      "value": "{0}{1}"
+    },
+    {
+      "key": "expr.raw",
+      "value": "原始C# {0}"
+    },
+    {
+      "key": "expr.unary",
+      "value": "{0}{1}"
+    },
+    {
+      "key": "hlsl.abs",
+      "value": "绝对值 {0}"
+    },
+    {
+      "key": "hlsl.acos",
+      "value": "反余弦 {0}"
+    },
+    {
+      "key": "hlsl.all",
+      "value": "{0} 全部为真"
+    },
+    {
+      "key": "hlsl.any",
+      "value": "{0} 任一为真"
+    },
+    {
+      "key": "hlsl.asin",
+      "value": "反正弦 {0}"
+    },
+    {
+      "key": "hlsl.atan",
+      "value": "反正切 {0}"
+    },
+    {
+      "key": "hlsl.atan2",
+      "value": "反正切 {0}/{1}"
+    },
+    {
+      "key": "hlsl.ceil",
+      "value": "向上取整 {0}"
+    },
+    {
+      "key": "hlsl.clamp",
+      "value": "钳制 {0} 到 {1}..{2}"
+    },
+    {
+      "key": "hlsl.clip",
+      "value": "裁剪 {0}"
+    },
+    {
+      "key": "hlsl.clipPos",
+      "value": "裁剪空间坐标 {0}"
+    },
+    {
+      "key": "hlsl.cos",
+      "value": "余弦 {0}"
+    },
+    {
+      "key": "hlsl.cross",
+      "value": "叉积 {0}×{1}"
+    },
+    {
+      "key": "hlsl.ddx",
+      "value": "屏幕横向变化率 {0}"
+    },
+    {
+      "key": "hlsl.ddy",
+      "value": "屏幕纵向变化率 {0}"
+    },
+    {
+      "key": "hlsl.determinant",
+      "value": "行列式 {0}"
+    },
+    {
+      "key": "hlsl.discard",
+      "value": "丢弃像素"
+    },
+    {
+      "key": "hlsl.distance",
+      "value": "距离 {0}→{1}"
+    },
+    {
+      "key": "hlsl.dot",
+      "value": "点积 {0}·{1}"
+    },
+    {
+      "key": "hlsl.exp",
+      "value": "e 的 {0} 次幂"
+    },
+    {
+      "key": "hlsl.exp2",
+      "value": "2 的 {0} 次幂"
+    },
+    {
+      "key": "hlsl.floor",
+      "value": "向下取整 {0}"
+    },
+    {
+      "key": "hlsl.fmod",
+      "value": "浮点取余 {0} {1}"
+    },
+    {
+      "key": "hlsl.frac",
+      "value": "小数部分 {0}"
+    },
+    {
+      "key": "hlsl.length",
+      "value": "长度 {0}"
+    },
+    {
+      "key": "hlsl.lerp",
+      "value": "插值 {0}→{1} 按 {2}"
+    },
+    {
+      "key": "hlsl.log",
+      "value": "自然对数 {0}"
+    },
+    {
+      "key": "hlsl.log2",
+      "value": "以 2 为底对数 {0}"
+    },
+    {
+      "key": "hlsl.mad",
+      "value": "乘加 {0}×{1}+{2}"
+    },
+    {
+      "key": "hlsl.max",
+      "value": "较大值 {0} {1}"
+    },
+    {
+      "key": "hlsl.min",
+      "value": "较小值 {0} {1}"
+    },
+    {
+      "key": "hlsl.mul",
+      "value": "矩阵乘 {0}×{1}"
+    },
+    {
+      "key": "hlsl.normalize",
+      "value": "归一化 {0}"
+    },
+    {
+      "key": "hlsl.pow",
+      "value": "幂 {0}^{1}"
+    },
+    {
+      "key": "hlsl.rcp",
+      "value": "倒数 {0}"
+    },
+    {
+      "key": "hlsl.reflect",
+      "value": "反射 {0} 法线 {1}"
+    },
+    {
+      "key": "hlsl.refract",
+      "value": "折射 {0} 法线 {1} 折射率 {2}"
+    },
+    {
+      "key": "hlsl.round",
+      "value": "四舍五入 {0}"
+    },
+    {
+      "key": "hlsl.rsqrt",
+      "value": "平方根倒数 {0}"
+    },
+    {
+      "key": "hlsl.sample",
+      "value": "采样 {0} 在 {1}"
+    },
+    {
+      "key": "hlsl.saturate",
+      "value": "saturate({0})"
+    },
+    {
+      "key": "hlsl.sign",
+      "value": "符号 {0}"
+    },
+    {
+      "key": "hlsl.sin",
+      "value": "正弦 {0}"
+    },
+    {
+      "key": "hlsl.smoothstep",
+      "value": "平滑阶跃 {0}..{1} 值 {2}"
+    },
+    {
+      "key": "hlsl.sqrt",
+      "value": "平方根 {0}"
+    },
+    {
+      "key": "hlsl.step",
+      "value": "阶跃 {0} 阈值 {1}"
+    },
+    {
+      "key": "hlsl.tan",
+      "value": "正切 {0}"
+    },
+    {
+      "key": "hlsl.tex2D",
+      "value": "采样 {0} 在 {1}"
+    },
+    {
+      "key": "hlsl.tex2Dlod",
+      "value": "采样 {0} 在 {1}"
+    },
+    {
+      "key": "hlsl.texCUBE",
+      "value": "立方采样 {0} 方向 {1}"
+    },
+    {
+      "key": "hlsl.transpose",
+      "value": "转置 {0}"
+    },
+    {
+      "key": "hlsl.trunc",
+      "value": "截断 {0}"
+    },
+    {
+      "key": "java.add",
+      "value": "追加 {1} 到 {0}"
+    },
+    {
+      "key": "java.arraysSort",
+      "value": "排序 {0}"
+    },
+    {
+      "key": "java.equals",
+      "value": "{0} 等于 {1}"
+    },
+    {
+      "key": "java.format",
+      "value": "格式化 {0} 用 {1}"
+    },
+    {
+      "key": "java.get",
+      "value": "{0} 的第 {1} 项"
+    },
+    {
+      "key": "java.length",
+      "value": "{0} 的长度"
+    },
+    {
+      "key": "java.list",
+      "value": "列表 {0}"
+    },
+    {
+      "key": "java.map",
+      "value": "映射 {0}"
+    },
+    {
+      "key": "java.mathAbs",
+      "value": "绝对值 {0}"
+    },
+    {
+      "key": "java.mathMax",
+      "value": "较大值 {0} {1}"
+    },
+    {
+      "key": "java.mathMin",
+      "value": "较小值 {0} {1}"
+    },
+    {
+      "key": "java.mathPow",
+      "value": "幂 {0}^{1}"
+    },
+    {
+      "key": "java.mathRandom",
+      "value": "随机数"
+    },
+    {
+      "key": "java.mathSqrt",
+      "value": "平方根 {0}"
+    },
+    {
+      "key": "java.parseDouble",
+      "value": "字符串转浮点 {0}"
+    },
+    {
+      "key": "java.parseInt",
+      "value": "字符串转整数 {0}"
+    },
+    {
+      "key": "java.print",
+      "value": "输出（不换行）{0}"
+    },
+    {
+      "key": "java.println",
+      "value": "输出 {0}"
+    },
+    {
+      "key": "java.put",
+      "value": "把 {1} → {2} 放入 {0}"
+    },
+    {
+      "key": "java.split",
+      "value": "按 {1} 分割 {0}"
+    },
+    {
+      "key": "java.substring",
+      "value": "{0} 的子串 {1}..{2}"
+    },
+    {
+      "key": "java.throw",
+      "value": "抛出 {0}"
+    },
+    {
+      "key": "java.toString",
+      "value": "{0} 转字符串"
+    },
+    {
+      "key": "java.valueOf",
+      "value": "转字符串 {0}"
+    },
+    {
+      "key": "py.abs",
+      "value": "绝对值 {0}"
+    },
+    {
+      "key": "py.append",
+      "value": "追加 {0} 到 {1}"
+    },
+    {
+      "key": "py.assert",
+      "value": "断言 {0}"
+    },
+    {
+      "key": "py.chr",
+      "value": "码转字符 {0}"
+    },
+    {
+      "key": "py.del",
+      "value": "删除 {0}"
+    },
+    {
+      "key": "py.dict",
+      "value": "字典 {0}"
+    },
+    {
+      "key": "py.enumerate",
+      "value": "带下标 {0}"
+    },
+    {
+      "key": "py.float",
+      "value": "转浮点 {0}"
+    },
+    {
+      "key": "py.format",
+      "value": "格式化 {0} 用 {1}"
+    },
+    {
+      "key": "py.fromImport",
+      "value": "从 {0} 导入 {1}"
+    },
+    {
+      "key": "py.global",
+      "value": "全局 {0}"
+    },
+    {
+      "key": "py.import",
+      "value": "导入 {0}"
+    },
+    {
+      "key": "py.input",
+      "value": "读取输入 {0}"
+    },
+    {
+      "key": "py.int",
+      "value": "转整数 {0}"
+    },
+    {
+      "key": "py.isinstance",
+      "value": "{0} 是 {1}"
+    },
+    {
+      "key": "py.items",
+      "value": "{0} 的键值对"
+    },
+    {
+      "key": "py.join",
+      "value": "用 {0} 连接 {1}"
+    },
+    {
+      "key": "py.keys",
+      "value": "{0} 的键"
+    },
+    {
+      "key": "py.len",
+      "value": "长度 {0}"
+    },
+    {
+      "key": "py.list",
+      "value": "列表 {0}"
+    },
+    {
+      "key": "py.lower",
+      "value": "{0} 转小写"
+    },
+    {
+      "key": "py.max",
+      "value": "最大值 {0}"
+    },
+    {
+      "key": "py.min",
+      "value": "最小值 {0}"
+    },
+    {
+      "key": "py.ord",
+      "value": "字符码 {0}"
+    },
+    {
+      "key": "py.pass",
+      "value": "pass"
+    },
+    {
+      "key": "py.print",
+      "value": "print({0})"
+    },
+    {
+      "key": "py.raise",
+      "value": "抛出 {0}"
+    },
+    {
+      "key": "py.range",
+      "value": "范围 {0}"
+    },
+    {
+      "key": "py.replace",
+      "value": "把 {0} 中的 {1} 换成 {2}"
+    },
+    {
+      "key": "py.repr",
+      "value": "表示 {0}"
+    },
+    {
+      "key": "py.round",
+      "value": "四舍五入 {0}"
+    },
+    {
+      "key": "py.set",
+      "value": "集合 {0}"
+    },
+    {
+      "key": "py.sorted",
+      "value": "排序 {0}"
+    },
+    {
+      "key": "py.split",
+      "value": "按 {0} 分割 {1}"
+    },
+    {
+      "key": "py.str",
+      "value": "转字符串 {0}"
+    },
+    {
+      "key": "py.strip",
+      "value": "去除空白 {0}"
+    },
+    {
+      "key": "py.sum",
+      "value": "求和 {0}"
+    },
+    {
+      "key": "py.tuple",
+      "value": "元组 {0}"
+    },
+    {
+      "key": "py.type",
+      "value": "类型 {0}"
+    },
+    {
+      "key": "py.upper",
+      "value": "{0} 转大写"
+    },
+    {
+      "key": "py.yield",
+      "value": "产出 {0}"
+    },
+    {
+      "key": "py.zip",
+      "value": "配对 {0} {1}"
+    },
+    {
+      "key": "rust.assert",
+      "value": "断言 {0}"
+    },
+    {
+      "key": "rust.collect",
+      "value": "收集 {0}"
+    },
+    {
+      "key": "rust.eprintln",
+      "value": "错误输出 {0}"
+    },
+    {
+      "key": "rust.err",
+      "value": "Err({0})"
+    },
+    {
+      "key": "rust.expect",
+      "value": "{0} 解包否则报错 {1}"
+    },
+    {
+      "key": "rust.filter",
+      "value": "筛选 {0} 满足 {1}"
+    },
+    {
+      "key": "rust.format",
+      "value": "格式化 {0}"
+    },
+    {
+      "key": "rust.hashmap",
+      "value": "映射 {0}"
+    },
+    {
+      "key": "rust.is_ok",
+      "value": "{0} 是 Ok"
+    },
+    {
+      "key": "rust.iter",
+      "value": "遍历 {0}"
+    },
+    {
+      "key": "rust.len",
+      "value": "{0} 的长度"
+    },
+    {
+      "key": "rust.map",
+      "value": "对 {0} 逐项 {1}"
+    },
+    {
+      "key": "rust.none",
+      "value": "None"
+    },
+    {
+      "key": "rust.ok",
+      "value": "Ok({0})"
+    },
+    {
+      "key": "rust.panic",
+      "value": "panic!({0})"
+    },
+    {
+      "key": "rust.parse",
+      "value": "解析 {0}"
+    },
+    {
+      "key": "rust.pop",
+      "value": "{0} 弹出末尾"
+    },
+    {
+      "key": "rust.println",
+      "value": "println!({0})"
+    },
+    {
+      "key": "rust.push",
+      "value": "追加 {1} 到 {0}"
+    },
+    {
+      "key": "rust.some",
+      "value": "Some({0})"
+    },
+    {
+      "key": "rust.string_from",
+      "value": "字符串 {0}"
+    },
+    {
+      "key": "rust.to_string",
+      "value": "{0} 转字符串"
+    },
+    {
+      "key": "rust.todo",
+      "value": "待办占位"
+    },
+    {
+      "key": "rust.unreachable",
+      "value": "不可达"
+    },
+    {
+      "key": "rust.unwrap",
+      "value": "{0} 解包"
+    },
+    {
+      "key": "rust.unwrap_or",
+      "value": "{0} 解包否则用 {1}"
+    },
+    {
+      "key": "rust.vec",
+      "value": "创建向量 {0}"
+    },
+    {
+      "key": "stmt.add",
+      "value": "把 {0} 增加 {1}"
+    },
+    {
+      "key": "stmt.assign",
+      "value": "把 {0} 设为 {1}"
+    },
+    {
+      "key": "stmt.break",
+      "value": "跳出循环"
+    },
+    {
+      "key": "stmt.continue",
+      "value": "继续下一次"
+    },
+    {
+      "key": "stmt.div",
+      "value": "把 {0} 除以 {1}"
+    },
+    {
+      "key": "stmt.expr",
+      "value": "执行 {0}"
+    },
+    {
+      "key": "stmt.for",
+      "value": "计数循环"
+    },
+    {
+      "key": "stmt.foreach",
+      "value": "对每个 {0} {1} 在 {2} 中"
+    },
+    {
+      "key": "stmt.if",
+      "value": "如果 {0}"
+    },
+    {
+      "key": "stmt.localDecl",
+      "value": "声明 {0} {1} = {2}"
+    },
+    {
+      "key": "stmt.mod",
+      "value": "把 {0} 取余 {1}"
+    },
+    {
+      "key": "stmt.mul",
+      "value": "把 {0} 乘以 {1}"
+    },
+    {
+      "key": "stmt.raw",
+      "value": "原始C# {0}"
+    },
+    {
+      "key": "stmt.return",
+      "value": "返回 {0}"
+    },
+    {
+      "key": "stmt.sub",
+      "value": "把 {0} 减少 {1}"
+    },
+    {
+      "key": "stmt.while",
+      "value": "重复当 {0}"
+    },
+    {
+      "key": "go.shortDecl",
+      "value": "声明 {0} 为 {1}"
+    },
+    {
+      "key": "go.varDecl",
+      "value": "变量 {0} 等于 {1}"
+    },
+    {
+      "key": "go.constDecl",
+      "value": "常量 {0} 等于 {1}"
+    },
+    {
+      "key": "go.import",
+      "value": "导入 {0}"
+    },
+    {
+      "key": "go.typeStruct",
+      "value": "结构体类型 {0}"
+    },
+    {
+      "key": "go.typeInterface",
+      "value": "接口类型 {0}"
+    },
+    {
+      "key": "go.deferCall",
+      "value": "退出时调用 {0}"
+    },
+    {
+      "key": "go.goCall",
+      "value": "并发执行 {0}"
+    },
+    {
+      "key": "go.chanOf",
+      "value": "{0} 的通道"
+    },
+    {
+      "key": "go.panic",
+      "value": "崩溃 {0}"
+    },
+    {
+      "key": "go.errCheck",
+      "value": "若 err 不为空则返回它"
+    },
+    {
+      "key": "go.errAs",
+      "value": "把错误 {0} 转为 {1}"
+    },
+    {
+      "key": "go.print",
+      "value": "输出 {0}"
+    },
+    {
+      "key": "go.println",
+      "value": "输出一行 {0}"
+    },
+    {
+      "key": "go.printf",
+      "value": "格式化输出 {0} 用 {1}"
+    },
+    {
+      "key": "go.printErr",
+      "value": "输出错误 {0}"
+    },
+    {
+      "key": "go.logFatal",
+      "value": "记录致命错误 {0}"
+    },
+    {
+      "key": "go.mutexLock",
+      "value": "锁定 {0}"
+    },
+    {
+      "key": "go.mutexUnlock",
+      "value": "解锁 {0}"
+    },
+    {
+      "key": "go.wgAdd",
+      "value": "等待组 {0} 增加 {1}"
+    },
+    {
+      "key": "go.wgDone",
+      "value": "等待组 {0} 完成一项"
+    },
+    {
+      "key": "go.wgWait",
+      "value": "等待组 {0} 全部完成"
+    },
+    {
+      "key": "go.ctxDone",
+      "value": "上下文 {0} 结束"
+    },
+    {
+      "key": "go.make",
+      "value": "创建 {0}"
+    },
+    {
+      "key": "go.new",
+      "value": "新建 {0}"
+    },
+    {
+      "key": "go.len",
+      "value": "{0} 的长度"
+    },
+    {
+      "key": "go.cap",
+      "value": "{0} 的容量"
+    },
+    {
+      "key": "go.append",
+      "value": "把 {1} 追加到 {0}"
+    },
+    {
+      "key": "go.copy",
+      "value": "把 {1} 复制到 {0}"
+    },
+    {
+      "key": "go.delete",
+      "value": "从 {0} 删除 {1}"
+    },
+    {
+      "key": "go.close",
+      "value": "关闭 {0}"
+    },
+    {
+      "key": "go.recover",
+      "value": "恢复"
+    },
+    {
+      "key": "go.string",
+      "value": "转字符串 {0}"
+    },
+    {
+      "key": "go.int",
+      "value": "转整数 {0}"
+    },
+    {
+      "key": "go.float64",
+      "value": "转 float64 {0}"
+    },
+    {
+      "key": "go.rune",
+      "value": "转字符 {0}"
+    },
+    {
+      "key": "go.sprintf",
+      "value": "格式化 {0} 用 {1}"
+    },
+    {
+      "key": "go.errorf",
+      "value": "构造错误 {0} {1}"
+    },
+    {
+      "key": "go.errorsNew",
+      "value": "新错误 {0}"
+    },
+    {
+      "key": "go.errorsIs",
+      "value": "{0} 是 {1}"
+    },
+    {
+      "key": "go.atoi",
+      "value": "解析整数 {0}"
+    },
+    {
+      "key": "go.itoa",
+      "value": "整数转文本 {0}"
+    },
+    {
+      "key": "go.stringsContains",
+      "value": "{0} 包含 {1}"
+    },
+    {
+      "key": "go.stringsHasPrefix",
+      "value": "{0} 以 {1} 开头"
+    },
+    {
+      "key": "go.stringsSplit",
+      "value": "按 {1} 切分 {0}"
+    },
+    {
+      "key": "go.stringsJoin",
+      "value": "用 {1} 连接 {0}"
+    },
+    {
+      "key": "go.jsonMarshal",
+      "value": "转 JSON {0}"
+    },
+    {
+      "key": "go.jsonUnmarshal",
+      "value": "从 JSON {0} 读入 {1}"
+    },
+    {
+      "key": "go.timeNow",
+      "value": "当前时间"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+    "id": "api.UnityEditor.DecaleryStandardPBRShaderGUI.FindProperties.1",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecaleryStandardPBRShaderGUI",
+    "categoryKey": "cat.api",
+    "label": "{0}DecaleryStandardPBRShaderGUI.FindProperties({1})",
+    "labelEn": "{0}DecaleryStandardPBRShaderGUI.FindProperties({1})",
+    "labelRu": "{0}DecaleryStandardPBRShaderGUI.FindProperties({1})",
+    "sockets": [
+        {
+            "name": "target",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "props",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecaleryStandardPBRShaderGUI.FindProperties",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "UnityEditor.DecaleryStandardPBRShaderGUI.FindProperties(props) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

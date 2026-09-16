@@ -1,0 +1,1835 @@
+{
+  "schemaVersion": 1,
+  "code": "ko",
+  "name": "한국어",
+  "rtl": false,
+  "order": 100,
+  "ui": [
+    {
+      "key": "api.done",
+      "value": "API 블록 {0}개 생성({1}개 건너뜀)."
+    },
+    {
+      "key": "api.folder",
+      "value": "API 블록 원본 폴더"
+    },
+    {
+      "key": "api.noFolder",
+      "value": "선택한 항목이 폴더가 아닙니다."
+    },
+    {
+      "key": "api.noSources",
+      "value": "소스 파일을 찾지 못했습니다."
+    },
+    {
+      "key": "api.projectPrompt",
+      "value": "소스 파일 {0}개를 찾았습니다. 모든 public 메서드의 API 블록을 다음 위치에 생성합니다:\n{1}\n\n큰 프로젝트에서는 수천 개가 되어 오래 걸릴 수 있습니다. 계속할까요?"
+    },
+    {
+      "key": "api.prompt",
+      "value": "선택한 폴더의 API 블록을 생성할까요?"
+    },
+    {
+      "key": "api.title",
+      "value": "API 블록 라이브러리 생성"
+    },
+    {
+      "key": "blk.body",
+      "value": "본문"
+    },
+    {
+      "key": "blk.del",
+      "value": "삭제"
+    },
+    {
+      "key": "blk.down",
+      "value": "아래로 이동"
+    },
+    {
+      "key": "blk.dup",
+      "value": "복제"
+    },
+    {
+      "key": "blk.editRaw",
+      "value": "원시 조각 편집"
+    },
+    {
+      "key": "blk.else",
+      "value": "아니면"
+    },
+    {
+      "key": "blk.insertAbove",
+      "value": "위에 삽입"
+    },
+    {
+      "key": "blk.insertBelow",
+      "value": "아래에 삽입"
+    },
+    {
+      "key": "blk.menu",
+      "value": "블록 작업"
+    },
+    {
+      "key": "blk.rename",
+      "value": "이름 바꾸기"
+    },
+    {
+      "key": "blk.replace",
+      "value": "바꾸기"
+    },
+    {
+      "key": "blk.up",
+      "value": "위로 이동"
+    },
+    {
+      "key": "bp.tidy",
+      "value": "자동 정렬"
+    },
+    {
+      "key": "btn.api",
+      "value": "선택한 폴더의 API 블록 생성"
+    },
+    {
+      "key": "btn.apiAll",
+      "value": "프로젝트 전체 API 라이브러리 구축"
+    },
+    {
+      "key": "btn.checkpoint",
+      "value": "체크포인트"
+    },
+    {
+      "key": "btn.collapseAll",
+      "value": "모두 접기"
+    },
+    {
+      "key": "btn.errors",
+      "value": "문제"
+    },
+    {
+      "key": "btn.expandAll",
+      "value": "모두 펼치기"
+    },
+    {
+      "key": "btn.fit",
+      "value": "창에 맞추기"
+    },
+    {
+      "key": "btn.generate",
+      "value": "블록 → 코드"
+    },
+    {
+      "key": "btn.git",
+      "value": "Git 체크포인트"
+    },
+    {
+      "key": "btn.import",
+      "value": "코드 → 블록"
+    },
+    {
+      "key": "btn.library",
+      "value": "블록 라이브러리 다시 불러오기"
+    },
+    {
+      "key": "btn.manage",
+      "value": "관리 대상으로 지정"
+    },
+    {
+      "key": "btn.manageAll",
+      "value": "프로젝트 전체를 관리 대상으로 지정"
+    },
+    {
+      "key": "btn.manageFolder",
+      "value": "선택한 폴더 관리 대상으로 지정"
+    },
+    {
+      "key": "btn.open",
+      "value": "선택한 스크립트 열기"
+    },
+    {
+      "key": "btn.preview",
+      "value": "미리보기"
+    },
+    {
+      "key": "btn.redo",
+      "value": "다시 실행"
+    },
+    {
+      "key": "btn.selftest",
+      "value": "자체 테스트"
+    },
+    {
+      "key": "btn.shell",
+      "value": "파이프라인 셸 생성"
+    },
+    {
+      "key": "btn.sprites",
+      "value": "스프라이트 사용"
+    },
+    {
+      "key": "btn.undo",
+      "value": "실행 취소"
+    },
+    {
+      "key": "btn.unmanage",
+      "value": "관리 해제"
+    },
+    {
+      "key": "btn.unmanageAll",
+      "value": "프로젝트 전체의 블록 설정 해제"
+    },
+    {
+      "key": "btn.unmanageFolder",
+      "value": "선택한 폴더의 블록 설정 해제"
+    },
+    {
+      "key": "cat.api",
+      "value": "API"
+    },
+    {
+      "key": "cat.apiAll",
+      "value": "전체"
+    },
+    {
+      "key": "cat.ctrl",
+      "value": "제어"
+    },
+    {
+      "key": "cat.expr",
+      "value": "식"
+    },
+    {
+      "key": "cat.frame",
+      "value": "구조"
+    },
+    {
+      "key": "cat.macro",
+      "value": "내 블록"
+    },
+    {
+      "key": "cat.raw",
+      "value": "탈출구"
+    },
+    {
+      "key": "cat.var",
+      "value": "변수"
+    },
+    {
+      "key": "confirm.alreadyManaged",
+      "value": "은(는) 이미 관리 중입니다."
+    },
+    {
+      "key": "confirm.cancel",
+      "value": "취소"
+    },
+    {
+      "key": "confirm.continue",
+      "value": "계속"
+    },
+    {
+      "key": "confirm.manage",
+      "value": "블록 파일을 만들고 가져올까요?"
+    },
+    {
+      "key": "confirm.manageYes",
+      "value": "만들고 가져오기"
+    },
+    {
+      "key": "confirm.notManaged",
+      "value": "블록 파일이 없으며 이미 자유 스크립트입니다."
+    },
+    {
+      "key": "confirm.ok",
+      "value": "확인"
+    },
+    {
+      "key": "confirm.overwriteConflict",
+      "value": "양쪽 모두 변경되었습니다. 덮어쓰면 메서드 본문의 수동 변경이 사라집니다(필드, 특성, 주석은 유지). 계속할까요?"
+    },
+    {
+      "key": "confirm.reimportConflict",
+      "value": "블록에 코드로 반영되지 않은 변경이 있습니다. 다시 가져오면 사라집니다. 계속할까요?"
+    },
+    {
+      "key": "confirm.selectCs",
+      "value": "먼저 Project 창에서 소스 파일을 선택하세요."
+    },
+    {
+      "key": "confirm.selectFolder",
+      "value": "먼저 Project 창에서 폴더를 선택하세요."
+    },
+    {
+      "key": "confirm.title",
+      "value": "NekoScriptGraph"
+    },
+    {
+      "key": "confirm.unmanage",
+      "value": "블록 파일을 삭제할까요? 스크립트는 다시 자유로워집니다."
+    },
+    {
+      "key": "confirm.unmanageYes",
+      "value": "블록 파일 삭제"
+    },
+    {
+      "key": "cp.confirmLoad",
+      "value": "불러오면 현재 코드와 블록이 덮어써집니다. 계속할까요?"
+    },
+    {
+      "key": "cp.delete",
+      "value": "체크포인트 {0} 삭제"
+    },
+    {
+      "key": "cp.empty",
+      "value": "체크포인트 {0}(비어 있음)"
+    },
+    {
+      "key": "cp.load",
+      "value": "체크포인트 {0} 불러오기({1})"
+    },
+    {
+      "key": "cp.loaded",
+      "value": "체크포인트 {0}을(를) 불러왔습니다"
+    },
+    {
+      "key": "cp.overwrite",
+      "value": "체크포인트 {0}에 저장(덮어쓰기: {1})"
+    },
+    {
+      "key": "cp.save",
+      "value": "체크포인트 {0}에 저장"
+    },
+    {
+      "key": "cp.saved",
+      "value": "체크포인트 {0}에 저장했습니다"
+    },
+    {
+      "key": "diag.summary",
+      "value": "오류 {0} / 경고 {1} / 정보 {2}"
+    },
+    {
+      "key": "drag.blocks",
+      "value": "블록 {0}개"
+    },
+    {
+      "key": "err.clear",
+      "value": "지우기"
+    },
+    {
+      "key": "err.count",
+      "value": "오류 {0} / 경고 {1} / 정보 {2}"
+    },
+    {
+      "key": "err.details",
+      "value": "자세한 내용은 문제 창을 참조하세요."
+    },
+    {
+      "key": "err.error",
+      "value": "오류"
+    },
+    {
+      "key": "err.generateFailed",
+      "value": "덮어쓰기 실패"
+    },
+    {
+      "key": "err.goto",
+      "value": "이동"
+    },
+    {
+      "key": "err.info",
+      "value": "정보"
+    },
+    {
+      "key": "err.manageFailed",
+      "value": "가져오기 실패"
+    },
+    {
+      "key": "err.none",
+      "value": "진단 없음"
+    },
+    {
+      "key": "err.reimportFailed",
+      "value": "다시 가져오기 실패"
+    },
+    {
+      "key": "err.title",
+      "value": "NekoScriptGraph 문제"
+    },
+    {
+      "key": "err.warning",
+      "value": "경고"
+    },
+    {
+      "key": "files.btnHide",
+      "value": "설정 파일 숨기기"
+    },
+    {
+      "key": "files.btnShow",
+      "value": "설정 파일 표시"
+    },
+    {
+      "key": "files.hidden",
+      "value": "{0}개 설정 파일 숨김"
+    },
+    {
+      "key": "files.hotkeyHint",
+      "value": "단축키: Ctrl/Cmd+Shift+H"
+    },
+    {
+      "key": "files.shown",
+      "value": "{0}개 설정 파일 표시"
+    },
+    {
+      "key": "git.done",
+      "value": "Git 체크포인트를 만들었습니다."
+    },
+    {
+      "key": "git.failed",
+      "value": "Git 커밋 실패: "
+    },
+    {
+      "key": "git.noChanges",
+      "value": "이 스크립트에는 변경 사항이 없습니다."
+    },
+    {
+      "key": "git.notRepo",
+      "value": "이 프로젝트는 git 저장소가 아닙니다."
+    },
+    {
+      "key": "git.note",
+      "value": "내장 체크포인트는 .checkpoints(git 무시)에 있어 저장소 기록과 충돌하지 않습니다."
+    },
+    {
+      "key": "health.afterReturn",
+      "value": "return 이후 문장은 실행되지 않습니다"
+    },
+    {
+      "key": "health.btn",
+      "value": "건전성 검사"
+    },
+    {
+      "key": "health.constantCondition",
+      "value": "조건이 항상 {0}이라 분기가 죽은 코드입니다"
+    },
+    {
+      "key": "health.cycle",
+      "value": "순환 의존: 식이 입력을 통해 자기 자신으로 돌아가 생성할 수 없습니다"
+    },
+    {
+      "key": "health.danglingInput",
+      "value": "필수 입력 '{0}'이(가) 비어 있어 생성된 코드에서 인수가 빠집니다"
+    },
+    {
+      "key": "health.duplicate",
+      "value": "중복 조각: 이 구조가 {0}번 나타납니다"
+    },
+    {
+      "key": "health.emptyBody",
+      "value": "제어 블록에 본문이 없어 아무것도 하지 않습니다"
+    },
+    {
+      "key": "health.emptyMethod",
+      "value": "메서드 본문이 비어 있습니다"
+    },
+    {
+      "key": "health.escapeRatio",
+      "value": "원시 조각이 코드의 {0}%(기준 {1}%)로 하위 집합이 너무 좁습니다"
+    },
+    {
+      "key": "health.expressionSize",
+      "value": "식이 너무 큼: 노드 {0}개(기준 {1})"
+    },
+    {
+      "key": "health.fix",
+      "value": "수정 제안"
+    },
+    {
+      "key": "health.fixAddRelease",
+      "value": "해제 호출 덧붙이기"
+    },
+    {
+      "key": "health.fixApply",
+      "value": "적용"
+    },
+    {
+      "key": "health.fixBreakLink",
+      "value": "순환을 닫는 연결을 끊기"
+    },
+    {
+      "key": "health.fixFillZero",
+      "value": "0으로 채우기"
+    },
+    {
+      "key": "health.fixNone",
+      "value": "자동 적용 가능한 수정이 없습니다"
+    },
+    {
+      "key": "health.leak",
+      "value": "메모리 누수 가능성: {0} {2}회, {1}은(는) {3}회만"
+    },
+    {
+      "key": "health.locals",
+      "value": "지역 변수가 많음: {0}개(기준 {1})"
+    },
+    {
+      "key": "health.magicNumber",
+      "value": "매직 넘버 {0}이(가) {1}번 나타납니다"
+    },
+    {
+      "key": "health.memberChain",
+      "value": "멤버 접근 체인이 김: {0}단계(기준 {1})"
+    },
+    {
+      "key": "health.methodLength",
+      "value": "메서드가 김: 문장 {0}개(기준 {1})"
+    },
+    {
+      "key": "health.methods",
+      "value": "메서드"
+    },
+    {
+      "key": "health.metric.escapes",
+      "value": "원시 조각 {0}({1:F1}%)"
+    },
+    {
+      "key": "health.metric.methods",
+      "value": "메서드 {0}"
+    },
+    {
+      "key": "health.metric.statements",
+      "value": "문장 블록 {0}"
+    },
+    {
+      "key": "health.nesting",
+      "value": "중첩이 깊음: {0}단계(기준 {1})"
+    },
+    {
+      "key": "health.none",
+      "value": "문제를 찾지 못했습니다."
+    },
+    {
+      "key": "health.optimizerNone",
+      "value": "자동 최적화는 아직 활성화되지 않았습니다(저수준 블록과 함께 제공 예정). 인터페이스는 준비되어 있으니 INsg_Pass(Optimizer)를 등록하면 됩니다."
+    },
+    {
+      "key": "health.optimizerReady",
+      "value": "자동 최적화 인터페이스 준비됨: 최적화 패스 {0}개"
+    },
+    {
+      "key": "health.passes",
+      "value": "등록된 패스: {0}"
+    },
+    {
+      "key": "health.placeholderName",
+      "value": "임시 이름: '{0}'"
+    },
+    {
+      "key": "health.rerun",
+      "value": "다시 검사"
+    },
+    {
+      "key": "health.score",
+      "value": "점수 {0}/100"
+    },
+    {
+      "key": "health.shortName",
+      "value": "이름이 너무 짧음: '{0}'"
+    },
+    {
+      "key": "health.summary",
+      "value": "오류 {0} / 경고 {1} / 제안 {2}"
+    },
+    {
+      "key": "health.title",
+      "value": "아키텍처 건전성"
+    },
+    {
+      "key": "health.unusedLocal",
+      "value": "지역 변수 '{0}'은(는) 선언 후 한 번도 읽히지 않았습니다"
+    },
+    {
+      "key": "info.canonicalized",
+      "value": "{0}개 메서드가 정규형이 아닙니다. 첫 «블록 → 코드»에서 정규화됩니다(의미는 동일)."
+    },
+    {
+      "key": "info.exported",
+      "value": "기본 블록 라이브러리를 내보냈습니다: {0}"
+    },
+    {
+      "key": "info.libraryReloaded",
+      "value": "블록 라이브러리를 다시 불러왔습니다: {0}개"
+    },
+    {
+      "key": "info.managed",
+      "value": "관리 대상으로 지정: {0}"
+    },
+    {
+      "key": "info.unmanaged",
+      "value": "관리 해제: {0}"
+    },
+    {
+      "key": "macro.cannot",
+      "value": "이 노드는 블록이 될 수 없습니다"
+    },
+    {
+      "key": "macro.create",
+      "value": "사용자 블록 만들기"
+    },
+    {
+      "key": "macro.saved",
+      "value": "사용자 블록 저장됨: {0}"
+    },
+    {
+      "key": "manage.done",
+      "value": "파일 {0}개를 관리 대상으로 지정했습니다. 실패 {1}개."
+    },
+    {
+      "key": "manage.nothing",
+      "value": "관리할 새 파일이 없습니다."
+    },
+    {
+      "key": "manage.prompt",
+      "value": "소스 파일 {0}개를 관리 대상으로 지정합니다. 각각 .nsg.json이 만들어지고 블록으로 가져옵니다. 큰 프로젝트에서는 오래 걸립니다. 계속할까요?"
+    },
+    {
+      "key": "manage.title",
+      "value": "일괄 관리"
+    },
+    {
+      "key": "manage.unmanageDone",
+      "value": "파일 {0}개 해제, 실패 {1}개."
+    },
+    {
+      "key": "manage.unmanageNothing",
+      "value": "해제할 블록 설정이 없습니다."
+    },
+    {
+      "key": "manage.unmanagePrompt",
+      "value": "파일 {0}개의 블록 설정을 해제합니다. 옆의 .nsg.json을 삭제하고 스크립트는 일반 파일로 돌아갑니다. .cs 자체는 건드리지 않습니다. 계속할까요?"
+    },
+    {
+      "key": "menu.api",
+      "value": "선택한 폴더의 API 블록 생성"
+    },
+    {
+      "key": "menu.apiAll",
+      "value": "프로젝트 전체 API 라이브러리 구축"
+    },
+    {
+      "key": "menu.export",
+      "value": "기본 블록 라이브러리 내보내기"
+    },
+    {
+      "key": "menu.health",
+      "value": "아키텍처 건전성"
+    },
+    {
+      "key": "menu.languages",
+      "value": "언어: 로드된 항목 표시"
+    },
+    {
+      "key": "menu.manage",
+      "value": "선택한 스크립트 관리 대상으로 지정"
+    },
+    {
+      "key": "menu.manageAll",
+      "value": "프로젝트 전체를 관리 대상으로 지정"
+    },
+    {
+      "key": "menu.manageFolder",
+      "value": "선택한 폴더 관리 대상으로 지정"
+    },
+    {
+      "key": "menu.open",
+      "value": "블록 편집기 열기"
+    },
+    {
+      "key": "menu.problems",
+      "value": "문제"
+    },
+    {
+      "key": "menu.reload",
+      "value": "블록 라이브러리 다시 불러오기"
+    },
+    {
+      "key": "menu.selftest",
+      "value": "자체 테스트: 왕복 변환"
+    },
+    {
+      "key": "menu.shell",
+      "value": "ShaderLab 셸 생성"
+    },
+    {
+      "key": "menu.unmanage",
+      "value": "선택한 스크립트 관리 해제"
+    },
+    {
+      "key": "msg.canonicalized",
+      "value": "{0}개 메서드가 정규형이 아닙니다(중괄호 누락, 들여쓰기 불일치 또는 동등한 여러 표기). 첫 «블록 → 코드»에서 정규화됩니다. 의미는 그대로이고 서식만 바뀝니다."
+    },
+    {
+      "key": "msg.expect",
+      "value": "'{0}'이(가) 필요하지만 '{1}'을(를) 찾음"
+    },
+    {
+      "key": "msg.expectIdent",
+      "value": "식별자가 필요하지만 '{0}'을(를) 찾음"
+    },
+    {
+      "key": "msg.foreachName",
+      "value": "foreach에 반복 변수 이름이 없습니다"
+    },
+    {
+      "key": "msg.lexUnknown",
+      "value": "인식할 수 없는 문자 '{0}'"
+    },
+    {
+      "key": "msg.methodCount",
+      "value": "디스크의 메서드 수({0})가 블록 파일({1})과 일치하지 않습니다. 코드를 다시 가져오거나 수동으로 맞춘 뒤 생성하세요."
+    },
+    {
+      "key": "msg.methodName",
+      "value": "{0}번째 메서드가 일치하지 않습니다: 디스크 '{1}', 블록 파일 '{2}'."
+    },
+    {
+      "key": "msg.noModelGenerate",
+      "value": "생성할 블록 모델이 없습니다."
+    },
+    {
+      "key": "msg.noModelRender",
+      "value": "렌더링할 블록 모델이 없습니다."
+    },
+    {
+      "key": "msg.noSource",
+      "value": "소스 파일을 찾을 수 없음: {0}"
+    },
+    {
+      "key": "msg.outOfSubset",
+      "value": "이 문장은 하위 집합 밖입니다. 원시 조각으로 유지됩니다(블록으로 되돌릴 수 없음)."
+    },
+    {
+      "key": "msg.unknownBlock",
+      "value": "라이브러리에 '{0}'이(가) 없습니다."
+    },
+    {
+      "key": "msg.unknownBlockHint",
+      "value": "라이브러리에 '{0}'이(가) 없습니다. Blocks/에 해당 JSON을 추가하세요."
+    },
+    {
+      "key": "msg.unknownExpr",
+      "value": "알 수 없는 식 블록 '{0}'은(는) 코드로 되돌릴 수 없습니다."
+    },
+    {
+      "key": "msg.unknownStmt",
+      "value": "알 수 없는 블록 '{0}'은(는) 코드로 되돌릴 수 없습니다. 해당 블록 정의를 설치하거나 원시 조각을 사용하세요."
+    },
+    {
+      "key": "palette.empty",
+      "value": "(사용 가능한 블록 없음)"
+    },
+    {
+      "key": "palette.found",
+      "value": "{0}개 블록"
+    },
+    {
+      "key": "palette.noMatch",
+      "value": "일치하는 블록 없음"
+    },
+    {
+      "key": "palette.other",
+      "value": "기타"
+    },
+    {
+      "key": "palette.search",
+      "value": "블록 검색…"
+    },
+    {
+      "key": "pick.clickToAdd",
+      "value": "클릭하여 블록 추가"
+    },
+    {
+      "key": "pick.empty",
+      "value": "(비어 있음)"
+    },
+    {
+      "key": "pick.expression",
+      "value": "식 블록 삽입"
+    },
+    {
+      "key": "pick.noMatch",
+      "value": "일치하는 블록이 없습니다"
+    },
+    {
+      "key": "pick.search",
+      "value": "검색"
+    },
+    {
+      "key": "pick.statement",
+      "value": "문장 블록 삽입"
+    },
+    {
+      "key": "ribbon.group.api",
+      "value": "API"
+    },
+    {
+      "key": "ribbon.group.edit",
+      "value": "편집"
+    },
+    {
+      "key": "ribbon.group.file",
+      "value": "이 파일"
+    },
+    {
+      "key": "ribbon.group.files",
+      "value": "설정 파일"
+    },
+    {
+      "key": "ribbon.group.folder",
+      "value": "폴더"
+    },
+    {
+      "key": "ribbon.group.inspect",
+      "value": "검사"
+    },
+    {
+      "key": "ribbon.group.lang",
+      "value": "언어"
+    },
+    {
+      "key": "ribbon.group.library",
+      "value": "라이브러리"
+    },
+    {
+      "key": "ribbon.group.mode",
+      "value": "모드"
+    },
+    {
+      "key": "ribbon.group.project",
+      "value": "전체 프로젝트"
+    },
+    {
+      "key": "ribbon.group.script",
+      "value": "스크립트"
+    },
+    {
+      "key": "ribbon.group.version",
+      "value": "버전"
+    },
+    {
+      "key": "ribbon.group.zoom",
+      "value": "확대/축소"
+    },
+    {
+      "key": "ribbon.tab.home",
+      "value": "홈"
+    },
+    {
+      "key": "ribbon.tab.manage",
+      "value": "관리"
+    },
+    {
+      "key": "ribbon.tab.tools",
+      "value": "도구"
+    },
+    {
+      "key": "ribbon.tab.view",
+      "value": "보기"
+    },
+    {
+      "key": "scratch.hint",
+      "value": "연결되지 않은 블록(컴파일되지 않음)"
+    },
+    {
+      "key": "selftest.fail",
+      "value": "FAIL"
+    },
+    {
+      "key": "selftest.pass",
+      "value": "PASS"
+    },
+    {
+      "key": "selftest.summary",
+      "value": "검사 {0}개, 통과 {1}, 실패 {2}"
+    },
+    {
+      "key": "selftest.title",
+      "value": "자체 테스트 결과"
+    },
+    {
+      "key": "shader.needShader",
+      "value": "먼저 .shader 파일을 선택하세요."
+    },
+    {
+      "key": "shader.shellDone",
+      "value": "{0} 파이프라인 셸을 생성했습니다: {1}"
+    },
+    {
+      "key": "shader.shellPrompt",
+      "value": "현재 파일을 {0} 파이프라인용 완전한 ShaderLab 셸로 덮어씁니다. 현재 내용은 모두 사라집니다. 계속할까요?"
+    },
+    {
+      "key": "shader.shellTitle",
+      "value": "ShaderLab 셸 생성"
+    },
+    {
+      "key": "state.blocksdirty",
+      "value": "블록 변경됨"
+    },
+    {
+      "key": "state.conflict",
+      "value": "충돌: 양쪽 모두 변경됨"
+    },
+    {
+      "key": "state.csdirty",
+      "value": "코드 변경됨"
+    },
+    {
+      "key": "state.synced",
+      "value": "동기화됨"
+    },
+    {
+      "key": "state.unmanaged",
+      "value": "자유 스크립트(블록 파일 없음)"
+    },
+    {
+      "key": "tree.base",
+      "value": "상속"
+    },
+    {
+      "key": "tree.bodyEmpty",
+      "value": "(비어 있음)"
+    },
+    {
+      "key": "tree.class",
+      "value": "클래스"
+    },
+    {
+      "key": "tree.customBase",
+      "value": "사용자 지정…"
+    },
+    {
+      "key": "tree.enum",
+      "value": "열거형"
+    },
+    {
+      "key": "tree.interface",
+      "value": "인터페이스"
+    },
+    {
+      "key": "tree.method",
+      "value": "메서드"
+    },
+    {
+      "key": "tree.namespace",
+      "value": "네임스페이스"
+    },
+    {
+      "key": "tree.noBase",
+      "value": "(없음)"
+    },
+    {
+      "key": "tree.raw",
+      "value": "멤버(그대로 유지)"
+    },
+    {
+      "key": "tree.struct",
+      "value": "구조체"
+    },
+    {
+      "key": "tree.using",
+      "value": "using"
+    },
+    {
+      "key": "view.blueprint",
+      "value": "블루프린트(UE)"
+    },
+    {
+      "key": "view.mode",
+      "value": "보기"
+    },
+    {
+      "key": "view.stack",
+      "value": "스택(Scratch)"
+    },
+    {
+      "key": "win.lang",
+      "value": "언어"
+    },
+    {
+      "key": "win.noDoc",
+      "value": "열린 파일 없음"
+    },
+    {
+      "key": "win.none",
+      "value": "—"
+    },
+    {
+      "key": "win.pipeline",
+      "value": "파이프라인"
+    },
+    {
+      "key": "win.pipelineAuto",
+      "value": "자동 ({0})"
+    },
+    {
+      "key": "win.title",
+      "value": "NekoScriptGraph 블록 편집기"
+    }
+  ],
+  "blocks": [
+    {
+      "key": "c.abs",
+      "value": "절댓값 {0}"
+    },
+    {
+      "key": "c.assert",
+      "value": "단언 {0}"
+    },
+    {
+      "key": "c.atof",
+      "value": "문자열을 실수로 {0}"
+    },
+    {
+      "key": "c.atoi",
+      "value": "문자열을 정수로 {0}"
+    },
+    {
+      "key": "c.exit",
+      "value": "프로그램 종료 {0}"
+    },
+    {
+      "key": "c.fabs",
+      "value": "실수 절댓값 {0}"
+    },
+    {
+      "key": "c.fclose",
+      "value": "파일 {0} 닫기"
+    },
+    {
+      "key": "c.fgets",
+      "value": "{0} 에서 {1} 로 한 줄 읽기, 최대 {2} 바이트"
+    },
+    {
+      "key": "c.fopen",
+      "value": "파일 {0} 를 모드 {1} 로 열기"
+    },
+    {
+      "key": "c.fprintf",
+      "value": "{0} 에 {1} 쓰기"
+    },
+    {
+      "key": "c.free",
+      "value": "{0} 해제"
+    },
+    {
+      "key": "c.malloc",
+      "value": "{0} 바이트 할당"
+    },
+    {
+      "key": "c.memcpy",
+      "value": "{2} 바이트 복사 {1}→{0}"
+    },
+    {
+      "key": "c.memset",
+      "value": "{0} 를 {1} 로 {2} 바이트 채우기"
+    },
+    {
+      "key": "c.perror",
+      "value": "오류 보고 {0}"
+    },
+    {
+      "key": "c.pow",
+      "value": "거듭제곱 {0}^{1}"
+    },
+    {
+      "key": "c.printf",
+      "value": "printf({0})"
+    },
+    {
+      "key": "c.sizeof",
+      "value": "sizeof({0})"
+    },
+    {
+      "key": "c.sqrt",
+      "value": "제곱근 {0}"
+    },
+    {
+      "key": "c.strcat",
+      "value": "문자열 연결 {0}+{1}"
+    },
+    {
+      "key": "c.strcmp",
+      "value": "문자열 비교 {0} {1}"
+    },
+    {
+      "key": "c.strcpy",
+      "value": "문자열 복사 {1}→{0}"
+    },
+    {
+      "key": "c.strlen",
+      "value": "문자열 길이 {0}"
+    },
+    {
+      "key": "cpp.at",
+      "value": "{0} 의 {1} 번째"
+    },
+    {
+      "key": "cpp.cin",
+      "value": "{0} 에 입력"
+    },
+    {
+      "key": "cpp.cout",
+      "value": "{0} 출력"
+    },
+    {
+      "key": "cpp.delete",
+      "value": "{0} 해제"
+    },
+    {
+      "key": "cpp.getline",
+      "value": "{0} 로 한 줄 읽기"
+    },
+    {
+      "key": "cpp.make_shared",
+      "value": "공유 포인터 {0} = 새로"
+    },
+    {
+      "key": "cpp.map",
+      "value": "맵 {0}<{1}, {2}>"
+    },
+    {
+      "key": "cpp.move",
+      "value": "{0} 이동"
+    },
+    {
+      "key": "cpp.printf",
+      "value": "printf({0})"
+    },
+    {
+      "key": "cpp.push_back",
+      "value": "{0} 에 {1} 추가"
+    },
+    {
+      "key": "cpp.size",
+      "value": "{0} 의 크기"
+    },
+    {
+      "key": "cpp.sizeof",
+      "value": "sizeof({0})"
+    },
+    {
+      "key": "cpp.stoi",
+      "value": "문자열을 정수로 {0}"
+    },
+    {
+      "key": "cpp.string",
+      "value": "문자열 {0} = {1}"
+    },
+    {
+      "key": "cpp.throw",
+      "value": "{0} 던지기"
+    },
+    {
+      "key": "cpp.to_string",
+      "value": "문자열로 {0}"
+    },
+    {
+      "key": "cpp.unique_ptr",
+      "value": "고유 포인터 {0} = 새로 {1}"
+    },
+    {
+      "key": "cpp.vector",
+      "value": "벡터 {0}<{1}>"
+    },
+    {
+      "key": "expr.binary",
+      "value": "{0} {1} {2}"
+    },
+    {
+      "key": "expr.call",
+      "value": "{0} 호출"
+    },
+    {
+      "key": "expr.cast",
+      "value": "{1} 를 {0} 로 변환"
+    },
+    {
+      "key": "expr.conditional",
+      "value": "만약 {0} 이면 {1} 아니면 {2}"
+    },
+    {
+      "key": "expr.ident",
+      "value": "변수 {0}"
+    },
+    {
+      "key": "expr.index",
+      "value": "{0} 의 {1} 번째"
+    },
+    {
+      "key": "expr.literal",
+      "value": "{0}"
+    },
+    {
+      "key": "expr.member",
+      "value": "{0} 의 {1}"
+    },
+    {
+      "key": "expr.new",
+      "value": "{0} 만들기"
+    },
+    {
+      "key": "expr.postfix",
+      "value": "{0}{1}"
+    },
+    {
+      "key": "expr.raw",
+      "value": "원시 C# {0}"
+    },
+    {
+      "key": "expr.unary",
+      "value": "{0}{1}"
+    },
+    {
+      "key": "hlsl.abs",
+      "value": "절댓값 {0}"
+    },
+    {
+      "key": "hlsl.acos",
+      "value": "아크 코사인 {0}"
+    },
+    {
+      "key": "hlsl.all",
+      "value": "{0} 모두 참"
+    },
+    {
+      "key": "hlsl.any",
+      "value": "{0} 중 하나라도 참"
+    },
+    {
+      "key": "hlsl.asin",
+      "value": "아크 사인 {0}"
+    },
+    {
+      "key": "hlsl.atan",
+      "value": "아크 탄젠트 {0}"
+    },
+    {
+      "key": "hlsl.atan2",
+      "value": "아크 탄젠트 {0}/{1}"
+    },
+    {
+      "key": "hlsl.ceil",
+      "value": "올림 {0}"
+    },
+    {
+      "key": "hlsl.clamp",
+      "value": "{0} 를 {1}..{2} 로 제한"
+    },
+    {
+      "key": "hlsl.clip",
+      "value": "{0} 잘라내기"
+    },
+    {
+      "key": "hlsl.clipPos",
+      "value": "클립 좌표 {0}"
+    },
+    {
+      "key": "hlsl.cos",
+      "value": "코사인 {0}"
+    },
+    {
+      "key": "hlsl.cross",
+      "value": "외적 {0}×{1}"
+    },
+    {
+      "key": "hlsl.ddx",
+      "value": "{0} 의 화면 가로 변화율"
+    },
+    {
+      "key": "hlsl.ddy",
+      "value": "{0} 의 화면 세로 변화율"
+    },
+    {
+      "key": "hlsl.determinant",
+      "value": "행렬식 {0}"
+    },
+    {
+      "key": "hlsl.discard",
+      "value": "픽셀 버리기"
+    },
+    {
+      "key": "hlsl.distance",
+      "value": "거리 {0}→{1}"
+    },
+    {
+      "key": "hlsl.dot",
+      "value": "내적 {0}·{1}"
+    },
+    {
+      "key": "hlsl.exp",
+      "value": "e 의 {0} 제곱"
+    },
+    {
+      "key": "hlsl.exp2",
+      "value": "2 의 {0} 제곱"
+    },
+    {
+      "key": "hlsl.floor",
+      "value": "내림 {0}"
+    },
+    {
+      "key": "hlsl.fmod",
+      "value": "실수 나머지 {0} {1}"
+    },
+    {
+      "key": "hlsl.frac",
+      "value": "소수 부분 {0}"
+    },
+    {
+      "key": "hlsl.length",
+      "value": "길이 {0}"
+    },
+    {
+      "key": "hlsl.lerp",
+      "value": "{0}→{1} 를 {2} 로 보간"
+    },
+    {
+      "key": "hlsl.log",
+      "value": "자연 로그 {0}"
+    },
+    {
+      "key": "hlsl.log2",
+      "value": "2 를 밑으로 하는 로그 {0}"
+    },
+    {
+      "key": "hlsl.mad",
+      "value": "곱셈-덧셈 {0}×{1}+{2}"
+    },
+    {
+      "key": "hlsl.max",
+      "value": "큰 값 {0} {1}"
+    },
+    {
+      "key": "hlsl.min",
+      "value": "작은 값 {0} {1}"
+    },
+    {
+      "key": "hlsl.mul",
+      "value": "행렬 곱 {0}×{1}"
+    },
+    {
+      "key": "hlsl.normalize",
+      "value": "{0} 정규화"
+    },
+    {
+      "key": "hlsl.pow",
+      "value": "거듭제곱 {0}^{1}"
+    },
+    {
+      "key": "hlsl.rcp",
+      "value": "역수 {0}"
+    },
+    {
+      "key": "hlsl.reflect",
+      "value": "{0} 를 {1} 로 반사"
+    },
+    {
+      "key": "hlsl.refract",
+      "value": "{0} 를 {1} 로 굴절 굴절률 {2}"
+    },
+    {
+      "key": "hlsl.round",
+      "value": "반올림 {0}"
+    },
+    {
+      "key": "hlsl.rsqrt",
+      "value": "제곱근의 역수 {0}"
+    },
+    {
+      "key": "hlsl.sample",
+      "value": "{1} 에서 {0} 표본"
+    },
+    {
+      "key": "hlsl.saturate",
+      "value": "saturate({0})"
+    },
+    {
+      "key": "hlsl.sign",
+      "value": "부호 {0}"
+    },
+    {
+      "key": "hlsl.sin",
+      "value": "사인 {0}"
+    },
+    {
+      "key": "hlsl.smoothstep",
+      "value": "부드러운 계단 {0}..{1} 값 {2}"
+    },
+    {
+      "key": "hlsl.sqrt",
+      "value": "제곱근 {0}"
+    },
+    {
+      "key": "hlsl.step",
+      "value": "계단 {0} 임계값 {1}"
+    },
+    {
+      "key": "hlsl.tan",
+      "value": "탄젠트 {0}"
+    },
+    {
+      "key": "hlsl.tex2D",
+      "value": "{1} 에서 {0} 표본"
+    },
+    {
+      "key": "hlsl.tex2Dlod",
+      "value": "{1} 에서 {0} 표본"
+    },
+    {
+      "key": "hlsl.texCUBE",
+      "value": "큐브 샘플 {0} 방향 {1}"
+    },
+    {
+      "key": "hlsl.transpose",
+      "value": "{0} 전치"
+    },
+    {
+      "key": "hlsl.trunc",
+      "value": "{0} 자르기"
+    },
+    {
+      "key": "java.add",
+      "value": "{0} 에 {1} 추가"
+    },
+    {
+      "key": "java.arraysSort",
+      "value": "{0} 정렬"
+    },
+    {
+      "key": "java.equals",
+      "value": "{0} 와 {1} 이 같음"
+    },
+    {
+      "key": "java.format",
+      "value": "{0} 를 {1} 로 서식"
+    },
+    {
+      "key": "java.get",
+      "value": "{0} 의 {1} 번째"
+    },
+    {
+      "key": "java.length",
+      "value": "{0} 의 길이"
+    },
+    {
+      "key": "java.list",
+      "value": "리스트 {0}"
+    },
+    {
+      "key": "java.map",
+      "value": "맵 {0}"
+    },
+    {
+      "key": "java.mathAbs",
+      "value": "절댓값 {0}"
+    },
+    {
+      "key": "java.mathMax",
+      "value": "큰 값 {0} {1}"
+    },
+    {
+      "key": "java.mathMin",
+      "value": "작은 값 {0} {1}"
+    },
+    {
+      "key": "java.mathPow",
+      "value": "거듭제곱 {0}^{1}"
+    },
+    {
+      "key": "java.mathRandom",
+      "value": "난수"
+    },
+    {
+      "key": "java.mathSqrt",
+      "value": "제곱근 {0}"
+    },
+    {
+      "key": "java.parseDouble",
+      "value": "문자열을 실수로 {0}"
+    },
+    {
+      "key": "java.parseInt",
+      "value": "문자열을 정수로 {0}"
+    },
+    {
+      "key": "java.print",
+      "value": "{0} 출력 (줄바꿈 없이)"
+    },
+    {
+      "key": "java.println",
+      "value": "{0} 출력"
+    },
+    {
+      "key": "java.put",
+      "value": "{1} → {2} 를 {0} 에 넣기"
+    },
+    {
+      "key": "java.split",
+      "value": "{0} 를 {1} 로 분할"
+    },
+    {
+      "key": "java.substring",
+      "value": "{0} 의 부분 문자열 {1}..{2}"
+    },
+    {
+      "key": "java.throw",
+      "value": "{0} 던지기"
+    },
+    {
+      "key": "java.toString",
+      "value": "{0} 를 문자열로"
+    },
+    {
+      "key": "java.valueOf",
+      "value": "문자열로 {0}"
+    },
+    {
+      "key": "py.abs",
+      "value": "절댓값 {0}"
+    },
+    {
+      "key": "py.append",
+      "value": "{1} 에 {0} 추가"
+    },
+    {
+      "key": "py.assert",
+      "value": "단언 {0}"
+    },
+    {
+      "key": "py.chr",
+      "value": "코드를 문자로 {0}"
+    },
+    {
+      "key": "py.del",
+      "value": "{0} 삭제"
+    },
+    {
+      "key": "py.dict",
+      "value": "딕셔너리 {0}"
+    },
+    {
+      "key": "py.enumerate",
+      "value": "인덱스 포함 {0}"
+    },
+    {
+      "key": "py.float",
+      "value": "실수로 {0}"
+    },
+    {
+      "key": "py.format",
+      "value": "{0} 를 {1} 로 서식"
+    },
+    {
+      "key": "py.fromImport",
+      "value": "{0} 에서 {1} 가져오기"
+    },
+    {
+      "key": "py.global",
+      "value": "전역 {0}"
+    },
+    {
+      "key": "py.import",
+      "value": "{0} 가져오기"
+    },
+    {
+      "key": "py.input",
+      "value": "입력 읽기 {0}"
+    },
+    {
+      "key": "py.int",
+      "value": "정수로 {0}"
+    },
+    {
+      "key": "py.isinstance",
+      "value": "{0} 는 {1}"
+    },
+    {
+      "key": "py.items",
+      "value": "{0} 의 키와 값"
+    },
+    {
+      "key": "py.join",
+      "value": "{1} 를 {0} 로 연결"
+    },
+    {
+      "key": "py.keys",
+      "value": "{0} 의 키"
+    },
+    {
+      "key": "py.len",
+      "value": "길이 {0}"
+    },
+    {
+      "key": "py.list",
+      "value": "리스트 {0}"
+    },
+    {
+      "key": "py.lower",
+      "value": "{0} 를 소문자로"
+    },
+    {
+      "key": "py.max",
+      "value": "{0} 의 최댓값"
+    },
+    {
+      "key": "py.min",
+      "value": "{0} 의 최솟값"
+    },
+    {
+      "key": "py.ord",
+      "value": "문자 코드 {0}"
+    },
+    {
+      "key": "py.pass",
+      "value": "pass"
+    },
+    {
+      "key": "py.print",
+      "value": "print({0})"
+    },
+    {
+      "key": "py.raise",
+      "value": "{0} 던지기"
+    },
+    {
+      "key": "py.range",
+      "value": "범위 {0}"
+    },
+    {
+      "key": "py.replace",
+      "value": "{0} 안의 {1} 을 {2} 로 바꾸기"
+    },
+    {
+      "key": "py.repr",
+      "value": "표현 {0}"
+    },
+    {
+      "key": "py.round",
+      "value": "반올림 {0}"
+    },
+    {
+      "key": "py.set",
+      "value": "집합 {0}"
+    },
+    {
+      "key": "py.sorted",
+      "value": "{0} 정렬"
+    },
+    {
+      "key": "py.split",
+      "value": "{1} 를 {0} 로 분할"
+    },
+    {
+      "key": "py.str",
+      "value": "문자열로 {0}"
+    },
+    {
+      "key": "py.strip",
+      "value": "공백 제거 {0}"
+    },
+    {
+      "key": "py.sum",
+      "value": "{0} 의 합"
+    },
+    {
+      "key": "py.tuple",
+      "value": "튜플 {0}"
+    },
+    {
+      "key": "py.type",
+      "value": "타입 {0}"
+    },
+    {
+      "key": "py.upper",
+      "value": "{0} 를 대문자로"
+    },
+    {
+      "key": "py.yield",
+      "value": "{0} 만들기"
+    },
+    {
+      "key": "py.zip",
+      "value": "{0} {1} 짝짓기"
+    },
+    {
+      "key": "rust.assert",
+      "value": "단언 {0}"
+    },
+    {
+      "key": "rust.collect",
+      "value": "{0} 수집"
+    },
+    {
+      "key": "rust.eprintln",
+      "value": "오류 출력 {0}"
+    },
+    {
+      "key": "rust.err",
+      "value": "Err({0})"
+    },
+    {
+      "key": "rust.expect",
+      "value": "{0} 꺼내기 실패 시 오류 {1}"
+    },
+    {
+      "key": "rust.filter",
+      "value": "{0} 를 {1} 로 거르기"
+    },
+    {
+      "key": "rust.format",
+      "value": "{0} 서식"
+    },
+    {
+      "key": "rust.hashmap",
+      "value": "맵 {0}"
+    },
+    {
+      "key": "rust.is_ok",
+      "value": "{0} 는 Ok"
+    },
+    {
+      "key": "rust.iter",
+      "value": "{0} 순회"
+    },
+    {
+      "key": "rust.len",
+      "value": "{0} 의 길이"
+    },
+    {
+      "key": "rust.map",
+      "value": "{0} 의 각 항목에 {1} 적용"
+    },
+    {
+      "key": "rust.none",
+      "value": "None"
+    },
+    {
+      "key": "rust.ok",
+      "value": "Ok({0})"
+    },
+    {
+      "key": "rust.panic",
+      "value": "panic!({0})"
+    },
+    {
+      "key": "rust.parse",
+      "value": "{0} 분석"
+    },
+    {
+      "key": "rust.pop",
+      "value": "{0} 마지막 꺼내기"
+    },
+    {
+      "key": "rust.println",
+      "value": "println!({0})"
+    },
+    {
+      "key": "rust.push",
+      "value": "{0} 에 {1} 추가"
+    },
+    {
+      "key": "rust.some",
+      "value": "Some({0})"
+    },
+    {
+      "key": "rust.string_from",
+      "value": "문자열 {0}"
+    },
+    {
+      "key": "rust.to_string",
+      "value": "{0} 를 문자열로"
+    },
+    {
+      "key": "rust.todo",
+      "value": "todo 자리 표시"
+    },
+    {
+      "key": "rust.unreachable",
+      "value": "도달 불가"
+    },
+    {
+      "key": "rust.unwrap",
+      "value": "{0} 꺼내기"
+    },
+    {
+      "key": "rust.unwrap_or",
+      "value": "{0} 꺼내기 실패 시 {1}"
+    },
+    {
+      "key": "rust.vec",
+      "value": "벡터 만들기 {0}"
+    },
+    {
+      "key": "stmt.add",
+      "value": "{0} 에 {1} 더하기"
+    },
+    {
+      "key": "stmt.assign",
+      "value": "{0} 를 {1} 로 설정"
+    },
+    {
+      "key": "stmt.break",
+      "value": "루프 빠져나가기"
+    },
+    {
+      "key": "stmt.continue",
+      "value": "다음 반복"
+    },
+    {
+      "key": "stmt.div",
+      "value": "{0} 를 {1} 로 나누기"
+    },
+    {
+      "key": "stmt.expr",
+      "value": "{0} 실행"
+    },
+    {
+      "key": "stmt.for",
+      "value": "카운트 루프"
+    },
+    {
+      "key": "stmt.foreach",
+      "value": "{2} 안의 각 {0} {1} 마다"
+    },
+    {
+      "key": "stmt.if",
+      "value": "만약 {0}"
+    },
+    {
+      "key": "stmt.localDecl",
+      "value": "{0} {1} = {2} 선언"
+    },
+    {
+      "key": "stmt.mod",
+      "value": "{0} 를 {1} 로 나눈 나머지"
+    },
+    {
+      "key": "stmt.mul",
+      "value": "{0} 에 {1} 곱하기"
+    },
+    {
+      "key": "stmt.raw",
+      "value": "원시 C# {0}"
+    },
+    {
+      "key": "stmt.return",
+      "value": "{0} 반환"
+    },
+    {
+      "key": "stmt.sub",
+      "value": "{0} 에서 {1} 빼기"
+    },
+    {
+      "key": "stmt.while",
+      "value": "{0} 동안 반복"
+    }
+  ]
+}

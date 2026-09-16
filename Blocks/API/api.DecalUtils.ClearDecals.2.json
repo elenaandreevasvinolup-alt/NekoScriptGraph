@@ -1,0 +1,36 @@
+{
+    "id": "api.DecalUtils.ClearDecals.2",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecalUtils",
+    "categoryKey": "cat.api",
+    "label": "DecalUtils.ClearDecals({0}, {1})",
+    "labelEn": "DecalUtils.ClearDecals({0}, {1})",
+    "labelRu": "DecalUtils.ClearDecals({0}, {1})",
+    "sockets": [
+        {
+            "name": "group",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "mode",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalUtils.ClearDecals",
+    "matchArity": 2,
+    "builtin": true,
+    "manual": "DecalUtils.ClearDecals(group, mode) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

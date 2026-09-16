@@ -1,0 +1,29 @@
+{
+    "id": "api.GPUDecalUtils.CreateGroup.1",
+    "level": "high",
+    "shape": "expression",
+    "category": "GPUDecalUtils",
+    "categoryKey": "cat.api",
+    "label": "GPUDecalUtils.CreateGroup({0})",
+    "labelEn": "GPUDecalUtils.CreateGroup({0})",
+    "labelRu": "GPUDecalUtils.CreateGroup({0})",
+    "sockets": [
+        {
+            "name": "desc",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "GPUDecalUtils.CreateGroup",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "GPUDecalUtils.CreateGroup(desc) : DecalUtils.Group",
+    "variantGroup": "",
+    "variantLabel": ""
+}

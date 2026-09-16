@@ -1,0 +1,11 @@
+{
+  "apiVersion": 1,
+  "id": "rust",
+  "displayName": "Rust",
+  "icon": "RUST",
+  "extensions": [".rs"],
+  "blocksFolder": "blocks",
+  "engineType": "NekoScriptGraph.Nsg_RustLanguage",
+  "author": "",
+  "note": "Требует папку _cstyle (общая машина разбора). Удалите обе — и Rust исчезнет из плагина."
+}

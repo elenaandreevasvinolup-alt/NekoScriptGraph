@@ -1,0 +1,36 @@
+{
+    "id": "api.DecalSpawner.ReleaseGroup.1",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecalSpawner",
+    "categoryKey": "cat.api",
+    "label": "{0}DecalSpawner.ReleaseGroup({1})",
+    "labelEn": "{0}DecalSpawner.ReleaseGroup({1})",
+    "labelRu": "{0}DecalSpawner.ReleaseGroup({1})",
+    "sockets": [
+        {
+            "name": "target",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "g",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalSpawner.ReleaseGroup",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "DecalSpawner.ReleaseGroup(g) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

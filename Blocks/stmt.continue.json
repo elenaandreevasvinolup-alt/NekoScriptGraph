@@ -1,0 +1,21 @@
+{
+    "id": "stmt.continue",
+    "level": "high",
+    "shape": "statement",
+    "category": "继续下一次",
+    "categoryKey": "cat.ctrl",
+    "label": "continue next iteration",
+    "labelEn": "continue next iteration",
+    "labelRu": "",
+    "sockets": [],
+    "emit": "continue;",
+    "node": "continue",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": false,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

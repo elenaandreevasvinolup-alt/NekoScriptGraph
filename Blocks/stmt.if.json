@@ -1,0 +1,29 @@
+{
+    "id": "stmt.if",
+    "level": "high",
+    "shape": "control",
+    "category": "如果 {0}",
+    "categoryKey": "cat.ctrl",
+    "label": "if {0}",
+    "labelEn": "if {0}",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "cond",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "if",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": true,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

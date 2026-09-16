@@ -1,0 +1,458 @@
+using System.IO;
+using UnityEditor;
+using UnityEngine;
+
+namespace NekoScriptGraph
+{
+    public static class Nsg_Menu
+    {
+        const string Root = "NekoScriptGraph/";
+
+        [MenuItem(Root + "Languages: Show Loaded")]
+        public static void ShowLanguages()
+        {
+            Nsg_LanguageRegistry.Rediscover();
+
+            var sb = new System.Text.StringBuilder();
+            sb.Append("[NekoScriptGraph] Языки:\n");
+
+            var all = Nsg_LanguageRegistry.All;
+            for (int i = 0; i < all.Count; i++)
+            {
+                var e = all[i];
+                sb.Append("  ").Append(e.Ok ? "OK   " : "FAIL ").Append(e.Id);
+
+                if (e.Language != null)
+                {
+                    sb.Append("  \"").Append(e.Language.DisplayName).Append("\"");
+                    sb.Append("  ext: ").Append(string.Join(", ", e.Language.Extensions));
+                    sb.Append(e.Language.BuiltIn ? "  [встроенный]" : "  [плагин]");
+                }
+
+                string folder = Nsg_LanguageRegistry.LibraryFolder(e);
+                if (!string.IsNullOrEmpty(folder)) sb.Append("\n         блоки: ").Append(folder);
+                if (!string.IsNullOrEmpty(e.Error)) sb.Append("\n         ошибка: ").Append(e.Error);
+
+                sb.Append('\n');
+            }
+
+            if (all.Count == 0) sb.Append("  (ничего не найдено)\n");
+
+            sb.Append("Папка плагинов: ").Append(Nsg_LanguageRegistry.SupportFolder);
+            Debug.Log(sb.ToString());
+        }
+
+        // Подписи в атрибутах — английские и статические: [MenuItem] это
+        // константа времени компиляции. Реальные, локализованные подписи
+        // расставляет Nsg_MenuRuntime.Rebuild() при загрузке и смене языка.
+        [MenuItem(Root + "Open Block Editor")]
+        public static void OpenWindow()
+        {
+            Nsg_Window.Open();
+        }
+
+        [MenuItem(Root + "Problems")]
+        public static void OpenErrors()
+        {
+            Nsg_ErrorWindow.Open();
+        }
+
+        /// <summary>
+        /// Окно кошки. Это то же окно проблем: без ProgramNeko оно показывает
+        /// только список ошибок, с ним — сверху кошку, снизу реплику.
+        /// Пункт меню подписан статически, как и остальные пункты Unity.
+        /// </summary>
+        [MenuItem(Root + "Assistant (ProgramNeko)")]
+        public static void OpenAssistant()
+        {
+            Nsg_ErrorWindow.Open();
+
+            if (!Nsg_NekoRegistry.Installed)
+            {
+                Debug.Log("[NekoScriptGraph] ProgramNeko is not installed. " +
+                          "Drop the ProgramNeko folder into the plugin to enable the assistant.");
+            }
+        }
+
+        /// <summary>
+        /// Ctrl/Cmd+Shift+E — кошка объясняет логику выделенного блока.
+        /// Ярлык глобальный, а не только внутри окна: так он работает, даже
+        /// когда фокус в другом окне, а выделение уже сделано.
+        /// </summary>
+        [MenuItem(Root + "Explain Selected Block %#e")]
+        public static void ExplainSelectedBlock()
+        {
+            Nsg_Window.ExplainSelectedBlock();
+        }
+
+        /// <summary>
+        /// Настройки плагина и кошки. Одно окно: «сделать кошку тише» и
+        /// «снять расширение» — одно действие пользователя, и искать его по
+        /// двум местам он не должен.
+        /// </summary>
+        [MenuItem(Root + "Settings")]
+        public static void OpenSettings()
+        {
+            Nsg_SettingsWindow.Open();
+        }
+
+        /// <summary>Расширения: языковые пакеты, кошка, внешние движки.</summary>
+        [MenuItem(Root + "Extensions")]
+        public static void OpenExtensions()
+        {
+            Nsg_SettingsWindow.OpenExtensions();
+        }
+
+        [MenuItem(Root + "Architecture Health")]
+        public static void OpenHealth()
+        {
+            string path = SelectionCs();
+            Nsg_Document doc = path != null ? Nsg_Manager.Instance.Open(path) : null;
+            Nsg_HealthWindow.Open(doc);
+        }
+
+        [MenuItem(Root + "Take Selected Script Under Management")]
+        public static void ManageSelection()
+        {
+            string path = SelectionCs();
+            if (path == null)
+            {
+                EditorUtility.DisplayDialog(Nsg_L10n.T("confirm.title"), Nsg_L10n.T("confirm.selectCs"),
+                                            Nsg_L10n.T("confirm.ok"));
+                return;
+            }
+
+            var doc = Nsg_Manager.Instance.Open(path);
+            if (doc.IsManaged)
+            {
+                EditorUtility.DisplayDialog(Nsg_L10n.T("confirm.title"),
+                    Path.GetFileName(path) + " " + Nsg_L10n.T("confirm.alreadyManaged"), Nsg_L10n.T("confirm.ok"));
+                return;
+            }
+
+            doc.Diagnostics.Clear();
+            if (!Nsg_Manager.Instance.Manage(doc))
+            {
+                Nsg_ErrorWindow.Push(doc.Diagnostics, doc.CsPath);
+                return;
+            }
+
+            Debug.Log("[NekoScriptGraph] " + Nsg_L10n.T("info.managed", path));
+            Nsg_Window.Open();
+        }
+
+        [MenuItem(Root + "Release Selected Script")]
+        public static void UnmanageSelection()
+        {
+            string path = SelectionCs();
+            if (path == null)
+            {
+                EditorUtility.DisplayDialog(Nsg_L10n.T("confirm.title"), Nsg_L10n.T("confirm.selectCs"),
+                                            Nsg_L10n.T("confirm.ok"));
+                return;
+            }
+
+            var doc = Nsg_Manager.Instance.Open(path);
+            if (!doc.IsManaged)
+            {
+                EditorUtility.DisplayDialog(Nsg_L10n.T("confirm.title"),
+                    Path.GetFileName(path) + " " + Nsg_L10n.T("confirm.notManaged"), Nsg_L10n.T("confirm.ok"));
+                return;
+            }
+
+            if (!EditorUtility.DisplayDialog(Nsg_L10n.T("confirm.title"),
+                Nsg_L10n.T("confirm.unmanage"), Nsg_L10n.T("confirm.unmanageYes"),
+                Nsg_L10n.T("confirm.cancel")))
+                return;
+
+            Nsg_Manager.Instance.Unmanage(doc);
+            Debug.Log("[NekoScriptGraph] " + Nsg_L10n.T("info.unmanaged", path));
+        }
+
+        /// <summary>
+        /// Отдельная функция, как и просили: превратить папку с C# в API-блоки.
+        /// </summary>
+        [MenuItem(Root + "Generate API Blocks for Selected Folder")]
+        public static void GenerateApiBlocks()
+        {
+            string folder = SelectionFolder();
+            if (folder == null)
+            {
+                EditorUtility.DisplayDialog(Nsg_L10n.T("confirm.title"), Nsg_L10n.T("confirm.selectFolder"),
+                                            Nsg_L10n.T("confirm.ok"));
+                return;
+            }
+            GenerateApiForFolder(folder);
+        }
+
+        public static void GenerateApiForFolder(string folder)
+        {
+            if (string.IsNullOrEmpty(folder)) return;
+
+            bool ok = EditorUtility.DisplayDialog(Nsg_L10n.T("api.title"),
+                Nsg_L10n.T("api.prompt") + "\n\n" + folder + "\n→ " + Nsg_Settings.Instance.apiOutputFolder,
+                Nsg_L10n.T("confirm.continue"), Nsg_L10n.T("confirm.cancel"));
+            if (!ok) return;
+
+            var diag = new NsgDiagnostics();
+            var result = Nsg_ApiGenerator.Generate(folder, diag);
+
+            if (diag.HasErrors)
+            {
+                Nsg_ErrorWindow.Push(diag, null);
+                return;
+            }
+
+            Nsg_Manager.Instance.ReloadLibrary();
+
+            string msg = Nsg_L10n.T("api.done", result.Generated, result.Skipped);
+            Debug.Log("[NekoScriptGraph] " + msg);
+            EditorUtility.DisplayDialog(Nsg_L10n.T("api.title"), msg, Nsg_L10n.T("confirm.ok"));
+        }
+
+        /// <summary>
+        /// Один клик — API-блоки для всего проекта. Считает файлы заранее и
+        /// предупреждает: на большом проекте это тысячи блоков и заметное время.
+        /// </summary>
+        [MenuItem(Root + "Build API Library for Whole Project")]
+        public static void GenerateApiForProject()
+        {
+            var manager = Nsg_Manager.Instance;
+            var files = manager.FindSourceFiles(null);
+
+            if (files.Count == 0)
+            {
+                EditorUtility.DisplayDialog(Nsg_L10n.T("api.title"), Nsg_L10n.T("api.noSources"),
+                                            Nsg_L10n.T("confirm.ok"));
+                return;
+            }
+
+            bool ok = EditorUtility.DisplayDialog(Nsg_L10n.T("api.title"),
+                Nsg_L10n.T("api.projectPrompt", files.Count, Nsg_Settings.Instance.apiOutputFolder),
+                Nsg_L10n.T("confirm.continue"), Nsg_L10n.T("confirm.cancel"));
+            if (!ok) return;
+
+            int total = 0;
+            int failed = 0;
+            var entries = Nsg_LanguageRegistry.All;
+
+            for (int i = 0; i < entries.Count; i++)
+            {
+                var entry = entries[i];
+                if (entry == null || entry.Language == null) continue;
+
+                var engine = entry.Language.CreateEngine();
+                if (engine == null) { failed++; continue; }
+
+                var diag = new NsgDiagnostics();
+                try
+                {
+                    total += engine.GenerateApiBlocks("Assets", diag);
+                }
+                catch (System.Exception e)
+                {
+                    diag.Error(NsgCodes.Internal, entry.Id + ": " + e.Message);
+                }
+
+                if (diag.HasErrors) Nsg_ErrorWindow.Push(diag, null);
+            }
+
+            manager.ReloadLibrary();
+
+            string msg = Nsg_L10n.T("api.done", total, failed);
+            Debug.Log("[NekoScriptGraph] " + msg);
+            EditorUtility.DisplayDialog(Nsg_L10n.T("api.title"), msg, Nsg_L10n.T("confirm.ok"));
+        }
+
+        [MenuItem(Root + "Take Whole Project Under Management")]
+        public static void ManageAllProject()
+        {
+            ManageAllIn(null);
+        }
+
+        [MenuItem(Root + "Take Selected Folder Under Management")]
+        public static void ManageSelectedFolder()
+        {
+            string folder = SelectionFolder();
+            if (folder == null)
+            {
+                EditorUtility.DisplayDialog(Nsg_L10n.T("confirm.title"), Nsg_L10n.T("confirm.selectFolder"),
+                                            Nsg_L10n.T("confirm.ok"));
+                return;
+            }
+            ManageAllIn(folder);
+        }
+
+        /// <summary>Берёт под управление все исходники папки (или всего проекта).</summary>
+        public static void ManageAllIn(string folder)
+        {
+            var manager = Nsg_Manager.Instance;
+            var files = manager.FindSourceFiles(folder);
+
+            int pending = 0;
+            for (int i = 0; i < files.Count; i++)
+            {
+                if (!File.Exists(Nsg_Document.NsgPathFor(files[i]))) pending++;
+            }
+
+            if (pending == 0)
+            {
+                EditorUtility.DisplayDialog(Nsg_L10n.T("manage.title"), Nsg_L10n.T("manage.nothing"),
+                                            Nsg_L10n.T("confirm.ok"));
+                return;
+            }
+
+            bool ok = EditorUtility.DisplayDialog(Nsg_L10n.T("manage.title"),
+                Nsg_L10n.T("manage.prompt", pending),
+                Nsg_L10n.T("confirm.continue"), Nsg_L10n.T("confirm.cancel"));
+            if (!ok) return;
+
+            int failed;
+            int done = manager.ManageAll(folder, out failed);
+
+            string msg = Nsg_L10n.T("manage.done", done, failed);
+            Debug.Log("[NekoScriptGraph] " + msg);
+            EditorUtility.DisplayDialog(Nsg_L10n.T("manage.title"), msg, Nsg_L10n.T("confirm.ok"));
+        }
+
+        [MenuItem(Root + "Release Whole Project")]
+        public static void UnmanageAllProject()
+        {
+            UnmanageAllIn(null);
+        }
+
+        [MenuItem(Root + "Release Selected Folder")]
+        public static void UnmanageSelectedFolder()
+        {
+            string folder = SelectionFolder();
+            if (folder == null)
+            {
+                EditorUtility.DisplayDialog(Nsg_L10n.T("confirm.title"), Nsg_L10n.T("confirm.selectFolder"),
+                                            Nsg_L10n.T("confirm.ok"));
+                return;
+            }
+
+            UnmanageAllIn(folder);
+        }
+
+        /// <summary>
+        /// Снимает с управления все исходники папки (или всего проекта): удаляет
+        /// их .nsg.json. Сами .cs не трогаются — они были и остаются источником.
+        ///
+        /// Нужно, чтобы убрать плагин из проекта, не разбирая скрипты вручную:
+        /// после этого рядом с кодом не остаётся ни одного файла NekoScriptGraph.
+        /// </summary>
+        public static void UnmanageAllIn(string folder)
+        {
+            var manager = Nsg_Manager.Instance;
+            int pending = manager.FindManagedConfigs(folder).Count;
+
+            if (pending == 0)
+            {
+                EditorUtility.DisplayDialog(Nsg_L10n.T("manage.title"), Nsg_L10n.T("manage.unmanageNothing"),
+                                            Nsg_L10n.T("confirm.ok"));
+                return;
+            }
+
+            bool ok = EditorUtility.DisplayDialog(Nsg_L10n.T("manage.title"),
+                Nsg_L10n.T("manage.unmanagePrompt", pending),
+                Nsg_L10n.T("confirm.continue"), Nsg_L10n.T("confirm.cancel"));
+            if (!ok) return;
+
+            int failed;
+            int done = manager.UnmanageAll(folder, out failed);
+
+            string msg = Nsg_L10n.T("manage.unmanageDone", done, failed);
+            Debug.Log("[NekoScriptGraph] " + msg);
+            EditorUtility.DisplayDialog(Nsg_L10n.T("manage.title"), msg, Nsg_L10n.T("confirm.ok"));
+        }
+
+        [MenuItem(Root + "Reload Block Library")]
+        public static void ReloadLibrary()
+        {
+            Nsg_Manager.Instance.ReloadLibrary();
+            Debug.Log("[NekoScriptGraph] " + Nsg_L10n.T("info.libraryReloaded",
+                Nsg_Manager.Instance.Library.Blocks.Count));
+        }
+
+        [MenuItem(Root + "Export Default Block Library")]
+        public static void ExportBlocks()
+        {
+            var lib = new Nsg_BlockLibrary();
+            lib.Blocks.AddRange(Nsg_BlockLibrary.CreateDefaults());
+            lib.SaveTo(Nsg_Paths.BlocksDir);
+            AssetDatabase.Refresh();
+            Debug.Log("[NekoScriptGraph] " + Nsg_L10n.T("info.exported", Nsg_Paths.BlocksDir));
+        }
+
+        [MenuItem(Root + "Self Test: Round Trip")]
+        public static void RunSelfTest()
+        {
+            Nsg_SelfTest.Run();
+        }
+
+        /// <summary>
+        /// Ctrl/Cmd+Shift+H — показать или снова спрятать файлы .nsg.json.
+        /// Ярлык глобальный: он работает и когда окно плагина закрыто, потому
+        /// что прятать файлы нужно независимо от того, открыт редактор блоков.
+        /// </summary>
+        [MenuItem(Root + "Toggle Block Files Visibility %#h")]
+        public static void ToggleBlockFiles()
+        {
+            bool hidden = Nsg_FileVisibility.Toggle();
+
+            Debug.Log("[NekoScriptGraph] " +
+                Nsg_L10n.T(hidden ? "files.hidden" : "files.shown",
+                    Nsg_Manager.Instance.FindManagedConfigs("Assets").Count));
+        }
+
+        // ------------------------------------------------------------------
+        // MCP-мост
+        //
+        // Подписи намеренно английские: пункты меню Unity пересобираются
+        // редко, и смешивать их с переводами интерфейса не стоит.
+        // ------------------------------------------------------------------
+
+        [MenuItem(Root + "MCP Bridge: Start")]
+        public static void McpBridgeStart()
+        {
+            if (Nsg_McpBridge.Start())
+            {
+                Debug.Log("[NekoScriptGraph] MCP bridge is up. Client URL: " + Nsg_McpBridge.Url);
+            }
+        }
+
+        [MenuItem(Root + "MCP Bridge: Stop")]
+        public static void McpBridgeStop()
+        {
+            Nsg_McpBridge.Stop();
+            Debug.Log("[NekoScriptGraph] MCP bridge stopped.");
+        }
+
+        [MenuItem(Root + "MCP Bridge: Copy Client URL")]
+        public static void McpBridgeCopyUrl()
+        {
+            EditorGUIUtility.systemCopyBuffer = Nsg_McpBridge.Url;
+            Debug.Log("[NekoScriptGraph] MCP URL copied to the clipboard: " + Nsg_McpBridge.Url +
+                      " (running: " + Nsg_McpBridge.IsRunning + ")");
+        }
+
+        static string SelectionCs()
+        {
+            var obj = Selection.activeObject;
+            if (obj == null) return null;
+            string p = AssetDatabase.GetAssetPath(obj);
+            if (string.IsNullOrEmpty(p) || !p.EndsWith(".cs")) return null;
+            return p;
+        }
+
+        static string SelectionFolder()
+        {
+            var obj = Selection.activeObject;
+            if (obj == null) return null;
+            string p = AssetDatabase.GetAssetPath(obj);
+            if (string.IsNullOrEmpty(p)) return null;
+            return AssetDatabase.IsValidFolder(p) ? p : null;
+        }
+    }
+}

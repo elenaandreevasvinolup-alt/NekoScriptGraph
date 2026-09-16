@@ -1,0 +1,43 @@
+{
+    "id": "api.DecalManager.CreateUniqueSpawner.3",
+    "level": "high",
+    "shape": "expression",
+    "category": "DecalManager",
+    "categoryKey": "cat.api",
+    "label": "DecalManager.CreateUniqueSpawner({0}, {1}, {2})",
+    "labelEn": "DecalManager.CreateUniqueSpawner({0}, {1}, {2})",
+    "labelRu": "DecalManager.CreateUniqueSpawner({0}, {1}, {2})",
+    "sockets": [
+        {
+            "name": "initData",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "maxTrisTotal",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "maxTrisInDecal",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalManager.CreateUniqueSpawner",
+    "matchArity": 3,
+    "builtin": true,
+    "manual": "DecalManager.CreateUniqueSpawner(initData, maxTrisTotal, maxTrisInDecal) : DecalSpawner",
+    "variantGroup": "",
+    "variantLabel": ""
+}

@@ -1,0 +1,29 @@
+{
+    "id": "stmt.return",
+    "level": "high",
+    "shape": "statement",
+    "category": "返回 {0}",
+    "categoryKey": "cat.ctrl",
+    "label": "return {0}",
+    "labelEn": "return {0}",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "value",
+            "kind": "expr",
+            "required": false,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "return {{0}};",
+    "node": "return",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": true,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

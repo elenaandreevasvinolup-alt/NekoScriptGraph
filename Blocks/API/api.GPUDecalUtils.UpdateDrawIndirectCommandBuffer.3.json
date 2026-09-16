@@ -1,0 +1,43 @@
+{
+    "id": "api.GPUDecalUtils.UpdateDrawIndirectCommandBuffer.3",
+    "level": "high",
+    "shape": "statement",
+    "category": "GPUDecalUtils",
+    "categoryKey": "cat.api",
+    "label": "GPUDecalUtils.UpdateDrawIndirectCommandBuffer({0}, {1}, {2})",
+    "labelEn": "GPUDecalUtils.UpdateDrawIndirectCommandBuffer({0}, {1}, {2})",
+    "labelRu": "GPUDecalUtils.UpdateDrawIndirectCommandBuffer({0}, {1}, {2})",
+    "sockets": [
+        {
+            "name": "group",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "mtx",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "pass",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "GPUDecalUtils.UpdateDrawIndirectCommandBuffer",
+    "matchArity": 3,
+    "builtin": true,
+    "manual": "GPUDecalUtils.UpdateDrawIndirectCommandBuffer(group, mtx, pass) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

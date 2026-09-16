@@ -1,0 +1,29 @@
+{
+    "id": "api.GPUDecalUtils.ClearDecals.1",
+    "level": "high",
+    "shape": "statement",
+    "category": "GPUDecalUtils",
+    "categoryKey": "cat.api",
+    "label": "GPUDecalUtils.ClearDecals({0})",
+    "labelEn": "GPUDecalUtils.ClearDecals({0})",
+    "labelRu": "GPUDecalUtils.ClearDecals({0})",
+    "sockets": [
+        {
+            "name": "group",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "GPUDecalUtils.ClearDecals",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "GPUDecalUtils.ClearDecals(group) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

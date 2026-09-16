@@ -1,0 +1,29 @@
+{
+    "id": "api.DecalUtils.GetSharedMesh.1",
+    "level": "high",
+    "shape": "expression",
+    "category": "DecalUtils",
+    "categoryKey": "cat.api",
+    "label": "DecalUtils.GetSharedMesh({0})",
+    "labelEn": "DecalUtils.GetSharedMesh({0})",
+    "labelRu": "DecalUtils.GetSharedMesh({0})",
+    "sockets": [
+        {
+            "name": "obj",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalUtils.GetSharedMesh",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "DecalUtils.GetSharedMesh(obj) : Mesh",
+    "variantGroup": "",
+    "variantLabel": ""
+}

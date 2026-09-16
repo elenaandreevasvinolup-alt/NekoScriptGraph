@@ -1,0 +1,36 @@
+{
+    "id": "api.DecalLightmaps.FindInScene.2",
+    "level": "high",
+    "shape": "expression",
+    "category": "DecalLightmaps",
+    "categoryKey": "cat.api",
+    "label": "DecalLightmaps.FindInScene({0}, {1})",
+    "labelEn": "DecalLightmaps.FindInScene({0}, {1})",
+    "labelRu": "DecalLightmaps.FindInScene({0}, {1})",
+    "sockets": [
+        {
+            "name": "nm",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "scn",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalLightmaps.FindInScene",
+    "matchArity": 2,
+    "builtin": true,
+    "manual": "DecalLightmaps.FindInScene(nm, scn) : GameObject",
+    "variantGroup": "",
+    "variantLabel": ""
+}

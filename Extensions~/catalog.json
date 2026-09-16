@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "extensions": [
+    {
+      "id": "com.nekoandreeva.nsg.completion.roslyn",
+      "nameKey": "ext.roslyn.name",
+      "descKey": "ext.roslyn.desc",
+      "version": "0.1.0",
+      "minUnity": "2022.3",
+      "local": "Assets/NekoScriptGraph/Extensions~/roslyn",
+      "git": "",
+      "tag": ""
+    }
+  ]
+}

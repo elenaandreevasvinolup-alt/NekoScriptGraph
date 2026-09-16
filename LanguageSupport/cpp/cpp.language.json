@@ -1,0 +1,11 @@
+{
+  "apiVersion": 1,
+  "id": "cpp",
+  "displayName": "C++",
+  "icon": "C++",
+  "extensions": [".cpp", ".cc", ".cxx", ".hpp", ".hh", ".h"],
+  "blocksFolder": "blocks",
+  "engineType": "NekoScriptGraph.Nsg_CppLanguage",
+  "author": "",
+  "note": "Устанавливаемый язык: удалите папку — и язык исчезнет из плагина."
+}

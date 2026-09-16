@@ -1,0 +1,36 @@
+{
+    "id": "api.UnityEditor.DecaleryStandardPBRShaderGUI.ShaderPropertiesGUI.1",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecaleryStandardPBRShaderGUI",
+    "categoryKey": "cat.api",
+    "label": "{0}DecaleryStandardPBRShaderGUI.ShaderPropertiesGUI({1})",
+    "labelEn": "{0}DecaleryStandardPBRShaderGUI.ShaderPropertiesGUI({1})",
+    "labelRu": "{0}DecaleryStandardPBRShaderGUI.ShaderPropertiesGUI({1})",
+    "sockets": [
+        {
+            "name": "target",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "material",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecaleryStandardPBRShaderGUI.ShaderPropertiesGUI",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "UnityEditor.DecaleryStandardPBRShaderGUI.ShaderPropertiesGUI(material) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

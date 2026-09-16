@@ -1,0 +1,36 @@
+{
+    "id": "api.DecalSpawner.ClearDecalsForRootTransform.1",
+    "level": "high",
+    "shape": "statement",
+    "category": "DecalSpawner",
+    "categoryKey": "cat.api",
+    "label": "{0}DecalSpawner.ClearDecalsForRootTransform({1})",
+    "labelEn": "{0}DecalSpawner.ClearDecalsForRootTransform({1})",
+    "labelRu": "{0}DecalSpawner.ClearDecalsForRootTransform({1})",
+    "sockets": [
+        {
+            "name": "target",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "rootTransform",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalSpawner.ClearDecalsForRootTransform",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "DecalSpawner.ClearDecalsForRootTransform(rootTransform) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

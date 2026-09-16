@@ -1,0 +1,43 @@
+{
+    "id": "api.DecalUtils.GetExtraUV.3",
+    "level": "high",
+    "shape": "expression",
+    "category": "DecalUtils",
+    "categoryKey": "cat.api",
+    "label": "DecalUtils.GetExtraUV({0}, {1}, {2})",
+    "labelEn": "DecalUtils.GetExtraUV({0}, {1}, {2})",
+    "labelRu": "DecalUtils.GetExtraUV({0}, {1}, {2})",
+    "sockets": [
+        {
+            "name": "mesh",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "vertCount",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "u",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalUtils.GetExtraUV",
+    "matchArity": 3,
+    "builtin": true,
+    "manual": "DecalUtils.GetExtraUV(mesh, vertCount, u) : Vector2[]",
+    "variantGroup": "",
+    "variantLabel": ""
+}

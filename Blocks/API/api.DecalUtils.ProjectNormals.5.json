@@ -1,0 +1,57 @@
+{
+    "id": "api.DecalUtils.ProjectNormals.5",
+    "level": "high",
+    "shape": "expression",
+    "category": "DecalUtils",
+    "categoryKey": "cat.api",
+    "label": "DecalUtils.ProjectNormals({0}, {1}, {2}, {3}, {4})",
+    "labelEn": "DecalUtils.ProjectNormals({0}, {1}, {2}, {3}, {4})",
+    "labelRu": "DecalUtils.ProjectNormals({0}, {1}, {2}, {3}, {4})",
+    "sockets": [
+        {
+            "name": "decalPosW",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "parents",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "decalNorm",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "decalTform",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "decalColor",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "DecalUtils.ProjectNormals",
+    "matchArity": 5,
+    "builtin": true,
+    "manual": "DecalUtils.ProjectNormals(decalPosW, parents, decalNorm, decalTform, decalColor) : Color[]",
+    "variantGroup": "",
+    "variantLabel": ""
+}

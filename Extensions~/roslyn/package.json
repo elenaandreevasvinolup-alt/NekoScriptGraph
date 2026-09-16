@@ -1,0 +1,17 @@
+{
+  "name": "com.nekoandreeva.nsg.completion.roslyn",
+  "version": "0.1.0",
+  "displayName": "NSG Roslyn Completion",
+  "description": "Optional Roslyn-backed completion engine for NekoScriptGraph. Lives outside the plugin package and is installed on demand; the plugin itself contains none of its code. Requires the ProgramNeko assistant.",
+  "unity": "2022.3",
+  "keywords": [
+    "nekoscriptgraph",
+    "completion",
+    "roslyn"
+  ],
+  "author": {
+    "name": "NekoAndreeva"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}

@@ -1,0 +1,11 @@
+{
+  "apiVersion": 1,
+  "id": "go",
+  "displayName": "Go",
+  "icon": "GO",
+  "extensions": [".go"],
+  "blocksFolder": "blocks",
+  "engineType": "NekoScriptGraph.Nsg_GoLanguage",
+  "author": "",
+  "note": "Устанавливаемый язык: удалите папку — и Go исчезнет из плагина. Общий разбор C-семейства лежит в ядре (Editor/Core/cstyle), профиль Go включает автоматическую ';', ':=' и тип возврата после параметров."
+}

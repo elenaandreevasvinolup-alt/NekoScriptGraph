@@ -1,0 +1,36 @@
+{
+    "id": "stmt.add",
+    "level": "high",
+    "shape": "statement",
+    "category": "把 {0} 增加 {1}",
+    "categoryKey": "cat.var",
+    "label": "increase {0} by {1}",
+    "labelEn": "increase {0} by {1}",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "target",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "value",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "{{0}} += {{1}};",
+    "node": "assign",
+    "op": "+=",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": false,
+    "manual": "",
+    "variantGroup": "assign",
+    "variantLabel": "+="
+}

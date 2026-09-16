@@ -1,0 +1,11 @@
+{
+  "apiVersion": 1,
+  "id": "python",
+  "displayName": "Python",
+  "icon": "PYTHON",
+  "extensions": [".py"],
+  "blocksFolder": "blocks",
+  "engineType": "NekoScriptGraph.Nsg_PythonLanguage",
+  "author": "",
+  "note": "Самодостаточный язык: собственный движок, общий только каркас блоков."
+}

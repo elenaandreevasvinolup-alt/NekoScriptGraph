@@ -1,0 +1,29 @@
+{
+    "id": "api.CPUBurstDecalUtils.ClearDecals.1",
+    "level": "high",
+    "shape": "statement",
+    "category": "CPUBurstDecalUtils",
+    "categoryKey": "cat.api",
+    "label": "CPUBurstDecalUtils.ClearDecals({0})",
+    "labelEn": "CPUBurstDecalUtils.ClearDecals({0})",
+    "labelRu": "CPUBurstDecalUtils.ClearDecals({0})",
+    "sockets": [
+        {
+            "name": "group",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "CPUBurstDecalUtils.ClearDecals",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "CPUBurstDecalUtils.ClearDecals(group) : void",
+    "variantGroup": "",
+    "variantLabel": ""
+}

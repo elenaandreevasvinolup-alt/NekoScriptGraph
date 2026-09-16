@@ -1,0 +1,1835 @@
+{
+  "schemaVersion": 1,
+  "code": "ja",
+  "name": "日本語",
+  "rtl": false,
+  "order": 90,
+  "ui": [
+    {
+      "key": "api.done",
+      "value": "API ブロックを {0} 個生成しました（{1} 個スキップ）。"
+    },
+    {
+      "key": "api.folder",
+      "value": "API ブロックのソースフォルダー"
+    },
+    {
+      "key": "api.noFolder",
+      "value": "選択はフォルダーではありません。"
+    },
+    {
+      "key": "api.noSources",
+      "value": "ソースファイルが見つかりませんでした。"
+    },
+    {
+      "key": "api.projectPrompt",
+      "value": "ソースファイル {0} 件を検出。すべての public メソッドの API ブロックを次に生成します:\n{1}\n\n大規模なプロジェクトでは数千個になり時間がかかります。続行しますか？"
+    },
+    {
+      "key": "api.prompt",
+      "value": "選択したフォルダーの API ブロックを生成しますか？"
+    },
+    {
+      "key": "api.title",
+      "value": "API ブロックライブラリを生成"
+    },
+    {
+      "key": "blk.body",
+      "value": "本体"
+    },
+    {
+      "key": "blk.del",
+      "value": "削除"
+    },
+    {
+      "key": "blk.down",
+      "value": "下へ移動"
+    },
+    {
+      "key": "blk.dup",
+      "value": "複製"
+    },
+    {
+      "key": "blk.editRaw",
+      "value": "生のフラグメントを編集"
+    },
+    {
+      "key": "blk.else",
+      "value": "そうでなければ"
+    },
+    {
+      "key": "blk.insertAbove",
+      "value": "上に挿入"
+    },
+    {
+      "key": "blk.insertBelow",
+      "value": "下に挿入"
+    },
+    {
+      "key": "blk.menu",
+      "value": "ブロック操作"
+    },
+    {
+      "key": "blk.rename",
+      "value": "名前を変更"
+    },
+    {
+      "key": "blk.replace",
+      "value": "置き換え"
+    },
+    {
+      "key": "blk.up",
+      "value": "上へ移動"
+    },
+    {
+      "key": "bp.tidy",
+      "value": "自動整列"
+    },
+    {
+      "key": "btn.api",
+      "value": "選択フォルダーの API ブロックを生成"
+    },
+    {
+      "key": "btn.apiAll",
+      "value": "プロジェクト全体の API ライブラリを構築"
+    },
+    {
+      "key": "btn.checkpoint",
+      "value": "チェックポイント"
+    },
+    {
+      "key": "btn.collapseAll",
+      "value": "すべて折りたたむ"
+    },
+    {
+      "key": "btn.errors",
+      "value": "問題"
+    },
+    {
+      "key": "btn.expandAll",
+      "value": "すべて展開"
+    },
+    {
+      "key": "btn.fit",
+      "value": "ウィンドウに合わせる"
+    },
+    {
+      "key": "btn.generate",
+      "value": "ブロック → コード"
+    },
+    {
+      "key": "btn.git",
+      "value": "Git チェックポイント"
+    },
+    {
+      "key": "btn.import",
+      "value": "コード → ブロック"
+    },
+    {
+      "key": "btn.library",
+      "value": "ブロックライブラリを再読込"
+    },
+    {
+      "key": "btn.manage",
+      "value": "管理下に置く"
+    },
+    {
+      "key": "btn.manageAll",
+      "value": "プロジェクト全体を管理下に置く"
+    },
+    {
+      "key": "btn.manageFolder",
+      "value": "選択したフォルダーを管理下に置く"
+    },
+    {
+      "key": "btn.open",
+      "value": "選択したスクリプトを開く"
+    },
+    {
+      "key": "btn.preview",
+      "value": "プレビュー"
+    },
+    {
+      "key": "btn.redo",
+      "value": "やり直す"
+    },
+    {
+      "key": "btn.selftest",
+      "value": "セルフテスト"
+    },
+    {
+      "key": "btn.shell",
+      "value": "パイプラインの外殻を生成"
+    },
+    {
+      "key": "btn.sprites",
+      "value": "スプライトを使用"
+    },
+    {
+      "key": "btn.undo",
+      "value": "元に戻す"
+    },
+    {
+      "key": "btn.unmanage",
+      "value": "管理を解除"
+    },
+    {
+      "key": "btn.unmanageAll",
+      "value": "プロジェクト全体のブロック設定を撤去"
+    },
+    {
+      "key": "btn.unmanageFolder",
+      "value": "選択したフォルダーのブロック設定を撤去"
+    },
+    {
+      "key": "cat.api",
+      "value": "API"
+    },
+    {
+      "key": "cat.apiAll",
+      "value": "すべて"
+    },
+    {
+      "key": "cat.ctrl",
+      "value": "制御"
+    },
+    {
+      "key": "cat.expr",
+      "value": "式"
+    },
+    {
+      "key": "cat.frame",
+      "value": "構造"
+    },
+    {
+      "key": "cat.macro",
+      "value": "マイブロック"
+    },
+    {
+      "key": "cat.raw",
+      "value": "エスケープハッチ"
+    },
+    {
+      "key": "cat.var",
+      "value": "変数"
+    },
+    {
+      "key": "confirm.alreadyManaged",
+      "value": "はすでに管理下にあります。"
+    },
+    {
+      "key": "confirm.cancel",
+      "value": "キャンセル"
+    },
+    {
+      "key": "confirm.continue",
+      "value": "続行"
+    },
+    {
+      "key": "confirm.manage",
+      "value": "ブロックファイルを作成して取り込みますか？"
+    },
+    {
+      "key": "confirm.manageYes",
+      "value": "作成して取り込む"
+    },
+    {
+      "key": "confirm.notManaged",
+      "value": "ブロックファイルがなく、すでに自由なスクリプトです。"
+    },
+    {
+      "key": "confirm.ok",
+      "value": "OK"
+    },
+    {
+      "key": "confirm.overwriteConflict",
+      "value": "両方が変更されています。上書きするとメソッド本体の手動変更は失われます（フィールド、属性、コメントは保持されます）。続行しますか？"
+    },
+    {
+      "key": "confirm.reimportConflict",
+      "value": "ブロックにコードへ未反映の変更があります。再取り込みすると失われます。続行しますか？"
+    },
+    {
+      "key": "confirm.selectCs",
+      "value": "まず Project ウィンドウでソースファイルを選択してください。"
+    },
+    {
+      "key": "confirm.selectFolder",
+      "value": "まず Project ウィンドウでフォルダーを選択してください。"
+    },
+    {
+      "key": "confirm.title",
+      "value": "NekoScriptGraph"
+    },
+    {
+      "key": "confirm.unmanage",
+      "value": "ブロックファイルを削除しますか？スクリプトは自由に戻ります。"
+    },
+    {
+      "key": "confirm.unmanageYes",
+      "value": "ブロックファイルを削除"
+    },
+    {
+      "key": "cp.confirmLoad",
+      "value": "読み込むと現在のコードとブロックが上書きされます。続行しますか？"
+    },
+    {
+      "key": "cp.delete",
+      "value": "チェックポイント {0} を削除"
+    },
+    {
+      "key": "cp.empty",
+      "value": "チェックポイント {0}（空）"
+    },
+    {
+      "key": "cp.load",
+      "value": "チェックポイント {0} を読み込む（{1}）"
+    },
+    {
+      "key": "cp.loaded",
+      "value": "チェックポイント {0} を読み込みました"
+    },
+    {
+      "key": "cp.overwrite",
+      "value": "チェックポイント {0} に保存（上書き: {1}）"
+    },
+    {
+      "key": "cp.save",
+      "value": "チェックポイント {0} に保存"
+    },
+    {
+      "key": "cp.saved",
+      "value": "チェックポイント {0} に保存しました"
+    },
+    {
+      "key": "diag.summary",
+      "value": "エラー {0} / 警告 {1} / 情報 {2}"
+    },
+    {
+      "key": "drag.blocks",
+      "value": "{0} ブロック"
+    },
+    {
+      "key": "err.clear",
+      "value": "クリア"
+    },
+    {
+      "key": "err.count",
+      "value": "エラー {0} / 警告 {1} / 情報 {2}"
+    },
+    {
+      "key": "err.details",
+      "value": "詳細は問題ウィンドウを参照。"
+    },
+    {
+      "key": "err.error",
+      "value": "エラー"
+    },
+    {
+      "key": "err.generateFailed",
+      "value": "上書きに失敗"
+    },
+    {
+      "key": "err.goto",
+      "value": "移動"
+    },
+    {
+      "key": "err.info",
+      "value": "情報"
+    },
+    {
+      "key": "err.manageFailed",
+      "value": "取り込みに失敗"
+    },
+    {
+      "key": "err.none",
+      "value": "診断はありません。"
+    },
+    {
+      "key": "err.reimportFailed",
+      "value": "再取り込みに失敗"
+    },
+    {
+      "key": "err.title",
+      "value": "NekoScriptGraph の問題"
+    },
+    {
+      "key": "err.warning",
+      "value": "警告"
+    },
+    {
+      "key": "files.btnHide",
+      "value": "設定ファイルを隠す"
+    },
+    {
+      "key": "files.btnShow",
+      "value": "設定ファイルを表示"
+    },
+    {
+      "key": "files.hidden",
+      "value": "{0} 個の設定ファイルを非表示"
+    },
+    {
+      "key": "files.hotkeyHint",
+      "value": "ショートカット: Ctrl/Cmd+Shift+H"
+    },
+    {
+      "key": "files.shown",
+      "value": "{0} 個の設定ファイルを表示"
+    },
+    {
+      "key": "git.done",
+      "value": "Git チェックポイントを作成しました。"
+    },
+    {
+      "key": "git.failed",
+      "value": "Git コミットに失敗: "
+    },
+    {
+      "key": "git.noChanges",
+      "value": "このスクリプトに変更はありません。"
+    },
+    {
+      "key": "git.notRepo",
+      "value": "このプロジェクトは git リポジトリではありません。"
+    },
+    {
+      "key": "git.note",
+      "value": "組み込みチェックポイントは .checkpoints（git 無視）にあり、履歴と競合しません。"
+    },
+    {
+      "key": "health.afterReturn",
+      "value": "return の後の文は実行されません"
+    },
+    {
+      "key": "health.btn",
+      "value": "健全性チェック"
+    },
+    {
+      "key": "health.constantCondition",
+      "value": "条件が常に {0} のため、分岐は到達不能なコードです"
+    },
+    {
+      "key": "health.cycle",
+      "value": "循環依存: 式が入力を通じて自分自身に戻るため生成できません"
+    },
+    {
+      "key": "health.danglingInput",
+      "value": "必須入力 '{0}' が空です。生成されるコードで引数が欠けます"
+    },
+    {
+      "key": "health.duplicate",
+      "value": "重複したフラグメント: この構造は {0} 回出現します"
+    },
+    {
+      "key": "health.emptyBody",
+      "value": "制御ブロックに本体がなく、何もしません"
+    },
+    {
+      "key": "health.emptyMethod",
+      "value": "メソッド本体が空です"
+    },
+    {
+      "key": "health.escapeRatio",
+      "value": "生のフラグメントがコードの {0}%（しきい値 {1}%）で、サブセットが狭すぎます"
+    },
+    {
+      "key": "health.expressionSize",
+      "value": "式が大きすぎます: {0} ノード（しきい値 {1}）"
+    },
+    {
+      "key": "health.fix",
+      "value": "修正案"
+    },
+    {
+      "key": "health.fixAddRelease",
+      "value": "対応する解放呼び出しを追加"
+    },
+    {
+      "key": "health.fixApply",
+      "value": "適用"
+    },
+    {
+      "key": "health.fixBreakLink",
+      "value": "循環を閉じているリンクを切る"
+    },
+    {
+      "key": "health.fixFillZero",
+      "value": "0 で埋める"
+    },
+    {
+      "key": "health.fixNone",
+      "value": "自動適用できる修正はありません"
+    },
+    {
+      "key": "health.leak",
+      "value": "メモリリークの可能性: {0} を {2} 回、{1} は {3} 回のみ"
+    },
+    {
+      "key": "health.locals",
+      "value": "ローカル変数が多い: {0} 個（しきい値 {1}）"
+    },
+    {
+      "key": "health.magicNumber",
+      "value": "マジックナンバー {0} が {1} 回出現します"
+    },
+    {
+      "key": "health.memberChain",
+      "value": "メンバーアクセスが長い: {0} 段（しきい値 {1}）"
+    },
+    {
+      "key": "health.methodLength",
+      "value": "メソッドが長い: {0} 文（しきい値 {1}）"
+    },
+    {
+      "key": "health.methods",
+      "value": "メソッド"
+    },
+    {
+      "key": "health.metric.escapes",
+      "value": "生のフラグメント {0}（{1:F1}%）"
+    },
+    {
+      "key": "health.metric.methods",
+      "value": "メソッド数 {0}"
+    },
+    {
+      "key": "health.metric.statements",
+      "value": "文ブロック {0}"
+    },
+    {
+      "key": "health.nesting",
+      "value": "ネストが深い: {0} 階層（しきい値 {1}）"
+    },
+    {
+      "key": "health.none",
+      "value": "問題は見つかりませんでした。"
+    },
+    {
+      "key": "health.optimizerNone",
+      "value": "自動最適化はまだ有効ではありません（低レベルブロックと共に実装予定）。受け口は準備済みで、INsg_Pass(Optimizer) を登録すれば接続できます。"
+    },
+    {
+      "key": "health.optimizerReady",
+      "value": "自動最適化の受け口は準備済み: 最適化パス {0} 個"
+    },
+    {
+      "key": "health.passes",
+      "value": "登録済みパス: {0}"
+    },
+    {
+      "key": "health.placeholderName",
+      "value": "仮の名前です: '{0}'"
+    },
+    {
+      "key": "health.rerun",
+      "value": "再チェック"
+    },
+    {
+      "key": "health.score",
+      "value": "スコア {0}/100"
+    },
+    {
+      "key": "health.shortName",
+      "value": "名前が短すぎます: '{0}'"
+    },
+    {
+      "key": "health.summary",
+      "value": "エラー {0} / 警告 {1} / 提案 {2}"
+    },
+    {
+      "key": "health.title",
+      "value": "アーキテクチャ健全性"
+    },
+    {
+      "key": "health.unusedLocal",
+      "value": "ローカル変数 '{0}' は宣言後に一度も読まれていません"
+    },
+    {
+      "key": "info.canonicalized",
+      "value": "{0} 個のメソッドが正規形ではありません。最初の「ブロック → コード」で正規化されます（意味は変わりません）。"
+    },
+    {
+      "key": "info.exported",
+      "value": "既定のブロックライブラリを書き出しました: {0}"
+    },
+    {
+      "key": "info.libraryReloaded",
+      "value": "ブロックライブラリを再読込しました: {0} 個"
+    },
+    {
+      "key": "info.managed",
+      "value": "管理下に置きました: {0}"
+    },
+    {
+      "key": "info.unmanaged",
+      "value": "管理を解除しました: {0}"
+    },
+    {
+      "key": "macro.cannot",
+      "value": "このノードはブロックにできません"
+    },
+    {
+      "key": "macro.create",
+      "value": "自作ブロックを作成"
+    },
+    {
+      "key": "macro.saved",
+      "value": "自作ブロックを保存しました: {0}"
+    },
+    {
+      "key": "manage.done",
+      "value": "{0} 個を管理下に置きました。失敗 {1} 個。"
+    },
+    {
+      "key": "manage.nothing",
+      "value": "管理する新しいファイルはありません。"
+    },
+    {
+      "key": "manage.prompt",
+      "value": "{0} 個のソースファイルを管理下に置きます。それぞれに .nsg.json を作成し、ブロックに取り込みます。大規模なプロジェクトでは時間がかかります。続行しますか？"
+    },
+    {
+      "key": "manage.title",
+      "value": "一括管理"
+    },
+    {
+      "key": "manage.unmanageDone",
+      "value": "{0} 個を撤去しました。失敗 {1} 個。"
+    },
+    {
+      "key": "manage.unmanageNothing",
+      "value": "撤去するブロック設定はありません。"
+    },
+    {
+      "key": "manage.unmanagePrompt",
+      "value": "{0} 個のファイルのブロック設定を撤去します。隣の .nsg.json を削除し、スクリプトは普通のファイルに戻ります。.cs 自体は一切触りません。続行しますか？"
+    },
+    {
+      "key": "menu.api",
+      "value": "選択フォルダーの API ブロックを生成"
+    },
+    {
+      "key": "menu.apiAll",
+      "value": "プロジェクト全体の API ライブラリを構築"
+    },
+    {
+      "key": "menu.export",
+      "value": "既定のブロックライブラリを書き出す"
+    },
+    {
+      "key": "menu.health",
+      "value": "アーキテクチャ健全性"
+    },
+    {
+      "key": "menu.languages",
+      "value": "言語: 読み込み済みを表示"
+    },
+    {
+      "key": "menu.manage",
+      "value": "選択したスクリプトを管理下に置く"
+    },
+    {
+      "key": "menu.manageAll",
+      "value": "プロジェクト全体を管理下に置く"
+    },
+    {
+      "key": "menu.manageFolder",
+      "value": "選択したフォルダーを管理下に置く"
+    },
+    {
+      "key": "menu.open",
+      "value": "ブロックエディターを開く"
+    },
+    {
+      "key": "menu.problems",
+      "value": "問題"
+    },
+    {
+      "key": "menu.reload",
+      "value": "ブロックライブラリを再読込"
+    },
+    {
+      "key": "menu.selftest",
+      "value": "セルフテスト: 往復変換"
+    },
+    {
+      "key": "menu.shell",
+      "value": "ShaderLab の外殻を生成"
+    },
+    {
+      "key": "menu.unmanage",
+      "value": "選択したスクリプトの管理を解除"
+    },
+    {
+      "key": "msg.canonicalized",
+      "value": "{0} 個のメソッドが正規形ではありません（括弧の欠落、不揃いなインデント、等価な複数の書き方）。最初の「ブロック → コード」で正規化されます。意味は変わりませんが書式は変わります。"
+    },
+    {
+      "key": "msg.expect",
+      "value": "'{0}' を期待しましたが '{1}' でした"
+    },
+    {
+      "key": "msg.expectIdent",
+      "value": "識別子を期待しましたが '{0}' でした"
+    },
+    {
+      "key": "msg.foreachName",
+      "value": "foreach に反復変数名がありません"
+    },
+    {
+      "key": "msg.lexUnknown",
+      "value": "認識できない文字 '{0}'"
+    },
+    {
+      "key": "msg.methodCount",
+      "value": "ディスク上のメソッド数 ({0}) がブロックファイル ({1}) と一致しません。コードを再取り込みするか手動で揃えてから生成してください。"
+    },
+    {
+      "key": "msg.methodName",
+      "value": "{0} 番目のメソッドが一致しません: ディスク '{1}'、ブロックファイル '{2}'。"
+    },
+    {
+      "key": "msg.noModelGenerate",
+      "value": "生成できるブロックモデルがありません。"
+    },
+    {
+      "key": "msg.noModelRender",
+      "value": "描画できるブロックモデルがありません。"
+    },
+    {
+      "key": "msg.noSource",
+      "value": "ソースファイルが見つかりません: {0}"
+    },
+    {
+      "key": "msg.outOfSubset",
+      "value": "この文はサブセット外です。生のフラグメントとして保持されます（ブロックには戻せません）。"
+    },
+    {
+      "key": "msg.unknownBlock",
+      "value": "ライブラリに '{0}' がありません。"
+    },
+    {
+      "key": "msg.unknownBlockHint",
+      "value": "ライブラリに '{0}' がありません。Blocks/ に対応する JSON を追加してください。"
+    },
+    {
+      "key": "msg.unknownExpr",
+      "value": "不明な式ブロック '{0}' はコードに戻せません。"
+    },
+    {
+      "key": "msg.unknownStmt",
+      "value": "不明なブロック '{0}' はコードに戻せません。対応するブロック定義を追加するか、生のフラグメントを使用してください。"
+    },
+    {
+      "key": "palette.empty",
+      "value": "（利用できるブロックがありません）"
+    },
+    {
+      "key": "palette.found",
+      "value": "{0} 個のブロック"
+    },
+    {
+      "key": "palette.noMatch",
+      "value": "一致するブロックがありません"
+    },
+    {
+      "key": "palette.other",
+      "value": "その他"
+    },
+    {
+      "key": "palette.search",
+      "value": "ブロックを検索…"
+    },
+    {
+      "key": "pick.clickToAdd",
+      "value": "クリックしてブロックを追加"
+    },
+    {
+      "key": "pick.empty",
+      "value": "（空）"
+    },
+    {
+      "key": "pick.expression",
+      "value": "式ブロックを挿入"
+    },
+    {
+      "key": "pick.noMatch",
+      "value": "一致するブロックがありません"
+    },
+    {
+      "key": "pick.search",
+      "value": "検索"
+    },
+    {
+      "key": "pick.statement",
+      "value": "文ブロックを挿入"
+    },
+    {
+      "key": "ribbon.group.api",
+      "value": "API"
+    },
+    {
+      "key": "ribbon.group.edit",
+      "value": "編集"
+    },
+    {
+      "key": "ribbon.group.file",
+      "value": "このファイル"
+    },
+    {
+      "key": "ribbon.group.files",
+      "value": "設定ファイル"
+    },
+    {
+      "key": "ribbon.group.folder",
+      "value": "フォルダー"
+    },
+    {
+      "key": "ribbon.group.inspect",
+      "value": "検査"
+    },
+    {
+      "key": "ribbon.group.lang",
+      "value": "言語"
+    },
+    {
+      "key": "ribbon.group.library",
+      "value": "ライブラリ"
+    },
+    {
+      "key": "ribbon.group.mode",
+      "value": "モード"
+    },
+    {
+      "key": "ribbon.group.project",
+      "value": "プロジェクト全体"
+    },
+    {
+      "key": "ribbon.group.script",
+      "value": "スクリプト"
+    },
+    {
+      "key": "ribbon.group.version",
+      "value": "バージョン"
+    },
+    {
+      "key": "ribbon.group.zoom",
+      "value": "ズーム"
+    },
+    {
+      "key": "ribbon.tab.home",
+      "value": "ホーム"
+    },
+    {
+      "key": "ribbon.tab.manage",
+      "value": "管理"
+    },
+    {
+      "key": "ribbon.tab.tools",
+      "value": "ツール"
+    },
+    {
+      "key": "ribbon.tab.view",
+      "value": "表示"
+    },
+    {
+      "key": "scratch.hint",
+      "value": "未接続のブロック（コンパイルされません）"
+    },
+    {
+      "key": "selftest.fail",
+      "value": "FAIL"
+    },
+    {
+      "key": "selftest.pass",
+      "value": "PASS"
+    },
+    {
+      "key": "selftest.summary",
+      "value": "チェック {0} 件、成功 {1}、失敗 {2}"
+    },
+    {
+      "key": "selftest.title",
+      "value": "セルフテスト結果"
+    },
+    {
+      "key": "shader.needShader",
+      "value": "まず .shader ファイルを選択してください。"
+    },
+    {
+      "key": "shader.shellDone",
+      "value": "{0} パイプラインの外殻を生成しました: {1}"
+    },
+    {
+      "key": "shader.shellPrompt",
+      "value": "現在のファイルを {0} パイプライン用の完全な ShaderLab 外殻で上書きします。現在の内容はすべて失われます。続行しますか？"
+    },
+    {
+      "key": "shader.shellTitle",
+      "value": "ShaderLab の外殻を生成"
+    },
+    {
+      "key": "state.blocksdirty",
+      "value": "ブロックが変更されました"
+    },
+    {
+      "key": "state.conflict",
+      "value": "競合: 両方が変更されました"
+    },
+    {
+      "key": "state.csdirty",
+      "value": "コードが変更されました"
+    },
+    {
+      "key": "state.synced",
+      "value": "同期済み"
+    },
+    {
+      "key": "state.unmanaged",
+      "value": "自由なスクリプト（ブロックファイルなし）"
+    },
+    {
+      "key": "tree.base",
+      "value": "継承"
+    },
+    {
+      "key": "tree.bodyEmpty",
+      "value": "（空）"
+    },
+    {
+      "key": "tree.class",
+      "value": "クラス"
+    },
+    {
+      "key": "tree.customBase",
+      "value": "カスタム…"
+    },
+    {
+      "key": "tree.enum",
+      "value": "列挙型"
+    },
+    {
+      "key": "tree.interface",
+      "value": "インターフェース"
+    },
+    {
+      "key": "tree.method",
+      "value": "メソッド"
+    },
+    {
+      "key": "tree.namespace",
+      "value": "名前空間"
+    },
+    {
+      "key": "tree.noBase",
+      "value": "（なし）"
+    },
+    {
+      "key": "tree.raw",
+      "value": "メンバー（そのまま保持）"
+    },
+    {
+      "key": "tree.struct",
+      "value": "構造体"
+    },
+    {
+      "key": "tree.using",
+      "value": "using"
+    },
+    {
+      "key": "view.blueprint",
+      "value": "ブループリント（UE）"
+    },
+    {
+      "key": "view.mode",
+      "value": "表示"
+    },
+    {
+      "key": "view.stack",
+      "value": "スタック（Scratch）"
+    },
+    {
+      "key": "win.lang",
+      "value": "言語"
+    },
+    {
+      "key": "win.noDoc",
+      "value": "ファイルが開かれていません"
+    },
+    {
+      "key": "win.none",
+      "value": "—"
+    },
+    {
+      "key": "win.pipeline",
+      "value": "パイプライン"
+    },
+    {
+      "key": "win.pipelineAuto",
+      "value": "自動（{0}）"
+    },
+    {
+      "key": "win.title",
+      "value": "NekoScriptGraph ブロックエディター"
+    }
+  ],
+  "blocks": [
+    {
+      "key": "c.abs",
+      "value": "絶対値 {0}"
+    },
+    {
+      "key": "c.assert",
+      "value": "表明 {0}"
+    },
+    {
+      "key": "c.atof",
+      "value": "文字列から浮動小数 {0}"
+    },
+    {
+      "key": "c.atoi",
+      "value": "文字列から整数 {0}"
+    },
+    {
+      "key": "c.exit",
+      "value": "プログラムを終了 {0}"
+    },
+    {
+      "key": "c.fabs",
+      "value": "浮動小数の絶対値 {0}"
+    },
+    {
+      "key": "c.fclose",
+      "value": "ファイル {0} を閉じる"
+    },
+    {
+      "key": "c.fgets",
+      "value": "{0} から {1} へ 1 行読み込み、最大 {2} バイト"
+    },
+    {
+      "key": "c.fopen",
+      "value": "ファイル {0} をモード {1} で開く"
+    },
+    {
+      "key": "c.fprintf",
+      "value": "{0} に {1} を書き込む"
+    },
+    {
+      "key": "c.free",
+      "value": "{0} を解放"
+    },
+    {
+      "key": "c.malloc",
+      "value": "{0} バイトを確保"
+    },
+    {
+      "key": "c.memcpy",
+      "value": "{2} バイトをコピー {1}→{0}"
+    },
+    {
+      "key": "c.memset",
+      "value": "{0} を {1} で {2} バイト埋める"
+    },
+    {
+      "key": "c.perror",
+      "value": "エラーを報告 {0}"
+    },
+    {
+      "key": "c.pow",
+      "value": "べき乗 {0}^{1}"
+    },
+    {
+      "key": "c.printf",
+      "value": "printf({0})"
+    },
+    {
+      "key": "c.sizeof",
+      "value": "sizeof({0})"
+    },
+    {
+      "key": "c.sqrt",
+      "value": "平方根 {0}"
+    },
+    {
+      "key": "c.strcat",
+      "value": "文字列を連結 {0}+{1}"
+    },
+    {
+      "key": "c.strcmp",
+      "value": "文字列を比較 {0} {1}"
+    },
+    {
+      "key": "c.strcpy",
+      "value": "文字列をコピー {1}→{0}"
+    },
+    {
+      "key": "c.strlen",
+      "value": "文字列の長さ {0}"
+    },
+    {
+      "key": "cpp.at",
+      "value": "{0} の {1} 番目"
+    },
+    {
+      "key": "cpp.cin",
+      "value": "{0} に入力"
+    },
+    {
+      "key": "cpp.cout",
+      "value": "{0} を出力"
+    },
+    {
+      "key": "cpp.delete",
+      "value": "{0} を解放"
+    },
+    {
+      "key": "cpp.getline",
+      "value": "{0} へ 1 行読み込み"
+    },
+    {
+      "key": "cpp.make_shared",
+      "value": "共有ポインタ {0} = 新規"
+    },
+    {
+      "key": "cpp.map",
+      "value": "マップ {0}<{1}, {2}>"
+    },
+    {
+      "key": "cpp.move",
+      "value": "{0} を移動"
+    },
+    {
+      "key": "cpp.printf",
+      "value": "printf({0})"
+    },
+    {
+      "key": "cpp.push_back",
+      "value": "{0} に {1} を追加"
+    },
+    {
+      "key": "cpp.size",
+      "value": "{0} のサイズ"
+    },
+    {
+      "key": "cpp.sizeof",
+      "value": "sizeof({0})"
+    },
+    {
+      "key": "cpp.stoi",
+      "value": "文字列から整数 {0}"
+    },
+    {
+      "key": "cpp.string",
+      "value": "文字列 {0} = {1}"
+    },
+    {
+      "key": "cpp.throw",
+      "value": "{0} を投げる"
+    },
+    {
+      "key": "cpp.to_string",
+      "value": "文字列に {0}"
+    },
+    {
+      "key": "cpp.unique_ptr",
+      "value": "一意ポインタ {0} = 新規 {1}"
+    },
+    {
+      "key": "cpp.vector",
+      "value": "ベクトル {0}<{1}>"
+    },
+    {
+      "key": "expr.binary",
+      "value": "{0} {1} {2}"
+    },
+    {
+      "key": "expr.call",
+      "value": "{0} を呼ぶ"
+    },
+    {
+      "key": "expr.cast",
+      "value": "{1} を {0} に変換"
+    },
+    {
+      "key": "expr.conditional",
+      "value": "もし {0} なら {1} そうでなければ {2}"
+    },
+    {
+      "key": "expr.ident",
+      "value": "変数 {0}"
+    },
+    {
+      "key": "expr.index",
+      "value": "{0} の {1} 番目"
+    },
+    {
+      "key": "expr.literal",
+      "value": "{0}"
+    },
+    {
+      "key": "expr.member",
+      "value": "{0} の {1}"
+    },
+    {
+      "key": "expr.new",
+      "value": "{0} を生成"
+    },
+    {
+      "key": "expr.postfix",
+      "value": "{0}{1}"
+    },
+    {
+      "key": "expr.raw",
+      "value": "生の C# {0}"
+    },
+    {
+      "key": "expr.unary",
+      "value": "{0}{1}"
+    },
+    {
+      "key": "hlsl.abs",
+      "value": "絶対値 {0}"
+    },
+    {
+      "key": "hlsl.acos",
+      "value": "逆余弦 {0}"
+    },
+    {
+      "key": "hlsl.all",
+      "value": "{0} がすべて真"
+    },
+    {
+      "key": "hlsl.any",
+      "value": "{0} のいずれかが真"
+    },
+    {
+      "key": "hlsl.asin",
+      "value": "逆正弦 {0}"
+    },
+    {
+      "key": "hlsl.atan",
+      "value": "逆正接 {0}"
+    },
+    {
+      "key": "hlsl.atan2",
+      "value": "逆正接 {0}/{1}"
+    },
+    {
+      "key": "hlsl.ceil",
+      "value": "切り上げ {0}"
+    },
+    {
+      "key": "hlsl.clamp",
+      "value": "{0} を {1}..{2} に制限"
+    },
+    {
+      "key": "hlsl.clip",
+      "value": "{0} を切り抜き"
+    },
+    {
+      "key": "hlsl.clipPos",
+      "value": "クリップ座標 {0}"
+    },
+    {
+      "key": "hlsl.cos",
+      "value": "余弦 {0}"
+    },
+    {
+      "key": "hlsl.cross",
+      "value": "外積 {0}×{1}"
+    },
+    {
+      "key": "hlsl.ddx",
+      "value": "{0} の画面横変化率"
+    },
+    {
+      "key": "hlsl.ddy",
+      "value": "{0} の画面縦変化率"
+    },
+    {
+      "key": "hlsl.determinant",
+      "value": "行列式 {0}"
+    },
+    {
+      "key": "hlsl.discard",
+      "value": "ピクセルを破棄"
+    },
+    {
+      "key": "hlsl.distance",
+      "value": "距離 {0}→{1}"
+    },
+    {
+      "key": "hlsl.dot",
+      "value": "内積 {0}·{1}"
+    },
+    {
+      "key": "hlsl.exp",
+      "value": "e の {0} 乗"
+    },
+    {
+      "key": "hlsl.exp2",
+      "value": "2 の {0} 乗"
+    },
+    {
+      "key": "hlsl.floor",
+      "value": "切り捨て {0}"
+    },
+    {
+      "key": "hlsl.fmod",
+      "value": "浮動小数の余り {0} {1}"
+    },
+    {
+      "key": "hlsl.frac",
+      "value": "小数部分 {0}"
+    },
+    {
+      "key": "hlsl.length",
+      "value": "長さ {0}"
+    },
+    {
+      "key": "hlsl.lerp",
+      "value": "{0}→{1} を {2} で補間"
+    },
+    {
+      "key": "hlsl.log",
+      "value": "自然対数 {0}"
+    },
+    {
+      "key": "hlsl.log2",
+      "value": "2 を底とする対数 {0}"
+    },
+    {
+      "key": "hlsl.mad",
+      "value": "積和 {0}×{1}+{2}"
+    },
+    {
+      "key": "hlsl.max",
+      "value": "大きい方 {0} {1}"
+    },
+    {
+      "key": "hlsl.min",
+      "value": "小さい方 {0} {1}"
+    },
+    {
+      "key": "hlsl.mul",
+      "value": "行列積 {0}×{1}"
+    },
+    {
+      "key": "hlsl.normalize",
+      "value": "{0} を正規化"
+    },
+    {
+      "key": "hlsl.pow",
+      "value": "べき乗 {0}^{1}"
+    },
+    {
+      "key": "hlsl.rcp",
+      "value": "逆数 {0}"
+    },
+    {
+      "key": "hlsl.reflect",
+      "value": "{0} を {1} で反射"
+    },
+    {
+      "key": "hlsl.refract",
+      "value": "{0} を {1} で屈折 屈折率 {2}"
+    },
+    {
+      "key": "hlsl.round",
+      "value": "四捨五入 {0}"
+    },
+    {
+      "key": "hlsl.rsqrt",
+      "value": "平方根の逆数 {0}"
+    },
+    {
+      "key": "hlsl.sample",
+      "value": "{1} で {0} を標本抽出"
+    },
+    {
+      "key": "hlsl.saturate",
+      "value": "saturate({0})"
+    },
+    {
+      "key": "hlsl.sign",
+      "value": "符号 {0}"
+    },
+    {
+      "key": "hlsl.sin",
+      "value": "正弦 {0}"
+    },
+    {
+      "key": "hlsl.smoothstep",
+      "value": "滑らかな段階 {0}..{1} 値 {2}"
+    },
+    {
+      "key": "hlsl.sqrt",
+      "value": "平方根 {0}"
+    },
+    {
+      "key": "hlsl.step",
+      "value": "段階 {0} しきい値 {1}"
+    },
+    {
+      "key": "hlsl.tan",
+      "value": "正接 {0}"
+    },
+    {
+      "key": "hlsl.tex2D",
+      "value": "{1} で {0} を標本抽出"
+    },
+    {
+      "key": "hlsl.tex2Dlod",
+      "value": "{1} で {0} を標本抽出"
+    },
+    {
+      "key": "hlsl.texCUBE",
+      "value": "立方体サンプル {0} 方向 {1}"
+    },
+    {
+      "key": "hlsl.transpose",
+      "value": "{0} を転置"
+    },
+    {
+      "key": "hlsl.trunc",
+      "value": "{0} を切り詰め"
+    },
+    {
+      "key": "java.add",
+      "value": "{0} に {1} を追加"
+    },
+    {
+      "key": "java.arraysSort",
+      "value": "{0} を並べ替え"
+    },
+    {
+      "key": "java.equals",
+      "value": "{0} と {1} が等しい"
+    },
+    {
+      "key": "java.format",
+      "value": "{0} を {1} で書式化"
+    },
+    {
+      "key": "java.get",
+      "value": "{0} の {1} 番目"
+    },
+    {
+      "key": "java.length",
+      "value": "{0} の長さ"
+    },
+    {
+      "key": "java.list",
+      "value": "リスト {0}"
+    },
+    {
+      "key": "java.map",
+      "value": "マップ {0}"
+    },
+    {
+      "key": "java.mathAbs",
+      "value": "絶対値 {0}"
+    },
+    {
+      "key": "java.mathMax",
+      "value": "大きい方 {0} {1}"
+    },
+    {
+      "key": "java.mathMin",
+      "value": "小さい方 {0} {1}"
+    },
+    {
+      "key": "java.mathPow",
+      "value": "べき乗 {0}^{1}"
+    },
+    {
+      "key": "java.mathRandom",
+      "value": "乱数"
+    },
+    {
+      "key": "java.mathSqrt",
+      "value": "平方根 {0}"
+    },
+    {
+      "key": "java.parseDouble",
+      "value": "文字列から浮動小数 {0}"
+    },
+    {
+      "key": "java.parseInt",
+      "value": "文字列から整数 {0}"
+    },
+    {
+      "key": "java.print",
+      "value": "{0} を出力（改行なし）"
+    },
+    {
+      "key": "java.println",
+      "value": "{0} を出力"
+    },
+    {
+      "key": "java.put",
+      "value": "{1} → {2} を {0} に入れる"
+    },
+    {
+      "key": "java.split",
+      "value": "{0} を {1} で分割"
+    },
+    {
+      "key": "java.substring",
+      "value": "{0} の部分文字列 {1}..{2}"
+    },
+    {
+      "key": "java.throw",
+      "value": "{0} を投げる"
+    },
+    {
+      "key": "java.toString",
+      "value": "{0} を文字列に"
+    },
+    {
+      "key": "java.valueOf",
+      "value": "文字列に {0}"
+    },
+    {
+      "key": "py.abs",
+      "value": "絶対値 {0}"
+    },
+    {
+      "key": "py.append",
+      "value": "{1} に {0} を追加"
+    },
+    {
+      "key": "py.assert",
+      "value": "表明 {0}"
+    },
+    {
+      "key": "py.chr",
+      "value": "コードから文字 {0}"
+    },
+    {
+      "key": "py.del",
+      "value": "{0} を削除"
+    },
+    {
+      "key": "py.dict",
+      "value": "辞書 {0}"
+    },
+    {
+      "key": "py.enumerate",
+      "value": "添字付き {0}"
+    },
+    {
+      "key": "py.float",
+      "value": "浮動小数に {0}"
+    },
+    {
+      "key": "py.format",
+      "value": "{0} を {1} で書式化"
+    },
+    {
+      "key": "py.fromImport",
+      "value": "{0} から {1} を読み込む"
+    },
+    {
+      "key": "py.global",
+      "value": "グローバル {0}"
+    },
+    {
+      "key": "py.import",
+      "value": "{0} を読み込む"
+    },
+    {
+      "key": "py.input",
+      "value": "入力を受け取る {0}"
+    },
+    {
+      "key": "py.int",
+      "value": "整数に {0}"
+    },
+    {
+      "key": "py.isinstance",
+      "value": "{0} は {1}"
+    },
+    {
+      "key": "py.items",
+      "value": "{0} のキーと値"
+    },
+    {
+      "key": "py.join",
+      "value": "{1} を {0} で連結"
+    },
+    {
+      "key": "py.keys",
+      "value": "{0} のキー"
+    },
+    {
+      "key": "py.len",
+      "value": "長さ {0}"
+    },
+    {
+      "key": "py.list",
+      "value": "リスト {0}"
+    },
+    {
+      "key": "py.lower",
+      "value": "{0} を小文字に"
+    },
+    {
+      "key": "py.max",
+      "value": "{0} の最大"
+    },
+    {
+      "key": "py.min",
+      "value": "{0} の最小"
+    },
+    {
+      "key": "py.ord",
+      "value": "文字コード {0}"
+    },
+    {
+      "key": "py.pass",
+      "value": "pass"
+    },
+    {
+      "key": "py.print",
+      "value": "print({0})"
+    },
+    {
+      "key": "py.raise",
+      "value": "{0} を投げる"
+    },
+    {
+      "key": "py.range",
+      "value": "範囲 {0}"
+    },
+    {
+      "key": "py.replace",
+      "value": "{0} の中の {1} を {2} に置換"
+    },
+    {
+      "key": "py.repr",
+      "value": "表現 {0}"
+    },
+    {
+      "key": "py.round",
+      "value": "四捨五入 {0}"
+    },
+    {
+      "key": "py.set",
+      "value": "集合 {0}"
+    },
+    {
+      "key": "py.sorted",
+      "value": "{0} を並べ替え"
+    },
+    {
+      "key": "py.split",
+      "value": "{1} を {0} で分割"
+    },
+    {
+      "key": "py.str",
+      "value": "文字列に {0}"
+    },
+    {
+      "key": "py.strip",
+      "value": "空白を除去 {0}"
+    },
+    {
+      "key": "py.sum",
+      "value": "{0} の合計"
+    },
+    {
+      "key": "py.tuple",
+      "value": "タプル {0}"
+    },
+    {
+      "key": "py.type",
+      "value": "型 {0}"
+    },
+    {
+      "key": "py.upper",
+      "value": "{0} を大文字に"
+    },
+    {
+      "key": "py.yield",
+      "value": "{0} を生成"
+    },
+    {
+      "key": "py.zip",
+      "value": "{0} と {1} を組にする"
+    },
+    {
+      "key": "rust.assert",
+      "value": "表明 {0}"
+    },
+    {
+      "key": "rust.collect",
+      "value": "{0} を収集"
+    },
+    {
+      "key": "rust.eprintln",
+      "value": "エラー出力 {0}"
+    },
+    {
+      "key": "rust.err",
+      "value": "Err({0})"
+    },
+    {
+      "key": "rust.expect",
+      "value": "{0} を取り出す（失敗時 {1} を報告）"
+    },
+    {
+      "key": "rust.filter",
+      "value": "{0} を {1} で絞り込み"
+    },
+    {
+      "key": "rust.format",
+      "value": "{0} を書式化"
+    },
+    {
+      "key": "rust.hashmap",
+      "value": "マップ {0}"
+    },
+    {
+      "key": "rust.is_ok",
+      "value": "{0} は Ok"
+    },
+    {
+      "key": "rust.iter",
+      "value": "{0} を走査"
+    },
+    {
+      "key": "rust.len",
+      "value": "{0} の長さ"
+    },
+    {
+      "key": "rust.map",
+      "value": "{0} の各要素に {1} を適用"
+    },
+    {
+      "key": "rust.none",
+      "value": "None"
+    },
+    {
+      "key": "rust.ok",
+      "value": "Ok({0})"
+    },
+    {
+      "key": "rust.panic",
+      "value": "panic!({0})"
+    },
+    {
+      "key": "rust.parse",
+      "value": "{0} を解析"
+    },
+    {
+      "key": "rust.pop",
+      "value": "{0} の末尾を取り出す"
+    },
+    {
+      "key": "rust.println",
+      "value": "println!({0})"
+    },
+    {
+      "key": "rust.push",
+      "value": "{0} に {1} を追加"
+    },
+    {
+      "key": "rust.some",
+      "value": "Some({0})"
+    },
+    {
+      "key": "rust.string_from",
+      "value": "文字列 {0}"
+    },
+    {
+      "key": "rust.to_string",
+      "value": "{0} を文字列に"
+    },
+    {
+      "key": "rust.todo",
+      "value": "todo のプレースホルダ"
+    },
+    {
+      "key": "rust.unreachable",
+      "value": "到達不能"
+    },
+    {
+      "key": "rust.unwrap",
+      "value": "{0} を取り出す"
+    },
+    {
+      "key": "rust.unwrap_or",
+      "value": "{0} を取り出す（失敗時 {1} を使う）"
+    },
+    {
+      "key": "rust.vec",
+      "value": "ベクトルを生成 {0}"
+    },
+    {
+      "key": "stmt.add",
+      "value": "{0} に {1} を足す"
+    },
+    {
+      "key": "stmt.assign",
+      "value": "{0} を {1} にする"
+    },
+    {
+      "key": "stmt.break",
+      "value": "ループを抜ける"
+    },
+    {
+      "key": "stmt.continue",
+      "value": "次の反復"
+    },
+    {
+      "key": "stmt.div",
+      "value": "{0} を {1} で割る"
+    },
+    {
+      "key": "stmt.expr",
+      "value": "{0} を実行"
+    },
+    {
+      "key": "stmt.for",
+      "value": "カウントループ"
+    },
+    {
+      "key": "stmt.foreach",
+      "value": "{2} の中の各 {0} {1} について"
+    },
+    {
+      "key": "stmt.if",
+      "value": "もし {0}"
+    },
+    {
+      "key": "stmt.localDecl",
+      "value": "{0} {1} = {2} を宣言"
+    },
+    {
+      "key": "stmt.mod",
+      "value": "{0} を {1} で割った余り"
+    },
+    {
+      "key": "stmt.mul",
+      "value": "{0} に {1} を掛ける"
+    },
+    {
+      "key": "stmt.raw",
+      "value": "生の C# {0}"
+    },
+    {
+      "key": "stmt.return",
+      "value": "{0} を返す"
+    },
+    {
+      "key": "stmt.sub",
+      "value": "{0} から {1} を引く"
+    },
+    {
+      "key": "stmt.while",
+      "value": "{0} の間くり返す"
+    }
+  ]
+}

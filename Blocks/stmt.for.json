@@ -1,0 +1,43 @@
+{
+    "id": "stmt.for",
+    "level": "high",
+    "shape": "control",
+    "category": "计数循环",
+    "categoryKey": "cat.ctrl",
+    "label": "count loop",
+    "labelEn": "count loop",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "init",
+            "kind": "expr",
+            "required": false,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "cond",
+            "kind": "expr",
+            "required": false,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "incr",
+            "kind": "expr",
+            "required": false,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "for",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": true,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

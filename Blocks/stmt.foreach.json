@@ -1,0 +1,43 @@
+{
+    "id": "stmt.foreach",
+    "level": "high",
+    "shape": "control",
+    "category": "对每个 {0} {1} 在 {2} 中",
+    "categoryKey": "cat.ctrl",
+    "label": "for each {0} {1} in {2}",
+    "labelEn": "for each {0} {1} in {2}",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "type",
+            "kind": "text",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "name",
+            "kind": "var",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "source",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "foreach",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": true,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

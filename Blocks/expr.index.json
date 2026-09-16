@@ -1,0 +1,36 @@
+{
+    "id": "expr.index",
+    "level": "high",
+    "shape": "expression",
+    "category": "{0} 的第 {1} 项",
+    "categoryKey": "cat.expr",
+    "label": "item {1} of {0}",
+    "labelEn": "item {1} of {0}",
+    "labelRu": "",
+    "sockets": [
+        {
+            "name": "target",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        },
+        {
+            "name": "args",
+            "kind": "expr",
+            "required": false,
+            "variadic": true,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "index",
+    "op": "",
+    "color": "",
+    "matchCall": "",
+    "matchArity": -1,
+    "builtin": true,
+    "manual": "",
+    "variantGroup": "",
+    "variantLabel": ""
+}

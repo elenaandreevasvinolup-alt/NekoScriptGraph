@@ -1,0 +1,29 @@
+{
+    "id": "api.CPUDecalUtils.CreateGroup.1",
+    "level": "high",
+    "shape": "expression",
+    "category": "CPUDecalUtils",
+    "categoryKey": "cat.api",
+    "label": "CPUDecalUtils.CreateGroup({0})",
+    "labelEn": "CPUDecalUtils.CreateGroup({0})",
+    "labelRu": "CPUDecalUtils.CreateGroup({0})",
+    "sockets": [
+        {
+            "name": "desc",
+            "kind": "expr",
+            "required": true,
+            "variadic": false,
+            "choices": []
+        }
+    ],
+    "emit": "",
+    "node": "call",
+    "op": "",
+    "color": "",
+    "matchCall": "CPUDecalUtils.CreateGroup",
+    "matchArity": 1,
+    "builtin": true,
+    "manual": "CPUDecalUtils.CreateGroup(desc) : DecalUtils.Group",
+    "variantGroup": "",
+    "variantLabel": ""
+}
