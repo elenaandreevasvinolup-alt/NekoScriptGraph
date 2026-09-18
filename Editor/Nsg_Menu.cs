@@ -14,7 +14,25 @@ namespace NekoScriptGraph
         public const string WorksRoot = "NekoWorks/";
         public const string Root = WorksRoot + "NekoScriptGraph/";
 
-        [MenuItem(Root + "Languages: Show Loaded")]
+        // ------------------------------------------------------------------ Группы второго уровня
+        //
+        // ЗАЧЕМ ВТОРОЙ УРОВЕНЬ. В подменю плагина было два десятка пунктов
+        // вперемешку: «Reload Block Library» рядом с «Release Whole Project», и
+        // найти нужное можно было только чтением всего списка. Группы разделяют
+        // список по СМЫСЛУ действия — окно, управление файлами, блоки,
+        // ассистент, диагностика, инструменты.
+        //
+        // Имена групп английские и не локализуются: это путь в атрибуте
+        // [MenuItem], а он константа времени компиляции. Локализуются листья —
+        // группа добавляется к переведённой подписи в Nsg_MenuRuntime.
+        public const string GWindow = Root + "Window/";
+        public const string GManage = Root + "Manage/";
+        public const string GBlocks = Root + "Blocks/";
+        public const string GAssistant = Root + "Assistant/";
+        public const string GDiagnostics = Root + "Diagnostics/";
+        public const string GTools = Root + "Tools/";
+
+        [MenuItem(GDiagnostics + "Languages: Show Loaded", false, 1410)]
         public static void ShowLanguages()
         {
             Nsg_LanguageRegistry.Rediscover();
@@ -51,13 +69,13 @@ namespace NekoScriptGraph
         // Подписи в атрибутах — английские и статические: [MenuItem] это
         // константа времени компиляции. Реальные, локализованные подписи
         // расставляет Nsg_MenuRuntime.Rebuild() при загрузке и смене языка.
-        [MenuItem(Root + "Open NekoScriptGraph")]
+        [MenuItem(GWindow + "Open NekoScriptGraph", false, 1000)]
         public static void OpenWindow()
         {
             Nsg_Window.Open();
         }
 
-        [MenuItem(Root + "Problems")]
+        [MenuItem(GWindow + "Problems", false, 1010)]
         public static void OpenErrors()
         {
             Nsg_ErrorWindow.Open();
@@ -68,7 +86,7 @@ namespace NekoScriptGraph
         /// только список ошибок, с ним — сверху кошку, снизу реплику.
         /// Пункт меню подписан статически, как и остальные пункты Unity.
         /// </summary>
-        [MenuItem(Root + "Assistant (ProgramNeko)")]
+        [MenuItem(GAssistant + "Assistant (ProgramNeko)", false, 1300)]
         public static void OpenAssistant()
         {
             Nsg_ErrorWindow.Open();
@@ -85,7 +103,7 @@ namespace NekoScriptGraph
         /// Ярлык глобальный, а не только внутри окна: так он работает, даже
         /// когда фокус в другом окне, а выделение уже сделано.
         /// </summary>
-        [MenuItem(Root + "Explain Selected Block %#e")]
+        [MenuItem(GAssistant + "Explain Selected Block %#e", false, 1310)]
         public static void ExplainSelectedBlock()
         {
             Nsg_Window.ExplainSelectedBlock();
@@ -96,20 +114,20 @@ namespace NekoScriptGraph
         /// «снять расширение» — одно действие пользователя, и искать его по
         /// двум местам он не должен.
         /// </summary>
-        [MenuItem(Root + "Settings")]
+        [MenuItem(GWindow + "Settings", false, 1020)]
         public static void OpenSettings()
         {
             Nsg_SettingsWindow.Open();
         }
 
         /// <summary>Расширения: языковые пакеты, кошка, внешние движки.</summary>
-        [MenuItem(Root + "Extensions")]
+        [MenuItem(GWindow + "Extensions", false, 1030)]
         public static void OpenExtensions()
         {
             Nsg_SettingsWindow.OpenExtensions();
         }
 
-        [MenuItem(Root + "Architecture Health")]
+        [MenuItem(GDiagnostics + "Architecture Health", false, 1400)]
         public static void OpenHealth()
         {
             string path = SelectionSource();
@@ -117,7 +135,7 @@ namespace NekoScriptGraph
             Nsg_HealthWindow.Open(doc);
         }
 
-        [MenuItem(Root + "Take Selected Script Under Management")]
+        [MenuItem(GManage + "Take Selected Script Under Management", false, 1100)]
         public static void ManageSelection()
         {
             string path = SelectionSource();
@@ -147,7 +165,7 @@ namespace NekoScriptGraph
             Nsg_Window.Open();
         }
 
-        [MenuItem(Root + "Release Selected Script")]
+        [MenuItem(GManage + "Release Selected Script", false, 1110)]
         public static void UnmanageSelection()
         {
             string path = SelectionSource();
@@ -178,7 +196,7 @@ namespace NekoScriptGraph
         /// <summary>
         /// Отдельная функция, как и просили: превратить папку с C# в API-блоки.
         /// </summary>
-        [MenuItem(Root + "Generate API Blocks for Selected Folder")]
+        [MenuItem(GBlocks + "Generate API Blocks for Selected Folder", false, 1200)]
         public static void GenerateApiBlocks()
         {
             string folder = SelectionFolder();
@@ -258,7 +276,7 @@ namespace NekoScriptGraph
         /// Один клик — API-блоки для всего проекта. Считает файлы заранее и
         /// предупреждает: на большом проекте это тысячи блоков и заметное время.
         /// </summary>
-        [MenuItem(Root + "Build API Library for Whole Project")]
+        [MenuItem(GBlocks + "Build API Library for Whole Project", false, 1210)]
         public static void GenerateApiForProject()
         {
             var manager = Nsg_Manager.Instance;
@@ -308,13 +326,13 @@ namespace NekoScriptGraph
             EditorUtility.DisplayDialog(Nsg_L10n.T("api.title"), msg, Nsg_L10n.T("confirm.ok"));
         }
 
-        [MenuItem(Root + "Take Whole Project Under Management")]
+        [MenuItem(GManage + "Take Whole Project Under Management", false, 1140)]
         public static void ManageAllProject()
         {
             ManageAllIn(null);
         }
 
-        [MenuItem(Root + "Take Selected Folder Under Management")]
+        [MenuItem(GManage + "Take Selected Folder Under Management", false, 1120)]
         public static void ManageSelectedFolder()
         {
             string folder = SelectionFolder();
@@ -359,13 +377,13 @@ namespace NekoScriptGraph
             EditorUtility.DisplayDialog(Nsg_L10n.T("manage.title"), msg, Nsg_L10n.T("confirm.ok"));
         }
 
-        [MenuItem(Root + "Release Whole Project")]
+        [MenuItem(GManage + "Release Whole Project", false, 1150)]
         public static void UnmanageAllProject()
         {
             UnmanageAllIn(null);
         }
 
-        [MenuItem(Root + "Release Selected Folder")]
+        [MenuItem(GManage + "Release Selected Folder", false, 1130)]
         public static void UnmanageSelectedFolder()
         {
             string folder = SelectionFolder();
@@ -411,7 +429,7 @@ namespace NekoScriptGraph
             EditorUtility.DisplayDialog(Nsg_L10n.T("manage.title"), msg, Nsg_L10n.T("confirm.ok"));
         }
 
-        [MenuItem(Root + "Reload Block Library")]
+        [MenuItem(GBlocks + "Reload Block Library", false, 1220)]
         public static void ReloadLibrary()
         {
             Nsg_Manager.Instance.ReloadLibrary();
@@ -419,7 +437,7 @@ namespace NekoScriptGraph
                 Nsg_Manager.Instance.Library.Blocks.Count));
         }
 
-        [MenuItem(Root + "Export Default Block Library")]
+        [MenuItem(GBlocks + "Export Default Block Library", false, 1230)]
         public static void ExportBlocks()
         {
             var lib = new Nsg_BlockLibrary();
@@ -429,7 +447,7 @@ namespace NekoScriptGraph
             Debug.Log("[NekoScriptGraph] " + Nsg_L10n.T("info.exported", Nsg_Paths.BlocksDir));
         }
 
-        [MenuItem(Root + "Self Test: Round Trip")]
+        [MenuItem(GDiagnostics + "Self Test: Round Trip", false, 1420)]
         public static void RunSelfTest()
         {
             Nsg_SelfTest.Run();
@@ -440,7 +458,7 @@ namespace NekoScriptGraph
         /// Ярлык глобальный: он работает и когда окно плагина закрыто, потому
         /// что прятать файлы нужно независимо от того, открыт редактор блоков.
         /// </summary>
-        [MenuItem(Root + "Toggle Block Files Visibility %#h")]
+        [MenuItem(GTools + "Toggle Block Files Visibility %#h", false, 1500)]
         public static void ToggleBlockFiles()
         {
             bool hidden = Nsg_FileVisibility.Toggle();
@@ -457,7 +475,7 @@ namespace NekoScriptGraph
         // редко, и смешивать их с переводами интерфейса не стоит.
         // ------------------------------------------------------------------
 
-        [MenuItem(Root + "MCP Bridge: Start")]
+        [MenuItem(GTools + "MCP Bridge: Start", false, 1510)]
         public static void McpBridgeStart()
         {
             if (Nsg_McpBridge.Start())
@@ -466,14 +484,14 @@ namespace NekoScriptGraph
             }
         }
 
-        [MenuItem(Root + "MCP Bridge: Stop")]
+        [MenuItem(GTools + "MCP Bridge: Stop", false, 1520)]
         public static void McpBridgeStop()
         {
             Nsg_McpBridge.Stop();
             Debug.Log("[NekoScriptGraph] MCP bridge stopped.");
         }
 
-        [MenuItem(Root + "MCP Bridge: Copy Client URL")]
+        [MenuItem(GTools + "MCP Bridge: Copy Client URL", false, 1530)]
         public static void McpBridgeCopyUrl()
         {
             EditorGUIUtility.systemCopyBuffer = Nsg_McpBridge.Url;

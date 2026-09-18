@@ -23,6 +23,7 @@ namespace NekoScriptGraph
 
         public class Item
         {
+            public string Group;      // сегмент пути второго уровня (английский, не локализуется)
             public string Key;        // ключ локализации
             public string Fallback;   // английская подпись, как в атрибуте
             public string Handler;    // имя статического метода в Nsg_Menu
@@ -31,27 +32,40 @@ namespace NekoScriptGraph
 
         static readonly Item[] Items =
         {
-            new Item { Key = "menu.open",      Fallback = "Open NekoScriptGraph",         Handler = "OpenWindow",         Priority = 10 },
-            new Item { Key = "menu.problems",  Fallback = "Problems",                  Handler = "OpenErrors",         Priority = 20 },
-            new Item { Key = "menu.health",    Fallback = "Architecture Health",       Handler = "OpenHealth",         Priority = 30 },
-            new Item { Key = "menu.manage",    Fallback = "Take Selected Script Under Management", Handler = "ManageSelection", Priority = 50 },
-            new Item { Key = "menu.unmanage",  Fallback = "Release Selected Script",   Handler = "UnmanageSelection",  Priority = 60 },
-            new Item { Key = "menu.manageFolder", Fallback = "Take Selected Folder Under Management", Handler = "ManageSelectedFolder", Priority = 65 },
-            new Item { Key = "menu.manageAll", Fallback = "Take Whole Project Under Management", Handler = "ManageAllProject", Priority = 70 },
-            new Item { Key = "menu.unmanageFolder", Fallback = "Release Selected Folder", Handler = "UnmanageSelectedFolder", Priority = 66 },
-            new Item { Key = "menu.unmanageAll", Fallback = "Release Whole Project", Handler = "UnmanageAllProject", Priority = 72 },
-            new Item { Key = "menu.api",       Fallback = "Generate API Blocks for Selected Folder", Handler = "GenerateApiBlocks", Priority = 80 },
-            new Item { Key = "menu.apiAll",    Fallback = "Build API Library for Whole Project", Handler = "GenerateApiForProject", Priority = 85 },
-            new Item { Key = "menu.settings",  Fallback = "Settings",                  Handler = "OpenSettings",       Priority = 90 },
-            new Item { Key = "menu.extensions", Fallback = "Extensions",               Handler = "OpenExtensions",     Priority = 92 },
-            new Item { Key = "menu.languages", Fallback = "Languages: Show Loaded",    Handler = "ShowLanguages",      Priority = 100 },
-            new Item { Key = "menu.reload",    Fallback = "Reload Block Library",      Handler = "ReloadLibrary",      Priority = 110 },
-            new Item { Key = "menu.export",    Fallback = "Export Default Block Library", Handler = "ExportBlocks",    Priority = 120 },
-            new Item { Key = "menu.selftest",  Fallback = "Self Test: Round Trip",     Handler = "RunSelfTest",        Priority = 140 },
-            new Item { Key = "menu.mcpStart",  Fallback = "MCP Bridge: Start",         Handler = "McpBridgeStart",     Priority = 200 },
-            new Item { Key = "menu.mcpStop",   Fallback = "MCP Bridge: Stop",          Handler = "McpBridgeStop",      Priority = 201 },
-            new Item { Key = "menu.mcpUrl",    Fallback = "MCP Bridge: Copy Client URL", Handler = "McpBridgeCopyUrl", Priority = 202 },
+            new Item { Group = "Window",      Key = "menu.open",      Fallback = "Open NekoScriptGraph",         Handler = "OpenWindow",         Priority = 1000 },
+            new Item { Group = "Window",      Key = "menu.problems",  Fallback = "Problems",                  Handler = "OpenErrors",         Priority = 1010 },
+            new Item { Group = "Window",      Key = "menu.settings",  Fallback = "Settings",                  Handler = "OpenSettings",       Priority = 1020 },
+            new Item { Group = "Window",      Key = "menu.extensions", Fallback = "Extensions",               Handler = "OpenExtensions",     Priority = 1030 },
+            new Item { Group = "Manage",      Key = "menu.manage",    Fallback = "Take Selected Script Under Management", Handler = "ManageSelection", Priority = 1100 },
+            new Item { Group = "Manage",      Key = "menu.unmanage",  Fallback = "Release Selected Script",   Handler = "UnmanageSelection",  Priority = 1110 },
+            new Item { Group = "Manage",      Key = "menu.manageFolder", Fallback = "Take Selected Folder Under Management", Handler = "ManageSelectedFolder", Priority = 1120 },
+            new Item { Group = "Manage",      Key = "menu.unmanageFolder", Fallback = "Release Selected Folder", Handler = "UnmanageSelectedFolder", Priority = 1130 },
+            new Item { Group = "Manage",      Key = "menu.manageAll", Fallback = "Take Whole Project Under Management", Handler = "ManageAllProject", Priority = 1140 },
+            new Item { Group = "Manage",      Key = "menu.unmanageAll", Fallback = "Release Whole Project", Handler = "UnmanageAllProject", Priority = 1150 },
+            new Item { Group = "Blocks",      Key = "menu.api",       Fallback = "Generate API Blocks for Selected Folder", Handler = "GenerateApiBlocks", Priority = 1200 },
+            new Item { Group = "Blocks",      Key = "menu.apiAll",    Fallback = "Build API Library for Whole Project", Handler = "GenerateApiForProject", Priority = 1210 },
+            new Item { Group = "Blocks",      Key = "menu.reload",    Fallback = "Reload Block Library",      Handler = "ReloadLibrary",      Priority = 1220 },
+            new Item { Group = "Blocks",      Key = "menu.export",    Fallback = "Export Default Block Library", Handler = "ExportBlocks",    Priority = 1230 },
+            new Item { Group = "Diagnostics", Key = "menu.health",    Fallback = "Architecture Health",       Handler = "OpenHealth",         Priority = 1400 },
+            new Item { Group = "Diagnostics", Key = "menu.languages", Fallback = "Languages: Show Loaded",    Handler = "ShowLanguages",      Priority = 1410 },
+            new Item { Group = "Diagnostics", Key = "menu.selftest",  Fallback = "Self Test: Round Trip",     Handler = "RunSelfTest",        Priority = 1420 },
+            new Item { Group = "Tools",       Key = "menu.mcpStart",  Fallback = "MCP Bridge: Start",         Handler = "McpBridgeStart",     Priority = 1510 },
+            new Item { Group = "Tools",       Key = "menu.mcpStop",   Fallback = "MCP Bridge: Stop",          Handler = "McpBridgeStop",      Priority = 1520 },
+            new Item { Group = "Tools",       Key = "menu.mcpUrl",    Fallback = "MCP Bridge: Copy Client URL", Handler = "McpBridgeCopyUrl", Priority = 1530 },
         };
+
+        /// <summary>Полный путь пункта: корень + группа + подпись.
+        ///
+        /// Группа стоит В ПУТИ, но не в подписи: она одинакова на всех языках, а
+        /// переводится только лист. Иначе пришлось бы переводить и имена групп,
+        /// а они — часть пути в атрибуте [MenuItem], то есть константа времени
+        /// компиляции.</summary>
+        static string PathOf(Item item, string leaf)
+        {
+            return string.IsNullOrEmpty(item.Group)
+                ? Root + leaf
+                : Root + item.Group + "/" + leaf;
+        }
 
         static Type _menuType;
         static MethodInfo _remove;
@@ -129,14 +143,14 @@ namespace NekoScriptGraph
             // языка в меню оказались бы оба варианта.
             for (int i = 0; i < Items.Length; i++)
             {
-                TryRemove(Root + Items[i].Fallback);
-                TryRemove(Root + Label(Items[i]));
+                TryRemove(PathOf(Items[i], Items[i].Fallback));
+                TryRemove(PathOf(Items[i], Label(Items[i])));
             }
 
             for (int i = 0; i < Items.Length; i++)
             {
                 var item = Items[i];
-                string path = Root + Label(item);
+                string path = PathOf(item, Label(item));
 
                 // Пункт «Расширения» существует, только если есть чем
                 // управлять. В сборке без кошки, без языковых пакетов и без

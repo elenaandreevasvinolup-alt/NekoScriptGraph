@@ -122,7 +122,7 @@ namespace NekoScriptGraph
         /// Пункт меню намеренно НЕ попадает в Nsg_MenuRuntime: по требованию
         /// подписи меню Unity остаются английскими.
         /// </summary>
-        [MenuItem(Nsg_Menu.Root + "Write Agent Writing Set", false, 300)]
+        [MenuItem(Nsg_Menu.GAssistant + "Write Agent Writing Set", false, 1320)]
         public static void WriteWritingSet()
         {
             string folder = Nsg_Paths.Root + "/AgentSpec";
