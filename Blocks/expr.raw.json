@@ -1,6 +1,6 @@
 {
     "id": "expr.raw",
-    "level": "high",
+    "level": "low",
     "shape": "expression",
     "category": "raw text {0}",
     "categoryKey": "cat.raw",

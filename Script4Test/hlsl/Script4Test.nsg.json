@@ -1,0 +1,513 @@
+{
+    "schemaVersion": 2,
+    "target": "csharp",
+    "engineMin": "0.1.0",
+    "sourceFile": "Script4Test.hlsl",
+    "sourceGuid": "ad353f6fb2e9f432a950f048be048d1d",
+    "roots": [
+        {
+            "kind": "method",
+            "leading": "// Только тело функции становится блоками; шапка и объявления переносятся\n// как есть. Внутри — письменное подмножество NSG.\n",
+            "header": "float attenuate(float3 lightDir, float3 normal, float distance, float range)\n",
+            "headerPrefix": "",
+            "name": "attenuate",
+            "headerBasePrefix": "",
+            "baseList": "",
+            "headerSuffix": "",
+            "typeKeyword": "",
+            "isContainer": false,
+            "tail": "",
+            "text": "",
+            "printed": "{\n    float lambert = max(dot(normal, lightDir), 0.0);\n    float falloff = 1.0 - distance / range;\n    falloff = falloff < 0.0 ? 0.0 : falloff;\n    float squared = falloff * falloff;\n    float result = lambert * squared;\n    int i = 0;\n    while (i < 4)\n    {\n        result *= 0.5;\n        i++;\n    }\n    return result;\n}",
+            "line": 4,
+            "children": []
+        }
+    ],
+    "graphs": [
+        {
+            "key": "float attenuate(float3 lightDir, float3 normal, float distance, float range)\n",
+            "graph": {
+                "entry": "s0_",
+                "nodes": [
+                    {
+                        "id": "s0_",
+                        "block": "stmt.localDecl",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s1_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "float"
+                            },
+                            {
+                                "link": "",
+                                "text": "lambert"
+                            },
+                            {
+                                "link": "s0_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 1
+                    },
+                    {
+                        "id": "s0_v_",
+                        "block": "hlsl.max",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [],
+                        "extra": [
+                            {
+                                "link": "s0_v_a0_",
+                                "text": ""
+                            },
+                            {
+                                "link": "",
+                                "text": "0.0"
+                            }
+                        ],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s0_v_a0_",
+                        "block": "hlsl.dot",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [],
+                        "extra": [
+                            {
+                                "link": "",
+                                "text": "normal"
+                            },
+                            {
+                                "link": "",
+                                "text": "lightDir"
+                            }
+                        ],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s1_",
+                        "block": "stmt.localDecl",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s2_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "float"
+                            },
+                            {
+                                "link": "",
+                                "text": "falloff"
+                            },
+                            {
+                                "link": "s1_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s1_v_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "1.0"
+                            },
+                            {
+                                "link": "",
+                                "text": "-"
+                            },
+                            {
+                                "link": "s1_v_x1_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s1_v_x1_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "distance"
+                            },
+                            {
+                                "link": "",
+                                "text": "/"
+                            },
+                            {
+                                "link": "",
+                                "text": "range"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_",
+                        "block": "stmt.assign",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s3_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "falloff"
+                            },
+                            {
+                                "link": "s2_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_v_",
+                        "block": "expr.conditional",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s2_v_x0_",
+                                "text": ""
+                            },
+                            {
+                                "link": "",
+                                "text": "0.0"
+                            },
+                            {
+                                "link": "",
+                                "text": "falloff"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_v_x0_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "falloff"
+                            },
+                            {
+                                "link": "",
+                                "text": "<"
+                            },
+                            {
+                                "link": "",
+                                "text": "0.0"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s3_",
+                        "block": "stmt.localDecl",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s4_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "float"
+                            },
+                            {
+                                "link": "",
+                                "text": "squared"
+                            },
+                            {
+                                "link": "s3_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s3_v_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "falloff"
+                            },
+                            {
+                                "link": "",
+                                "text": "*"
+                            },
+                            {
+                                "link": "",
+                                "text": "falloff"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s4_",
+                        "block": "stmt.localDecl",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s5_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "float"
+                            },
+                            {
+                                "link": "",
+                                "text": "result"
+                            },
+                            {
+                                "link": "s4_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s4_v_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "lambert"
+                            },
+                            {
+                                "link": "",
+                                "text": "*"
+                            },
+                            {
+                                "link": "",
+                                "text": "squared"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s5_",
+                        "block": "stmt.localDecl",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s6_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "int"
+                            },
+                            {
+                                "link": "",
+                                "text": "i"
+                            },
+                            {
+                                "link": "",
+                                "text": "0"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_",
+                        "block": "stmt.while",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s7_",
+                        "body": "s6_w_0_",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s6_c_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_c_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "i"
+                            },
+                            {
+                                "link": "",
+                                "text": "<"
+                            },
+                            {
+                                "link": "",
+                                "text": "4"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_",
+                        "block": "stmt.mul",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s6_w_1_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "result"
+                            },
+                            {
+                                "link": "",
+                                "text": "0.5"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_1_",
+                        "block": "stmt.expr",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s6_w_1_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_1_v_",
+                        "block": "expr.postfix",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "i"
+                            },
+                            {
+                                "link": "",
+                                "text": "++"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s7_",
+                        "block": "stmt.return",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "result"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    }
+                ]
+            }
+        }
+    ],
+    "epilogue": "\n"
+}

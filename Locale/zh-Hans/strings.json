@@ -1332,6 +1332,82 @@
     {
       "key": "set.adv.state.missing",
       "value": "不可用"
+    },
+    {
+      "key": "health.optimizerDeadCode",
+      "value": "删除不可达语句"
+    },
+    {
+      "key": "health.optimizerConstCond",
+      "value": "折叠常量条件"
+    },
+    {
+      "key": "health.optimizeRun",
+      "value": "优化积木"
+    },
+    {
+      "key": "health.optimizeNothing",
+      "value": "没有可优化的：未发现不可达语句。"
+    },
+    {
+      "key": "health.optimizeDone",
+      "value": "已删除 {0} 个不可达积木，涉及 {1} 个方法。"
+    },
+    {
+      "key": "health.optimizeRolledBack",
+      "value": "已回滚：{0}"
+    },
+    {
+      "key": "msg.modelLoadFailed",
+      "value": "积木文件 {0} 无法读取（{1}），已按空文件处理。请修复或删除脚本旁的 .nsg.json，然后重新导入。"
+    },
+    {
+      "key": "lang.python.apiNotImplemented",
+      "value": "Python 的 API 积木生成尚未实现"
+    },
+    {
+      "key": "lang.python.unparsed",
+      "value": "未解析：{0}"
+    },
+    {
+      "key": "err.explain",
+      "value": "解释"
+    },
+    {
+      "key": "neko.noArt",
+      "value": "（暂无立绘）"
+    },
+    {
+      "key": "blk.explain",
+      "value": "解释这块积木"
+    },
+    {
+      "key": "palette.advanced",
+      "value": "显示高级积木"
+    },
+    {
+      "key": "manage.noLanguages",
+      "value": "没有加载任何语言，因此没有可查找的源文件。请检查 LanguageSupport 文件夹是否完整，然后用 Blocks ▸ Languages: Show Loaded 查看。"
+    },
+    {
+      "key": "manage.noSourcesProject",
+      "value": "没有可托管的内容：工程里没有这些扩展名的源文件——{0}。"
+    },
+    {
+      "key": "manage.noSourcesFolder",
+      "value": "{0} 里没有可托管的内容：没有这些扩展名的源文件——{1}。"
+    },
+    {
+      "key": "manage.allManaged",
+      "value": "这里的 {0} 个源文件已经全部在托管中。用 Release 撤销，或在积木编辑器里编辑它们。"
+    },
+    {
+      "key": "optimise.selectScript",
+      "value": "请先选中一个脚本。优化一次只处理一个文件，并重写它的积木。"
+    },
+    {
+      "key": "optimise.noModel",
+      "value": "这个脚本还没有积木模型。请先把它纳入管理。"
     }
   ],
   "blocks": [

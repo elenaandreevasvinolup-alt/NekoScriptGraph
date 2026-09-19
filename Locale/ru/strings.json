@@ -1020,6 +1020,394 @@
     {
       "key": "win.title",
       "value": "NekoScriptGraph"
+    },
+    {
+      "key": "palette.advanced",
+      "value": "Показать сложные блоки"
+    },
+    {
+      "key": "health.optimizerDeadCode",
+      "value": "Удалить недостижимые операторы"
+    },
+    {
+      "key": "health.optimizerConstCond",
+      "value": "Свернуть постоянные условия"
+    },
+    {
+      "key": "health.optimizeRun",
+      "value": "Оптимизировать блоки"
+    },
+    {
+      "key": "health.optimizeNothing",
+      "value": "Оптимизировать нечего: недостижимых операторов не найдено."
+    },
+    {
+      "key": "health.optimizeDone",
+      "value": "Удалено недостижимых блоков: {0} в методах: {1}."
+    },
+    {
+      "key": "health.optimizeRolledBack",
+      "value": "Откат: {0}"
+    },
+    {
+      "key": "msg.importFailed",
+      "value": "не удалось импортировать {0}: {1}"
+    },
+    {
+      "key": "msg.modelLoadFailed",
+      "value": "файл блоков {0} не удалось прочитать ({1}); он обработан как пустой. Исправьте или удалите .nsg.json рядом со скриптом и импортируйте заново."
+    },
+    {
+      "key": "confirm.selectSource",
+      "value": "Сначала выберите исходный файл поддерживаемого языка в окне Project."
+    },
+    {
+      "key": "api.doneAll",
+      "value": "Создано API-блоков: {0} по всем языкам (языков с ошибками: {1})."
+    },
+    {
+      "key": "lang.python.apiNotImplemented",
+      "value": "Создание API-блоков для Python пока не реализовано"
+    },
+    {
+      "key": "lang.python.unparsed",
+      "value": "не разобран: {0}"
+    },
+    {
+      "key": "err.explain",
+      "value": "Объяснить"
+    },
+    {
+      "key": "neko.noArt",
+      "value": "(портрет ещё не задан)"
+    },
+    {
+      "key": "blk.explain",
+      "value": "Объяснить этот блок"
+    },
+    {
+      "key": "adv.enabled",
+      "value": "Дополнительные возможности включены: ProgramNeko установлена и может объяснить каждое изменение."
+    },
+    {
+      "key": "adv.disabled",
+      "value": "Дополнительные возможности выключены: ядро (разбор, вывод, диагностика, блоки) работает, но подсказки, автоисправления и оптимизаторы требуют ProgramNeko."
+    },
+    {
+      "key": "adv.needAssistant",
+      "value": "Для этого нужна ProgramNeko. Установите или включите её в разделе «Расширения»."
+    },
+    {
+      "key": "menu.settings",
+      "value": "Настройки"
+    },
+    {
+      "key": "menu.extensions",
+      "value": "Расширения"
+    },
+    {
+      "key": "set.title",
+      "value": "Настройки NekoScriptGraph"
+    },
+    {
+      "key": "set.versions",
+      "value": "плагин {0} · ядро {1} ({2})"
+    },
+    {
+      "key": "set.tab.general",
+      "value": "Общие"
+    },
+    {
+      "key": "set.tab.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.tab.extensions",
+      "value": "Расширения"
+    },
+    {
+      "key": "set.tab.advanced",
+      "value": "Дополнительно"
+    },
+    {
+      "key": "set.general.view",
+      "value": "Редактор"
+    },
+    {
+      "key": "set.general.api",
+      "value": "API-блоки"
+    },
+    {
+      "key": "set.general.langNote",
+      "value": "Язык интерфейса. Английский встроен и не может быть удалён: это запасной вариант для любого незавершённого перевода."
+    },
+    {
+      "key": "set.assistant.missing",
+      "value": "ProgramNeko не установлена"
+    },
+    {
+      "key": "set.assistant.missingNote",
+      "value": "Без неё плагин по-прежнему разбирает, выводит и сообщает диагностику. Её настройки персонажа появятся здесь после установки."
+    },
+    {
+      "key": "set.assistant.noSchema",
+      "value": "Настройки персонажа не описаны."
+    },
+    {
+      "key": "set.assistant.presets",
+      "value": "Наборы"
+    },
+    {
+      "key": "set.assistant.persona",
+      "value": "Персонаж"
+    },
+    {
+      "key": "set.persona.speakRate",
+      "value": "Как часто она говорит"
+    },
+    {
+      "key": "set.persona.speakRateNote",
+      "value": "Задаёт паузу между репликами. Чем выше, тем раньше она заговорит."
+    },
+    {
+      "key": "set.persona.chatter",
+      "value": "Болтовня"
+    },
+    {
+      "key": "set.persona.chatterNote",
+      "value": "Реплики без всякого повода. Ноль — и она реагирует только на происходящее."
+    },
+    {
+      "key": "set.persona.serious",
+      "value": "Серьёзность"
+    },
+    {
+      "key": "set.persona.seriousNote",
+      "value": "Смещает формулировки от игривых к сухим. Меняет веса существующих реплик, новых не добавляет."
+    },
+    {
+      "key": "set.persona.alert",
+      "value": "Прерывать при новых ошибках"
+    },
+    {
+      "key": "set.persona.alertNote",
+      "value": "Если включено, новая ошибка заставляет её говорить сразу, минуя задержку."
+    },
+    {
+      "key": "set.persona.stuckMoves",
+      "value": "Порог беспокойства (движения указателя)"
+    },
+    {
+      "key": "set.persona.stuckSeconds",
+      "value": "Порог беспокойства (секунды)"
+    },
+    {
+      "key": "set.persona.idleSleep",
+      "value": "Засыпает через"
+    },
+    {
+      "key": "set.persona.workRemind",
+      "value": "Напоминает отдохнуть через"
+    },
+    {
+      "key": "set.persona.explainBudget",
+      "value": "Сколько подблоков она объясняет"
+    },
+    {
+      "key": "set.persona.explainBudgetNote",
+      "value": "Она останавливается и просит выделить остальное, если у блока слишком много дочерних."
+    },
+    {
+      "key": "set.preset.quiet",
+      "value": "Тихий"
+    },
+    {
+      "key": "set.preset.normal",
+      "value": "Обычный"
+    },
+    {
+      "key": "set.preset.chatty",
+      "value": "Болтливый"
+    },
+    {
+      "key": "set.preset.errorsOnly",
+      "value": "Только ошибки"
+    },
+    {
+      "key": "set.ext.locales",
+      "value": "Языковые пакеты"
+    },
+    {
+      "key": "set.ext.localesNote",
+      "value": "Английский встроен в код и не может быть удалён: любой отсутствующий перевод берётся оттуда. Остальные пакеты — обычные папки, их можно убрать или вернуть в любой момент."
+    },
+    {
+      "key": "set.ext.none",
+      "value": "Ничего не найдено."
+    },
+    {
+      "key": "set.ext.enable",
+      "value": "Включить"
+    },
+    {
+      "key": "set.ext.disable",
+      "value": "Удалить"
+    },
+    {
+      "key": "set.ext.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.ext.assistantOn",
+      "value": "ProgramNeko установлена"
+    },
+    {
+      "key": "set.ext.assistantOff",
+      "value": "ProgramNeko удалена (файлы сохранены)"
+    },
+    {
+      "key": "set.ext.assistantAbsent",
+      "value": "ProgramNeko отсутствует"
+    },
+    {
+      "key": "set.ext.assistantNote",
+      "value": "Удаление ProgramNeko сохраняет все файлы и выключает дополнительные возможности. Ядро продолжает работать. Вернуть её можно одним щелчком."
+    },
+    {
+      "key": "set.ext.engines",
+      "value": "Внешние движки"
+    },
+    {
+      "key": "set.ext.enginesNote",
+      "value": "Они находятся вне пакета плагина и устанавливаются через Package Manager. В плагине нет их кода, поэтому удаление движка не может его сломать."
+    },
+    {
+      "key": "set.ext.installed",
+      "value": "установлено"
+    },
+    {
+      "key": "set.ext.notInstalled",
+      "value": "не установлено"
+    },
+    {
+      "key": "set.ext.install",
+      "value": "Установить"
+    },
+    {
+      "key": "set.ext.uninstall",
+      "value": "Удалить"
+    },
+    {
+      "key": "set.ext.catalog",
+      "value": "Показать каталог"
+    },
+    {
+      "key": "set.ext.refresh",
+      "value": "Обновить"
+    },
+    {
+      "key": "ext.noSource",
+      "value": "Для этого расширения не задан источник установки. Добавьте git-URL или локальный путь в Extensions~/catalog.json."
+    },
+    {
+      "key": "ext.reloadFailed",
+      "value": "После перезагрузки состояние пакета не совпало с запросом. Проверьте Package Manager."
+    },
+    {
+      "key": "ext.completion.data",
+      "value": "Встроенные подсказки по блокам"
+    },
+    {
+      "key": "ext.roslyn.name",
+      "value": "Движок автодополнения Roslyn"
+    },
+    {
+      "key": "ext.roslyn.desc",
+      "value": "Необязательно. Настоящее дополнение членов и перегрузок от компилятора C#. Устанавливается отдельным пакетом, требует ProgramNeko."
+    },
+    {
+      "key": "ext.roslyn.notFound",
+      "value": "Сборки Roslyn не найдены. Поместите Microsoft.CodeAnalysis.dll и Microsoft.CodeAnalysis.CSharp.dll в {0}/ или используйте редактор, который их поставляет."
+    },
+    {
+      "key": "set.adv.gate",
+      "value": "Шлюз"
+    },
+    {
+      "key": "set.adv.providers",
+      "value": "Источники подсказок"
+    },
+    {
+      "key": "set.adv.priority",
+      "value": "приоритет"
+    },
+    {
+      "key": "set.adv.noProviders",
+      "value": "Источники не зарегистрированы."
+    },
+    {
+      "key": "set.adv.test",
+      "value": "Проверить внешние движки"
+    },
+    {
+      "key": "set.adv.testNoFile",
+      "value": "Сначала выберите файл .cs в окне Project."
+    },
+    {
+      "key": "set.adv.testRunning",
+      "value": "Выполняется…"
+    },
+    {
+      "key": "set.adv.testDone",
+      "value": "Возвращено элементов: {0}"
+    },
+    {
+      "key": "set.adv.optimizers",
+      "value": "Оптимизаторы"
+    },
+    {
+      "key": "set.adv.optimizerCount",
+      "value": "Зарегистрировано проходов-оптимизаторов: {0}. Оптимизаторы не работают без ProgramNeko."
+    },
+    {
+      "key": "set.adv.state.ready",
+      "value": "готово"
+    },
+    {
+      "key": "set.adv.state.warming",
+      "value": "разогрев"
+    },
+    {
+      "key": "set.adv.state.failed",
+      "value": "сбой"
+    },
+    {
+      "key": "set.adv.state.missing",
+      "value": "недоступно"
+    },
+    {
+      "key": "manage.noLanguages",
+      "value": "Ни один язык не загружен, поэтому искать исходники не по чему. Проверьте, цела ли папка LanguageSupport, затем Blocks ▸ Languages: Show Loaded."
+    },
+    {
+      "key": "manage.noSourcesProject",
+      "value": "Нечего брать под управление: в проекте нет исходников с этими расширениями — {0}."
+    },
+    {
+      "key": "manage.noSourcesFolder",
+      "value": "Нечего брать под управление в {0}: нет исходников с этими расширениями — {1}."
+    },
+    {
+      "key": "manage.allManaged",
+      "value": "Все {0} исходник(ов) здесь уже под управлением. Снять — командой Release, или правьте их в редакторе блоков."
+    },
+    {
+      "key": "optimise.selectScript",
+      "value": "Сначала выберите скрипт. Оптимизация идёт по одному файлу и перезаписывает его блоки."
+    },
+    {
+      "key": "optimise.noModel",
+      "value": "У этого скрипта ещё нет модели блоков. Сначала возьмите его под управление."
     }
   ],
   "blocks": [

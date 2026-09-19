@@ -920,6 +920,494 @@
     {
       "key": "menu.open",
       "value": "فتح NekoScriptGraph"
+    },
+    {
+      "key": "palette.advanced",
+      "value": "إظهار الكتل المتقدمة"
+    },
+    {
+      "key": "health.optimizerDeadCode",
+      "value": "إزالة العبارات غير القابلة للوصول"
+    },
+    {
+      "key": "health.optimizerConstCond",
+      "value": "طيّ الشروط الثابتة"
+    },
+    {
+      "key": "health.optimizeRun",
+      "value": "تحسين الكتل"
+    },
+    {
+      "key": "health.optimizeNothing",
+      "value": "لا شيء لتحسينه: لم يتم العثور على عبارات غير قابلة للوصول."
+    },
+    {
+      "key": "health.optimizeDone",
+      "value": "تمت إزالة {0} كتلة غير قابلة للوصول في {1} دالة."
+    },
+    {
+      "key": "health.optimizeRolledBack",
+      "value": "تم التراجع: {0}"
+    },
+    {
+      "key": "msg.importFailed",
+      "value": "فشل استيراد {0}: {1}"
+    },
+    {
+      "key": "msg.modelLoadFailed",
+      "value": "تعذّر قراءة ملف الكتل {0} ({1})؛ تمت معاملته كفارغ. أصلح ملف .nsg.json بجانب البرنامج النصي أو احذفه ثم أعد الاستيراد."
+    },
+    {
+      "key": "menu.apiAll",
+      "value": "بناء مكتبة API للمشروع بأكمله"
+    },
+    {
+      "key": "menu.manageFolder",
+      "value": "وضع المجلد المحدد تحت الإدارة"
+    },
+    {
+      "key": "menu.manageAll",
+      "value": "وضع المشروع بأكمله تحت الإدارة"
+    },
+    {
+      "key": "menu.shell",
+      "value": "إنشاء هيكل ShaderLab"
+    },
+    {
+      "key": "preset.title",
+      "value": "الإعدادات المسبقة"
+    },
+    {
+      "key": "preset.save",
+      "value": "حفظ التحديد كإعداد مسبق"
+    },
+    {
+      "key": "preset.namePrompt",
+      "value": "اسم الإعداد المسبق"
+    },
+    {
+      "key": "preset.none",
+      "value": "لا توجد إعدادات مسبقة بعد. حدّد مجموعة من الكتل واضغط الزر أعلاه."
+    },
+    {
+      "key": "preset.confirmDelete",
+      "value": "حذف الإعداد المسبق «{0}»؟ لا يمكن التراجع عن ذلك."
+    },
+    {
+      "key": "preset.dragHint",
+      "value": "اسحب إلى اللوحة للإدراج، أو انقر للإضافة"
+    },
+    {
+      "key": "preset.noSelection",
+      "value": "حدّد بعض الكتل أولاً."
+    },
+    {
+      "key": "preset.notConnected",
+      "value": "التحديد ليس مجموعة متصلة واحدة ({0} قطع منفصلة). حدّد مجموعة متصلة واحدة."
+    },
+    {
+      "key": "preset.multiGraph",
+      "value": "يمتد التحديد على عدة دوال. حدّد داخل دالة واحدة."
+    },
+    {
+      "key": "preset.tooBig",
+      "value": "كبير جدًا: {0} كتلة، الحد {1}."
+    },
+    {
+      "key": "preset.empty",
+      "value": "لا يحتوي الإعداد المسبق على كتل."
+    },
+    {
+      "key": "preset.needName",
+      "value": "أدخل اسمًا للإعداد المسبق."
+    },
+    {
+      "key": "menu.problems",
+      "value": "المشكلات"
+    },
+    {
+      "key": "menu.health",
+      "value": "صحة البنية"
+    },
+    {
+      "key": "menu.manage",
+      "value": "وضع البرنامج النصي المحدد تحت الإدارة"
+    },
+    {
+      "key": "menu.unmanage",
+      "value": "تحرير البرنامج النصي المحدد"
+    },
+    {
+      "key": "menu.api",
+      "value": "إنشاء كتل API للمجلد المحدد"
+    },
+    {
+      "key": "menu.languages",
+      "value": "اللغات: عرض المحمّلة"
+    },
+    {
+      "key": "menu.reload",
+      "value": "إعادة تحميل مكتبة الكتل"
+    },
+    {
+      "key": "menu.export",
+      "value": "تصدير مكتبة الكتل الافتراضية"
+    },
+    {
+      "key": "menu.selftest",
+      "value": "اختبار ذاتي: ذهاب وإياب"
+    },
+    {
+      "key": "confirm.selectSource",
+      "value": "حدّد أولاً ملفًا مصدريًا للغة مدعومة في نافذة Project."
+    },
+    {
+      "key": "api.doneAll",
+      "value": "تم إنشاء {0} كتلة API في كل اللغات (أبلغت {1} لغة عن أخطاء)."
+    },
+    {
+      "key": "lang.python.apiNotImplemented",
+      "value": "إنشاء كتل API غير مُنفّذ بعد للغة Python"
+    },
+    {
+      "key": "lang.python.unparsed",
+      "value": "لم يتم التحليل: {0}"
+    },
+    {
+      "key": "err.explain",
+      "value": "شرح"
+    },
+    {
+      "key": "neko.noArt",
+      "value": "(لا توجد صورة شخصية بعد)"
+    },
+    {
+      "key": "blk.explain",
+      "value": "اشرح هذه الكتلة"
+    },
+    {
+      "key": "adv.enabled",
+      "value": "الميزات المتقدمة مفعّلة: ProgramNeko مثبّتة ويمكنها شرح كل تغيير."
+    },
+    {
+      "key": "adv.disabled",
+      "value": "الميزات المتقدمة معطّلة: النواة (التحليل والطباعة والتشخيص والكتل) تعمل، لكن التلميحات والإصلاحات التلقائية والمحسّنات تحتاج إلى ProgramNeko."
+    },
+    {
+      "key": "adv.needAssistant",
+      "value": "يتطلب هذا ProgramNeko. ثبّتها أو أعد تمكينها من الإضافات."
+    },
+    {
+      "key": "menu.settings",
+      "value": "الإعدادات"
+    },
+    {
+      "key": "menu.extensions",
+      "value": "الإضافات"
+    },
+    {
+      "key": "set.title",
+      "value": "إعدادات NekoScriptGraph"
+    },
+    {
+      "key": "set.versions",
+      "value": "الإضافة {0} · النواة {1} ({2})"
+    },
+    {
+      "key": "set.tab.general",
+      "value": "عام"
+    },
+    {
+      "key": "set.tab.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.tab.extensions",
+      "value": "الإضافات"
+    },
+    {
+      "key": "set.tab.advanced",
+      "value": "متقدم"
+    },
+    {
+      "key": "set.general.view",
+      "value": "المحرر"
+    },
+    {
+      "key": "set.general.api",
+      "value": "كتل API"
+    },
+    {
+      "key": "set.general.langNote",
+      "value": "لغة الواجهة. الإنجليزية مضمّنة ولا يمكن إزالتها: فهي البديل لكل ترجمة غير مكتملة."
+    },
+    {
+      "key": "set.assistant.missing",
+      "value": "ProgramNeko غير مثبّتة"
+    },
+    {
+      "key": "set.assistant.missingNote",
+      "value": "بدونها يظل البرنامج الإضافي يحلّل ويطبع ويبلّغ عن التشخيصات. ستظهر إعدادات شخصيتها هنا بعد تثبيتها."
+    },
+    {
+      "key": "set.assistant.noSchema",
+      "value": "لا توجد إعدادات شخصية موصوفة."
+    },
+    {
+      "key": "set.assistant.presets",
+      "value": "الإعدادات المسبقة"
+    },
+    {
+      "key": "set.assistant.persona",
+      "value": "الشخصية"
+    },
+    {
+      "key": "set.persona.speakRate",
+      "value": "مدى تكرار حديثها"
+    },
+    {
+      "key": "set.persona.speakRateNote",
+      "value": "يضبط الفاصل بين الملاحظات. القيمة الأعلى تعني أنها تتحدث أسرع."
+    },
+    {
+      "key": "set.persona.chatter",
+      "value": "الدردشة"
+    },
+    {
+      "key": "set.persona.chatterNote",
+      "value": "ملاحظات بلا سبب على الإطلاق. اضبطها على صفر لتتفاعل فقط مع ما يحدث."
+    },
+    {
+      "key": "set.persona.serious",
+      "value": "الجدية"
+    },
+    {
+      "key": "set.persona.seriousNote",
+      "value": "يضبط الأسلوب من المرح إلى الجاف. يعيد ترجيح السطور الحالية ولا يضيف سطورًا جديدة."
+    },
+    {
+      "key": "set.persona.alert",
+      "value": "المقاطعة عند الأخطاء الجديدة"
+    },
+    {
+      "key": "set.persona.alertNote",
+      "value": "عند التفعيل، يجعلها خطأ جديد تتحدث فورًا متجاوزةً فترة الانتظار."
+    },
+    {
+      "key": "set.persona.stuckMoves",
+      "value": "حد التململ (حركات المؤشر)"
+    },
+    {
+      "key": "set.persona.stuckSeconds",
+      "value": "حد التململ (بالثواني)"
+    },
+    {
+      "key": "set.persona.idleSleep",
+      "value": "تغفو بعد"
+    },
+    {
+      "key": "set.persona.workRemind",
+      "value": "تذكّرك بالراحة بعد"
+    },
+    {
+      "key": "set.persona.explainBudget",
+      "value": "عدد الكتل الفرعية التي تشرحها"
+    },
+    {
+      "key": "set.persona.explainBudgetNote",
+      "value": "تتوقف وتطلب منك تحديد الباقي عندما تحتوي الكتلة على أبناء كثيرين."
+    },
+    {
+      "key": "set.preset.quiet",
+      "value": "هادئ"
+    },
+    {
+      "key": "set.preset.normal",
+      "value": "عادي"
+    },
+    {
+      "key": "set.preset.chatty",
+      "value": "ثرثار"
+    },
+    {
+      "key": "set.preset.errorsOnly",
+      "value": "الأخطاء فقط"
+    },
+    {
+      "key": "set.ext.locales",
+      "value": "حزم اللغات"
+    },
+    {
+      "key": "set.ext.localesNote",
+      "value": "الإنجليزية مدمجة في الشيفرة ولا يمكن إزالتها: كل ترجمة ناقصة تعود إليها. الحزم الأخرى مجلدات عادية ويمكن إزالتها أو إعادتها في أي وقت."
+    },
+    {
+      "key": "set.ext.none",
+      "value": "لم يتم العثور على شيء."
+    },
+    {
+      "key": "set.ext.enable",
+      "value": "تفعيل"
+    },
+    {
+      "key": "set.ext.disable",
+      "value": "إزالة"
+    },
+    {
+      "key": "set.ext.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.ext.assistantOn",
+      "value": "ProgramNeko مثبّتة"
+    },
+    {
+      "key": "set.ext.assistantOff",
+      "value": "ProgramNeko مُزالة (الملفات محفوظة)"
+    },
+    {
+      "key": "set.ext.assistantAbsent",
+      "value": "ProgramNeko غير موجودة"
+    },
+    {
+      "key": "set.ext.assistantNote",
+      "value": "إزالة ProgramNeko تحفظ كل الملفات وتُطفئ الميزات المتقدمة. تظل النواة تعمل. أعدها بنقرة واحدة."
+    },
+    {
+      "key": "set.ext.engines",
+      "value": "المحرّكات الخارجية"
+    },
+    {
+      "key": "set.ext.enginesNote",
+      "value": "توجد خارج حزمة الإضافة وتُثبَّت عبر Package Manager. لا تحتوي الإضافة على أي من شيفرتها، لذا فإن إزالة أحدها لا يمكن أن تكسرها."
+    },
+    {
+      "key": "set.ext.installed",
+      "value": "مثبّت"
+    },
+    {
+      "key": "set.ext.notInstalled",
+      "value": "غير مثبّت"
+    },
+    {
+      "key": "set.ext.install",
+      "value": "تثبيت"
+    },
+    {
+      "key": "set.ext.uninstall",
+      "value": "إلغاء التثبيت"
+    },
+    {
+      "key": "set.ext.catalog",
+      "value": "عرض الكتالوج"
+    },
+    {
+      "key": "set.ext.refresh",
+      "value": "تحديث"
+    },
+    {
+      "key": "ext.noSource",
+      "value": "لا يوجد مصدر تثبيت مُهيّأ لهذا الامتداد. أضف عنوان git أو مسارًا محليًا إلى Extensions~/catalog.json."
+    },
+    {
+      "key": "ext.reloadFailed",
+      "value": "لم تتطابق حالة الحزمة مع الطلب بعد إعادة التحميل. تحقق من Package Manager."
+    },
+    {
+      "key": "ext.completion.data",
+      "value": "تلميحات الكتل المدمجة"
+    },
+    {
+      "key": "ext.roslyn.name",
+      "value": "محرّك الإكمال Roslyn"
+    },
+    {
+      "key": "ext.roslyn.desc",
+      "value": "اختياري. إكمال حقيقي للأعضاء والحمولات من مترجم C#. يُثبَّت كحزمة منفصلة ويتطلب ProgramNeko."
+    },
+    {
+      "key": "ext.roslyn.notFound",
+      "value": "لم يتم العثور على تجميعات Roslyn. ضع Microsoft.CodeAnalysis.dll وMicrosoft.CodeAnalysis.CSharp.dll في {0}/، أو استخدم محررًا يوفّرها."
+    },
+    {
+      "key": "set.adv.gate",
+      "value": "البوابة"
+    },
+    {
+      "key": "set.adv.providers",
+      "value": "مصادر التلميحات"
+    },
+    {
+      "key": "set.adv.priority",
+      "value": "الأولوية"
+    },
+    {
+      "key": "set.adv.noProviders",
+      "value": "لا توجد مصادر مسجّلة."
+    },
+    {
+      "key": "set.adv.test",
+      "value": "جرّب المحرّكات الخارجية"
+    },
+    {
+      "key": "set.adv.testNoFile",
+      "value": "حدّد أولاً ملف .cs في نافذة Project."
+    },
+    {
+      "key": "set.adv.testRunning",
+      "value": "قيد التشغيل…"
+    },
+    {
+      "key": "set.adv.testDone",
+      "value": "تم إرجاع {0} عنصر"
+    },
+    {
+      "key": "set.adv.optimizers",
+      "value": "المحسّنات"
+    },
+    {
+      "key": "set.adv.optimizerCount",
+      "value": "تم تسجيل {0} تمريرة محسّن. لا تعمل المحسّنات أبدًا بدون ProgramNeko."
+    },
+    {
+      "key": "set.adv.state.ready",
+      "value": "جاهز"
+    },
+    {
+      "key": "set.adv.state.warming",
+      "value": "قيد التسخين"
+    },
+    {
+      "key": "set.adv.state.failed",
+      "value": "فشل"
+    },
+    {
+      "key": "set.adv.state.missing",
+      "value": "غير متاح"
+    },
+    {
+      "key": "manage.noLanguages",
+      "value": "لا توجد لغة محمّلة، فلا يوجد مصدر للبحث عنه. تحقّق من سلامة مجلد LanguageSupport ثم استخدم Blocks ▸ Languages: Show Loaded."
+    },
+    {
+      "key": "manage.noSourcesProject",
+      "value": "لا شيء لالتقاطه: لا يحتوي المشروع على ملفات مصدر بهذه الامتدادات — {0}."
+    },
+    {
+      "key": "manage.noSourcesFolder",
+      "value": "لا شيء لالتقاطه في {0}: لا ملفات مصدر بهذه الامتدادات — {1}."
+    },
+    {
+      "key": "manage.allManaged",
+      "value": "جميع الملفات المصدرية هنا ({0}) مُلتقَطة بالفعل. استخدم Release للتراجع، أو حرّرها في محرّر الكتل."
+    },
+    {
+      "key": "optimise.selectScript",
+      "value": "اختر ملفًا نصيًا أولًا. يعمل التحسين على ملف واحد ويعيد كتابة كتله."
+    },
+    {
+      "key": "optimise.noModel",
+      "value": "لا يحتوي هذا الملف على نموذج كتل بعد. التقطه تحت الإدارة أولًا."
     }
   ],
   "blocks": [

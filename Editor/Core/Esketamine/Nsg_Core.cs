@@ -22,6 +22,6 @@ namespace NekoScriptGraph
         public const string Name = "Esketamine";
 
         /// <summary>Версия ядра.</summary>
-        public const string Version = "1.0.1";
+        public const string Version = "1.0.2";
     }
 }

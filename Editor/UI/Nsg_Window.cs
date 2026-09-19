@@ -152,6 +152,28 @@ namespace NekoScriptGraph
                 RebuildPalette();
             });
             _paletteSearchHost.Add(searchField);
+
+            // ПЕРЕКЛЮЧАТЕЛЬ УРОВНЯ.
+            //
+            // Поле `level` в описании блока было мёртвым: все 28 блоков стояли
+            // на «high», и различать их было нечем. Теперь «low» — это то, что
+            // нужно не каждый день (приведение, тернарник, new, постинкремент,
+            // голое выражение и обе «сырые» заглушки), и оно скрыто, пока не
+            // попросят. Новичок видит рабочий набор, а не весь словарь языка.
+            //
+            // Варианты одной группы прятать нельзя по отдельности: у семейства
+            // присваивания все шесть помечены одинаково, иначе переключатель
+            // вариантов на полотне упёрся бы в скрытого соседа.
+            var levelToggle = new Toggle(Nsg_L10n.T("palette.advanced")) { value = ShowAdvancedBlocks };
+            levelToggle.style.fontSize = 10;
+            levelToggle.style.marginTop = 2;
+            levelToggle.RegisterValueChangedCallback(evt =>
+            {
+                ShowAdvancedBlocks = evt.newValue;
+                RebuildPalette();
+            });
+            _paletteSearchHost.Add(levelToggle);
+
             paletteScroll.Add(_paletteSearchHost);
 
             _palette = new VisualElement();
@@ -906,6 +928,15 @@ namespace NekoScriptGraph
         {
             var hits = lib.Search(query, 200);
 
+            // Поиск идёт мимо дерева категорий, поэтому уровень фильтруется и
+            // здесь: иначе скрытый блок находился бы строкой поиска — то есть
+            // прятался бы ровно до первого обращения к нему по имени.
+            if (!ShowAdvancedBlocks)
+            {
+                for (int i = hits.Count - 1; i >= 0; i--)
+                    if (IsAdvanced(hits[i])) hits.RemoveAt(i);
+            }
+
             var head = new Label(Nsg_L10n.T("palette.found", hits.Count));
             head.style.fontSize = 10;
             head.style.color = new Color(0.62f, 0.66f, 0.72f);
@@ -926,7 +957,24 @@ namespace NekoScriptGraph
             return !string.IsNullOrEmpty(cat) && cat.StartsWith("cat.") ? Nsg_L10n.T(cat) : cat;
         }
 
-        /// <summary>Оставляет по одному представителю на группу вариантов.</summary>
+        const string PrefShowAdvanced = "NekoScriptGraph.ShowAdvancedBlocks";
+
+        /// <summary>Показывать блоки уровня «low». Настройка переживает сессию:
+        /// тот, кто один раз попросил полный словарь, не должен просить снова.</summary>
+        static bool ShowAdvancedBlocks
+        {
+            get { return EditorPrefs.GetBool(PrefShowAdvanced, false); }
+            set { EditorPrefs.SetBool(PrefShowAdvanced, value); }
+        }
+
+        /// <summary>
+        /// Оставляет по одному представителю на группу вариантов и прячет
+        /// низкоуровневые блоки, пока их не попросили.
+        ///
+        /// Скрытие живёт здесь, а не в дереве категорий: через этот метод идут
+        /// и обычные разделы, и API. Поиск фильтруется отдельно — в нём нет
+        /// ни категорий, ни групп вариантов.
+        /// </summary>
         static List<NsgBlockDef> UniqueVariants(List<NsgBlockDef> blocks, HashSet<string> shownGroups)
         {
             var list = new List<NsgBlockDef>();
@@ -935,9 +983,16 @@ namespace NekoScriptGraph
                 var def = blocks[i];
                 if (def == null) continue;
                 if (!string.IsNullOrEmpty(def.variantGroup) && !shownGroups.Add(def.variantGroup)) continue;
+                if (!ShowAdvancedBlocks && IsAdvanced(def)) continue;
                 list.Add(def);
             }
             return list;
+        }
+
+        /// <summary>Блок для «не каждый день»: уровень low, а не отсутствие уровня.</summary>
+        static bool IsAdvanced(NsgBlockDef def)
+        {
+            return def != null && !string.IsNullOrEmpty(def.level) && def.level == "low";
         }
 
         /// <summary>
@@ -1952,6 +2007,28 @@ namespace NekoScriptGraph
 
             var w = all[0];
             if (w != null && w._view != null) w._view.ExplainSelectedBlock();
+        }
+
+        /// <summary>
+        /// Перерисовать открытые окна после ВНЕШНЕГО изменения модели.
+        ///
+        /// Нужно оптимизатору: он живёт в окне гигиены и меняет тот же
+        /// Nsg_Document, что показывает окно блоков. Без перерисовки
+        /// пользователь видел бы старый граф до следующего действия.
+        /// </summary>
+        public static void RefreshOpen()
+        {
+            var all = Resources.FindObjectsOfTypeAll<Nsg_Window>();
+            if (all == null) return;
+
+            for (int i = 0; i < all.Length; i++)
+            {
+                var w = all[i];
+                if (w == null || w._view == null) continue;
+
+                w._view.Rebuild();
+                w.RefreshStatus();
+            }
         }
 
         /// <summary>Здоровается один раз на сборку окна, а не на каждый статус.</summary>

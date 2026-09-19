@@ -1,0 +1,1297 @@
+{
+    "schemaVersion": 2,
+    "target": "csharp",
+    "engineMin": "0.1.0",
+    "sourceFile": "Script4Test.java",
+    "sourceGuid": "722c1a922628a4368b04d685a3183890",
+    "roots": [
+        {
+            "kind": "raw",
+            "leading": "",
+            "header": "",
+            "headerPrefix": "",
+            "name": "",
+            "headerBasePrefix": "",
+            "baseList": "",
+            "headerSuffix": "",
+            "typeKeyword": "",
+            "isContainer": false,
+            "tail": "",
+            "text": "import java.util.ArrayList;",
+            "printed": "",
+            "line": 0,
+            "children": []
+        },
+        {
+            "kind": "raw",
+            "leading": "\n",
+            "header": "",
+            "headerPrefix": "",
+            "name": "",
+            "headerBasePrefix": "",
+            "baseList": "",
+            "headerSuffix": "",
+            "typeKeyword": "",
+            "isContainer": false,
+            "tail": "",
+            "text": "import java.util.HashMap;",
+            "printed": "",
+            "line": 0,
+            "children": []
+        },
+        {
+            "kind": "raw",
+            "leading": "\n",
+            "header": "",
+            "headerPrefix": "",
+            "name": "",
+            "headerBasePrefix": "",
+            "baseList": "",
+            "headerSuffix": "",
+            "typeKeyword": "",
+            "isContainer": false,
+            "tail": "",
+            "text": "import java.util.List;",
+            "printed": "",
+            "line": 0,
+            "children": []
+        },
+        {
+            "kind": "raw",
+            "leading": "\n",
+            "header": "",
+            "headerPrefix": "",
+            "name": "",
+            "headerBasePrefix": "",
+            "baseList": "",
+            "headerSuffix": "",
+            "typeKeyword": "",
+            "isContainer": false,
+            "tail": "",
+            "text": "import java.util.Map;",
+            "printed": "",
+            "line": 0,
+            "children": []
+        },
+        {
+            "kind": "type",
+            "leading": "\n\n// Только тело метода становится блоками; шапка файла переносится как есть.\n// Внутри — исключительно письменное подмножество NSG: объявления, присваивания,\n// while/if, арифметика и вызовы. Дженерики живут в ТЕКСТОВЫХ слотах (тип),\n// поэтому они не «сырой фрагмент», а полноценный блок.\n",
+            "header": "public class Script4Test ",
+            "headerPrefix": "public class ",
+            "name": "Script4Test",
+            "headerBasePrefix": "",
+            "baseList": "",
+            "headerSuffix": " ",
+            "typeKeyword": "class",
+            "isContainer": false,
+            "tail": "\n}",
+            "text": "",
+            "printed": "",
+            "line": 0,
+            "children": [
+                {
+                    "kind": "method",
+                    "leading": "\n\n    ",
+                    "header": "public int crunch(int n) ",
+                    "headerPrefix": "",
+                    "name": "crunch",
+                    "headerBasePrefix": "",
+                    "baseList": "",
+                    "headerSuffix": "",
+                    "typeKeyword": "",
+                    "isContainer": false,
+                    "tail": "",
+                    "text": "",
+                    "printed": "{\n        List<Integer> sieve = new ArrayList<Integer>();\n        Map<String, Integer> tally = new HashMap<String, Integer>();\n        int primes = 0;\n        int i = 0;\n        while (i <= n) {\n            sieve.add(0);\n            i++;\n        }\n        i = 2;\n        while (i <= n) {\n            if (sieve.get(i) == 0) {\n                primes += 1;\n                tally.put(\"p\" + primes, i);\n                int j = i * i;\n                while (j <= n) {\n                    sieve.set(j, 1);\n                    j += i;\n                }\n            }\n            i++;\n        }\n        int mask = (1 << 8) - 1;\n        int folded = (primes & mask) ^ (primes >> 3);\n        int bonus = folded > 0 ? folded : -1;\n        return primes + bonus + tally.size();\n    }",
+                    "line": 12,
+                    "children": []
+                }
+            ]
+        }
+    ],
+    "graphs": [
+        {
+            "key": "public int crunch(int n) ",
+            "graph": {
+                "entry": "s0_",
+                "nodes": [
+                    {
+                        "id": "s0_",
+                        "block": "stmt.localDecl",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s1_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "List<Integer>"
+                            },
+                            {
+                                "link": "",
+                                "text": "sieve"
+                            },
+                            {
+                                "link": "s0_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 1
+                    },
+                    {
+                        "id": "s0_v_",
+                        "block": "expr.new",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "ArrayList<Integer>"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s1_",
+                        "block": "stmt.localDecl",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s2_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "Map<String, Integer>"
+                            },
+                            {
+                                "link": "",
+                                "text": "tally"
+                            },
+                            {
+                                "link": "s1_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s1_v_",
+                        "block": "expr.new",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "HashMap<String, Integer>"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_",
+                        "block": "stmt.localDecl",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s3_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "int"
+                            },
+                            {
+                                "link": "",
+                                "text": "primes"
+                            },
+                            {
+                                "link": "",
+                                "text": "0"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s3_",
+                        "block": "stmt.localDecl",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s4_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "int"
+                            },
+                            {
+                                "link": "",
+                                "text": "i"
+                            },
+                            {
+                                "link": "",
+                                "text": "0"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s4_",
+                        "block": "stmt.while",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s5_",
+                        "body": "s4_w_0_",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s4_c_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s4_c_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "i"
+                            },
+                            {
+                                "link": "",
+                                "text": "<="
+                            },
+                            {
+                                "link": "",
+                                "text": "n"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s4_w_0_",
+                        "block": "stmt.expr",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s4_w_1_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s4_w_0_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s4_w_0_v_",
+                        "block": "expr.call",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s4_w_0_v_x0_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [
+                            {
+                                "link": "",
+                                "text": "0"
+                            }
+                        ],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s4_w_0_v_x0_",
+                        "block": "expr.member",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "sieve"
+                            },
+                            {
+                                "link": "",
+                                "text": "add"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s4_w_1_",
+                        "block": "stmt.expr",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s4_w_1_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s4_w_1_v_",
+                        "block": "expr.postfix",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "i"
+                            },
+                            {
+                                "link": "",
+                                "text": "++"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s5_",
+                        "block": "stmt.assign",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s6_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "i"
+                            },
+                            {
+                                "link": "",
+                                "text": "2"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_",
+                        "block": "stmt.while",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s7_",
+                        "body": "s6_w_0_",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s6_c_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_c_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "i"
+                            },
+                            {
+                                "link": "",
+                                "text": "<="
+                            },
+                            {
+                                "link": "",
+                                "text": "n"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_",
+                        "block": "stmt.if",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s6_w_1_",
+                        "body": "s6_w_0_t_0_",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s6_w_0_c_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_c_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s6_w_0_c_x0_",
+                                "text": ""
+                            },
+                            {
+                                "link": "",
+                                "text": "=="
+                            },
+                            {
+                                "link": "",
+                                "text": "0"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_c_x0_",
+                        "block": "expr.call",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s6_w_0_c_x0_x0_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [
+                            {
+                                "link": "",
+                                "text": "i"
+                            }
+                        ],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_c_x0_x0_",
+                        "block": "expr.member",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "sieve"
+                            },
+                            {
+                                "link": "",
+                                "text": "get"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_t_0_",
+                        "block": "stmt.add",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s6_w_0_t_1_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "primes"
+                            },
+                            {
+                                "link": "",
+                                "text": "1"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_t_1_",
+                        "block": "stmt.expr",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s6_w_0_t_2_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s6_w_0_t_1_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_t_1_v_",
+                        "block": "expr.call",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s6_w_0_t_1_v_x0_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [
+                            {
+                                "link": "s6_w_0_t_1_v_a0_",
+                                "text": ""
+                            },
+                            {
+                                "link": "",
+                                "text": "i"
+                            }
+                        ],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_t_1_v_x0_",
+                        "block": "expr.member",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "tally"
+                            },
+                            {
+                                "link": "",
+                                "text": "put"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_t_1_v_a0_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "\"p\""
+                            },
+                            {
+                                "link": "",
+                                "text": "+"
+                            },
+                            {
+                                "link": "",
+                                "text": "primes"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_t_2_",
+                        "block": "stmt.localDecl",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s6_w_0_t_3_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "int"
+                            },
+                            {
+                                "link": "",
+                                "text": "j"
+                            },
+                            {
+                                "link": "s6_w_0_t_2_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_t_2_v_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "i"
+                            },
+                            {
+                                "link": "",
+                                "text": "*"
+                            },
+                            {
+                                "link": "",
+                                "text": "i"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_t_3_",
+                        "block": "stmt.while",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "s6_w_0_t_3_w_0_",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s6_w_0_t_3_c_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_t_3_c_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "j"
+                            },
+                            {
+                                "link": "",
+                                "text": "<="
+                            },
+                            {
+                                "link": "",
+                                "text": "n"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_t_3_w_0_",
+                        "block": "stmt.expr",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s6_w_0_t_3_w_1_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s6_w_0_t_3_w_0_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_t_3_w_0_v_",
+                        "block": "expr.call",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s6_w_0_t_3_w_0_v_x0_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [
+                            {
+                                "link": "",
+                                "text": "j"
+                            },
+                            {
+                                "link": "",
+                                "text": "1"
+                            }
+                        ],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_t_3_w_0_v_x0_",
+                        "block": "expr.member",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "sieve"
+                            },
+                            {
+                                "link": "",
+                                "text": "set"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_0_t_3_w_1_",
+                        "block": "stmt.add",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "j"
+                            },
+                            {
+                                "link": "",
+                                "text": "i"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_1_",
+                        "block": "stmt.expr",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s6_w_1_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_w_1_v_",
+                        "block": "expr.postfix",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "i"
+                            },
+                            {
+                                "link": "",
+                                "text": "++"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s7_",
+                        "block": "stmt.localDecl",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s8_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "int"
+                            },
+                            {
+                                "link": "",
+                                "text": "mask"
+                            },
+                            {
+                                "link": "s7_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s7_v_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s7_v_x0_",
+                                "text": ""
+                            },
+                            {
+                                "link": "",
+                                "text": "-"
+                            },
+                            {
+                                "link": "",
+                                "text": "1"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s7_v_x0_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "1"
+                            },
+                            {
+                                "link": "",
+                                "text": "<<"
+                            },
+                            {
+                                "link": "",
+                                "text": "8"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s8_",
+                        "block": "stmt.localDecl",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s9_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "int"
+                            },
+                            {
+                                "link": "",
+                                "text": "folded"
+                            },
+                            {
+                                "link": "s8_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s8_v_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s8_v_x0_",
+                                "text": ""
+                            },
+                            {
+                                "link": "",
+                                "text": "^"
+                            },
+                            {
+                                "link": "s8_v_x1_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s8_v_x0_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "primes"
+                            },
+                            {
+                                "link": "",
+                                "text": "&"
+                            },
+                            {
+                                "link": "",
+                                "text": "mask"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s8_v_x1_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "primes"
+                            },
+                            {
+                                "link": "",
+                                "text": ">>"
+                            },
+                            {
+                                "link": "",
+                                "text": "3"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s9_",
+                        "block": "stmt.localDecl",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s10_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "int"
+                            },
+                            {
+                                "link": "",
+                                "text": "bonus"
+                            },
+                            {
+                                "link": "s9_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s9_v_",
+                        "block": "expr.conditional",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s9_v_x0_",
+                                "text": ""
+                            },
+                            {
+                                "link": "",
+                                "text": "folded"
+                            },
+                            {
+                                "link": "s9_v_x2_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s9_v_x0_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "folded"
+                            },
+                            {
+                                "link": "",
+                                "text": ">"
+                            },
+                            {
+                                "link": "",
+                                "text": "0"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s9_v_x2_",
+                        "block": "expr.unary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "-"
+                            },
+                            {
+                                "link": "",
+                                "text": "1"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s10_",
+                        "block": "stmt.return",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s10_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s10_v_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s10_v_x0_",
+                                "text": ""
+                            },
+                            {
+                                "link": "",
+                                "text": "+"
+                            },
+                            {
+                                "link": "s10_v_x1_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s10_v_x0_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "primes"
+                            },
+                            {
+                                "link": "",
+                                "text": "+"
+                            },
+                            {
+                                "link": "",
+                                "text": "bonus"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s10_v_x1_",
+                        "block": "expr.call",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s10_v_x1_x0_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s10_v_x1_x0_",
+                        "block": "expr.member",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "tally"
+                            },
+                            {
+                                "link": "",
+                                "text": "size"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    }
+                ]
+            }
+        }
+    ],
+    "epilogue": "\n"
+}

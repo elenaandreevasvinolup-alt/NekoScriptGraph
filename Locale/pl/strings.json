@@ -920,6 +920,494 @@
     {
       "key": "menu.open",
       "value": "Otwórz NekoScriptGraph"
+    },
+    {
+      "key": "palette.advanced",
+      "value": "Pokaż bloki zaawansowane"
+    },
+    {
+      "key": "health.optimizerDeadCode",
+      "value": "Usuń nieosiągalne instrukcje"
+    },
+    {
+      "key": "health.optimizerConstCond",
+      "value": "Złóż stałe warunki"
+    },
+    {
+      "key": "health.optimizeRun",
+      "value": "Optymalizuj bloki"
+    },
+    {
+      "key": "health.optimizeNothing",
+      "value": "Nie ma czego optymalizować: nie znaleziono nieosiągalnych instrukcji."
+    },
+    {
+      "key": "health.optimizeDone",
+      "value": "Usunięto nieosiągalne bloki: {0} w metodach: {1}."
+    },
+    {
+      "key": "health.optimizeRolledBack",
+      "value": "Wycofano: {0}"
+    },
+    {
+      "key": "msg.importFailed",
+      "value": "nie udało się zaimportować {0}: {1}"
+    },
+    {
+      "key": "msg.modelLoadFailed",
+      "value": "nie można odczytać pliku bloków {0} ({1}); potraktowano go jako pusty. Popraw lub usuń plik .nsg.json obok skryptu i zaimportuj ponownie."
+    },
+    {
+      "key": "menu.apiAll",
+      "value": "Zbuduj bibliotekę API dla całego projektu"
+    },
+    {
+      "key": "menu.manageFolder",
+      "value": "Przejmij wybrany folder pod zarządzanie"
+    },
+    {
+      "key": "menu.manageAll",
+      "value": "Przejmij cały projekt pod zarządzanie"
+    },
+    {
+      "key": "menu.shell",
+      "value": "Wygeneruj powłokę ShaderLab"
+    },
+    {
+      "key": "preset.title",
+      "value": "Presety"
+    },
+    {
+      "key": "preset.save",
+      "value": "Zapisz zaznaczenie jako preset"
+    },
+    {
+      "key": "preset.namePrompt",
+      "value": "Nazwa presetu"
+    },
+    {
+      "key": "preset.none",
+      "value": "Nie ma jeszcze presetów. Zaznacz grupę bloków i naciśnij przycisk powyżej."
+    },
+    {
+      "key": "preset.confirmDelete",
+      "value": "Usunąć preset „{0}”? Tego nie można cofnąć."
+    },
+    {
+      "key": "preset.dragHint",
+      "value": "Przeciągnij na obszar roboczy, aby wstawić, lub kliknij, aby dodać"
+    },
+    {
+      "key": "preset.noSelection",
+      "value": "Najpierw zaznacz kilka bloków."
+    },
+    {
+      "key": "preset.notConnected",
+      "value": "Zaznaczenie nie jest jednym połączonym zbiorem (osobnych części: {0}). Zaznacz jedną połączoną grupę."
+    },
+    {
+      "key": "preset.multiGraph",
+      "value": "Zaznaczenie obejmuje kilka metod. Zaznacz w obrębie jednej metody."
+    },
+    {
+      "key": "preset.tooBig",
+      "value": "Za duże: bloków {0}, limit to {1}."
+    },
+    {
+      "key": "preset.empty",
+      "value": "Preset nie ma bloków."
+    },
+    {
+      "key": "preset.needName",
+      "value": "Wpisz nazwę presetu."
+    },
+    {
+      "key": "menu.problems",
+      "value": "Problemy"
+    },
+    {
+      "key": "menu.health",
+      "value": "Kondycja architektury"
+    },
+    {
+      "key": "menu.manage",
+      "value": "Przejmij wybrany skrypt pod zarządzanie"
+    },
+    {
+      "key": "menu.unmanage",
+      "value": "Zwolnij wybrany skrypt"
+    },
+    {
+      "key": "menu.api",
+      "value": "Wygeneruj bloki API dla wybranego folderu"
+    },
+    {
+      "key": "menu.languages",
+      "value": "Języki: pokaż załadowane"
+    },
+    {
+      "key": "menu.reload",
+      "value": "Przeładuj bibliotekę bloków"
+    },
+    {
+      "key": "menu.export",
+      "value": "Eksportuj domyślną bibliotekę bloków"
+    },
+    {
+      "key": "menu.selftest",
+      "value": "Autotest: konwersja w obie strony"
+    },
+    {
+      "key": "confirm.selectSource",
+      "value": "Najpierw wybierz plik źródłowy obsługiwanego języka w oknie Project."
+    },
+    {
+      "key": "api.doneAll",
+      "value": "Wygenerowano bloki API: {0} we wszystkich językach (języków z błędami: {1})."
+    },
+    {
+      "key": "lang.python.apiNotImplemented",
+      "value": "Generowanie bloków API dla Pythona nie jest jeszcze zaimplementowane"
+    },
+    {
+      "key": "lang.python.unparsed",
+      "value": "nie przeanalizowano: {0}"
+    },
+    {
+      "key": "err.explain",
+      "value": "Wyjaśnij"
+    },
+    {
+      "key": "neko.noArt",
+      "value": "(brak portretu)"
+    },
+    {
+      "key": "blk.explain",
+      "value": "Wyjaśnij ten blok"
+    },
+    {
+      "key": "adv.enabled",
+      "value": "Funkcje zaawansowane są włączone: ProgramNeko jest zainstalowana i potrafi wyjaśnić każdą zmianę."
+    },
+    {
+      "key": "adv.disabled",
+      "value": "Funkcje zaawansowane są wyłączone: rdzeń (analiza, drukowanie, diagnostyka, bloki) działa, ale podpowiedzi, autokorekty i optymalizatory wymagają ProgramNeko."
+    },
+    {
+      "key": "adv.needAssistant",
+      "value": "To wymaga ProgramNeko. Zainstaluj ją lub włącz ponownie w sekcji Rozszerzenia."
+    },
+    {
+      "key": "menu.settings",
+      "value": "Ustawienia"
+    },
+    {
+      "key": "menu.extensions",
+      "value": "Rozszerzenia"
+    },
+    {
+      "key": "set.title",
+      "value": "Ustawienia NekoScriptGraph"
+    },
+    {
+      "key": "set.versions",
+      "value": "wtyczka {0} · rdzeń {1} ({2})"
+    },
+    {
+      "key": "set.tab.general",
+      "value": "Ogólne"
+    },
+    {
+      "key": "set.tab.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.tab.extensions",
+      "value": "Rozszerzenia"
+    },
+    {
+      "key": "set.tab.advanced",
+      "value": "Zaawansowane"
+    },
+    {
+      "key": "set.general.view",
+      "value": "Edytor"
+    },
+    {
+      "key": "set.general.api",
+      "value": "Bloki API"
+    },
+    {
+      "key": "set.general.langNote",
+      "value": "Język interfejsu. Angielski jest wbudowany i nie można go usunąć: to źródło zastępcze dla każdego nieukończonego tłumaczenia."
+    },
+    {
+      "key": "set.assistant.missing",
+      "value": "ProgramNeko nie jest zainstalowana"
+    },
+    {
+      "key": "set.assistant.missingNote",
+      "value": "Bez niej wtyczka nadal analizuje, drukuje i zgłasza diagnostykę. Jej ustawienia postaci pojawią się tutaj po instalacji."
+    },
+    {
+      "key": "set.assistant.noSchema",
+      "value": "Nie opisano żadnych ustawień postaci."
+    },
+    {
+      "key": "set.assistant.presets",
+      "value": "Presety"
+    },
+    {
+      "key": "set.assistant.persona",
+      "value": "Postać"
+    },
+    {
+      "key": "set.persona.speakRate",
+      "value": "Jak często mówi"
+    },
+    {
+      "key": "set.persona.speakRateNote",
+      "value": "Skaluje przerwę między uwagami. Wyższa wartość oznacza, że odezwie się szybciej."
+    },
+    {
+      "key": "set.persona.chatter",
+      "value": "Pogaduszki"
+    },
+    {
+      "key": "set.persona.chatterNote",
+      "value": "Uwagi bez żadnego powodu. Ustaw zero, a zareaguje tylko na to, co się dzieje."
+    },
+    {
+      "key": "set.persona.serious",
+      "value": "Powaga"
+    },
+    {
+      "key": "set.persona.seriousNote",
+      "value": "Przechyla ton od żartobliwego do rzeczowego. Zmienia wagi istniejących kwestii, nie dodaje nowych."
+    },
+    {
+      "key": "set.persona.alert",
+      "value": "Przerywaj przy nowych błędach"
+    },
+    {
+      "key": "set.persona.alertNote",
+      "value": "Gdy włączone, nowy błąd sprawia, że mówi natychmiast, z pominięciem czasu oczekiwania."
+    },
+    {
+      "key": "set.persona.stuckMoves",
+      "value": "Próg nerwowości (ruchy wskaźnika)"
+    },
+    {
+      "key": "set.persona.stuckSeconds",
+      "value": "Próg nerwowości (sekundy)"
+    },
+    {
+      "key": "set.persona.idleSleep",
+      "value": "Zasypia po"
+    },
+    {
+      "key": "set.persona.workRemind",
+      "value": "Przypomina o odpoczynku po"
+    },
+    {
+      "key": "set.persona.explainBudget",
+      "value": "Ile podbloków wyjaśnia"
+    },
+    {
+      "key": "set.persona.explainBudgetNote",
+      "value": "Zatrzymuje się i prosi o zaznaczenie reszty, gdy blok ma zbyt wiele elementów podrzędnych."
+    },
+    {
+      "key": "set.preset.quiet",
+      "value": "Cichy"
+    },
+    {
+      "key": "set.preset.normal",
+      "value": "Normalny"
+    },
+    {
+      "key": "set.preset.chatty",
+      "value": "Gadatliwy"
+    },
+    {
+      "key": "set.preset.errorsOnly",
+      "value": "Tylko błędy"
+    },
+    {
+      "key": "set.ext.locales",
+      "value": "Pakiety językowe"
+    },
+    {
+      "key": "set.ext.localesNote",
+      "value": "Angielski jest wbudowany w kod i nie można go usunąć: każde brakujące tłumaczenie korzysta z niego. Pozostałe pakiety to zwykłe foldery, które można usunąć lub przywrócić w każdej chwili."
+    },
+    {
+      "key": "set.ext.none",
+      "value": "Nic nie znaleziono."
+    },
+    {
+      "key": "set.ext.enable",
+      "value": "Włącz"
+    },
+    {
+      "key": "set.ext.disable",
+      "value": "Usuń"
+    },
+    {
+      "key": "set.ext.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.ext.assistantOn",
+      "value": "ProgramNeko jest zainstalowana"
+    },
+    {
+      "key": "set.ext.assistantOff",
+      "value": "ProgramNeko jest usunięta (pliki zachowane)"
+    },
+    {
+      "key": "set.ext.assistantAbsent",
+      "value": "ProgramNeko nie ma"
+    },
+    {
+      "key": "set.ext.assistantNote",
+      "value": "Usunięcie ProgramNeko zachowuje wszystkie pliki i wyłącza funkcje zaawansowane. Rdzeń nadal działa. Przywróć ją jednym kliknięciem."
+    },
+    {
+      "key": "set.ext.engines",
+      "value": "Silniki zewnętrzne"
+    },
+    {
+      "key": "set.ext.enginesNote",
+      "value": "Znajdują się poza pakietem wtyczki i są instalowane przez Package Manager. Wtyczka nie zawiera ich kodu, więc usunięcie silnika nigdy jej nie zepsuje."
+    },
+    {
+      "key": "set.ext.installed",
+      "value": "zainstalowany"
+    },
+    {
+      "key": "set.ext.notInstalled",
+      "value": "niezainstalowany"
+    },
+    {
+      "key": "set.ext.install",
+      "value": "Zainstaluj"
+    },
+    {
+      "key": "set.ext.uninstall",
+      "value": "Odinstaluj"
+    },
+    {
+      "key": "set.ext.catalog",
+      "value": "Pokaż katalog"
+    },
+    {
+      "key": "set.ext.refresh",
+      "value": "Odśwież"
+    },
+    {
+      "key": "ext.noSource",
+      "value": "Dla tego rozszerzenia nie skonfigurowano źródła instalacji. Dodaj adres git lub ścieżkę lokalną w Extensions~/catalog.json."
+    },
+    {
+      "key": "ext.reloadFailed",
+      "value": "Po przeładowaniu stan pakietu nie zgadzał się z żądaniem. Sprawdź Package Manager."
+    },
+    {
+      "key": "ext.completion.data",
+      "value": "Wbudowane podpowiedzi bloków"
+    },
+    {
+      "key": "ext.roslyn.name",
+      "value": "Silnik uzupełniania Roslyn"
+    },
+    {
+      "key": "ext.roslyn.desc",
+      "value": "Opcjonalny. Prawdziwe uzupełnianie składowych i przeciążeń z kompilatora C#. Instalowany jako osobny pakiet, wymaga ProgramNeko."
+    },
+    {
+      "key": "ext.roslyn.notFound",
+      "value": "Nie znaleziono zestawów Roslyn. Umieść Microsoft.CodeAnalysis.dll i Microsoft.CodeAnalysis.CSharp.dll w {0}/ albo użyj edytora, który je dostarcza."
+    },
+    {
+      "key": "set.adv.gate",
+      "value": "Bramka"
+    },
+    {
+      "key": "set.adv.providers",
+      "value": "Źródła podpowiedzi"
+    },
+    {
+      "key": "set.adv.priority",
+      "value": "priorytet"
+    },
+    {
+      "key": "set.adv.noProviders",
+      "value": "Nie zarejestrowano żadnych źródeł."
+    },
+    {
+      "key": "set.adv.test",
+      "value": "Wypróbuj silniki zewnętrzne"
+    },
+    {
+      "key": "set.adv.testNoFile",
+      "value": "Najpierw wybierz plik .cs w oknie Project."
+    },
+    {
+      "key": "set.adv.testRunning",
+      "value": "Trwa…"
+    },
+    {
+      "key": "set.adv.testDone",
+      "value": "Zwrócono elementów: {0}"
+    },
+    {
+      "key": "set.adv.optimizers",
+      "value": "Optymalizatory"
+    },
+    {
+      "key": "set.adv.optimizerCount",
+      "value": "Zarejestrowano przebiegi optymalizatorów: {0}. Optymalizatory nie działają bez ProgramNeko."
+    },
+    {
+      "key": "set.adv.state.ready",
+      "value": "gotowe"
+    },
+    {
+      "key": "set.adv.state.warming",
+      "value": "rozgrzewanie"
+    },
+    {
+      "key": "set.adv.state.failed",
+      "value": "błąd"
+    },
+    {
+      "key": "set.adv.state.missing",
+      "value": "niedostępne"
+    },
+    {
+      "key": "manage.noLanguages",
+      "value": "Nie wczytano żadnego języka, więc nie ma źródła do wyszukania. Sprawdź folder LanguageSupport, potem Blocks ▸ Languages: Show Loaded."
+    },
+    {
+      "key": "manage.noSourcesProject",
+      "value": "Nie ma czego przejmować: projekt nie zawiera źródeł z tymi rozszerzeniami — {0}."
+    },
+    {
+      "key": "manage.noSourcesFolder",
+      "value": "Nie ma czego przejmować w {0}: brak źródeł z tymi rozszerzeniami — {1}."
+    },
+    {
+      "key": "manage.allManaged",
+      "value": "Wszystkie {0} źródła tutaj są już przejęte. Użyj Release, aby cofnąć, albo edytuj je w edytorze bloków."
+    },
+    {
+      "key": "optimise.selectScript",
+      "value": "Najpierw wybierz skrypt. Optymalizacja działa na jednym pliku i przepisuje jego bloki."
+    },
+    {
+      "key": "optimise.noModel",
+      "value": "Ten skrypt nie ma jeszcze modelu bloków. Najpierw przejmij go pod zarządzanie."
     }
   ],
   "blocks": [

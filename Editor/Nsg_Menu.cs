@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -326,6 +327,74 @@ namespace NekoScriptGraph
             EditorUtility.DisplayDialog(Nsg_L10n.T("api.title"), msg, Nsg_L10n.T("confirm.ok"));
         }
 
+        // ------------------------------------------------------------------
+        // Оптимизация блоков
+        // ------------------------------------------------------------------
+
+        /// <summary>
+        /// Прогон оптимизаторов по выбранному скрипту.
+        ///
+        /// Пункт меню, а не только кнопка в окне гигиены: оптимизация — это
+        /// действие над ФАЙЛОМ, и искать его в окне под названием «архитектурная
+        /// гигиена» никто не станет. Тот же прогон, что и в окне: копия модели,
+        /// проверка, откат при провале, запись только при успехе.
+        /// </summary>
+        [MenuItem(GBlocks + "Optimise Blocks", false, 1220)]
+        public static void OptimiseSelected()
+        {
+            string cs = SelectionSource();
+            if (cs == null)
+            {
+                EditorUtility.DisplayDialog(Nsg_L10n.T("health.optimizeRun"),
+                    Nsg_L10n.T("optimise.selectScript"), Nsg_L10n.T("confirm.ok"));
+                return;
+            }
+
+            var doc = Nsg_Manager.Instance.Open(cs);
+            if (doc == null || doc.Model == null)
+            {
+                EditorUtility.DisplayDialog(Nsg_L10n.T("health.optimizeRun"),
+                    Nsg_L10n.T("optimise.noModel"), Nsg_L10n.T("confirm.ok"));
+                return;
+            }
+
+            var report = Nsg_Optimizer.Run(doc);
+
+            // Запись — ТОЛЬКО если прогон выжил и что-то изменил. Проверки уже
+            // прошли внутри Run; здесь остаётся применить результат к диску.
+            if (!report.RolledBack && report.NodesBefore != report.NodesAfter)
+            {
+                var diag = new NsgDiagnostics();
+                string text;
+                List<string> bodies;
+
+                if (doc.Generate(out text, out bodies, diag) && !diag.HasErrors)
+                {
+                    doc.WriteCode(text, bodies);
+                }
+                else
+                {
+                    report.RolledBack = true;
+                    report.Reason = diag.Items.Count > 0 && diag.Items[0] != null
+                        ? diag.Items[0].Message
+                        : "write failed";
+                }
+            }
+
+            Nsg_Window.RefreshOpen();
+
+            string msg;
+            if (report.RolledBack)
+                msg = Nsg_L10n.T("health.optimizeRolledBack", report.Reason ?? "?");
+            else if (report.Removed > 0)
+                msg = Nsg_L10n.T("health.optimizeDone", report.Removed, report.MethodsChanged);
+            else
+                msg = Nsg_L10n.T("health.optimizeNothing");
+
+            Debug.Log("[NekoScriptGraph] " + msg);
+            EditorUtility.DisplayDialog(Nsg_L10n.T("health.optimizeRun"), msg, Nsg_L10n.T("confirm.ok"));
+        }
+
         [MenuItem(GManage + "Take Whole Project Under Management", false, 1140)]
         public static void ManageAllProject()
         {
@@ -349,6 +418,19 @@ namespace NekoScriptGraph
         public static void ManageAllIn(string folder)
         {
             var manager = Nsg_Manager.Instance;
+
+            // Пустой словарь расширений — это не «нечего брать», а «языки не
+            // загрузились». Разница принципиальная: в первом случае идти некуда,
+            // во втором — надо чинить реестр языков. Раньше оба выглядели как
+            // одно и то же окно «нечего брать», и отличить их было нельзя.
+            var extensions = manager.RegisteredExtensions();
+            if (extensions.Count == 0)
+            {
+                EditorUtility.DisplayDialog(Nsg_L10n.T("manage.title"),
+                    Nsg_L10n.T("manage.noLanguages"), Nsg_L10n.T("confirm.ok"));
+                return;
+            }
+
             var files = manager.FindSourceFiles(folder);
 
             int pending = 0;
@@ -357,10 +439,23 @@ namespace NekoScriptGraph
                 if (!File.Exists(Nsg_Document.NsgPathFor(files[i]))) pending++;
             }
 
+            if (files.Count == 0)
+            {
+                // Разбираем, ПОЧЕМУ пусто: папки нет, или в ней нет исходников
+                // поддерживаемых языков. Раньше оба случая давали одинаковый
+                // текст, и понять, что не так, было невозможно.
+                string why = string.IsNullOrEmpty(folder)
+                    ? Nsg_L10n.T("manage.noSourcesProject", string.Join(", ", extensions.ToArray()))
+                    : Nsg_L10n.T("manage.noSourcesFolder", folder, string.Join(", ", extensions.ToArray()));
+
+                EditorUtility.DisplayDialog(Nsg_L10n.T("manage.title"), why, Nsg_L10n.T("confirm.ok"));
+                return;
+            }
+
             if (pending == 0)
             {
-                EditorUtility.DisplayDialog(Nsg_L10n.T("manage.title"), Nsg_L10n.T("manage.nothing"),
-                                            Nsg_L10n.T("confirm.ok"));
+                EditorUtility.DisplayDialog(Nsg_L10n.T("manage.title"),
+                    Nsg_L10n.T("manage.allManaged", files.Count), Nsg_L10n.T("confirm.ok"));
                 return;
             }
 

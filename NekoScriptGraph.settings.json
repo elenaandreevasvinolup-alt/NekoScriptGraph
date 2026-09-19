@@ -1,6 +1,6 @@
 {
     "viewMode": 0,
-    "hideBlockFiles": false,
+    "hideBlockFiles": true,
     "useSprites": false,
     "headerSprite": "block_header",
     "bodySprite": "block_body",

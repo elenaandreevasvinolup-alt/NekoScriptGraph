@@ -920,6 +920,494 @@
     {
       "key": "menu.open",
       "value": "NekoScriptGraph'ı Aç"
+    },
+    {
+      "key": "palette.advanced",
+      "value": "Gelişmiş blokları göster"
+    },
+    {
+      "key": "health.optimizerDeadCode",
+      "value": "Erişilemeyen deyimleri kaldır"
+    },
+    {
+      "key": "health.optimizerConstCond",
+      "value": "Sabit koşulları katla"
+    },
+    {
+      "key": "health.optimizeRun",
+      "value": "Blokları optimize et"
+    },
+    {
+      "key": "health.optimizeNothing",
+      "value": "Optimize edilecek bir şey yok: erişilemeyen deyim bulunamadı."
+    },
+    {
+      "key": "health.optimizeDone",
+      "value": "{1} metotta {0} erişilemeyen blok kaldırıldı."
+    },
+    {
+      "key": "health.optimizeRolledBack",
+      "value": "Geri alındı: {0}"
+    },
+    {
+      "key": "msg.importFailed",
+      "value": "{0} içe aktarılamadı: {1}"
+    },
+    {
+      "key": "msg.modelLoadFailed",
+      "value": "blok dosyası {0} okunamadı ({1}); boş kabul edildi. Betiğin yanındaki .nsg.json dosyasını düzeltin veya silin, sonra yeniden içe aktarın."
+    },
+    {
+      "key": "menu.apiAll",
+      "value": "Tüm proje için API kitaplığı oluştur"
+    },
+    {
+      "key": "menu.manageFolder",
+      "value": "Seçili klasörü yönetime al"
+    },
+    {
+      "key": "menu.manageAll",
+      "value": "Tüm projeyi yönetime al"
+    },
+    {
+      "key": "menu.shell",
+      "value": "ShaderLab kabuğu oluştur"
+    },
+    {
+      "key": "preset.title",
+      "value": "Ön ayarlar"
+    },
+    {
+      "key": "preset.save",
+      "value": "Seçimi ön ayar olarak kaydet"
+    },
+    {
+      "key": "preset.namePrompt",
+      "value": "Ön ayar adı"
+    },
+    {
+      "key": "preset.none",
+      "value": "Henüz ön ayar yok. Bir blok kümesi seçip yukarıdaki düğmeye basın."
+    },
+    {
+      "key": "preset.confirmDelete",
+      "value": "«{0}» ön ayarı silinsin mi? Bu geri alınamaz."
+    },
+    {
+      "key": "preset.dragHint",
+      "value": "Eklemek için tuvale sürükleyin veya eklemek için tıklayın"
+    },
+    {
+      "key": "preset.noSelection",
+      "value": "Önce birkaç blok seçin."
+    },
+    {
+      "key": "preset.notConnected",
+      "value": "Seçim tek bir bağlı küme değil ({0} ayrı parça). Tek bir bağlı grup seçin."
+    },
+    {
+      "key": "preset.multiGraph",
+      "value": "Seçim birkaç metoda yayılıyor. Tek bir metot içinde seçin."
+    },
+    {
+      "key": "preset.tooBig",
+      "value": "Çok büyük: {0} blok, sınır {1}."
+    },
+    {
+      "key": "preset.empty",
+      "value": "Ön ayarda blok yok."
+    },
+    {
+      "key": "preset.needName",
+      "value": "Bir ön ayar adı girin."
+    },
+    {
+      "key": "menu.problems",
+      "value": "Sorunlar"
+    },
+    {
+      "key": "menu.health",
+      "value": "Mimari sağlığı"
+    },
+    {
+      "key": "menu.manage",
+      "value": "Seçili betiği yönetime al"
+    },
+    {
+      "key": "menu.unmanage",
+      "value": "Seçili betiği serbest bırak"
+    },
+    {
+      "key": "menu.api",
+      "value": "Seçili klasör için API blokları oluştur"
+    },
+    {
+      "key": "menu.languages",
+      "value": "Diller: yüklenenleri göster"
+    },
+    {
+      "key": "menu.reload",
+      "value": "Blok kitaplığını yeniden yükle"
+    },
+    {
+      "key": "menu.export",
+      "value": "Varsayılan blok kitaplığını dışa aktar"
+    },
+    {
+      "key": "menu.selftest",
+      "value": "Öz test: gidiş dönüş"
+    },
+    {
+      "key": "confirm.selectSource",
+      "value": "Önce Proje penceresinde desteklenen bir dilin kaynak dosyasını seçin."
+    },
+    {
+      "key": "api.doneAll",
+      "value": "Tüm dillerde {0} API bloğu oluşturuldu ({1} dil hata bildirdi)."
+    },
+    {
+      "key": "lang.python.apiNotImplemented",
+      "value": "API blok oluşturma Python için henüz uygulanmadı"
+    },
+    {
+      "key": "lang.python.unparsed",
+      "value": "ayrıştırılmadı: {0}"
+    },
+    {
+      "key": "err.explain",
+      "value": "Açıkla"
+    },
+    {
+      "key": "neko.noArt",
+      "value": "(henüz portre yok)"
+    },
+    {
+      "key": "blk.explain",
+      "value": "Bu bloğu açıkla"
+    },
+    {
+      "key": "adv.enabled",
+      "value": "Gelişmiş özellikler açık: ProgramNeko kurulu ve her değişikliği açıklayabilir."
+    },
+    {
+      "key": "adv.disabled",
+      "value": "Gelişmiş özellikler kapalı: çekirdek (ayrıştırma, yazdırma, tanılama, bloklar) çalışır, ancak ipuçları, otomatik düzeltmeler ve optimize ediciler ProgramNeko gerektirir."
+    },
+    {
+      "key": "adv.needAssistant",
+      "value": "Bu, ProgramNeko gerektirir. Uzantılar bölümünden kurun veya yeniden etkinleştirin."
+    },
+    {
+      "key": "menu.settings",
+      "value": "Ayarlar"
+    },
+    {
+      "key": "menu.extensions",
+      "value": "Uzantılar"
+    },
+    {
+      "key": "set.title",
+      "value": "NekoScriptGraph Ayarları"
+    },
+    {
+      "key": "set.versions",
+      "value": "eklenti {0} · çekirdek {1} ({2})"
+    },
+    {
+      "key": "set.tab.general",
+      "value": "Genel"
+    },
+    {
+      "key": "set.tab.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.tab.extensions",
+      "value": "Uzantılar"
+    },
+    {
+      "key": "set.tab.advanced",
+      "value": "Gelişmiş"
+    },
+    {
+      "key": "set.general.view",
+      "value": "Düzenleyici"
+    },
+    {
+      "key": "set.general.api",
+      "value": "API blokları"
+    },
+    {
+      "key": "set.general.langNote",
+      "value": "Arayüz dili. İngilizce yerleşiktir ve kaldırılamaz: tamamlanmamış her çeviri ona döner."
+    },
+    {
+      "key": "set.assistant.missing",
+      "value": "ProgramNeko kurulu değil"
+    },
+    {
+      "key": "set.assistant.missingNote",
+      "value": "O olmadan da eklenti ayrıştırır, yazdırır ve tanılama bildirir. Kurulduğunda karakter ayarları burada görünür."
+    },
+    {
+      "key": "set.assistant.noSchema",
+      "value": "Hiçbir karakter ayarı tanımlanmamış."
+    },
+    {
+      "key": "set.assistant.presets",
+      "value": "Ön ayarlar"
+    },
+    {
+      "key": "set.assistant.persona",
+      "value": "Karakter"
+    },
+    {
+      "key": "set.persona.speakRate",
+      "value": "Ne sıklıkla konuşur"
+    },
+    {
+      "key": "set.persona.speakRateNote",
+      "value": "Sözler arasındaki duraklamayı ölçekler. Yüksek değer, daha erken konuşması demektir."
+    },
+    {
+      "key": "set.persona.chatter",
+      "value": "Sohbet"
+    },
+    {
+      "key": "set.persona.chatterNote",
+      "value": "Hiçbir sebebi olmayan sözler. Sıfıra ayarlayın, yalnızca olanlara tepki verir."
+    },
+    {
+      "key": "set.persona.serious",
+      "value": "Ciddiyet"
+    },
+    {
+      "key": "set.persona.seriousNote",
+      "value": "İfadeyi şakacıdan kuruya doğru kaydırır. Var olan replikleri yeniden ağırlıklandırır, yenilerini eklemez."
+    },
+    {
+      "key": "set.persona.alert",
+      "value": "Yeni hatalarda kes"
+    },
+    {
+      "key": "set.persona.alertNote",
+      "value": "Açıkken yeni bir hata, bekleme süresini aşarak hemen konuşmasını sağlar."
+    },
+    {
+      "key": "set.persona.stuckMoves",
+      "value": "Kıpırdanma eşiği (işaretçi hareketleri)"
+    },
+    {
+      "key": "set.persona.stuckSeconds",
+      "value": "Kıpırdanma eşiği (saniye)"
+    },
+    {
+      "key": "set.persona.idleSleep",
+      "value": "Şu süreden sonra uyur"
+    },
+    {
+      "key": "set.persona.workRemind",
+      "value": "Şu süreden sonra dinlenmeni hatırlatır"
+    },
+    {
+      "key": "set.persona.explainBudget",
+      "value": "Kaç alt blok açıklar"
+    },
+    {
+      "key": "set.persona.explainBudgetNote",
+      "value": "Bir bloğun çok fazla alt öğesi olduğunda durur ve kalanı seçmeni ister."
+    },
+    {
+      "key": "set.preset.quiet",
+      "value": "Sessiz"
+    },
+    {
+      "key": "set.preset.normal",
+      "value": "Normal"
+    },
+    {
+      "key": "set.preset.chatty",
+      "value": "Konuşkan"
+    },
+    {
+      "key": "set.preset.errorsOnly",
+      "value": "Yalnızca hatalar"
+    },
+    {
+      "key": "set.ext.locales",
+      "value": "Dil paketleri"
+    },
+    {
+      "key": "set.ext.localesNote",
+      "value": "İngilizce koda yerleşiktir ve kaldırılamaz: eksik her çeviri ona döner. Diğer paketler sıradan klasörlerdir ve istenildiği zaman kaldırılıp geri konabilir."
+    },
+    {
+      "key": "set.ext.none",
+      "value": "Hiçbir şey bulunamadı."
+    },
+    {
+      "key": "set.ext.enable",
+      "value": "Etkinleştir"
+    },
+    {
+      "key": "set.ext.disable",
+      "value": "Kaldır"
+    },
+    {
+      "key": "set.ext.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.ext.assistantOn",
+      "value": "ProgramNeko kurulu"
+    },
+    {
+      "key": "set.ext.assistantOff",
+      "value": "ProgramNeko kaldırıldı (dosyalar korundu)"
+    },
+    {
+      "key": "set.ext.assistantAbsent",
+      "value": "ProgramNeko yok"
+    },
+    {
+      "key": "set.ext.assistantNote",
+      "value": "ProgramNeko'yu kaldırmak tüm dosyaları korur ve gelişmiş özellikleri kapatır. Çekirdek çalışmaya devam eder. Tek tıkla geri getirin."
+    },
+    {
+      "key": "set.ext.engines",
+      "value": "Harici motorlar"
+    },
+    {
+      "key": "set.ext.enginesNote",
+      "value": "Bunlar eklenti paketinin dışında yaşar ve Package Manager ile kurulur. Eklenti onların kodunu içermez, bu yüzden birini kaldırmak onu asla bozamaz."
+    },
+    {
+      "key": "set.ext.installed",
+      "value": "kurulu"
+    },
+    {
+      "key": "set.ext.notInstalled",
+      "value": "kurulu değil"
+    },
+    {
+      "key": "set.ext.install",
+      "value": "Kur"
+    },
+    {
+      "key": "set.ext.uninstall",
+      "value": "Kaldır"
+    },
+    {
+      "key": "set.ext.catalog",
+      "value": "Kataloğu göster"
+    },
+    {
+      "key": "set.ext.refresh",
+      "value": "Yenile"
+    },
+    {
+      "key": "ext.noSource",
+      "value": "Bu uzantı için kurulum kaynağı yapılandırılmamış. Extensions~/catalog.json dosyasına bir git URL'si veya yerel yol ekleyin."
+    },
+    {
+      "key": "ext.reloadFailed",
+      "value": "Yeniden yüklemeden sonra paket durumu istekle eşleşmedi. Package Manager'ı denetleyin."
+    },
+    {
+      "key": "ext.completion.data",
+      "value": "Yerleşik blok ipuçları"
+    },
+    {
+      "key": "ext.roslyn.name",
+      "value": "Roslyn tamamlama motoru"
+    },
+    {
+      "key": "ext.roslyn.desc",
+      "value": "İsteğe bağlı. C# derleyicisinden gerçek üye ve aşırı yükleme tamamlama. Ayrı paket olarak kurulur, ProgramNeko gerektirir."
+    },
+    {
+      "key": "ext.roslyn.notFound",
+      "value": "Roslyn derlemeleri bulunamadı. Microsoft.CodeAnalysis.dll ve Microsoft.CodeAnalysis.CSharp.dll dosyalarını {0}/ içine koyun veya bunları içeren bir düzenleyici kullanın."
+    },
+    {
+      "key": "set.adv.gate",
+      "value": "Geçit"
+    },
+    {
+      "key": "set.adv.providers",
+      "value": "İpucu kaynakları"
+    },
+    {
+      "key": "set.adv.priority",
+      "value": "öncelik"
+    },
+    {
+      "key": "set.adv.noProviders",
+      "value": "Kayıtlı kaynak yok."
+    },
+    {
+      "key": "set.adv.test",
+      "value": "Harici motorları dene"
+    },
+    {
+      "key": "set.adv.testNoFile",
+      "value": "Önce Proje penceresinde bir .cs dosyası seçin."
+    },
+    {
+      "key": "set.adv.testRunning",
+      "value": "Çalışıyor…"
+    },
+    {
+      "key": "set.adv.testDone",
+      "value": "{0} öğe döndürüldü"
+    },
+    {
+      "key": "set.adv.optimizers",
+      "value": "Optimize ediciler"
+    },
+    {
+      "key": "set.adv.optimizerCount",
+      "value": "{0} optimize edici geçişi kayıtlı. Optimize ediciler ProgramNeko olmadan asla çalışmaz."
+    },
+    {
+      "key": "set.adv.state.ready",
+      "value": "hazır"
+    },
+    {
+      "key": "set.adv.state.warming",
+      "value": "ısınıyor"
+    },
+    {
+      "key": "set.adv.state.failed",
+      "value": "başarısız"
+    },
+    {
+      "key": "set.adv.state.missing",
+      "value": "kullanılamaz"
+    },
+    {
+      "key": "manage.noLanguages",
+      "value": "Hiçbir dil yüklü değil, aranacak kaynak yok. LanguageSupport klasörünü denetleyin, sonra Blocks ▸ Languages: Show Loaded."
+    },
+    {
+      "key": "manage.noSourcesProject",
+      "value": "Devralınacak bir şey yok: projede bu uzantılarda kaynak yok — {0}."
+    },
+    {
+      "key": "manage.noSourcesFolder",
+      "value": "{0} içinde devralınacak bir şey yok: bu uzantılarda kaynak yok — {1}."
+    },
+    {
+      "key": "manage.allManaged",
+      "value": "Buradaki {0} kaynağın tümü zaten yönetim altında. Geri almak için Release, ya da blok düzenleyicide düzenleyin."
+    },
+    {
+      "key": "optimise.selectScript",
+      "value": "Önce bir betik seçin. En iyileştirme tek dosya üzerinde çalışır ve bloklarını yeniden yazar."
+    },
+    {
+      "key": "optimise.noModel",
+      "value": "Bu betiğin henüz blok modeli yok. Önce yönetime alın."
     }
   ],
   "blocks": [

@@ -87,6 +87,41 @@ namespace NekoScriptGraph
 
         /// <summary>Прочитать нельзя: сырой фрагмент или неизвестный блок.</summary>
         public bool Opaque;
+
+        // ------------------------------------------------------------------
+        // Дерево вложенных блоков
+        // ------------------------------------------------------------------
+
+        /// <summary>
+        /// Разобранные вложенные блоки: тело ветки, ветка else и блоки в
+        /// слотах-значениях.
+        ///
+        /// Раньше их не было вовсе — блок описывался только счётом «внутри N
+        /// штук», и кошка не могла сказать, что именно внутри. Дерево строится
+        /// из тех же трёх указателей графа (body / els / args[i].link), поэтому
+        /// его автоматически получает любой язык, любой блок и любой API-блок.
+        /// </summary>
+        public List<Nsg_NekoBlock> Children;
+
+        /// <summary>Откуда пришёл блок: body / else / value. null у корня.</summary>
+        public string ChildKind;
+
+        /// <summary>Сколько вложенных блоков всего.</summary>
+        public int Total;
+
+        /// <summary>Сколько из них разобрано и лежит в Children.</summary>
+        public int Shown;
+
+        /// <summary>Сколько осталось неразобранными. Больше нуля — кошка
+        /// честно говорит «дальше я устала» и просит выбрать остаток.</summary>
+        public int Rest;
+
+        /// <summary>
+        /// Логический разбор: при каком условии и что меняется. Заполняется
+        /// для конструкций, у которых есть условие или цель; null — разбирать
+        /// нечего (сырой фрагмент, неизвестный блок).
+        /// </summary>
+        public Nsg_NekoLogic Logic;
     }
 
     /// <summary>
@@ -279,7 +314,23 @@ namespace NekoScriptGraph
         const int BlockDepthLimit = 3;
 
         /// <summary>
-        /// Вычитывает логику блока из графа.
+        /// Сколько блоков кошка согласна разобрать за один раз.
+        ///
+        /// Это защита от «накормить кошку деревом»: большой метод содержит
+        /// сотни блоков, и пересказ всех — это и длинная реплика, и заметная
+        /// работа на каждый клик. Остаток не теряется: он попадает в
+        /// <see cref="Nsg_NekoBlock.Rest"/>, и кошка просит выбрать его
+        /// отдельно, вместо того чтобы молча оборваться.
+        /// </summary>
+        public const int ExplainBudget = 8;
+
+        /// <summary>Сколько детей одного блока показывать. Тот же смысл, что у
+        /// бюджета, но на уровень ниже: иначе один узел с двадцатью входами
+        /// съел бы весь бюджет.</summary>
+        public const int MaxChildrenPerBlock = 6;
+
+        /// <summary>
+        /// Вычитывает логику блока из графа вместе с вложенными блоками.
         ///
         /// Описывается именно ЛОГИКА: что за конструкция, что стоит в её
         /// входах, сколько операторов внутри. Смысл («зачем это нужно»)
@@ -287,16 +338,36 @@ namespace NekoScriptGraph
         /// </summary>
         public static Nsg_NekoBlock FromBlock(NsgMethodGraph g, NsgGraphNode node, Nsg_BlockLibrary lib)
         {
+            var budget = new int[1] { ExplainBudget };
+            var seen = new HashSet<string>();
+            return FromBlock(g, node, lib, budget, seen, 0, null);
+        }
+
+        /// <summary>
+        /// Разбор одного узла. <paramref name="seen"/> защищает от кольца в
+        /// графе: без него повреждённый next/body зациклил бы рекурсию, а
+        /// существующий CountChain такую защиту уже имеет — её нельзя терять.
+        /// </summary>
+        static Nsg_NekoBlock FromBlock(NsgMethodGraph g, NsgGraphNode node, Nsg_BlockLibrary lib,
+                                       int[] budget, HashSet<string> seen, int depth, string childKind)
+        {
             if (node == null) return null;
+
+            // Один узел в дереве описывается один раз. Повторная ссылка не
+            // ошибка (значение можно переиспользовать), но и рассказывать про
+            // него второй раз нечего.
+            if (!string.IsNullOrEmpty(node.id) && !seen.Add(node.id)) return null;
 
             var def = lib != null ? lib.Get(node.block) : null;
             var b = new Nsg_NekoBlock();
+            b.ChildKind = childKind;
 
             if (def == null)
             {
                 // Блок неизвестен: честно говорим, что читать нечего.
                 b.Shape = "unknown";
                 b.Opaque = true;
+                b.Children = new List<Nsg_NekoBlock>();
                 return b;
             }
 
@@ -306,7 +377,74 @@ namespace NekoScriptGraph
             b.Body = CountChain(g, node.body, 0) + CountChain(g, node.els, 0);
             b.Missing = CountMissing(node, def);
             b.Opaque = b.Shape == "raw" || b.Shape == "unknown";
+
+            // Логический разбор считается для самого блока, а не для детей:
+            // он отвечает на вопрос «что делает эта конструкция», и вложенные
+            // блоки получат свой при обходе дерева.
+            b.Logic = Nsg_NekoLogicReader.Read(g, node, lib);
+
+            b.Children = new List<Nsg_NekoBlock>();
+            CollectChildren(g, node, lib, b, budget, seen, depth);
+            b.Shown = b.Children.Count;
+            b.Rest = b.Total - b.Shown;
+            if (b.Rest < 0) b.Rest = 0;
+
             return b;
+        }
+
+        /// <summary>Вложенные блоки: сначала ветки, потом значения.</summary>
+        static void CollectChildren(NsgMethodGraph g, NsgGraphNode node, Nsg_BlockLibrary lib,
+                                    Nsg_NekoBlock b, int[] budget, HashSet<string> seen, int depth)
+        {
+            AddChain(g, node.body, "body", lib, b, budget, seen, depth);
+            AddChain(g, node.els, "else", lib, b, budget, seen, depth);
+
+            if (node.args == null) return;
+            for (int i = 0; i < node.args.Count; i++)
+            {
+                var s = node.args[i];
+                if (s == null || string.IsNullOrEmpty(s.link)) continue;
+                AddChild(g, s.link, "value", lib, b, budget, seen, depth);
+            }
+        }
+
+        static void AddChain(NsgMethodGraph g, string head, string kind, Nsg_BlockLibrary lib,
+                             Nsg_NekoBlock b, int[] budget, HashSet<string> seen, int depth)
+        {
+            if (g == null || string.IsNullOrEmpty(head)) return;
+
+            string cur = head;
+            var guard = new HashSet<string>();
+            while (!string.IsNullOrEmpty(cur) && guard.Add(cur))
+            {
+                AddChild(g, cur, kind, lib, b, budget, seen, depth);
+
+                var n = g.Find(cur);
+                if (n == null) break;
+                cur = n.next;
+            }
+        }
+
+        /// <summary>
+        /// Добавляет ребёнка. Всегда считает его в Total, но разбирает только
+        /// если хватает бюджета, места и глубины: остаток виден как Rest, и
+        /// кошка говорит о нём отдельно.
+        /// </summary>
+        static void AddChild(NsgMethodGraph g, string id, string kind, Nsg_BlockLibrary lib,
+                             Nsg_NekoBlock b, int[] budget, HashSet<string> seen, int depth)
+        {
+            var n = g != null ? g.Find(id) : null;
+            if (n == null) return;
+
+            b.Total++;
+
+            if (b.Children.Count >= MaxChildrenPerBlock) return;
+            if (budget[0] <= 0) return;
+            if (depth + 1 > BlockDepthLimit) return;
+
+            budget[0]--;
+            var child = FromBlock(g, n, lib, budget, seen, depth + 1, kind);
+            if (child != null) b.Children.Add(child);
         }
 
         /// <summary>Вид конструкции. От него зависит, каким шаблоном кошка расскажет.</summary>
@@ -342,7 +480,20 @@ namespace NekoScriptGraph
         /// Пустой вход даёт «?», вложенный блок — «…»: так видно, где именно
         /// информации не хватает.
         /// </summary>
-        static string DetailOf(NsgBlockDef def, NsgGraphNode node)
+        /// <summary>Текст блока: подпись с подставленными входами. Публичная —
+        /// нужна логическому разбору, который показывает условие и цели.</summary>
+        public static string Render(NsgMethodGraph g, string nodeId, Nsg_BlockLibrary lib)
+        {
+            if (string.IsNullOrEmpty(nodeId)) return null;
+
+            var n = g != null ? g.Find(nodeId) : null;
+            if (n == null) return null;
+
+            var def = lib != null ? lib.Get(n.block) : null;
+            return def != null ? DetailOf(def, n) : null;
+        }
+
+        public static string DetailOf(NsgBlockDef def, NsgGraphNode node)
         {
             int n = def.SocketCount;
             var values = new string[n];

@@ -26,6 +26,106 @@ your scripts still compile.
 - Editor-only: the whole package is scoped by an Editor-only assembly definition,
   so nothing is added to a player build.
 
+## What's new in 1.0.3
+
+Core **1.0.2** (unchanged engine), plugin **1.0.3**.
+
+### The cat can now read the tree
+
+Explaining a block used to be a count: "there are 3 blocks inside". It now walks the
+block's actual children — the branch body, the `else` branch, and the blocks plugged
+into value slots — and describes them one by one.
+
+- **Bounded on purpose.** Eight blocks per answer, six children per node, three levels
+  deep. A large method would otherwise be a wall of text and a noticeable cost on every
+  click.
+- **It says when it stopped.** The remainder is not lost: the cat reports how many
+  blocks are left and asks you to select them — *"that's too many blocks, my head is
+  spinning; select the remaining N and I'll look after a rest"*.
+- **Data-driven.** The new strings live in a separate `tree.*` slot group, so a locale
+  that has not translated them still gets the block sentence, and adding a tree
+  translation is a data edit, not a code change. English, Simplified and Traditional
+  Chinese ship translated.
+
+### Auto-optimisation, with a gate that can say no
+
+`Nsg_Optimizer` and two passes, run in order.
+
+- **`optimizer.constantcondition`** — `if (true) { … }` is exactly `{ … }`, and
+  `if (false) { … }` is nothing. A `true`/`false` literal has no side effects, so
+  substituting the taken branch cannot change behaviour — unlike a condition that
+  computes something. Code that followed the `if` is spliced onto the branch tail, and
+  the orphaned literal is left for the next pass.
+- **`optimizer.deadcode`** — removes statements after `return` / `break` / `continue` in
+  the same list, and nodes nothing references any more.
+- **Why that is safe:** reachability is walked from the entry point and stops at a
+  terminator. Anything not marked reachable cannot run under any input.
+- **It is not trusted on its own.** The model is deep-cloned first, then the result must
+  resolve every reference, contain no cycles, render with no more errors than before,
+  and the printed text must parse back. Any failure rolls the whole thing back and
+  reports why. A file that was already imperfect is not rejected for staying imperfect.
+- **Where:** `NekoWorks ▸ NSG ▸ Blocks ▸ Optimise Blocks` on the selected script, or Health window ▸ *Optimise blocks*. Both run the same passes through the same gate.
+
+### The cat reads the logic, not just the shape
+
+Explaining a block now ends with what it *does to the data*, not only what it contains:
+
+> *"So while `health > 0` holds, it changes `health`, `timer`, nya."*
+
+- **Condition** — the socket named `cond`, rendered with its inputs filled in (`foreach`
+  uses its `source` instead, since it has no condition).
+- **Targets** — the variables the block changes: its own `target` / `name` socket, plus
+  the same from every statement inside the branch or loop body, nested branches
+  included.
+- **Actions** — how many statements the body runs.
+
+**All eight languages, no per-language code.** The reader never looks at syntax. It reads
+two things each language's blocks already fill in: the `node` field (`while` / `for` /
+`foreach` / `if` / `assign` / `localDecl` / `call` / `return` / `expr`) and the socket
+names (`cond`, `target`, `name`, `source`). A new language gets the logic reading for
+free as long as its blocks are labelled the same way.
+
+It deliberately does **not** try to explain *why* a block exists — that needs a language
+model. It reports only what is visible in the graph.
+
+### Smarter next-block suggestions
+
+`Nsg_Autocomplete` gained two signals on top of the category prior:
+
+- **Transition scoring** — the graph is read for "block A followed by block B"
+  (continuation, branch body, `else`), and a candidate that already followed the
+  current block in this file scores higher. No dictionary, no training: it is the same
+  graph read differently, so it adapts per script.
+- **Symbols in value slots** — `Nsg_SymbolIndex` collects every name that was filled
+  into a `var`-kind socket (declarations, loop variables) generically, so it works for
+  any language and any block. The completion provider now returns `symbol` items for
+  locals and for API members matched by their `matchCall` prefix.
+
+### Localisation completed
+
+Every locale now carries the full key set — 349 keys × 14 languages, no gaps and no duplicates. Thirteen packs were filled in this pass (Arabic, Hebrew, Polish, Turkish, German, Spanish, French, Italian, Japanese, Korean, Portuguese, Russian, Traditional Chinese); Simplified Chinese was already complete. Translations are unreviewed by native speakers — Arabic and Hebrew especially are worth a second pass.
+
+### Fixes
+
+- **The Problems window was empty when both filters were on.** The two toggles were two
+  independent `continue`s, that is a logical AND: errors failed "not a warning" and
+  warnings failed "not an error". They are now an OR-set — enable either, or both, and
+  you see exactly that.
+- **The Problems window stole focus on every action.** `Push` called `Open`, and `Push`
+  runs on every file open, so the window jumped to the front even when it had been
+  closed. It now updates in place and only surfaces for an error — which is the whole
+  reason the window exists.
+- **Any recompile turned the MCP bridge off permanently.** `Stop` wrote the "enabled"
+  preference to `false`, and `Stop` was bound to `beforeAssemblyReload`. Lifecycle
+  shutdown now keeps the preference; only an explicit stop clears it.
+- **A corrupt `.nsg.json` threw while opening the file.** It is data, not code: the
+  failure is now a diagnostic (`msg.modelLoadFailed`) and the file opens empty.
+- **`empty.method` reported the opposite.** The guard returned when the entry was
+  *empty*, so the rule fired on methods that had a body. Inverted back.
+- **One unknown block produced unbounded duplicate errors.** The notice is emitted
+  during rendering, which repeats on every rebuild, while diagnostics are cleared on
+  import. Duplicates are now suppressed by code+message.
+
 ## What's new in 1.0.2
 
 ### Two more languages

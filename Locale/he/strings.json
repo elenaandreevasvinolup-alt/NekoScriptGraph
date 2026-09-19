@@ -920,6 +920,494 @@
     {
       "key": "menu.open",
       "value": "פתח NekoScriptGraph"
+    },
+    {
+      "key": "palette.advanced",
+      "value": "הצג בלוקים מתקדמים"
+    },
+    {
+      "key": "health.optimizerDeadCode",
+      "value": "הסרת הצהרות בלתי נגישות"
+    },
+    {
+      "key": "health.optimizerConstCond",
+      "value": "קיפול תנאים קבועים"
+    },
+    {
+      "key": "health.optimizeRun",
+      "value": "אופטימיזציה של בלוקים"
+    },
+    {
+      "key": "health.optimizeNothing",
+      "value": "אין מה לבצע אופטימיזציה: לא נמצאו הצהרות בלתי נגישות."
+    },
+    {
+      "key": "health.optimizeDone",
+      "value": "הוסרו {0} בלוקים בלתי נגישים ב-{1} מתודות."
+    },
+    {
+      "key": "health.optimizeRolledBack",
+      "value": "שוחזר: {0}"
+    },
+    {
+      "key": "msg.importFailed",
+      "value": "ייבוא {0} נכשל: {1}"
+    },
+    {
+      "key": "msg.modelLoadFailed",
+      "value": "לא ניתן היה לקרוא את קובץ הבלוקים {0} ({1}); הוא טופל כריק. תקן או מחק את קובץ ה-.nsg.json שליד הסקריפט, ואז ייבא מחדש."
+    },
+    {
+      "key": "menu.apiAll",
+      "value": "בניית ספריית API לכל הפרויקט"
+    },
+    {
+      "key": "menu.manageFolder",
+      "value": "העברת התיקייה הנבחרת לניהול"
+    },
+    {
+      "key": "menu.manageAll",
+      "value": "העברת הפרויקט כולו לניהול"
+    },
+    {
+      "key": "menu.shell",
+      "value": "יצירת שלד ShaderLab"
+    },
+    {
+      "key": "preset.title",
+      "value": "ערכות מוגדרות"
+    },
+    {
+      "key": "preset.save",
+      "value": "שמירת הבחירה כערכה"
+    },
+    {
+      "key": "preset.namePrompt",
+      "value": "שם הערכה"
+    },
+    {
+      "key": "preset.none",
+      "value": "אין עדיין ערכות. בחר מקבץ בלוקים ולחץ על הכפתור שלמעלה."
+    },
+    {
+      "key": "preset.confirmDelete",
+      "value": "למחוק את הערכה ״{0}״? לא ניתן לבטל פעולה זו."
+    },
+    {
+      "key": "preset.dragHint",
+      "value": "גרור אל הבד כדי להוסיף, או לחץ כדי לצרף"
+    },
+    {
+      "key": "preset.noSelection",
+      "value": "בחר תחילה כמה בלוקים."
+    },
+    {
+      "key": "preset.notConnected",
+      "value": "הבחירה אינה מקבץ מחובר אחד ({0} חלקים נפרדים). בחר קבוצה מחוברת אחת."
+    },
+    {
+      "key": "preset.multiGraph",
+      "value": "הבחירה משתרעת על כמה מתודות. בחר בתוך מתודה אחת."
+    },
+    {
+      "key": "preset.tooBig",
+      "value": "גדול מדי: {0} בלוקים, המגבלה היא {1}."
+    },
+    {
+      "key": "preset.empty",
+      "value": "לערכה אין בלוקים."
+    },
+    {
+      "key": "preset.needName",
+      "value": "הזן שם ערכה."
+    },
+    {
+      "key": "menu.problems",
+      "value": "בעיות"
+    },
+    {
+      "key": "menu.health",
+      "value": "בריאות הארכיטקטורה"
+    },
+    {
+      "key": "menu.manage",
+      "value": "העברת הסקריפט הנבחר לניהול"
+    },
+    {
+      "key": "menu.unmanage",
+      "value": "שחרור הסקריפט הנבחר"
+    },
+    {
+      "key": "menu.api",
+      "value": "יצירת בלוקי API עבור התיקייה הנבחרת"
+    },
+    {
+      "key": "menu.languages",
+      "value": "שפות: הצג טעונות"
+    },
+    {
+      "key": "menu.reload",
+      "value": "טען מחדש את ספריית הבלוקים"
+    },
+    {
+      "key": "menu.export",
+      "value": "ייצוא ספריית הבלוקים המוגדרת כברירת מחדל"
+    },
+    {
+      "key": "menu.selftest",
+      "value": "בדיקה עצמית: הלוך ושוב"
+    },
+    {
+      "key": "confirm.selectSource",
+      "value": "בחר תחילה קובץ מקור בשפה נתמכת בחלון Project."
+    },
+    {
+      "key": "api.doneAll",
+      "value": "נוצרו {0} בלוקי API בכל השפות ({1} שפות דיווחו על שגיאות)."
+    },
+    {
+      "key": "lang.python.apiNotImplemented",
+      "value": "יצירת בלוקי API עבור Python טרם מיושמת"
+    },
+    {
+      "key": "lang.python.unparsed",
+      "value": "לא מנותח: {0}"
+    },
+    {
+      "key": "err.explain",
+      "value": "הסבר"
+    },
+    {
+      "key": "neko.noArt",
+      "value": "(אין דיוקן עדיין)"
+    },
+    {
+      "key": "blk.explain",
+      "value": "הסבר את הבלוק הזה"
+    },
+    {
+      "key": "adv.enabled",
+      "value": "התכונות המתקדמות פועלות: ProgramNeko מותקנת ויכולה להסביר כל שינוי."
+    },
+    {
+      "key": "adv.disabled",
+      "value": "התכונות המתקדמות כבויות: הליבה (ניתוח, הדפסה, אבחון, בלוקים) עובדת, אך רמזים, תיקונים אוטומטיים ומבצעי אופטימיזציה דורשים את ProgramNeko."
+    },
+    {
+      "key": "adv.needAssistant",
+      "value": "זה דורש את ProgramNeko. התקן או הפעל אותה מחדש תחת תוספים."
+    },
+    {
+      "key": "menu.settings",
+      "value": "הגדרות"
+    },
+    {
+      "key": "menu.extensions",
+      "value": "תוספים"
+    },
+    {
+      "key": "set.title",
+      "value": "הגדרות NekoScriptGraph"
+    },
+    {
+      "key": "set.versions",
+      "value": "תוסף {0} · ליבה {1} ({2})"
+    },
+    {
+      "key": "set.tab.general",
+      "value": "כללי"
+    },
+    {
+      "key": "set.tab.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.tab.extensions",
+      "value": "תוספים"
+    },
+    {
+      "key": "set.tab.advanced",
+      "value": "מתקדם"
+    },
+    {
+      "key": "set.general.view",
+      "value": "עורך"
+    },
+    {
+      "key": "set.general.api",
+      "value": "בלוקי API"
+    },
+    {
+      "key": "set.general.langNote",
+      "value": "שפת הממשק. אנגלית מובנית ואינה ניתנת להסרה: היא ברירת המחדל לכל תרגום שאינו שלם."
+    },
+    {
+      "key": "set.assistant.missing",
+      "value": "ProgramNeko אינה מותקנת"
+    },
+    {
+      "key": "set.assistant.missingNote",
+      "value": "בלעדיה התוסף עדיין מנתח, מדפיס ומדווח אבחונים. הגדרות הדמות שלה יופיעו כאן לאחר שתותקן."
+    },
+    {
+      "key": "set.assistant.noSchema",
+      "value": "לא מתוארות הגדרות דמות."
+    },
+    {
+      "key": "set.assistant.presets",
+      "value": "ערכות מוגדרות"
+    },
+    {
+      "key": "set.assistant.persona",
+      "value": "דמות"
+    },
+    {
+      "key": "set.persona.speakRate",
+      "value": "באיזו תדירות היא מדברת"
+    },
+    {
+      "key": "set.persona.speakRateNote",
+      "value": "משנה את ההשהיה בין הערות. ערך גבוה יותר פירושו שהיא מדברת מוקדם יותר."
+    },
+    {
+      "key": "set.persona.chatter",
+      "value": "פטפוט"
+    },
+    {
+      "key": "set.persona.chatterNote",
+      "value": "הערות בלי שום סיבה. אפס והיא תגיב רק למה שקורה."
+    },
+    {
+      "key": "set.persona.serious",
+      "value": "רצינות"
+    },
+    {
+      "key": "set.persona.seriousNote",
+      "value": "מטה את הניסוח משובב נפש ליבש. הוא משנה את המשקל של שורות קיימות ואינו מוסיף חדשות."
+    },
+    {
+      "key": "set.persona.alert",
+      "value": "הפרעה בשגיאות חדשות"
+    },
+    {
+      "key": "set.persona.alertNote",
+      "value": "כשמופעל, שגיאה חדשה גורמת לה לדבר מיד, מעבר לזמן ההמתנה."
+    },
+    {
+      "key": "set.persona.stuckMoves",
+      "value": "סף אי-שקט (תנועות מצביע)"
+    },
+    {
+      "key": "set.persona.stuckSeconds",
+      "value": "סף אי-שקט (שניות)"
+    },
+    {
+      "key": "set.persona.idleSleep",
+      "value": "נרדמת לאחר"
+    },
+    {
+      "key": "set.persona.workRemind",
+      "value": "מזכירה לך לנוח לאחר"
+    },
+    {
+      "key": "set.persona.explainBudget",
+      "value": "כמה תת-בלוקים היא מסבירה"
+    },
+    {
+      "key": "set.persona.explainBudgetNote",
+      "value": "היא עוצרת ומבקשת שתבחר את השאר כאשר לבלוק יש יותר מדי ילדים."
+    },
+    {
+      "key": "set.preset.quiet",
+      "value": "שקט"
+    },
+    {
+      "key": "set.preset.normal",
+      "value": "רגיל"
+    },
+    {
+      "key": "set.preset.chatty",
+      "value": "פטפטן"
+    },
+    {
+      "key": "set.preset.errorsOnly",
+      "value": "שגיאות בלבד"
+    },
+    {
+      "key": "set.ext.locales",
+      "value": "חבילות שפה"
+    },
+    {
+      "key": "set.ext.localesNote",
+      "value": "אנגלית מובנית בקוד ואינה ניתנת להסרה: כל תרגום חסר נופל אליה. חבילות אחרות הן תיקיות רגילות וניתן להסירן או להחזירן בכל עת."
+    },
+    {
+      "key": "set.ext.none",
+      "value": "לא נמצא דבר."
+    },
+    {
+      "key": "set.ext.enable",
+      "value": "הפעל"
+    },
+    {
+      "key": "set.ext.disable",
+      "value": "הסר"
+    },
+    {
+      "key": "set.ext.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.ext.assistantOn",
+      "value": "ProgramNeko מותקנת"
+    },
+    {
+      "key": "set.ext.assistantOff",
+      "value": "ProgramNeko הוסרה (הקבצים נשמרו)"
+    },
+    {
+      "key": "set.ext.assistantAbsent",
+      "value": "ProgramNeko אינה קיימת"
+    },
+    {
+      "key": "set.ext.assistantNote",
+      "value": "הסרת ProgramNeko שומרת על כל הקבצים ומכבה את התכונות המתקדמות. הליבה ממשיכה לעבוד. החזר אותה בלחיצה אחת."
+    },
+    {
+      "key": "set.ext.engines",
+      "value": "מנועים חיצוניים"
+    },
+    {
+      "key": "set.ext.enginesNote",
+      "value": "אלה חיים מחוץ לחבילת התוסף ומותקנים דרך Package Manager. התוסף אינו מכיל משיטת הקוד שלהם, ולכן הסרת אחד מהם לעולם לא תשבור אותו."
+    },
+    {
+      "key": "set.ext.installed",
+      "value": "מותקן"
+    },
+    {
+      "key": "set.ext.notInstalled",
+      "value": "לא מותקן"
+    },
+    {
+      "key": "set.ext.install",
+      "value": "התקן"
+    },
+    {
+      "key": "set.ext.uninstall",
+      "value": "הסר התקנה"
+    },
+    {
+      "key": "set.ext.catalog",
+      "value": "הצג קטלוג"
+    },
+    {
+      "key": "set.ext.refresh",
+      "value": "רענן"
+    },
+    {
+      "key": "ext.noSource",
+      "value": "לא הוגדר מקור התקנה לתוסף זה. הוסף כתובת git או נתיב מקומי אל Extensions~/catalog.json."
+    },
+    {
+      "key": "ext.reloadFailed",
+      "value": "מצב החבילה לא תאם את הבקשה לאחר הטעינה מחדש. בדוק את Package Manager."
+    },
+    {
+      "key": "ext.completion.data",
+      "value": "רמזי בלוקים מובנים"
+    },
+    {
+      "key": "ext.roslyn.name",
+      "value": "מנוע השלמה Roslyn"
+    },
+    {
+      "key": "ext.roslyn.desc",
+      "value": "אופציונלי. השלמה אמיתית של איברים ועומסי-יתר מהמהדר של C#. מותקן כחבילה נפרדת, דורש את ProgramNeko."
+    },
+    {
+      "key": "ext.roslyn.notFound",
+      "value": "לא נמצאו מכלולי Roslyn. הנח את Microsoft.CodeAnalysis.dll ואת Microsoft.CodeAnalysis.CSharp.dll בתוך {0}/, או השתמש בעורך שמספק אותם."
+    },
+    {
+      "key": "set.adv.gate",
+      "value": "שער"
+    },
+    {
+      "key": "set.adv.providers",
+      "value": "מקורות רמזים"
+    },
+    {
+      "key": "set.adv.priority",
+      "value": "עדיפות"
+    },
+    {
+      "key": "set.adv.noProviders",
+      "value": "לא נרשמו מקורות."
+    },
+    {
+      "key": "set.adv.test",
+      "value": "נסה את המנועים החיצוניים"
+    },
+    {
+      "key": "set.adv.testNoFile",
+      "value": "בחר תחילה קובץ .cs בחלון Project."
+    },
+    {
+      "key": "set.adv.testRunning",
+      "value": "פועל…"
+    },
+    {
+      "key": "set.adv.testDone",
+      "value": "הוחזרו {0} פריטים"
+    },
+    {
+      "key": "set.adv.optimizers",
+      "value": "מבצעי אופטימיזציה"
+    },
+    {
+      "key": "set.adv.optimizerCount",
+      "value": "נרשמו {0} מעברי אופטימיזציה. מבצעי האופטימיזציה לעולם אינם פועלים ללא ProgramNeko."
+    },
+    {
+      "key": "set.adv.state.ready",
+      "value": "מוכן"
+    },
+    {
+      "key": "set.adv.state.warming",
+      "value": "מתחמם"
+    },
+    {
+      "key": "set.adv.state.failed",
+      "value": "נכשל"
+    },
+    {
+      "key": "set.adv.state.missing",
+      "value": "לא זמין"
+    },
+    {
+      "key": "manage.noLanguages",
+      "value": "לא נטענה שום שפה, ולכן אין קובץ מקור לחפש. בדוק שתיקיית LanguageSupport שלמה, ואז Blocks ▸ Languages: Show Loaded."
+    },
+    {
+      "key": "manage.noSourcesProject",
+      "value": "אין מה לתפוס: בפרויקט אין קובצי מקור בהרחבות האלה — {0}."
+    },
+    {
+      "key": "manage.noSourcesFolder",
+      "value": "אין מה לתפוס ב־{0}: אין קובצי מקור בהרחבות האלה — {1}."
+    },
+    {
+      "key": "manage.allManaged",
+      "value": "כל {0} קובצי המקור כאן כבר תפוסים. השתמש ב־Release לביטול, או ערוך אותם בעורך הבלוקים."
+    },
+    {
+      "key": "optimise.selectScript",
+      "value": "בחר קובץ תחילה. האופטימיזציה פועלת על קובץ אחד וכותבת מחדש את הבלוקים שלו."
+    },
+    {
+      "key": "optimise.noModel",
+      "value": "לקובץ הזה אין עדיין מודל בלוקים. תפוס אותו בניהול קודם."
     }
   ],
   "blocks": [

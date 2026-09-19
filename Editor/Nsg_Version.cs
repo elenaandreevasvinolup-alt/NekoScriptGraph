@@ -14,6 +14,6 @@ namespace NekoScriptGraph
     public static class Nsg_Version
     {
         /// <summary>Версия пакета. Держать в согласии с package.json.</summary>
-        public const string Plugin = "1.0.2";
+        public const string Plugin = "1.0.3";
     }
 }

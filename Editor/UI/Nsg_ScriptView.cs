@@ -1193,12 +1193,48 @@ namespace NekoScriptGraph
         /// Призрак не является частью модели: он не печатается и не сохраняется,
         /// это только предположение.
         /// </summary>
+        /// <summary>
+        /// Блок, после которого вставляют — для переходной подсказки.
+        ///
+        /// Полоса стоит в КОНЦЕ списка, поэтому «сосед» — хвост этого списка,
+        /// а не владелец. Если список пуст, ориентир — блок, который его
+        /// открыл: подсказать, что положить внутрь if, тоже полезно.
+        /// </summary>
+        static string PrecedingBlock(StackTarget target)
+        {
+            if (target == null || target.Graph == null) return null;
+
+            var tail = TailOf(target.Graph, target.GetHead());
+            if (tail != null) return tail.block;
+
+            return target.OwnerNode != null ? target.OwnerNode.block : null;
+        }
+
+        static NsgGraphNode TailOf(NsgMethodGraph g, string head)
+        {
+            if (g == null || string.IsNullOrEmpty(head)) return null;
+
+            var guard = new HashSet<string>();
+            NsgGraphNode last = null;
+            string cur = head;
+
+            while (!string.IsNullOrEmpty(cur) && guard.Add(cur))
+            {
+                var n = g.Find(cur);
+                if (n == null) break;
+                last = n;
+                cur = n.next;
+            }
+            return last;
+        }
+
         VisualElement BuildSuggestStrip(StackTarget target)
         {
             var box = new VisualElement();
             if (target == null || target.Graph == null || Library == null) return box;
 
-            var list = Nsg_Autocomplete.Suggest(target.Graph, Library, true, SuggestCount);
+            var list = Nsg_Autocomplete.Suggest(target.Graph, Library, true, SuggestCount,
+                                               PrecedingBlock(target));
             if (list.Count == 0) return box;
 
             box.style.marginTop = 2;
@@ -1362,8 +1398,13 @@ namespace NekoScriptGraph
 
             if (Doc != null)
             {
-                Doc.Diagnostics.Error(NsgCodes.UnknownBlock,
-                    Nsg_L10n.T("msg.unknownBlockHint", blockId));
+                // Этот код выполняется при каждой пересборке стека, а список
+                // диагностики чистится только при импорте: без проверки одна
+                // неизвестная деталь добавляла бы по одинаковой ошибке на
+                // каждый Rebuild.
+                string hint = Nsg_L10n.T("msg.unknownBlockHint", blockId);
+                if (!Doc.Diagnostics.Has(NsgCodes.UnknownBlock, hint))
+                    Doc.Diagnostics.Error(NsgCodes.UnknownBlock, hint);
             }
 
             return box;

@@ -972,6 +972,442 @@
     {
       "key": "win.title",
       "value": "NekoScriptGraph"
+    },
+    {
+      "key": "health.optimizerDeadCode",
+      "value": "刪除不可達語句"
+    },
+    {
+      "key": "health.optimizerConstCond",
+      "value": "折疊常數條件"
+    },
+    {
+      "key": "health.optimizeRun",
+      "value": "最佳化積木"
+    },
+    {
+      "key": "health.optimizeNothing",
+      "value": "沒有可最佳化的：未發現不可達語句。"
+    },
+    {
+      "key": "health.optimizeDone",
+      "value": "已刪除 {0} 個不可達積木，涉及 {1} 個方法。"
+    },
+    {
+      "key": "health.optimizeRolledBack",
+      "value": "已回滾：{0}"
+    },
+    {
+      "key": "msg.modelLoadFailed",
+      "value": "積木檔 {0} 無法讀取（{1}），已按空檔處理。請修復或刪除腳本旁的 .nsg.json，然後重新匯入。"
+    },
+    {
+      "key": "lang.python.apiNotImplemented",
+      "value": "Python 的 API 積木產生尚未實作"
+    },
+    {
+      "key": "lang.python.unparsed",
+      "value": "未解析：{0}"
+    },
+    {
+      "key": "err.explain",
+      "value": "解釋"
+    },
+    {
+      "key": "neko.noArt",
+      "value": "（尚無立繪）"
+    },
+    {
+      "key": "blk.explain",
+      "value": "解釋這塊積木"
+    },
+    {
+      "key": "palette.advanced",
+      "value": "顯示進階積木"
+    },
+    {
+      "key": "msg.importFailed",
+      "value": "匯入 {0} 失敗：{1}"
+    },
+    {
+      "key": "preset.title",
+      "value": "預設集"
+    },
+    {
+      "key": "preset.save",
+      "value": "將選取範圍存為預設集"
+    },
+    {
+      "key": "preset.namePrompt",
+      "value": "預設集名稱"
+    },
+    {
+      "key": "preset.none",
+      "value": "尚無預設集。選取一組積木並按上方按鈕。"
+    },
+    {
+      "key": "preset.confirmDelete",
+      "value": "要刪除預設集「{0}」嗎？此動作無法復原。"
+    },
+    {
+      "key": "preset.dragHint",
+      "value": "拖曳到畫布以插入，或按一下以附加"
+    },
+    {
+      "key": "preset.noSelection",
+      "value": "請先選取一些積木。"
+    },
+    {
+      "key": "preset.notConnected",
+      "value": "選取範圍不是單一相連的群組（{0} 個分離的部分）。請選取單一相連群組。"
+    },
+    {
+      "key": "preset.multiGraph",
+      "value": "選取範圍橫跨多個方法。請在單一方法內選取。"
+    },
+    {
+      "key": "preset.tooBig",
+      "value": "太大：{0} 個積木，上限為 {1}。"
+    },
+    {
+      "key": "preset.empty",
+      "value": "此預設集沒有積木。"
+    },
+    {
+      "key": "preset.needName",
+      "value": "請輸入預設集名稱。"
+    },
+    {
+      "key": "confirm.selectSource",
+      "value": "請先在 Project 視窗中選取支援語言的來源檔。"
+    },
+    {
+      "key": "api.doneAll",
+      "value": "已在所有語言中產生 {0} 個 API 積木（{1} 個語言回報錯誤）。"
+    },
+    {
+      "key": "adv.enabled",
+      "value": "進階功能已開啟：已安裝 ProgramNeko，可說明每一項變更。"
+    },
+    {
+      "key": "adv.disabled",
+      "value": "進階功能已關閉：核心（剖析、輸出、診斷、積木）仍可運作，但提示、自動修正與最佳化工具需要 ProgramNeko。"
+    },
+    {
+      "key": "adv.needAssistant",
+      "value": "此功能需要 ProgramNeko。請在「擴充功能」中安裝或重新啟用。"
+    },
+    {
+      "key": "menu.settings",
+      "value": "設定"
+    },
+    {
+      "key": "menu.extensions",
+      "value": "擴充功能"
+    },
+    {
+      "key": "set.title",
+      "value": "NekoScriptGraph 設定"
+    },
+    {
+      "key": "set.versions",
+      "value": "外掛 {0} · 核心 {1}（{2}）"
+    },
+    {
+      "key": "set.tab.general",
+      "value": "一般"
+    },
+    {
+      "key": "set.tab.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.tab.extensions",
+      "value": "擴充功能"
+    },
+    {
+      "key": "set.tab.advanced",
+      "value": "進階"
+    },
+    {
+      "key": "set.general.view",
+      "value": "編輯器"
+    },
+    {
+      "key": "set.general.api",
+      "value": "API 積木"
+    },
+    {
+      "key": "set.general.langNote",
+      "value": "介面語言。英文為內建且無法移除：所有未完成的翻譯都會回退至英文。"
+    },
+    {
+      "key": "set.assistant.missing",
+      "value": "未安裝 ProgramNeko"
+    },
+    {
+      "key": "set.assistant.missingNote",
+      "value": "沒有她，外掛仍會剖析、輸出並回報診斷。安裝後，她的角色設定會顯示在這裡。"
+    },
+    {
+      "key": "set.assistant.noSchema",
+      "value": "未描述任何角色設定。"
+    },
+    {
+      "key": "set.assistant.presets",
+      "value": "預設集"
+    },
+    {
+      "key": "set.assistant.persona",
+      "value": "角色"
+    },
+    {
+      "key": "set.persona.speakRate",
+      "value": "說話頻率"
+    },
+    {
+      "key": "set.persona.speakRateNote",
+      "value": "調整發言之間的間隔。數值越高，她越早開口。"
+    },
+    {
+      "key": "set.persona.chatter",
+      "value": "閒聊"
+    },
+    {
+      "key": "set.persona.chatterNote",
+      "value": "毫無理由的發言。設為零時，她只對發生的事情做出反應。"
+    },
+    {
+      "key": "set.persona.serious",
+      "value": "嚴肅度"
+    },
+    {
+      "key": "set.persona.seriousNote",
+      "value": "將用語從俏皮偏向冷靜。它會重新加權現有台詞，不會新增台詞。"
+    },
+    {
+      "key": "set.persona.alert",
+      "value": "新錯誤時打斷"
+    },
+    {
+      "key": "set.persona.alertNote",
+      "value": "開啟時，新錯誤會讓她立即開口，不受冷卻時間限制。"
+    },
+    {
+      "key": "set.persona.stuckMoves",
+      "value": "躁動臨界值（指標移動）"
+    },
+    {
+      "key": "set.persona.stuckSeconds",
+      "value": "躁動臨界值（秒）"
+    },
+    {
+      "key": "set.persona.idleSleep",
+      "value": "在此時間後入睡"
+    },
+    {
+      "key": "set.persona.workRemind",
+      "value": "在此時間後提醒休息"
+    },
+    {
+      "key": "set.persona.explainBudget",
+      "value": "她說明的子積木數量"
+    },
+    {
+      "key": "set.persona.explainBudgetNote",
+      "value": "當積木的子項過多時，她會停下並請你選取其餘部分。"
+    },
+    {
+      "key": "set.preset.quiet",
+      "value": "安靜"
+    },
+    {
+      "key": "set.preset.normal",
+      "value": "普通"
+    },
+    {
+      "key": "set.preset.chatty",
+      "value": "多話"
+    },
+    {
+      "key": "set.preset.errorsOnly",
+      "value": "僅錯誤"
+    },
+    {
+      "key": "set.ext.locales",
+      "value": "語言套件"
+    },
+    {
+      "key": "set.ext.localesNote",
+      "value": "英文內建於程式中，無法移除：所有缺少的翻譯都會回退至英文。其他套件是一般資料夾，可隨時移除或放回。"
+    },
+    {
+      "key": "set.ext.none",
+      "value": "找不到任何項目。"
+    },
+    {
+      "key": "set.ext.enable",
+      "value": "啟用"
+    },
+    {
+      "key": "set.ext.disable",
+      "value": "移除"
+    },
+    {
+      "key": "set.ext.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.ext.assistantOn",
+      "value": "已安裝 ProgramNeko"
+    },
+    {
+      "key": "set.ext.assistantOff",
+      "value": "已移除 ProgramNeko（保留檔案）"
+    },
+    {
+      "key": "set.ext.assistantAbsent",
+      "value": "沒有 ProgramNeko"
+    },
+    {
+      "key": "set.ext.assistantNote",
+      "value": "移除 ProgramNeko 會保留所有檔案並關閉進階功能。核心仍可運作。按一下即可放回。"
+    },
+    {
+      "key": "set.ext.engines",
+      "value": "外部引擎"
+    },
+    {
+      "key": "set.ext.enginesNote",
+      "value": "這些位於外掛套件之外，透過 Package Manager 安裝。外掛不含它們的程式碼，因此移除任一個都不會使其損壞。"
+    },
+    {
+      "key": "set.ext.installed",
+      "value": "已安裝"
+    },
+    {
+      "key": "set.ext.notInstalled",
+      "value": "未安裝"
+    },
+    {
+      "key": "set.ext.install",
+      "value": "安裝"
+    },
+    {
+      "key": "set.ext.uninstall",
+      "value": "解除安裝"
+    },
+    {
+      "key": "set.ext.catalog",
+      "value": "顯示目錄"
+    },
+    {
+      "key": "set.ext.refresh",
+      "value": "重新整理"
+    },
+    {
+      "key": "ext.noSource",
+      "value": "此擴充功能未設定安裝來源。請將 git URL 或本機路徑加入 Extensions~/catalog.json。"
+    },
+    {
+      "key": "ext.reloadFailed",
+      "value": "重新載入後套件狀態與要求不符。請檢查 Package Manager。"
+    },
+    {
+      "key": "ext.completion.data",
+      "value": "內建積木提示"
+    },
+    {
+      "key": "ext.roslyn.name",
+      "value": "Roslyn 補全引擎"
+    },
+    {
+      "key": "ext.roslyn.desc",
+      "value": "選用。來自 C# 編譯器的真實成員與多載補全。以獨立套件安裝，需要 ProgramNeko。"
+    },
+    {
+      "key": "ext.roslyn.notFound",
+      "value": "找不到 Roslyn 組件。請將 Microsoft.CodeAnalysis.dll 與 Microsoft.CodeAnalysis.CSharp.dll 放入 {0}/，或使用隨附這些檔案的編輯器。"
+    },
+    {
+      "key": "set.adv.gate",
+      "value": "閘門"
+    },
+    {
+      "key": "set.adv.providers",
+      "value": "提示來源"
+    },
+    {
+      "key": "set.adv.priority",
+      "value": "優先順序"
+    },
+    {
+      "key": "set.adv.noProviders",
+      "value": "未註冊任何來源。"
+    },
+    {
+      "key": "set.adv.test",
+      "value": "試用外部引擎"
+    },
+    {
+      "key": "set.adv.testNoFile",
+      "value": "請先在 Project 視窗中選取 .cs 檔案。"
+    },
+    {
+      "key": "set.adv.testRunning",
+      "value": "執行中…"
+    },
+    {
+      "key": "set.adv.testDone",
+      "value": "已傳回 {0} 個項目"
+    },
+    {
+      "key": "set.adv.optimizers",
+      "value": "最佳化工具"
+    },
+    {
+      "key": "set.adv.optimizerCount",
+      "value": "已註冊 {0} 個最佳化回合。沒有 ProgramNeko 時，最佳化工具一律不會執行。"
+    },
+    {
+      "key": "set.adv.state.ready",
+      "value": "就緒"
+    },
+    {
+      "key": "set.adv.state.warming",
+      "value": "暖機中"
+    },
+    {
+      "key": "set.adv.state.failed",
+      "value": "失敗"
+    },
+    {
+      "key": "set.adv.state.missing",
+      "value": "無法使用"
+    },
+    {
+      "key": "manage.noLanguages",
+      "value": "沒有載入任何語言，因此沒有可尋找的原始檔。請檢查 LanguageSupport 資料夾是否完整，再用 Blocks ▸ Languages: Show Loaded 查看。"
+    },
+    {
+      "key": "manage.noSourcesProject",
+      "value": "沒有可託管的內容：專案裡沒有這些副檔名的原始檔——{0}。"
+    },
+    {
+      "key": "manage.noSourcesFolder",
+      "value": "{0} 裡沒有可託管的內容：沒有這些副檔名的原始檔——{1}。"
+    },
+    {
+      "key": "manage.allManaged",
+      "value": "這裡的 {0} 個原始檔已經全部在託管中。用 Release 撤銷，或在積木編輯器裡編輯它們。"
+    },
+    {
+      "key": "optimise.selectScript",
+      "value": "請先選中一個腳本。最佳化一次只處理一個檔案，並重寫它的積木。"
+    },
+    {
+      "key": "optimise.noModel",
+      "value": "這個腳本還沒有積木模型。請先把它納入管理。"
     }
   ],
   "blocks": [

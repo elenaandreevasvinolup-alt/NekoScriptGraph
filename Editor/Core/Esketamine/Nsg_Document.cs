@@ -87,12 +87,28 @@ namespace NekoScriptGraph
         public bool LoadModel()
         {
             if (!File.Exists(NsgPath)) return false;
-            string json = File.ReadAllText(NsgPath);
-            if (string.IsNullOrEmpty(json)) return false;
-            Model = JsonUtility.FromJson<NsgFileModel>(json);
-            if (Model == null) return false;
-            Model.UnpackGraphs();
-            return true;
+
+            // Файл модели — данные, а не код: его правят руками и он бывает
+            // обрезан. Раньше битый JSON бросал исключение прямо из открытия
+            // файла; теперь это обычная диагностика, а файл открывается пустым.
+            try
+            {
+                string json = File.ReadAllText(NsgPath);
+                if (string.IsNullOrEmpty(json)) return false;
+
+                Model = JsonUtility.FromJson<NsgFileModel>(json);
+                if (Model == null) return false;
+
+                Model.UnpackGraphs();
+                return true;
+            }
+            catch (System.Exception e)
+            {
+                Model = null;
+                Diagnostics.Error(NsgCodes.Internal,
+                    Nsg_L10n.T("msg.modelLoadFailed", Path.GetFileName(NsgPath), e.Message));
+                return false;
+            }
         }
 
         public void SaveModel()
@@ -137,6 +153,11 @@ namespace NekoScriptGraph
         {
             if (Engine == null) return false;
             if (src == null) src = string.Empty;
+
+            // Импорт из кода ПЕРЕЗАПИСЫВАЕТ блоки: то, что было собрано
+            // руками, исчезает. Это необратимо, поэтому состояние до импорта
+            // уходит в автоматический слот — до первой правки, а не после.
+            if (Model != null) Nsg_Checkpoints.AutoSave(CsPath, Model, null, "before import from code");
 
             Diagnostics.Clear();
 

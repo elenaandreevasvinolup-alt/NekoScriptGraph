@@ -972,6 +972,442 @@
     {
       "key": "win.title",
       "value": "NekoScriptGraph"
+    },
+    {
+      "key": "palette.advanced",
+      "value": "Mostrar blocos avançados"
+    },
+    {
+      "key": "health.optimizerDeadCode",
+      "value": "Remover instruções inalcançáveis"
+    },
+    {
+      "key": "health.optimizerConstCond",
+      "value": "Dobrar condições constantes"
+    },
+    {
+      "key": "health.optimizeRun",
+      "value": "Otimizar blocos"
+    },
+    {
+      "key": "health.optimizeNothing",
+      "value": "Nada a otimizar: nenhuma instrução inalcançável encontrada."
+    },
+    {
+      "key": "health.optimizeDone",
+      "value": "Removidos {0} blocos inalcançáveis em {1} métodos."
+    },
+    {
+      "key": "health.optimizeRolledBack",
+      "value": "Revertido: {0}"
+    },
+    {
+      "key": "msg.importFailed",
+      "value": "falha ao importar {0}: {1}"
+    },
+    {
+      "key": "msg.modelLoadFailed",
+      "value": "o arquivo de blocos {0} não pôde ser lido ({1}); foi tratado como vazio. Corrija ou exclua o .nsg.json ao lado do script e reimporte."
+    },
+    {
+      "key": "preset.title",
+      "value": "Predefinições"
+    },
+    {
+      "key": "preset.save",
+      "value": "Salvar seleção como predefinição"
+    },
+    {
+      "key": "preset.namePrompt",
+      "value": "Nome da predefinição"
+    },
+    {
+      "key": "preset.none",
+      "value": "Ainda não há predefinições. Selecione um grupo de blocos e clique no botão acima."
+    },
+    {
+      "key": "preset.confirmDelete",
+      "value": "Excluir a predefinição «{0}»? Isso não pode ser desfeito."
+    },
+    {
+      "key": "preset.dragHint",
+      "value": "Arraste para a tela para inserir, ou clique para acrescentar"
+    },
+    {
+      "key": "preset.noSelection",
+      "value": "Selecione primeiro alguns blocos."
+    },
+    {
+      "key": "preset.notConnected",
+      "value": "A seleção não é um grupo conectado ({0} partes separadas). Selecione um único grupo conectado."
+    },
+    {
+      "key": "preset.multiGraph",
+      "value": "A seleção abrange vários métodos. Selecione dentro de um único método."
+    },
+    {
+      "key": "preset.tooBig",
+      "value": "Grande demais: {0} blocos, o limite é {1}."
+    },
+    {
+      "key": "preset.empty",
+      "value": "A predefinição não tem blocos."
+    },
+    {
+      "key": "preset.needName",
+      "value": "Digite um nome de predefinição."
+    },
+    {
+      "key": "confirm.selectSource",
+      "value": "Selecione primeiro um arquivo-fonte de uma linguagem suportada na janela Projeto."
+    },
+    {
+      "key": "api.doneAll",
+      "value": "Gerados {0} blocos de API em todos os idiomas ({1} idioma(s) relataram erros)."
+    },
+    {
+      "key": "lang.python.apiNotImplemented",
+      "value": "A geração de blocos de API ainda não está implementada para Python"
+    },
+    {
+      "key": "lang.python.unparsed",
+      "value": "não analisado: {0}"
+    },
+    {
+      "key": "err.explain",
+      "value": "Explicar"
+    },
+    {
+      "key": "neko.noArt",
+      "value": "(ainda sem retrato)"
+    },
+    {
+      "key": "blk.explain",
+      "value": "Explicar este bloco"
+    },
+    {
+      "key": "adv.enabled",
+      "value": "Os recursos avançados estão ativos: a ProgramNeko está instalada e pode explicar cada mudança."
+    },
+    {
+      "key": "adv.disabled",
+      "value": "Os recursos avançados estão desativados: o núcleo (análise, impressão, diagnósticos, blocos) funciona, mas dicas, correções automáticas e otimizadores precisam da ProgramNeko."
+    },
+    {
+      "key": "adv.needAssistant",
+      "value": "Isso precisa da ProgramNeko. Instale-a ou reative-a em Extensões."
+    },
+    {
+      "key": "menu.settings",
+      "value": "Configurações"
+    },
+    {
+      "key": "menu.extensions",
+      "value": "Extensões"
+    },
+    {
+      "key": "set.title",
+      "value": "Configurações do NekoScriptGraph"
+    },
+    {
+      "key": "set.versions",
+      "value": "plugin {0} · núcleo {1} ({2})"
+    },
+    {
+      "key": "set.tab.general",
+      "value": "Geral"
+    },
+    {
+      "key": "set.tab.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.tab.extensions",
+      "value": "Extensões"
+    },
+    {
+      "key": "set.tab.advanced",
+      "value": "Avançado"
+    },
+    {
+      "key": "set.general.view",
+      "value": "Editor"
+    },
+    {
+      "key": "set.general.api",
+      "value": "Blocos de API"
+    },
+    {
+      "key": "set.general.langNote",
+      "value": "Idioma da interface. O inglês é integrado e não pode ser removido: é o fallback para toda tradução incompleta."
+    },
+    {
+      "key": "set.assistant.missing",
+      "value": "A ProgramNeko não está instalada"
+    },
+    {
+      "key": "set.assistant.missingNote",
+      "value": "Sem ela, o plugin ainda analisa, imprime e reporta diagnósticos. As configurações de personagem dela aparecem aqui quando for instalada."
+    },
+    {
+      "key": "set.assistant.noSchema",
+      "value": "Nenhuma configuração de personagem descrita."
+    },
+    {
+      "key": "set.assistant.presets",
+      "value": "Predefinições"
+    },
+    {
+      "key": "set.assistant.persona",
+      "value": "Personagem"
+    },
+    {
+      "key": "set.persona.speakRate",
+      "value": "Com que frequência ela fala"
+    },
+    {
+      "key": "set.persona.speakRateNote",
+      "value": "Ajusta a pausa entre comentários. Mais alto significa que ela fala mais cedo."
+    },
+    {
+      "key": "set.persona.chatter",
+      "value": "Tagarelice"
+    },
+    {
+      "key": "set.persona.chatterNote",
+      "value": "Comentários sem motivo algum. Em zero, ela só reage ao que acontece."
+    },
+    {
+      "key": "set.persona.serious",
+      "value": "Seriedade"
+    },
+    {
+      "key": "set.persona.seriousNote",
+      "value": "Pende o tom do brincalhão ao seco. Repondera as falas existentes, não acrescenta novas."
+    },
+    {
+      "key": "set.persona.alert",
+      "value": "Interromper por novos erros"
+    },
+    {
+      "key": "set.persona.alertNote",
+      "value": "Quando ativo, um novo erro a faz falar imediatamente, além do tempo de espera."
+    },
+    {
+      "key": "set.persona.stuckMoves",
+      "value": "Limite de inquietação (movimentos do ponteiro)"
+    },
+    {
+      "key": "set.persona.stuckSeconds",
+      "value": "Limite de inquietação (segundos)"
+    },
+    {
+      "key": "set.persona.idleSleep",
+      "value": "Adormece após"
+    },
+    {
+      "key": "set.persona.workRemind",
+      "value": "Lembra você de descansar após"
+    },
+    {
+      "key": "set.persona.explainBudget",
+      "value": "Quantos sub-blocos ela explica"
+    },
+    {
+      "key": "set.persona.explainBudgetNote",
+      "value": "Ela para e pede que você selecione o resto quando um bloco tem filhos demais."
+    },
+    {
+      "key": "set.preset.quiet",
+      "value": "Silencioso"
+    },
+    {
+      "key": "set.preset.normal",
+      "value": "Normal"
+    },
+    {
+      "key": "set.preset.chatty",
+      "value": "Falante"
+    },
+    {
+      "key": "set.preset.errorsOnly",
+      "value": "Somente erros"
+    },
+    {
+      "key": "set.ext.locales",
+      "value": "Pacotes de idioma"
+    },
+    {
+      "key": "set.ext.localesNote",
+      "value": "O inglês é integrado ao código e não pode ser removido: toda tradução ausente recorre a ele. Os outros pacotes são pastas comuns e podem ser removidos ou recolocados a qualquer momento."
+    },
+    {
+      "key": "set.ext.none",
+      "value": "Nada encontrado."
+    },
+    {
+      "key": "set.ext.enable",
+      "value": "Ativar"
+    },
+    {
+      "key": "set.ext.disable",
+      "value": "Remover"
+    },
+    {
+      "key": "set.ext.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.ext.assistantOn",
+      "value": "A ProgramNeko está instalada"
+    },
+    {
+      "key": "set.ext.assistantOff",
+      "value": "A ProgramNeko foi removida (arquivos mantidos)"
+    },
+    {
+      "key": "set.ext.assistantAbsent",
+      "value": "A ProgramNeko não está presente"
+    },
+    {
+      "key": "set.ext.assistantNote",
+      "value": "Remover a ProgramNeko mantém todos os arquivos e desliga os recursos avançados. O núcleo continua funcionando. Traga-a de volta com um clique."
+    },
+    {
+      "key": "set.ext.engines",
+      "value": "Motores externos"
+    },
+    {
+      "key": "set.ext.enginesNote",
+      "value": "Eles ficam fora do pacote do plugin e são instalados pelo Package Manager. O plugin não contém nada do código deles, então remover um nunca pode quebrá-lo."
+    },
+    {
+      "key": "set.ext.installed",
+      "value": "instalado"
+    },
+    {
+      "key": "set.ext.notInstalled",
+      "value": "não instalado"
+    },
+    {
+      "key": "set.ext.install",
+      "value": "Instalar"
+    },
+    {
+      "key": "set.ext.uninstall",
+      "value": "Desinstalar"
+    },
+    {
+      "key": "set.ext.catalog",
+      "value": "Mostrar catálogo"
+    },
+    {
+      "key": "set.ext.refresh",
+      "value": "Atualizar"
+    },
+    {
+      "key": "ext.noSource",
+      "value": "Nenhuma origem de instalação está configurada para esta extensão. Adicione uma URL git ou um caminho local a Extensions~/catalog.json."
+    },
+    {
+      "key": "ext.reloadFailed",
+      "value": "O estado do pacote não correspondeu à solicitação após a recarga. Verifique o Package Manager."
+    },
+    {
+      "key": "ext.completion.data",
+      "value": "Dicas de blocos integradas"
+    },
+    {
+      "key": "ext.roslyn.name",
+      "value": "Motor de completação Roslyn"
+    },
+    {
+      "key": "ext.roslyn.desc",
+      "value": "Opcional. Completação real de membros e sobrecargas do compilador C#. Instalado como pacote separado, requer a ProgramNeko."
+    },
+    {
+      "key": "ext.roslyn.notFound",
+      "value": "Os assemblies do Roslyn não foram encontrados. Coloque Microsoft.CodeAnalysis.dll e Microsoft.CodeAnalysis.CSharp.dll em {0}/, ou use um editor que os inclua."
+    },
+    {
+      "key": "set.adv.gate",
+      "value": "Portão"
+    },
+    {
+      "key": "set.adv.providers",
+      "value": "Fontes de dicas"
+    },
+    {
+      "key": "set.adv.priority",
+      "value": "prioridade"
+    },
+    {
+      "key": "set.adv.noProviders",
+      "value": "Nenhuma fonte registrada."
+    },
+    {
+      "key": "set.adv.test",
+      "value": "Testar os motores externos"
+    },
+    {
+      "key": "set.adv.testNoFile",
+      "value": "Selecione primeiro um arquivo .cs na janela Projeto."
+    },
+    {
+      "key": "set.adv.testRunning",
+      "value": "Executando…"
+    },
+    {
+      "key": "set.adv.testDone",
+      "value": "{0} item(ns) retornado(s)"
+    },
+    {
+      "key": "set.adv.optimizers",
+      "value": "Otimizadores"
+    },
+    {
+      "key": "set.adv.optimizerCount",
+      "value": "{0} passada(s) de otimizador registradas. Os otimizadores nunca rodam sem a ProgramNeko."
+    },
+    {
+      "key": "set.adv.state.ready",
+      "value": "pronto"
+    },
+    {
+      "key": "set.adv.state.warming",
+      "value": "aquecendo"
+    },
+    {
+      "key": "set.adv.state.failed",
+      "value": "falhou"
+    },
+    {
+      "key": "set.adv.state.missing",
+      "value": "indisponível"
+    },
+    {
+      "key": "manage.noLanguages",
+      "value": "Nenhuma linguagem está carregada, então não há fonte para procurar. Verifique a pasta LanguageSupport e depois Blocks ▸ Languages: Show Loaded."
+    },
+    {
+      "key": "manage.noSourcesProject",
+      "value": "Nada para assumir: o projeto não tem fontes com estas extensões — {0}."
+    },
+    {
+      "key": "manage.noSourcesFolder",
+      "value": "Nada para assumir em {0}: sem fontes com estas extensões — {1}."
+    },
+    {
+      "key": "manage.allManaged",
+      "value": "Todos os {0} fontes aqui já estão sob gestão. Use Release para desfazer, ou edite-os no editor de blocos."
+    },
+    {
+      "key": "optimise.selectScript",
+      "value": "Selecione primeiro um script. A otimização trabalha um ficheiro de cada vez e reescreve os seus blocos."
+    },
+    {
+      "key": "optimise.noModel",
+      "value": "Este script ainda não tem modelo de blocos. Assuma-o em gestão primeiro."
     }
   ],
   "blocks": [

@@ -6,16 +6,28 @@ using UnityEngine;
 namespace NekoScriptGraph
 {
     /// <summary>
-    /// Три именованных слота сохранения на скрипт.
+    /// Три именованных слота сохранения на скрипт ПЛЮС автоматический.
     ///
     /// Они лежат в папке с точкой в начале, которую Unity никогда не
     /// импортирует, и эта папка пишет собственный .gitignore. Поэтому
     /// встроенные точки сохранения приватны для плагина и никогда не
     /// конфликтуют с историей репозитория.
+    ///
+    /// АВТОМАТИЧЕСКИЙ СЛОТ — не «четвёртый именованный». Его нельзя выбрать,
+    /// назвать или занять вручную: он пишется САМ перед каждым необратимым
+    /// действием и служит одной цели — дать точку возврата, о которой не надо
+    /// было помнить. Именованные слоты для этого не годятся: пользователь
+    /// вспоминает о них после того, как стало поздно.
     /// </summary>
     public static class Nsg_Checkpoints
     {
         public const int SlotCount = 3;
+
+        /// <summary>Номер автоматического слота. Вне диапазона именованных.</summary>
+        public const int AutoSlot = SlotCount;
+
+        /// <summary>Последняя метка автосохранения — её показывает интерфейс.</summary>
+        public static string LastAutoLabel { get; private set; }
 
         [Serializable]
         public class Slot
@@ -47,7 +59,8 @@ namespace NekoScriptGraph
 
         static string FileFor(string csPath, int slot)
         {
-            return DirFor(csPath) + "/" + slot + ".json";
+            string name = slot == AutoSlot ? "auto" : slot.ToString();
+            return DirFor(csPath) + "/" + name + ".json";
         }
 
         public static void EnsureGitIgnore()
@@ -101,6 +114,38 @@ namespace NekoScriptGraph
             };
 
             File.WriteAllText(FileFor(csPath, slot), JsonUtility.ToJson(s, true));
+        }
+
+        /// <summary>
+        /// Автосохранение перед НЕОБРАТИМЫМ действием.
+        ///
+        /// Модель клонируется: Save упаковывает графы (PackGraphs), а
+        /// вызывающий обычно продолжает работать с той же моделью. Менять её
+        /// ради резервной копии — значит портить то, что копируют.
+        ///
+        /// Сбой автосохранения НЕ отменяет само действие: он лишает точки
+        /// возврата, но не является причиной отказываться от работы. Поэтому
+        /// исключение ловится и уходит предупреждением.
+        /// </summary>
+        public static void AutoSave(string csPath, NsgFileModel model, string csSource, string label)
+        {
+            if (model == null || string.IsNullOrEmpty(csPath)) return;
+
+            try
+            {
+                var copy = Nsg_Cloner.CloneModel(model);
+                Save(csPath, AutoSlot, copy, csSource, label);
+                LastAutoLabel = DateTime.Now.ToString("HH:mm:ss") + " — " + label;
+            }
+            catch (Exception e)
+            {
+                UnityEngine.Debug.LogWarning("[NekoScriptGraph] autosave failed: " + e.Message);
+            }
+        }
+
+        public static Slot LoadAuto(string csPath)
+        {
+            return Load(csPath, AutoSlot);
         }
 
         public static Slot Load(string csPath, int slot)

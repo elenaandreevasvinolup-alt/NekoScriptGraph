@@ -75,6 +75,24 @@ namespace NekoScriptGraph
             if (d != null) Items.Add(d);
         }
 
+        /// <summary>
+        /// Есть ли уже ровно такая запись.
+        ///
+        /// Нужна там, где диагностика выдаётся из ОТРИСОВКИ: перерисовка
+        /// повторяется десятки раз, а список живёт до следующего импорта —
+        /// без этой проверки одна неизвестная деталь плодила неограниченный
+        /// хвост одинаковых ошибок.
+        /// </summary>
+        public bool Has(string code, string message)
+        {
+            for (int i = 0; i < Items.Count; i++)
+            {
+                var d = Items[i];
+                if (d != null && d.Code == code && d.Message == message) return true;
+            }
+            return false;
+        }
+
         public void Error(string code, string message, int line = 0, int col = 0)
         {
             Items.Add(new NsgDiagnostic(code, NsgSeverity.Error, message, line, col));

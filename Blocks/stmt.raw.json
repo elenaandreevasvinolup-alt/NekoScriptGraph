@@ -1,6 +1,6 @@
 {
     "id": "stmt.raw",
-    "level": "high",
+    "level": "low",
     "shape": "statement",
     "category": "raw text {0}",
     "categoryKey": "cat.raw",

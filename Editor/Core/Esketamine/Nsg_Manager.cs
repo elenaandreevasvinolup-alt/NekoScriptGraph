@@ -373,16 +373,46 @@ namespace NekoScriptGraph
             for (int i = 0; i < files.Length; i++)
             {
                 string path = files[i].Replace('\\', '/');
-                if (path.Contains("/.checkpoints/")) continue;
-                if (path.Contains("/Dependencies/")) continue;
-                if (path.Contains("/Library/")) continue;
-                if (path.Contains("/NekoScriptGraph/")) continue;
+                if (IsInfrastructure(path)) continue;
 
                 if (extensions.Contains(Path.GetExtension(path))) result.Add(path);
             }
 
             result.Sort();
             return result;
+        }
+
+        /// <summary>
+        /// Служебные пути плагина: их исходники брать под управление нельзя.
+        ///
+        /// РАНЬШЕ ЗДЕСЬ СТОЯЛО `path.Contains("/NekoScriptGraph/")` — то есть
+        /// исключалась ВСЯ папка плагина. Вместе с ней исключался и любой код,
+        /// положенный туда намеренно (например Script4Test), и «Взять папку под
+        /// управление» на такой папке молча отвечала «нечего брать». При этом
+        /// «Снять с управления» работала: она ищет по суффиксу .nsg.json и
+        /// ничего не исключает. Отсюда и картина «снять можно, взять нельзя».
+        ///
+        /// Теперь исключается ровно инфраструктура, а не территория.
+        /// </summary>
+        static bool IsInfrastructure(string path)
+        {
+            if (string.IsNullOrEmpty(path)) return true;
+
+            if (path.Contains("/.checkpoints/")) return true;
+            if (path.Contains("/Dependencies/")) return true;
+            if (path.Contains("/Library/")) return true;
+            if (path.Contains("/Locale/")) return true;
+            if (path.Contains("/Blocks/")) return true;
+
+            string root = Nsg_Paths.Root + "/";
+            if (!path.StartsWith(root)) return false;
+
+            string rest = path.Substring(root.Length);
+            if (rest.StartsWith("Editor/")) return true;
+            if (rest.StartsWith("Runtime/")) return true;
+            if (rest.StartsWith("LanguageSupport/")) return true;
+
+            return false;
         }
 
         /// <summary>
@@ -433,6 +463,33 @@ namespace NekoScriptGraph
             for (int i = 0; i < configs.Count; i++)
             {
                 string nsg = configs[i];
+                string cs = Nsg_Document.CsPathFor(nsg);
+
+                // СНИМОК ДО УДАЛЕНИЯ.
+                //
+                // Release необратим по своей природе: файла конфигурации больше
+                // не будет. Единственное место, откуда модель ещё можно взять, —
+                // сам удаляемый файл, поэтому читаем его и кладём в
+                // автоматический слот ДО File.Delete, а не после.
+                //
+                // Сбой снимка не мешает удалению: он лишает точки возврата, но
+                // не является причиной отказываться от Release.
+                if (!string.IsNullOrEmpty(cs))
+                {
+                    try
+                    {
+                        var model = JsonUtility.FromJson<NsgFileModel>(File.ReadAllText(nsg));
+                        if (model != null)
+                        {
+                            model.UnpackGraphs();
+                            Nsg_Checkpoints.AutoSave(cs, model, null, "before release");
+                        }
+                    }
+                    catch (System.Exception e)
+                    {
+                        Debug.LogWarning("[NekoScriptGraph] release snapshot failed for " + nsg + ": " + e.Message);
+                    }
+                }
 
                 try
                 {
@@ -447,7 +504,6 @@ namespace NekoScriptGraph
                 // Кэш обязан забыть документ: держать в памяти модель, которой
                 // больше нет на диске, нельзя — состояние стало бы враньём, а
                 // следующее сохранение воскресило бы удалённый файл.
-                string cs = Nsg_Document.CsPathFor(nsg);
                 if (!string.IsNullOrEmpty(cs)) _documents.Remove(Normalize(cs));
 
                 done++;

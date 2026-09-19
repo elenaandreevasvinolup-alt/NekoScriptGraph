@@ -408,7 +408,14 @@ namespace NekoScriptGraph
 
         static void CheckEmptyMethod(NsgStructNode m, Nsg_HealthReport r)
         {
-            if (m.graph == null || string.IsNullOrEmpty(m.graph.entry)) return;
+            if (m.graph == null) return;
+
+            // Пустой метод — это метод БЕЗ точки входа: EmitChain возвращает
+            // null, когда операторов нет (Nsg_CSharpCodeMap.cs). Раньше условие
+            // стояло наоборот, и правило срабатывало ровно на непустых методах,
+            // то есть сообщало «тело пустое» про метод с телом.
+            if (!string.IsNullOrEmpty(m.graph.entry)) return;
+
             Add(r, "empty.method", NsgSeverity.Info, Nsg_L10n.T("health.emptyMethod"),
                 m.name, null, null, 0, 0);
         }
@@ -862,11 +869,16 @@ namespace NekoScriptGraph
             get { return "health.title"; }
         }
 
+        /// <summary>Отчёт последнего прогона. Окно гигиены читает его отсюда, а
+        /// не считает анализ второй раз: один прогон прохода — один анализ.</summary>
+        public static Nsg_HealthReport Last { get; private set; }
+
         public bool Run(Nsg_PassContext context, NsgDiagnostics diagnostics)
         {
             if (context == null || context.Model == null) return false;
 
             var report = Nsg_Health.Analyze(context.Model, context.Library, null);
+            Last = report;
             if (diagnostics == null) return report.Findings.Count > 0;
 
             for (int i = 0; i < report.Findings.Count; i++)

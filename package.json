@@ -1,6 +1,6 @@
 {
   "name": "com.nekoandreeva.nekoscriptgraph",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "NekoScriptGraph",
   "description": "Scratch-like visual programming for Unity that never puts anything into your code. NSG writes a block config next to a script to make it editable as blocks, and translates both ways. 7 languages (C, C++, C#, HLSL, Java, Rust, Python), 15 locales with full Arabic/Hebrew RTL, and an in-editor MCP server for agent-assisted editing.",
   "unity": "2022.3",

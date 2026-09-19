@@ -1,0 +1,479 @@
+{
+    "schemaVersion": 2,
+    "target": "csharp",
+    "engineMin": "0.1.0",
+    "sourceFile": "Script4Test.swift",
+    "sourceGuid": "c7b8d97a61d504a148f2f48fdcc68cfe",
+    "roots": [
+        {
+            "kind": "method",
+            "leading": "// Только тело функции становится блоками; шапка переносится как есть.\n// Внутри — письменное подмножество NSG.\n",
+            "header": "func crunch(_ n: Int) -> Int ",
+            "headerPrefix": "",
+            "name": "crunch",
+            "headerBasePrefix": "",
+            "baseList": "",
+            "headerSuffix": "",
+            "typeKeyword": "",
+            "isContainer": false,
+            "tail": "",
+            "text": "",
+            "printed": "{\n    var primes: Int = 0\n    var i: Int = 2\n    while i <= n {\n        var isPrime: Int = 1\n        var j: Int = 2\n        while j * j <= i {\n            if i % j == 0 {\n                isPrime = 0\n            }\n            j += 1\n        }\n        primes += isPrime\n        i += 1\n    }\n    let mask: Int = (1 << 8) - 1\n    let folded: Int = (primes & mask) ^ (primes >> 3)\n    let bonus: Int = folded > 0 ? folded : -1\n    return primes + bonus\n}",
+            "line": 3,
+            "children": []
+        }
+    ],
+    "graphs": [
+        {
+            "key": "func crunch(_ n: Int) -> Int ",
+            "graph": {
+                "entry": "s0_",
+                "nodes": [
+                    {
+                        "id": "s0_",
+                        "block": "stmt.raw",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s1_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "var primes: Int = 0"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 1
+                    },
+                    {
+                        "id": "s1_",
+                        "block": "stmt.raw",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s2_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "var i: Int = 2"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_",
+                        "block": "stmt.while",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s3_",
+                        "body": "s2_w_0_",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s2_c_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_c_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "i"
+                            },
+                            {
+                                "link": "",
+                                "text": "<="
+                            },
+                            {
+                                "link": "",
+                                "text": "n"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_w_0_",
+                        "block": "stmt.raw",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s2_w_1_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "var isPrime: Int = 1"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_w_1_",
+                        "block": "stmt.raw",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s2_w_2_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "var j: Int = 2"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_w_2_",
+                        "block": "stmt.while",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s2_w_3_",
+                        "body": "s2_w_2_w_0_",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s2_w_2_c_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_w_2_c_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s2_w_2_c_x0_",
+                                "text": ""
+                            },
+                            {
+                                "link": "",
+                                "text": "<="
+                            },
+                            {
+                                "link": "",
+                                "text": "i"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_w_2_c_x0_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "j"
+                            },
+                            {
+                                "link": "",
+                                "text": "*"
+                            },
+                            {
+                                "link": "",
+                                "text": "j"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_w_2_w_0_",
+                        "block": "stmt.if",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s2_w_2_w_1_",
+                        "body": "s2_w_2_w_0_t_0_",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s2_w_2_w_0_c_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_w_2_w_0_c_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s2_w_2_w_0_c_x0_",
+                                "text": ""
+                            },
+                            {
+                                "link": "",
+                                "text": "=="
+                            },
+                            {
+                                "link": "",
+                                "text": "0"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_w_2_w_0_c_x0_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "i"
+                            },
+                            {
+                                "link": "",
+                                "text": "%"
+                            },
+                            {
+                                "link": "",
+                                "text": "j"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_w_2_w_0_t_0_",
+                        "block": "stmt.assign",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "isPrime"
+                            },
+                            {
+                                "link": "",
+                                "text": "0"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_w_2_w_1_",
+                        "block": "stmt.add",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "j"
+                            },
+                            {
+                                "link": "",
+                                "text": "1"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_w_3_",
+                        "block": "stmt.add",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s2_w_4_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "primes"
+                            },
+                            {
+                                "link": "",
+                                "text": "isPrime"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s2_w_4_",
+                        "block": "stmt.add",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "i"
+                            },
+                            {
+                                "link": "",
+                                "text": "1"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s3_",
+                        "block": "stmt.raw",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s4_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "let mask: Int = (1 << 8) - 1"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s4_",
+                        "block": "stmt.raw",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s5_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "let folded: Int = (primes & mask) ^ (primes >> 3)"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s5_",
+                        "block": "stmt.raw",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "s6_",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "let bonus: Int = folded > 0 ? folded : -1"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_",
+                        "block": "stmt.return",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "s6_v_",
+                                "text": ""
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    },
+                    {
+                        "id": "s6_v_",
+                        "block": "expr.binary",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "next": "",
+                        "body": "",
+                        "els": "",
+                        "args": [
+                            {
+                                "link": "",
+                                "text": "primes"
+                            },
+                            {
+                                "link": "",
+                                "text": "+"
+                            },
+                            {
+                                "link": "",
+                                "text": "bonus"
+                            }
+                        ],
+                        "extra": [],
+                        "comments": "",
+                        "blankBefore": 0
+                    }
+                ]
+            }
+        }
+    ],
+    "epilogue": "\n"
+}

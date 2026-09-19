@@ -972,6 +972,442 @@
     {
       "key": "win.title",
       "value": "NekoScriptGraph"
+    },
+    {
+      "key": "palette.advanced",
+      "value": "고급 블록 표시"
+    },
+    {
+      "key": "health.optimizerDeadCode",
+      "value": "도달할 수 없는 문 제거"
+    },
+    {
+      "key": "health.optimizerConstCond",
+      "value": "상수 조건 접기"
+    },
+    {
+      "key": "health.optimizeRun",
+      "value": "블록 최적화"
+    },
+    {
+      "key": "health.optimizeNothing",
+      "value": "최적화할 것이 없습니다: 도달할 수 없는 문이 없습니다."
+    },
+    {
+      "key": "health.optimizeDone",
+      "value": "{1}개 메서드에서 도달할 수 없는 블록 {0}개를 제거했습니다."
+    },
+    {
+      "key": "health.optimizeRolledBack",
+      "value": "되돌림: {0}"
+    },
+    {
+      "key": "msg.importFailed",
+      "value": "{0} 가져오기 실패: {1}"
+    },
+    {
+      "key": "msg.modelLoadFailed",
+      "value": "블록 파일 {0}을(를) 읽을 수 없습니다({1}). 빈 파일로 처리했습니다. 스크립트 옆의 .nsg.json을 고치거나 삭제한 뒤 다시 가져오세요."
+    },
+    {
+      "key": "preset.title",
+      "value": "프리셋"
+    },
+    {
+      "key": "preset.save",
+      "value": "선택 항목을 프리셋으로 저장"
+    },
+    {
+      "key": "preset.namePrompt",
+      "value": "프리셋 이름"
+    },
+    {
+      "key": "preset.none",
+      "value": "아직 프리셋이 없습니다. 블록 묶음을 선택하고 위 버튼을 누르세요."
+    },
+    {
+      "key": "preset.confirmDelete",
+      "value": "프리셋 '{0}'을(를) 삭제할까요? 되돌릴 수 없습니다."
+    },
+    {
+      "key": "preset.dragHint",
+      "value": "캔버스로 끌어 삽입하거나 클릭해 추가"
+    },
+    {
+      "key": "preset.noSelection",
+      "value": "먼저 블록을 선택하세요."
+    },
+    {
+      "key": "preset.notConnected",
+      "value": "선택 항목이 하나로 연결된 묶음이 아닙니다({0}개 조각). 연결된 하나의 그룹을 선택하세요."
+    },
+    {
+      "key": "preset.multiGraph",
+      "value": "선택 항목이 여러 메서드에 걸쳐 있습니다. 한 메서드 안에서 선택하세요."
+    },
+    {
+      "key": "preset.tooBig",
+      "value": "너무 큽니다: 블록 {0}개, 한도 {1}개."
+    },
+    {
+      "key": "preset.empty",
+      "value": "프리셋에 블록이 없습니다."
+    },
+    {
+      "key": "preset.needName",
+      "value": "프리셋 이름을 입력하세요."
+    },
+    {
+      "key": "confirm.selectSource",
+      "value": "먼저 프로젝트 창에서 지원 언어의 소스 파일을 선택하세요."
+    },
+    {
+      "key": "api.doneAll",
+      "value": "모든 언어에서 API 블록 {0}개를 생성했습니다({1}개 언어에서 오류 보고)."
+    },
+    {
+      "key": "lang.python.apiNotImplemented",
+      "value": "Python용 API 블록 생성은 아직 구현되지 않았습니다"
+    },
+    {
+      "key": "lang.python.unparsed",
+      "value": "구문 분석 안 됨: {0}"
+    },
+    {
+      "key": "err.explain",
+      "value": "설명"
+    },
+    {
+      "key": "neko.noArt",
+      "value": "(초상화 없음)"
+    },
+    {
+      "key": "blk.explain",
+      "value": "이 블록 설명"
+    },
+    {
+      "key": "adv.enabled",
+      "value": "고급 기능이 켜져 있습니다: ProgramNeko가 설치되어 모든 변경을 설명할 수 있습니다."
+    },
+    {
+      "key": "adv.disabled",
+      "value": "고급 기능이 꺼져 있습니다: 코어(구문 분석, 출력, 진단, 블록)는 동작하지만 힌트, 자동 수정, 최적화에는 ProgramNeko가 필요합니다."
+    },
+    {
+      "key": "adv.needAssistant",
+      "value": "ProgramNeko가 필요합니다. 확장 기능에서 설치하거나 다시 켜세요."
+    },
+    {
+      "key": "menu.settings",
+      "value": "설정"
+    },
+    {
+      "key": "menu.extensions",
+      "value": "확장 기능"
+    },
+    {
+      "key": "set.title",
+      "value": "NekoScriptGraph 설정"
+    },
+    {
+      "key": "set.versions",
+      "value": "플러그인 {0} · 코어 {1} ({2})"
+    },
+    {
+      "key": "set.tab.general",
+      "value": "일반"
+    },
+    {
+      "key": "set.tab.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.tab.extensions",
+      "value": "확장 기능"
+    },
+    {
+      "key": "set.tab.advanced",
+      "value": "고급"
+    },
+    {
+      "key": "set.general.view",
+      "value": "에디터"
+    },
+    {
+      "key": "set.general.api",
+      "value": "API 블록"
+    },
+    {
+      "key": "set.general.langNote",
+      "value": "인터페이스 언어. 영어는 내장되어 있어 제거할 수 없습니다. 미완성 번역은 모두 영어로 대체됩니다."
+    },
+    {
+      "key": "set.assistant.missing",
+      "value": "ProgramNeko가 설치되어 있지 않습니다"
+    },
+    {
+      "key": "set.assistant.missingNote",
+      "value": "그녀가 없어도 플러그인은 구문 분석, 출력, 진단을 계속합니다. 설치하면 여기에 캐릭터 설정이 나타납니다."
+    },
+    {
+      "key": "set.assistant.noSchema",
+      "value": "설명된 캐릭터 설정이 없습니다."
+    },
+    {
+      "key": "set.assistant.presets",
+      "value": "프리셋"
+    },
+    {
+      "key": "set.assistant.persona",
+      "value": "캐릭터"
+    },
+    {
+      "key": "set.persona.speakRate",
+      "value": "말하는 빈도"
+    },
+    {
+      "key": "set.persona.speakRateNote",
+      "value": "발언 사이의 간격을 조절합니다. 높을수록 더 빨리 말합니다."
+    },
+    {
+      "key": "set.persona.chatter",
+      "value": "잡담"
+    },
+    {
+      "key": "set.persona.chatterNote",
+      "value": "이유 없는 발언입니다. 0으로 두면 일어나는 일에만 반응합니다."
+    },
+    {
+      "key": "set.persona.serious",
+      "value": "진지함"
+    },
+    {
+      "key": "set.persona.seriousNote",
+      "value": "말투를 장난스러운 쪽에서 건조한 쪽으로 기울입니다. 기존 대사에 가중치를 다시 줄 뿐 새 대사를 더하지 않습니다."
+    },
+    {
+      "key": "set.persona.alert",
+      "value": "새 오류 시 끼어들기"
+    },
+    {
+      "key": "set.persona.alertNote",
+      "value": "켜면 새 오류가 생겼을 때 대기 시간을 넘겨 즉시 말합니다."
+    },
+    {
+      "key": "set.persona.stuckMoves",
+      "value": "안절부절 기준(포인터 이동)"
+    },
+    {
+      "key": "set.persona.stuckSeconds",
+      "value": "안절부절 기준(초)"
+    },
+    {
+      "key": "set.persona.idleSleep",
+      "value": "다음 시간 후 잠듦"
+    },
+    {
+      "key": "set.persona.workRemind",
+      "value": "다음 시간 후 휴식 알림"
+    },
+    {
+      "key": "set.persona.explainBudget",
+      "value": "설명할 하위 블록 수"
+    },
+    {
+      "key": "set.persona.explainBudgetNote",
+      "value": "블록의 자식이 너무 많으면 멈추고 나머지를 선택하라고 요청합니다."
+    },
+    {
+      "key": "set.preset.quiet",
+      "value": "조용히"
+    },
+    {
+      "key": "set.preset.normal",
+      "value": "보통"
+    },
+    {
+      "key": "set.preset.chatty",
+      "value": "수다스럽게"
+    },
+    {
+      "key": "set.preset.errorsOnly",
+      "value": "오류만"
+    },
+    {
+      "key": "set.ext.locales",
+      "value": "언어 팩"
+    },
+    {
+      "key": "set.ext.localesNote",
+      "value": "영어는 코드에 내장되어 제거할 수 없습니다. 빠진 번역은 모두 영어로 대체됩니다. 다른 팩은 일반 폴더이며 언제든 제거하거나 되돌릴 수 있습니다."
+    },
+    {
+      "key": "set.ext.none",
+      "value": "찾은 것이 없습니다."
+    },
+    {
+      "key": "set.ext.enable",
+      "value": "사용"
+    },
+    {
+      "key": "set.ext.disable",
+      "value": "제거"
+    },
+    {
+      "key": "set.ext.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.ext.assistantOn",
+      "value": "ProgramNeko 설치됨"
+    },
+    {
+      "key": "set.ext.assistantOff",
+      "value": "ProgramNeko 제거됨(파일 유지)"
+    },
+    {
+      "key": "set.ext.assistantAbsent",
+      "value": "ProgramNeko 없음"
+    },
+    {
+      "key": "set.ext.assistantNote",
+      "value": "ProgramNeko를 제거해도 모든 파일은 남고 고급 기능만 꺼집니다. 코어는 계속 동작합니다. 클릭 한 번으로 되돌릴 수 있습니다."
+    },
+    {
+      "key": "set.ext.engines",
+      "value": "외부 엔진"
+    },
+    {
+      "key": "set.ext.enginesNote",
+      "value": "이들은 플러그인 패키지 밖에 있으며 Package Manager로 설치합니다. 플러그인에는 이들의 코드가 없으므로 제거해도 깨지지 않습니다."
+    },
+    {
+      "key": "set.ext.installed",
+      "value": "설치됨"
+    },
+    {
+      "key": "set.ext.notInstalled",
+      "value": "설치 안 됨"
+    },
+    {
+      "key": "set.ext.install",
+      "value": "설치"
+    },
+    {
+      "key": "set.ext.uninstall",
+      "value": "제거"
+    },
+    {
+      "key": "set.ext.catalog",
+      "value": "카탈로그 보기"
+    },
+    {
+      "key": "set.ext.refresh",
+      "value": "새로 고침"
+    },
+    {
+      "key": "ext.noSource",
+      "value": "이 확장 기능에 설치 원본이 설정되어 있지 않습니다. git URL이나 로컬 경로를 Extensions~/catalog.json에 추가하세요."
+    },
+    {
+      "key": "ext.reloadFailed",
+      "value": "다시 불러온 뒤 패키지 상태가 요청과 일치하지 않았습니다. Package Manager를 확인하세요."
+    },
+    {
+      "key": "ext.completion.data",
+      "value": "내장 블록 힌트"
+    },
+    {
+      "key": "ext.roslyn.name",
+      "value": "Roslyn 완성 엔진"
+    },
+    {
+      "key": "ext.roslyn.desc",
+      "value": "선택 사항. C# 컴파일러의 실제 멤버 및 오버로드 완성입니다. 별도 패키지로 설치하며 ProgramNeko가 필요합니다."
+    },
+    {
+      "key": "ext.roslyn.notFound",
+      "value": "Roslyn 어셈블리를 찾지 못했습니다. Microsoft.CodeAnalysis.dll과 Microsoft.CodeAnalysis.CSharp.dll을 {0}/에 넣거나, 이를 포함한 에디터를 사용하세요."
+    },
+    {
+      "key": "set.adv.gate",
+      "value": "게이트"
+    },
+    {
+      "key": "set.adv.providers",
+      "value": "힌트 원본"
+    },
+    {
+      "key": "set.adv.priority",
+      "value": "우선순위"
+    },
+    {
+      "key": "set.adv.noProviders",
+      "value": "등록된 원본이 없습니다."
+    },
+    {
+      "key": "set.adv.test",
+      "value": "외부 엔진 사용해 보기"
+    },
+    {
+      "key": "set.adv.testNoFile",
+      "value": "먼저 프로젝트 창에서 .cs 파일을 선택하세요."
+    },
+    {
+      "key": "set.adv.testRunning",
+      "value": "실행 중…"
+    },
+    {
+      "key": "set.adv.testDone",
+      "value": "{0}개 항목 반환"
+    },
+    {
+      "key": "set.adv.optimizers",
+      "value": "최적화"
+    },
+    {
+      "key": "set.adv.optimizerCount",
+      "value": "최적화 패스 {0}개가 등록되었습니다. 최적화는 ProgramNeko 없이 실행되지 않습니다."
+    },
+    {
+      "key": "set.adv.state.ready",
+      "value": "준비됨"
+    },
+    {
+      "key": "set.adv.state.warming",
+      "value": "예열 중"
+    },
+    {
+      "key": "set.adv.state.failed",
+      "value": "실패"
+    },
+    {
+      "key": "set.adv.state.missing",
+      "value": "사용 불가"
+    },
+    {
+      "key": "manage.noLanguages",
+      "value": "언어가 로드되지 않아 찾을 소스가 없습니다. LanguageSupport 폴더가 온전한지 확인한 뒤 Blocks ▸ Languages: Show Loaded 로 확인하세요."
+    },
+    {
+      "key": "manage.noSourcesProject",
+      "value": "관리할 대상이 없습니다. 이 확장자의 소스가 프로젝트에 없습니다 — {0}."
+    },
+    {
+      "key": "manage.noSourcesFolder",
+      "value": "{0} 에 관리할 대상이 없습니다. 이 확장자의 소스가 없습니다 — {1}."
+    },
+    {
+      "key": "manage.allManaged",
+      "value": "여기 있는 {0} 개 소스는 이미 모두 관리 중입니다. 되돌리려면 Release, 또는 블록 편집기에서 편집하세요."
+    },
+    {
+      "key": "optimise.selectScript",
+      "value": "먼저 스크립트를 선택하세요. 최적화는 한 번에 한 파일만 처리하며 그 블록을 다시 씁니다."
+    },
+    {
+      "key": "optimise.noModel",
+      "value": "이 스크립트에는 아직 블록 모델이 없습니다. 먼저 관리 대상으로 지정하세요."
     }
   ],
   "blocks": [

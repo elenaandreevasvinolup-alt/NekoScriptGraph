@@ -1,6 +1,6 @@
 {
     "id": "expr.postfix",
-    "level": "high",
+    "level": "low",
     "shape": "expression",
     "category": "{0}{1}",
     "categoryKey": "cat.expr",

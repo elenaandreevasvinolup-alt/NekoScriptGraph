@@ -972,6 +972,442 @@
     {
       "key": "win.title",
       "value": "NekoScriptGraph"
+    },
+    {
+      "key": "palette.advanced",
+      "value": "上級ブロックを表示"
+    },
+    {
+      "key": "health.optimizerDeadCode",
+      "value": "到達不能な文を削除"
+    },
+    {
+      "key": "health.optimizerConstCond",
+      "value": "定数条件を畳み込む"
+    },
+    {
+      "key": "health.optimizeRun",
+      "value": "ブロックを最適化"
+    },
+    {
+      "key": "health.optimizeNothing",
+      "value": "最適化する対象がありません。到達不能な文は見つかりませんでした。"
+    },
+    {
+      "key": "health.optimizeDone",
+      "value": "到達不能なブロックを {0} 個、{1} 個のメソッドから削除しました。"
+    },
+    {
+      "key": "health.optimizeRolledBack",
+      "value": "元に戻しました: {0}"
+    },
+    {
+      "key": "msg.importFailed",
+      "value": "{0} のインポートに失敗しました: {1}"
+    },
+    {
+      "key": "msg.modelLoadFailed",
+      "value": "ブロックファイル {0} を読み込めませんでした（{1}）。空として扱いました。スクリプトの隣の .nsg.json を修正または削除してから再インポートしてください。"
+    },
+    {
+      "key": "preset.title",
+      "value": "プリセット"
+    },
+    {
+      "key": "preset.save",
+      "value": "選択範囲をプリセットとして保存"
+    },
+    {
+      "key": "preset.namePrompt",
+      "value": "プリセット名"
+    },
+    {
+      "key": "preset.none",
+      "value": "プリセットはまだありません。ブロックのまとまりを選択し、上のボタンを押してください。"
+    },
+    {
+      "key": "preset.confirmDelete",
+      "value": "プリセット「{0}」を削除しますか？ 元に戻せません。"
+    },
+    {
+      "key": "preset.dragHint",
+      "value": "キャンバスにドラッグして挿入、またはクリックして追加"
+    },
+    {
+      "key": "preset.noSelection",
+      "value": "先にブロックを選択してください。"
+    },
+    {
+      "key": "preset.notConnected",
+      "value": "選択範囲がひとつの連結したまとまりではありません（{0} 個の分離した部分）。連結したひとつのグループを選択してください。"
+    },
+    {
+      "key": "preset.multiGraph",
+      "value": "選択範囲が複数のメソッドにまたがっています。ひとつのメソッド内で選択してください。"
+    },
+    {
+      "key": "preset.tooBig",
+      "value": "大きすぎます: ブロック {0} 個、上限は {1} 個です。"
+    },
+    {
+      "key": "preset.empty",
+      "value": "プリセットにブロックがありません。"
+    },
+    {
+      "key": "preset.needName",
+      "value": "プリセット名を入力してください。"
+    },
+    {
+      "key": "confirm.selectSource",
+      "value": "先にプロジェクトウィンドウで対応言語のソースファイルを選択してください。"
+    },
+    {
+      "key": "api.doneAll",
+      "value": "全言語で API ブロックを {0} 個生成しました（{1} 言語がエラーを報告）。"
+    },
+    {
+      "key": "lang.python.apiNotImplemented",
+      "value": "Python の API ブロック生成はまだ実装されていません"
+    },
+    {
+      "key": "lang.python.unparsed",
+      "value": "解析されていません: {0}"
+    },
+    {
+      "key": "err.explain",
+      "value": "説明"
+    },
+    {
+      "key": "neko.noArt",
+      "value": "（ポートレート未設定）"
+    },
+    {
+      "key": "blk.explain",
+      "value": "このブロックを説明"
+    },
+    {
+      "key": "adv.enabled",
+      "value": "拡張機能はオンです: ProgramNeko がインストールされており、すべての変更を説明できます。"
+    },
+    {
+      "key": "adv.disabled",
+      "value": "拡張機能はオフです: コア（解析、出力、診断、ブロック）は動作しますが、ヒント、自動修正、最適化には ProgramNeko が必要です。"
+    },
+    {
+      "key": "adv.needAssistant",
+      "value": "これには ProgramNeko が必要です。拡張機能からインストールまたは有効化してください。"
+    },
+    {
+      "key": "menu.settings",
+      "value": "設定"
+    },
+    {
+      "key": "menu.extensions",
+      "value": "拡張機能"
+    },
+    {
+      "key": "set.title",
+      "value": "NekoScriptGraph の設定"
+    },
+    {
+      "key": "set.versions",
+      "value": "プラグイン {0} · コア {1}（{2}）"
+    },
+    {
+      "key": "set.tab.general",
+      "value": "一般"
+    },
+    {
+      "key": "set.tab.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.tab.extensions",
+      "value": "拡張機能"
+    },
+    {
+      "key": "set.tab.advanced",
+      "value": "詳細"
+    },
+    {
+      "key": "set.general.view",
+      "value": "エディター"
+    },
+    {
+      "key": "set.general.api",
+      "value": "API ブロック"
+    },
+    {
+      "key": "set.general.langNote",
+      "value": "インターフェース言語。英語は組み込みで削除できません。未完成の翻訳はすべて英語にフォールバックします。"
+    },
+    {
+      "key": "set.assistant.missing",
+      "value": "ProgramNeko がインストールされていません"
+    },
+    {
+      "key": "set.assistant.missingNote",
+      "value": "彼女がいなくても、プラグインは解析・出力・診断を続けます。インストールすると、ここにキャラクター設定が表示されます。"
+    },
+    {
+      "key": "set.assistant.noSchema",
+      "value": "キャラクター設定がありません。"
+    },
+    {
+      "key": "set.assistant.presets",
+      "value": "プリセット"
+    },
+    {
+      "key": "set.assistant.persona",
+      "value": "キャラクター"
+    },
+    {
+      "key": "set.persona.speakRate",
+      "value": "話す頻度"
+    },
+    {
+      "key": "set.persona.speakRateNote",
+      "value": "発言の間隔を調整します。大きいほど早く話し出します。"
+    },
+    {
+      "key": "set.persona.chatter",
+      "value": "雑談"
+    },
+    {
+      "key": "set.persona.chatterNote",
+      "value": "理由のない発言です。0 にすると、起きたことにだけ反応します。"
+    },
+    {
+      "key": "set.persona.serious",
+      "value": "真面目さ"
+    },
+    {
+      "key": "set.persona.seriousNote",
+      "value": "言葉遣いを遊び心から淡々とした調子へ寄せます。既存の台詞を重み付けするだけで、新しい台詞は追加しません。"
+    },
+    {
+      "key": "set.persona.alert",
+      "value": "新しいエラーで割り込む"
+    },
+    {
+      "key": "set.persona.alertNote",
+      "value": "オンのとき、新しいエラーがあると待ち時間を無視してすぐ話します。"
+    },
+    {
+      "key": "set.persona.stuckMoves",
+      "value": "そわそわ判定（ポインター移動）"
+    },
+    {
+      "key": "set.persona.stuckSeconds",
+      "value": "そわそわ判定（秒）"
+    },
+    {
+      "key": "set.persona.idleSleep",
+      "value": "この後に眠る"
+    },
+    {
+      "key": "set.persona.workRemind",
+      "value": "この後に休憩を促す"
+    },
+    {
+      "key": "set.persona.explainBudget",
+      "value": "説明するサブブロック数"
+    },
+    {
+      "key": "set.persona.explainBudgetNote",
+      "value": "ブロックの子が多すぎると、残りを選択するよう促して停止します。"
+    },
+    {
+      "key": "set.preset.quiet",
+      "value": "静か"
+    },
+    {
+      "key": "set.preset.normal",
+      "value": "普通"
+    },
+    {
+      "key": "set.preset.chatty",
+      "value": "おしゃべり"
+    },
+    {
+      "key": "set.preset.errorsOnly",
+      "value": "エラーのみ"
+    },
+    {
+      "key": "set.ext.locales",
+      "value": "言語パック"
+    },
+    {
+      "key": "set.ext.localesNote",
+      "value": "英語はコードに組み込まれており削除できません。未翻訳はすべて英語にフォールバックします。他のパックは通常のフォルダーで、いつでも削除・復元できます。"
+    },
+    {
+      "key": "set.ext.none",
+      "value": "何も見つかりません。"
+    },
+    {
+      "key": "set.ext.enable",
+      "value": "有効化"
+    },
+    {
+      "key": "set.ext.disable",
+      "value": "削除"
+    },
+    {
+      "key": "set.ext.assistant",
+      "value": "ProgramNeko"
+    },
+    {
+      "key": "set.ext.assistantOn",
+      "value": "ProgramNeko はインストール済み"
+    },
+    {
+      "key": "set.ext.assistantOff",
+      "value": "ProgramNeko は削除済み（ファイルは保持）"
+    },
+    {
+      "key": "set.ext.assistantAbsent",
+      "value": "ProgramNeko は存在しません"
+    },
+    {
+      "key": "set.ext.assistantNote",
+      "value": "ProgramNeko を削除してもファイルは残り、拡張機能だけがオフになります。コアは動作し続けます。ワンクリックで戻せます。"
+    },
+    {
+      "key": "set.ext.engines",
+      "value": "外部エンジン"
+    },
+    {
+      "key": "set.ext.enginesNote",
+      "value": "これらはプラグインパッケージの外にあり、Package Manager でインストールします。プラグインにはこれらのコードは含まれないため、削除しても壊れることはありません。"
+    },
+    {
+      "key": "set.ext.installed",
+      "value": "インストール済み"
+    },
+    {
+      "key": "set.ext.notInstalled",
+      "value": "未インストール"
+    },
+    {
+      "key": "set.ext.install",
+      "value": "インストール"
+    },
+    {
+      "key": "set.ext.uninstall",
+      "value": "アンインストール"
+    },
+    {
+      "key": "set.ext.catalog",
+      "value": "カタログを表示"
+    },
+    {
+      "key": "set.ext.refresh",
+      "value": "更新"
+    },
+    {
+      "key": "ext.noSource",
+      "value": "この拡張機能にインストール元が設定されていません。git URL またはローカルパスを Extensions~/catalog.json に追加してください。"
+    },
+    {
+      "key": "ext.reloadFailed",
+      "value": "再読み込み後、パッケージの状態が要求と一致しませんでした。Package Manager を確認してください。"
+    },
+    {
+      "key": "ext.completion.data",
+      "value": "組み込みブロックヒント"
+    },
+    {
+      "key": "ext.roslyn.name",
+      "value": "Roslyn 補完エンジン"
+    },
+    {
+      "key": "ext.roslyn.desc",
+      "value": "任意。C# コンパイラーによる実際のメンバーとオーバーロードの補完。別パッケージとしてインストールし、ProgramNeko が必要です。"
+    },
+    {
+      "key": "ext.roslyn.notFound",
+      "value": "Roslyn アセンブリが見つかりません。Microsoft.CodeAnalysis.dll と Microsoft.CodeAnalysis.CSharp.dll を {0}/ に置くか、同梱のエディターを使ってください。"
+    },
+    {
+      "key": "set.adv.gate",
+      "value": "ゲート"
+    },
+    {
+      "key": "set.adv.providers",
+      "value": "ヒント元"
+    },
+    {
+      "key": "set.adv.priority",
+      "value": "優先度"
+    },
+    {
+      "key": "set.adv.noProviders",
+      "value": "登録されたヒント元はありません。"
+    },
+    {
+      "key": "set.adv.test",
+      "value": "外部エンジンを試す"
+    },
+    {
+      "key": "set.adv.testNoFile",
+      "value": "先にプロジェクトウィンドウで .cs ファイルを選択してください。"
+    },
+    {
+      "key": "set.adv.testRunning",
+      "value": "実行中…"
+    },
+    {
+      "key": "set.adv.testDone",
+      "value": "{0} 件を返しました"
+    },
+    {
+      "key": "set.adv.optimizers",
+      "value": "最適化"
+    },
+    {
+      "key": "set.adv.optimizerCount",
+      "value": "最適化パスを {0} 件登録しました。最適化は ProgramNeko なしでは動作しません。"
+    },
+    {
+      "key": "set.adv.state.ready",
+      "value": "準備完了"
+    },
+    {
+      "key": "set.adv.state.warming",
+      "value": "準備中"
+    },
+    {
+      "key": "set.adv.state.failed",
+      "value": "失敗"
+    },
+    {
+      "key": "set.adv.state.missing",
+      "value": "利用不可"
+    },
+    {
+      "key": "manage.noLanguages",
+      "value": "言語が読み込まれていないため、探すべきソースがありません。LanguageSupport フォルダが無事か確認し、Blocks ▸ Languages: Show Loaded で確認してください。"
+    },
+    {
+      "key": "manage.noSourcesProject",
+      "value": "管理対象がありません：この拡張子のソースがプロジェクトにありません — {0}。"
+    },
+    {
+      "key": "manage.noSourcesFolder",
+      "value": "{0} に管理対象がありません：この拡張子のソースがありません — {1}。"
+    },
+    {
+      "key": "manage.allManaged",
+      "value": "ここにある {0} 個のソースはすでにすべて管理下です。取り消すには Release、またはブロックエディタで編集してください。"
+    },
+    {
+      "key": "optimise.selectScript",
+      "value": "先にスクリプトを選択してください。最適化は 1 ファイルずつ実行し、そのブロックを書き換えます。"
+    },
+    {
+      "key": "optimise.noModel",
+      "value": "このスクリプトにはまだブロックモデルがありません。先に管理下に置いてください。"
     }
   ],
   "blocks": [

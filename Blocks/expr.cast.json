@@ -1,6 +1,6 @@
 {
     "id": "expr.cast",
-    "level": "high",
+    "level": "low",
     "shape": "expression",
     "category": "把 {1} 转为 {0}",
     "categoryKey": "cat.expr",

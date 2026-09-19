@@ -1,6 +1,6 @@
 {
     "id": "expr.new",
-    "level": "high",
+    "level": "low",
     "shape": "expression",
     "category": "创建 {0}",
     "categoryKey": "cat.expr",

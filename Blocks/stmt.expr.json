@@ -1,6 +1,6 @@
 {
     "id": "stmt.expr",
-    "level": "high",
+    "level": "low",
     "shape": "statement",
     "category": "执行 {0}",
     "categoryKey": "cat.var",

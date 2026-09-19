@@ -14,6 +14,11 @@ namespace NekoScriptGraph
     {
         static Nsg_ErrorWindow _instance;
 
+        // Последняя диагностика, даже если окна ещё нет. Нужна, чтобы открытие
+        // окна вручную показывало актуальное, а не пустой список.
+        static NsgDiagnostics _lastDiag;
+        static string _lastPath;
+
         NsgDiagnostics _diag;
         string _csPath;
         bool _filterErrors;
@@ -25,38 +30,76 @@ namespace NekoScriptGraph
         // ---- кошка (необязательная часть окна) ----
         Nsg_NekoView _neko;
 
-        public static void Open()
+        /// <summary>Уже существующее окно или null. НЕ создаёт: иначе проверка
+        /// «есть ли окно» сама бы его и открывала.</summary>
+        static Nsg_ErrorWindow Instance()
         {
-            if (_instance == null)
-            {
-                _instance = GetWindow<Nsg_ErrorWindow>();
-                _instance.titleContent = new GUIContent(Nsg_L10n.T("err.title"));
-                _instance.minSize = new Vector2(420, 240);
-            }
-            _instance.Show();
-            _instance.Rebuild();
+            if (_instance != null) return _instance;
+
+            var all = Resources.FindObjectsOfTypeAll<Nsg_ErrorWindow>();
+            if (all != null && all.Length > 0) _instance = all[0];
+            return _instance;
         }
 
+        /// <summary>Создаёт окно, если его ещё нет. GetWindow показывает окно,
+        /// поэтому вызывается только тогда, когда показать действительно надо.</summary>
+        static Nsg_ErrorWindow Ensure()
+        {
+            var w = Instance();
+            if (w != null) return w;
+
+            w = GetWindow<Nsg_ErrorWindow>();
+            w.titleContent = new GUIContent(Nsg_L10n.T("err.title"));
+            w.minSize = new Vector2(420, 240);
+            _instance = w;
+            return w;
+        }
+
+        public static void Open()
+        {
+            var w = Ensure();
+            w._diag = _lastDiag;
+            w._csPath = _lastPath;
+            w.Show();
+            w.Rebuild();
+        }
+
+        /// <summary>
+        /// Обновить диагностику. Окно НЕ всплывает само: раньше Push вызывал
+        /// Open, а Push зовётся при каждом открытии файла — окно вылезало
+        /// наверх и забирало фокус на любом действии. Всплывает только
+        /// ошибка: ровно ради этого окно и существует.
+        /// </summary>
         public static void Push(NsgDiagnostics diag, string csPath)
         {
-            Open();
-            if (_instance == null) return;
-            _instance._diag = diag;
-            _instance._csPath = csPath;
-            _instance.Rebuild();
+            _lastDiag = diag;
+            _lastPath = csPath;
+
+            var w = Instance();
+            if (w == null)
+            {
+                // Окна нет. Показывать нечего — не создаём его молча; ошибка
+                // ниже создаст и покажет.
+                if (diag == null || !diag.HasErrors) return;
+                w = Ensure();
+            }
+
+            w._diag = diag;
+            w._csPath = csPath;
+            w.Rebuild();
 
             if (diag != null && diag.HasErrors)
             {
-                _instance.Show();
-                _instance.NekoSay("react.error", Nsg_NekoMood.Worried);
+                w.Show();
+                w.NekoSay("react.error", Nsg_NekoMood.Worried);
             }
             else if (diag != null && diag.Count == 0)
             {
-                _instance.NekoSay("react.clean", Nsg_NekoMood.Happy);
+                w.NekoSay("react.clean", Nsg_NekoMood.Happy);
             }
             else if (diag != null)
             {
-                _instance.NekoSay("react.success", Nsg_NekoMood.Happy);
+                w.NekoSay("react.success", Nsg_NekoMood.Happy);
             }
         }
 
@@ -146,8 +189,19 @@ namespace NekoScriptGraph
                     else if (d.Severity == NsgSeverity.Warning) warnings++;
                     else infos++;
 
-                    if (_filterErrors && d.Severity != NsgSeverity.Error) continue;
-                    if (_filterWarnings && d.Severity != NsgSeverity.Warning) continue;
+                    // Два переключателя — это НАБОР фильтров, а не два
+                    // последовательных запрета. Раньше здесь стояли два
+                    // независимых continue, то есть логическое И: с обоими
+                    // включёнными галочками не проходило ни одной строки —
+                    // ошибка не проходила по «!= Warning», предупреждение по
+                    // «!= Error». Теперь включённые галочки объединяются по ИЛИ,
+                    // а при выключенных показывается всё.
+                    if (_filterErrors || _filterWarnings)
+                    {
+                        bool pass = (_filterErrors && d.Severity == NsgSeverity.Error)
+                                 || (_filterWarnings && d.Severity == NsgSeverity.Warning);
+                        if (!pass) continue;
+                    }
 
                     _list.Add(Row(d));
                 }

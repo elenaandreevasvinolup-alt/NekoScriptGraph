@@ -98,8 +98,13 @@ namespace NekoScriptGraph
             // Перезагрузка домена уничтожает управляемое состояние, но сокет —
             // ресурс операционной системы. Закрываем его явно, иначе порт
             // останется занятым, и после перезагрузки Start() упадёт.
-            AssemblyReloadEvents.beforeAssemblyReload += Stop;
-            EditorApplication.quitting += Stop;
+            //
+            // Именно StopQuiet, а не Stop: перезагрузка домена случается при
+            // любой перекомпиляции, и «явная остановка» здесь означала бы, что
+            // первый же скрипт-релоад забывает пользовательский выбор и мост
+            // больше не поднимается. Настройку снимает только сам пользователь.
+            AssemblyReloadEvents.beforeAssemblyReload += StopQuiet;
+            EditorApplication.quitting += StopQuiet;
             EditorApplication.update += DrainQueue;
 
             if (Enabled) EditorApplication.delayCall += Restore;
@@ -160,7 +165,21 @@ namespace NekoScriptGraph
             }
         }
 
+        /// <summary>Явная остановка: закрыть сокет И забыть пользовательский
+        /// выбор, чтобы следующий запуск редактора мост не поднимал.</summary>
         public static void Stop()
+        {
+            Stop(true);
+        }
+
+        /// <summary>Остановка по жизненному циклу: закрыть сокет, но сохранить
+        /// настройку — иначе перекомпиляция выключала бы мост навсегда.</summary>
+        static void StopQuiet()
+        {
+            Stop(false);
+        }
+
+        static void Stop(bool forget)
         {
             _running = false;
 
@@ -178,7 +197,7 @@ namespace NekoScriptGraph
             // Поток фоновый и завершится сам, когда Close() уронит Accept.
             _thread = null;
 
-            EditorPrefs.SetBool(KeyEnabled, false);
+            if (forget) EditorPrefs.SetBool(KeyEnabled, false);
         }
 
         public static void SetPort(int port)

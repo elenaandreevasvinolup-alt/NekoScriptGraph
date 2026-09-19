@@ -1,6 +1,6 @@
 {
     "id": "expr.conditional",
-    "level": "high",
+    "level": "low",
     "shape": "expression",
     "category": "如果 {0} 就 {1} 否则 {2}",
     "categoryKey": "cat.expr",

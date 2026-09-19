@@ -341,7 +341,37 @@ Switch with the **View** dropdown (`view.stack` / `view.blueprint`).
 
 ### 6.3 Checkpoints
 
-Built-in snapshots live in `.checkpoints/`, which is **git-ignored** — it can never fight your repository history. Take one before a large *blocks → code* write.
+There are **three named slots per script**, plus one **automatic slot**. All of them live
+in `.checkpoints/`, which is **git-ignored** — they can never fight your repository
+history.
+
+| Slot | Filled by | Purpose |
+|---|---|---|
+| 1 / 2 / 3 | you | Named points you choose to keep |
+| **auto** | the plugin | A safety net written **before every irreversible action** |
+
+**The automatic slot is not a fourth named slot.** It cannot be chosen, named or
+occupied by hand. It is written by the plugin itself, immediately before an operation
+that cannot be undone, and it exists so that you never have to remember to make a
+snapshot:
+
+- **Import from code** — blocks are rebuilt from the file, so hand-assembled blocks are
+  replaced. The previous model is snapshotted first.
+- **Optimise blocks** — the optimiser edits your code. The snapshot is taken *before* the
+  run, regardless of whether the run passes its own checks, because a point of return is
+  exactly what you need when something goes wrong.
+- **Release / unmanage** — the block file is deleted. The model is read from the file *before* it is deleted, so Release is recoverable too.
+
+**When to take a named slot yourself**
+
+- Before a large *blocks → code* write, if you have not committed in a while.
+- Before a structural refactor across many methods — the automatic slot only keeps the
+  **last** action, so a series of edits overwrites it each time.
+- Before you hand the file to someone else, or before an agent session works on it.
+
+**What the automatic slot is not.** It keeps one snapshot, not a history: the next
+irreversible action replaces it. If you want a point you can come back to next week, take
+a named slot — that is what they are for.
 
 ### 6.4 Hiding block files
 
@@ -353,6 +383,63 @@ Built-in snapshots live in `.checkpoints/`, which is **git-ignored** — it can 
 ### 6.5 Explain the selected block
 
 `Cmd/Ctrl+Shift+E` (menu **`Explain Selected Block`**) asks the assistant to explain the current block. Also a global hotkey.
+
+### 6.6 Reading a whole branch (1.0.3)
+
+With the assistant installed, explaining a block no longer stops at "there are 3 blocks
+inside" — it walks the block's children and describes them one by one: the branch body,
+the `else` branch, and any block plugged into a value slot.
+
+**The limits are deliberate:**
+
+| Limit | Value | Why |
+|---|---|---|
+| Blocks per answer | 8 | A large method would otherwise be a wall of text and a cost on every click |
+| Children per block | 6 | One node with twenty inputs would eat the whole budget |
+| Depth | 3 | Deeper structure is not what "what is this block" asks |
+
+**When it stops early it says so.** The remainder is counted and reported, and the
+assistant asks you to select those blocks and explain them separately — the rest is not
+silently dropped.
+
+**Translations are data.** The tree sentences live in their own `tree.*` slot group, so a
+locale without them still gets the block sentence, and adding a tree translation is a
+`neko.json` edit. English, Simplified Chinese and Traditional Chinese ship translated.
+
+**The explanation also reads the logic.** After the tree, the assistant says what the
+block does to the data:
+
+> *"So while `health > 0` holds, it changes `health`, `timer`, nya."*
+
+| Part | Where it comes from |
+|---|---|
+| Condition | The socket named `cond`, rendered with its inputs filled in. `foreach` has no condition, so it uses `source` |
+| Targets | The block's own `target` / `name` socket, plus the same from every statement in the branch or loop body — nested branches included |
+| Actions | How many statements the body runs |
+
+**It works for all eight languages with no per-language code.** The reader never looks at
+syntax; it reads the `node` field (`while` / `for` / `foreach` / `if` / `assign` /
+`localDecl` / `call` / `return` / `expr`) and the socket names (`cond`, `target`, `name`,
+`source`) — both are data every language's blocks already carry. A new language gets the
+logic reading as soon as its blocks use the same labels.
+
+If a block changes nothing, it says so rather than staying silent, and the sentence is
+keyed by kind (`logic.loop.*`, `logic.branch.*`, `logic.action.*`) so a locale can
+translate each one separately. It does **not** attempt to explain *why* a block exists —
+that would need a language model; it reports only what is visible in the graph.
+
+### 6.7 How the next-block suggestion is ordered (1.0.3)
+
+The suggestion strip at the end of a stack is ranked by three signals:
+
+1. **Category prior** — declarations and control flow before idioms, generated API last.
+2. **Already used in this method** — what the file uses is what it will use again.
+3. **Transition scoring** — the graph is read for "block A followed by block B"
+   (continuation, branch body, `else`). A candidate that already followed the current
+   block in *this file* scores higher.
+
+The third signal is data from the file itself, not a built-in dictionary: it adapts per
+script and needs no training.
 
 ---
 
@@ -385,6 +472,7 @@ The table below lists the entries inside `NekoWorks → NSG`.
 | `Release Whole Project` | Release everything |
 | `Generate API Blocks for Selected Folder` | Folder-scoped API minting |
 | `Build API Library for Whole Project` | One-click global API (Part A) |
+| `Optimise Blocks` | Run the optimiser on the selected script (same run as the Health window, with the same gate and rollback) |
 | `Reload Block Library` | Re-read `Blocks/` |
 | `Export Default Block Library` | Write built-in blocks to `Blocks/` |
 | `Generate ShaderLab Shell` | Emit the shader outer structure |
@@ -548,6 +636,40 @@ Menu **`Architecture Health`** — with a script selected it analyses that file;
 | `leak` | Suspected leak |
 
 **Fix actions:** `fixBreakLink`, `fixFillZero`, `fixAddRelease`, `fixApply`, `rerun`.
+
+### 11.1 Optimising blocks (1.0.3)
+
+The bottom of the Health window shows the registered passes and, when at least one
+optimizer exists, an **`Optimise blocks`** button.
+
+**What runs** — two passes, in registration order:
+
+1. **`optimizer.constantcondition`** — folds `if (true) { … }` to `{ … }` and
+   `if (false) { … }` to nothing. The condition must be a `true`/`false` literal
+   (directly or through a literal block): a literal has no side effects, so taking the
+   branch cannot change behaviour. Whatever followed the `if` is spliced onto the tail of
+   the taken branch, and the orphaned literal is left for pass 2.
+2. **`optimizer.deadcode`** — removes statements after `return` / `break` / `continue`
+   in the same list, and nodes that nothing references any more (leftovers from
+   editing).
+
+**Why it is safe.** Reachability is walked from the method entry and stops at a
+terminator: everything unmarked cannot execute under any input, so removing it cannot
+change behaviour.
+
+**The gate.** Optimisation edits your code, so it is never trusted on its own:
+
+1. the model is deep-cloned before the run;
+2. after the run every reference must resolve and the graph must be acyclic;
+3. the model must render with **no more errors than before** (a file that was already
+   imperfect is not rejected for staying imperfect);
+4. the printed text must parse back without errors.
+
+Any failure rolls the entire run back and the reason is shown under the button. The
+button reports how many blocks were removed and across how many methods.
+
+**Writes only on success.** Nothing is written to disk unless the run survived the gate
+and actually changed something. The block editor is refreshed afterwards.
 
 ---
 

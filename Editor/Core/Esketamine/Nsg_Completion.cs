@@ -185,9 +185,93 @@ namespace NekoScriptGraph
                         Detail = s.Def.CategoryLabel()
                     });
                 }
+
+                // В позиции значения блока мало: там нужно ИМЯ. Локальные
+                // переменные этого метода берутся из общего индекса
+                // (Nsg_SymbolIndex), поэтому работают в любом языке.
+                if (!context.StatementPosition)
+                {
+                    AddLocals(result, context);
+                    AddApiMembers(result, context);
+                }
             }
 
             if (done != null) done(result);
+        }
+
+        /// <summary>Имена, объявленные в этом же методе.</summary>
+        static void AddLocals(List<Nsg_CompletionItem> result, Nsg_CompletionContext context)
+        {
+            var locals = Nsg_SymbolIndex.CollectLocals(context.Graph, context.Library);
+
+            for (int i = 0; i < locals.Count; i++)
+            {
+                string name = locals[i];
+                if (!Matches(name, context.Prefix)) continue;
+
+                result.Add(new Nsg_CompletionItem
+                {
+                    Kind = "symbol",
+                    Display = name,
+                    Insert = name,
+                    // Выше блоков: имя из этого же метода почти всегда нужнее.
+                    Score = 5f,
+                    Detail = "local"
+                });
+            }
+        }
+
+        /// <summary>
+        /// Члены API по префиксу. Данные уже лежат в библиотеке: matchCall
+        /// автогенерированных блоков хранит полное имя вызова, поэтому
+        /// отдельного дерева префиксов не нужно — сравнение по суффиксу
+        /// даёт то же самое на десятках тысяч блоков.
+        /// </summary>
+        static void AddApiMembers(List<Nsg_CompletionItem> result, Nsg_CompletionContext context)
+        {
+            if (string.IsNullOrEmpty(context.Prefix)) return;
+            if (context.Library == null || context.Library.Blocks == null) return;
+
+            var blocks = context.Library.Blocks;
+            for (int i = 0; i < blocks.Count; i++)
+            {
+                var def = blocks[i];
+                if (def == null || string.IsNullOrEmpty(def.matchCall)) continue;
+
+                string shortName = ShortCall(def.matchCall);
+                if (!Matches(shortName, context.Prefix) && !Matches(def.matchCall, context.Prefix)) continue;
+
+                result.Add(new Nsg_CompletionItem
+                {
+                    Kind = "symbol",
+                    Display = shortName,
+                    Insert = shortName,
+                    Score = 4f,
+                    Def = def,
+                    Detail = "member"
+                });
+
+                if (result.Count >= 400) return;
+            }
+        }
+
+        /// <summary>«UnityEngine.Debug.Log» → «Debug.Log»: в слоте пишут именно так.</summary>
+        static string ShortCall(string call)
+        {
+            if (string.IsNullOrEmpty(call)) return call;
+
+            int last = call.LastIndexOf('.');
+            if (last <= 0) return call;
+
+            int prev = call.LastIndexOf('.', last - 1);
+            return prev < 0 ? call : call.Substring(prev + 1);
+        }
+
+        static bool Matches(string text, string prefix)
+        {
+            if (string.IsNullOrEmpty(prefix)) return true;
+            if (string.IsNullOrEmpty(text)) return false;
+            return text.IndexOf(prefix, System.StringComparison.OrdinalIgnoreCase) >= 0;
         }
     }
 

@@ -20,6 +20,10 @@ namespace NekoScriptGraph
         Nsg_Document _doc;
         Nsg_HealthReport _report;
 
+        /// <summary>Итог последнего прогона оптимизатора. Показывается под
+        /// списком находок, пока окно открыто.</summary>
+        NsgOptimizeReport _optimizeResult;
+
         Label _score;
         Label _summary;
         VisualElement _list;
@@ -103,8 +107,11 @@ namespace NekoScriptGraph
                 CsPath = _doc.CsPath
             };
 
+            // Один прогон — один анализ. Раньше результат RunAll выбрасывался,
+            // а следом вызывался Analyze, то есть модель разбиралась дважды.
+            // Отчёт берётся у самого прохода.
             Nsg_PassRegistry.RunAll(context, NsgPassKind.Diagnostic, passes);
-            _report = Nsg_Health.Analyze(_doc.Model, context.Library, null);
+            _report = Nsg_HealthPass.Last;
 
             Rebuild();
         }
@@ -253,6 +260,75 @@ namespace NekoScriptGraph
                 passes.style.color = new Color(0.55f, 0.58f, 0.64f);
                 _optimizer.Add(passes);
             }
+
+            // Кнопка есть только когда есть что запускать и есть документ.
+            if (optimizers > 0 && _doc != null && _doc.Model != null)
+            {
+                var run = new Button(RunOptimizer);
+                run.text = Nsg_L10n.T("health.optimizeRun");
+                run.style.marginTop = 4;
+                run.style.alignSelf = Align.FlexStart;
+                _optimizer.Add(run);
+            }
+
+            if (_optimizeResult != null)
+            {
+                var r = _optimizeResult;
+                string text;
+
+                if (r.RolledBack)
+                    text = Nsg_L10n.T("health.optimizeRolledBack", r.Reason ?? "?");
+                else if (r.Removed > 0)
+                    text = Nsg_L10n.T("health.optimizeDone", r.Removed, r.MethodsChanged);
+                else
+                    text = Nsg_L10n.T("health.optimizeNothing");
+
+                var result = new Label(text);
+                result.style.whiteSpace = WhiteSpace.Normal;
+                result.style.unityTextAlign = Nsg_Rtl.TextAlign;
+                result.style.fontSize = 10;
+                result.style.marginTop = 3;
+                result.style.color = r.RolledBack
+                    ? Nsg_Palette.Warning
+                    : (r.Removed > 0 ? new Color(0.5f, 0.85f, 0.55f) : new Color(0.65f, 0.68f, 0.74f));
+                _optimizer.Add(result);
+            }
+        }
+
+        /// <summary>
+        /// Прогон оптимизаторов с записью результата.
+        ///
+        /// Запись идёт ТОЛЬКО если прогон не откатился и правка что-то дала:
+        /// Nsg_Optimizer уже проверил, что модель печатается и текст
+        /// разбирается заново, поэтому здесь остаётся применить результат к
+        /// диску и перерисовать окно блоков.
+        /// </summary>
+        void RunOptimizer()
+        {
+            if (_doc == null || _doc.Model == null) return;
+
+            var report = Nsg_Optimizer.Run(_doc);
+
+            if (!report.RolledBack && report.NodesBefore != report.NodesAfter)
+            {
+                var diag = new NsgDiagnostics();
+                string text;
+                List<string> bodies;
+
+                if (_doc.Generate(out text, out bodies, diag) && !diag.HasErrors)
+                    _doc.WriteCode(text, bodies);
+                else
+                {
+                    report.RolledBack = true;
+                    report.Reason = diag.Items.Count > 0 && diag.Items[0] != null
+                        ? diag.Items[0].Message
+                        : "write failed";
+                }
+            }
+
+            _optimizeResult = report;
+            Nsg_Window.RefreshOpen();
+            Run();
         }
 
         static string Label(NsgSeverity s)
