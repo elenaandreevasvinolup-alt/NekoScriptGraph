@@ -1,3 +1,4 @@
+![banner](https://raw.githubusercontent.com/elenaandreevasvinolup-alt/NekoScriptGraph/main/banner.png)
 # NekoScriptGraph (NSG)
 
 A Scratch-like visual programming plugin for Unity that **never puts anything into
@@ -30,18 +31,19 @@ your scripts still compile.
 
 Core **1.0.2** (unchanged engine), plugin **1.0.3**.
 
-### The cat can now read the tree
+### Block explanation reads the branch
 
 Explaining a block used to be a count: "there are 3 blocks inside". It now walks the
 block's actual children — the branch body, the `else` branch, and the blocks plugged
-into value slots — and describes them one by one.
+into value slots — and describes them one by one. This is the data the optional
+assistant renders; the explanation itself is built by NSG, so any assistant
+implementation can use it.
 
 - **Bounded on purpose.** Eight blocks per answer, six children per node, three levels
   deep. A large method would otherwise be a wall of text and a noticeable cost on every
   click.
-- **It says when it stopped.** The remainder is not lost: the cat reports how many
-  blocks are left and asks you to select them — *"that's too many blocks, my head is
-  spinning; select the remaining N and I'll look after a rest"*.
+- **It says when it stopped.** The remainder is not lost: the explanation reports how
+  many blocks are left and asks you to select them, instead of stopping silently.
 - **Data-driven.** The new strings live in a separate `tree.*` slot group, so a locale
   that has not translated them still gets the block sentence, and adding a tree
   translation is a data edit, not a code change. English, Simplified and Traditional
@@ -66,11 +68,11 @@ into value slots — and describes them one by one.
   reports why. A file that was already imperfect is not rejected for staying imperfect.
 - **Where:** `NekoWorks ▸ NSG ▸ Blocks ▸ Optimise Blocks` on the selected script, or Health window ▸ *Optimise blocks*. Both run the same passes through the same gate.
 
-### The cat reads the logic, not just the shape
+### It reads the logic, not just the shape
 
 Explaining a block now ends with what it *does to the data*, not only what it contains:
 
-> *"So while `health > 0` holds, it changes `health`, `timer`, nya."*
+> *"So while `health > 0` holds, it changes `health`, `timer`."*
 
 - **Condition** — the socket named `cond`, rendered with its inputs filled in (`foreach`
   uses its `source` instead, since it has no condition).
@@ -311,3 +313,7 @@ Author: NekoAndreeva
 
 - Email: elenaandreevasvinolup@gmail.com
 - WhatsApp: +852 5247 4163
+<img width="1436" height="752" alt="Screenshot 2026-09-16 at 19 51 33" src="https://github.com/user-attachments/assets/5eea5914-19c6-4324-aee4-a3fb118d5f30" />
+<img width="1436" height="752" alt="Screenshot 2026-09-16 at 19 51 19" src="https://github.com/user-attachments/assets/8d648043-dd58-4a2d-86ea-eed99f1a36ca" />
+<img width="1436" height="752" alt="Screenshot 2026-09-16 at 19 51 03" src="https://github.com/user-attachments/assets/47ba12ec-1bdd-4499-8288-2c946916088b" />
+<img width="1436" height="752" alt="Screenshot 2026-09-16 at 19 50 50" src="https://github.com/user-attachments/assets/02b373bf-99b0-4273-b763-1a76da883733" />
